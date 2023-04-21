@@ -3,8 +3,6 @@ import Layout from "../Component/Layout";
 import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 
 export default function Body() {
   return (
