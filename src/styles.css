@@ -1,10 +1,9 @@
-:root {
-  --bg-color: #f8f9fa;
-  --text-color: #343a40;
+.navbar-light {
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
-.dark {
-  --bg-color: #343a40;
-  --text-color: #f8f9fa;
+.navbar-dark {
+  background-color: #343a40;
+  color: #f8f9fa;
 }
-
