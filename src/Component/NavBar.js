@@ -7,8 +7,6 @@ import { BsCart3, BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
-import "../styles1.css";
-import ThemeContext from "../ThemeContext";
 
 function NavBar() {
   return (
