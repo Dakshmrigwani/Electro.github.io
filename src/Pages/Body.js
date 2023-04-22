@@ -2,7 +2,10 @@ import React from "react";
 import Layout from "../Component/Layout";
 import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
+import Typewriter from "typewriter-effect";
 import CardGroup from "react-bootstrap/CardGroup";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 export default function Body() {
   return (
@@ -78,71 +81,108 @@ export default function Body() {
         </Carousel>
         <div className="container-fluid ">
           <div className="text-center">
-            <h2 className="title">
-              <span className="title-word title-word-1">Welcome</span>
-              <span className="title-word title-word-2 ms-2">To</span>
-              <span className="title-word title-word-3 ms-2">Our</span>
-              <span className="title-word title-word-4 ms-2">Website</span>
+            <h2 class="title">
+              <span class="title-word title-word-1">Welcome</span>
+              <span class="title-word title-word-2">to</span>
+              <span class="title-word title-word-3">our</span>
+              <span class="title-word title-word-4">website</span>
             </h2>
           </div>
         </div>
         <CardGroup className="container-fluid my-5">
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This card has supporting text below as a natural lead-in to
-                additional content.{" "}
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
+          <Row>
+            <Col>
+              <Card>
+                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Body>
+                  <Card.Title>Card title</Card.Title>
+                  <Card.Text>
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <small className="text-muted">Last updated 3 mins ago</small>
+                </Card.Footer>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Body>
+                  <Card.Title>Card title</Card.Title>
+                  <Card.Text>
+                    This card has supporting text below as a natural lead-in to
+                    additional content.{" "}
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <small className="text-muted">Last updated 3 mins ago</small>
+                </Card.Footer>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Body>
+                  <Card.Title>Card title</Card.Title>
+                  <Card.Text>
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This card has even longer
+                    content than the first to show that equal height action.
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <small className="text-muted">Last updated 3 mins ago</small>
+                </Card.Footer>
+              </Card>
+            </Col>
+            <Col>
+              <Card>
+                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Body>
+                  <Card.Title>Card title</Card.Title>
+                  <Card.Text>
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This card has even longer
+                    content than the first to show that equal height action.
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <small className="text-muted">Last updated 3 mins ago</small>
+                </Card.Footer>
+              </Card>
+            </Col>
+          </Row>
         </CardGroup>
+        <div className="text-center p-5 padding-the-text">
+          <h1>
+            <Typewriter
+              options={{
+                autoStart: true,
+                loop: true,
+                delay: 50,
+                strings: ["Your favourite products are here with Us"],
+              }}
+            />
+          </h1>
+        </div>
+        <h4 className="text p-4 container-fluid  padding-the-text">
+          This is some products you Must Go Through
+          <div className="roller p-5">
+            <span id="rolltext">
+              HeadPhone
+              <br />
+              Watches
+              <br />
+              Smartphones
+              <br />
+              <span id="spare-time">Or More</span>
+              <br />
+            </span>
+          </div>
+        </h4>
       </Layout>
     </>
   );
