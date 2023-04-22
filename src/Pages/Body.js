@@ -170,21 +170,29 @@ export default function Body() {
             </h1>
           </div>
         </div>
-        <h4 className="text p-4 container-fluid  padding-the-text">
-          This is some products you Must Go Through
-          <div className="roller p-5">
-            <span id="rolltext">
-              HeadPhone
-              <br />
-              Watches
-              <br />
-              Smartphones
-              <br />
-              <span id="spare-time">Or More</span>
-              <br />
-            </span>
+
+        <div className="d-flex justify-content-center ">
+          <img
+            src="https://img.freepik.com/free-photo/headphones-african-american-woman-s-portrait-isolated-dark-studio-background-multicolored-neon-light-beautiful-female-model-concept-human-emotions-facial-expression-sales-ad-fashion_155003-34470.jpg?size=626&ext=jpg&ga=GA1.1.431024627.1681996656&semt=sph"
+            alt=""
+            style={{ width: "100vw", position: "relative" }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "100%",
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              color: "#fff",
+              textAlign: "center",
+              padding: "10px",
+              boxSizing: "border-box",
+            }}
+          >
+            <h2>Caption Text Goes Here</h2>
           </div>
-        </h4>
+        </div>
       </Layout>
     </>
   );
