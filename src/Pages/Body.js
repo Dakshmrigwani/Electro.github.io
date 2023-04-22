@@ -76,6 +76,16 @@ export default function Body() {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+        <div className="container-fluid ">
+          <div className="text-center">
+            <h2 className="title">
+              <span className="title-word title-word-1">Welcome</span>
+              <span className="title-word title-word-2 ms-2">To</span>
+              <span className="title-word title-word-3 ms-2">Our</span>
+              <span className="title-word title-word-4 ms-2">Website</span>
+            </h2>
+          </div>
+        </div>
         <CardGroup className="container-fluid my-5">
           <Card>
             <Card.Img variant="top" src="holder.js/100px160" />

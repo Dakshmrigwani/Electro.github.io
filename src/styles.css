@@ -1,4 +1,9 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #343a40;
+}
+
+.dark {
+  --bg-color: #343a40;
+  --text-color: #f8f9fa;
 }
