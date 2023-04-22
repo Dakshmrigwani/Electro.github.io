@@ -6,7 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { BsCart3, BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import React, { useContext } from "react";
+import React from "react";
 
 function NavBar() {
   return (
