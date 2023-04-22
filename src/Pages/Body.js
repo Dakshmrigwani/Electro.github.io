@@ -79,7 +79,7 @@ export default function Body() {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <div className="container-fluid ">
+        <div className="container-fluid p-5">
           <div className="text-center">
             <h2 class="title">
               <span class="title-word title-word-1">Welcome</span>
@@ -156,17 +156,19 @@ export default function Body() {
             </Col>
           </Row>
         </CardGroup>
-        <div className="text-center p-5 padding-the-text">
-          <h1>
-            <Typewriter
-              options={{
-                autoStart: true,
-                loop: true,
-                delay: 50,
-                strings: ["Your favourite products are here with Us"],
-              }}
-            />
-          </h1>
+        <div className=" container my-5 pb-5" style={{ height: "5vh" }}>
+          <div className="text-center padding-the-text">
+            <h1 className="text-dark">
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: true,
+                  delay: 50,
+                  strings: ["Your favourite products are here with Us"],
+                }}
+              />
+            </h1>
+          </div>
         </div>
         <h4 className="text p-4 container-fluid  padding-the-text">
           This is some products you Must Go Through
