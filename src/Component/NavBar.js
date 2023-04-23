@@ -72,7 +72,7 @@ function NavBar() {
                 Services
               </Link>
             </Nav>
-            <Form className="d-flex">
+            <Form className="d-flex mr-auto" style={{ flex: "none" }}>
               <Form.Control
                 type="search"
                 placeholder="Search"
