@@ -8,9 +8,13 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import ReactStars from "react-stars";
 
 export default function Body() {
   const [show, setShow] = useState(false);
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  };
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -31,7 +35,7 @@ export default function Body() {
       <Layout>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>E-mail Subscribe</Modal.Title>
+            <Modal.Title>Subscribe Us</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <p className="text-center fs-4">
@@ -159,17 +163,49 @@ export default function Body() {
                   src="https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg"
                 />
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
+                  <Card.Title className="fw-normal">
+                    {showMore
+                      ? `boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)`
+                      : `boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones `}
+                    <span onClick={handleToggle} className="fw-bolder">
+                      {showMore ? " ...Read Less" : " ...Read More"}
+                    </span>
+                  </Card.Title>
                   <Card.Text>
-                    <div>
-                      {showMore
-                        ? `boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones`
-                        : `boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)`}
-                      <span onClick={handleToggle} className="fw-bolder">
-                        {showMore ? " ...Read Less" : " ...Read More"}
-                      </span>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <ReactStars
+                        count={5}
+                        onChange={ratingChanged}
+                        size={24}
+                        color2={"#ffd700"}
+                        value={4}
+                        style={{ marginRight: "5px" }}
+                      />
+                      <p style={{ margin: "0" }} className="ms-2">
+                        10,000
+                      </p>
                     </div>
-                    
+
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <b className="fs-2">$100</b>
+                      <p className="fs-6 text-decoration-line-through">$130</p>
+                      <p className="mt-3 ms-3">(24% OFF)</p>
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <Button
+                        variant="outline-light"
+                        style={{ backgroundColor: "#7E90C8", color: "white" }}
+                      >
+                        Add To Cart
+                      </Button>
+                      <Button
+                        className="ms-2"
+                        variant="outline-light"
+                        style={{ backgroundColor: "#8B5095", color: "white" }}
+                      >
+                        Add To Wishlist
+                      </Button>
+                    </div>
                   </Card.Text>
                 </Card.Body>
               </Card>
