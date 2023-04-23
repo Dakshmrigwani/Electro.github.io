@@ -1,17 +1,77 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../Component/Layout";
-import Carousel from "react-bootstrap/Carousel";
+import { Button, Modal, Carousel } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Typewriter from "typewriter-effect";
 import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 export default function Body() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShow(true);
+    }, 10000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+  const [showMore, setShowMore] = useState(false);
+
+  const handleToggle = () => setShowMore(!showMore);
+
+  const handleClose = () => setShow(false);
   return (
     <>
       <Layout>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>E-mail Subscribe</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p className="text-center fs-4">
+              Subscribe our E-mail and get <br />
+              <b>more exciting offers</b>
+            </p>
+            <InputGroup className="mb-3 mt-5">
+              <Form.Control
+                placeholder="Email address"
+                aria-label="Email address"
+                aria-describedby="basic-addon2"
+              />
+              <Button variant="outline-danger" id="button-addon2">
+                Submit
+              </Button>
+            </InputGroup>
+            <div className="text-end">
+              <small className="text-center">
+                <p>
+                  By providing your email address
+                  <br />
+                  you agree to our&nbsp;
+                  <p
+                    className="text-decoration-underline"
+                    style={{ display: "inline-block" }}
+                  >
+                    privacy policy
+                  </p>
+                  &nbsp;and&nbsp;
+                  <p
+                    className="text-decoration-underline"
+                    style={{ display: "inline-block" }}
+                  >
+                    Terms and conditions
+                  </p>
+                </p>
+              </small>
+            </div>
+          </Modal.Body>
+        </Modal>
         <Carousel className="container-fluid my-4">
           <Carousel.Item interval={1000}>
             <img
@@ -94,18 +154,24 @@ export default function Body() {
           <Row>
             <Col>
               <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img
+                  variant="top"
+                  src="https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg"
+                />
                 <Card.Body>
                   <Card.Title>Card title</Card.Title>
                   <Card.Text>
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                    <div>
+                      {showMore
+                        ? `boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones`
+                        : `boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)`}
+                      <span onClick={handleToggle} className="fw-bolder">
+                        {showMore ? " ...Read Less" : " ...Read More"}
+                      </span>
+                    </div>
+                    
                   </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </Card.Footer>
               </Card>
             </Col>
             <Col>
