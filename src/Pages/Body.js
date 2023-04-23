@@ -6,6 +6,7 @@ import Typewriter from "typewriter-effect";
 import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 
 export default function Body() {
   return (
@@ -170,27 +171,49 @@ export default function Body() {
             </h1>
           </div>
         </div>
-
         <div className="d-flex justify-content-center ">
-          <img
-            src="https://img.freepik.com/free-photo/headphones-african-american-woman-s-portrait-isolated-dark-studio-background-multicolored-neon-light-beautiful-female-model-concept-human-emotions-facial-expression-sales-ad-fashion_155003-34470.jpg?size=626&ext=jpg&ga=GA1.1.431024627.1681996656&semt=sph"
-            alt=""
-            style={{ width: "100vw", position: "relative" }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              width: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.7)",
-              color: "#fff",
-              textAlign: "center",
-              padding: "10px",
-              boxSizing: "border-box",
-            }}
-          >
-            <h2>Caption Text Goes Here</h2>
+          <div style={{ position: "relative" }}>
+            <img
+              src="https://img.freepik.com/free-photo/headphones-african-american-woman-s-portrait-isolated-dark-studio-background-multicolored-neon-light-beautiful-female-model-concept-human-emotions-facial-expression-sales-ad-fashion_155003-34470.jpg?size=626&ext=jpg&ga=GA1.1.431024627.1681996656&semt=sph"
+              alt=""
+              style={{ width: "98vw" }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: "75%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "2.5vw",
+                  textAlign: "center",
+                }}
+              >
+                Immerse yourself in sound like never before.
+              </p>
+
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "1.5vw",
+                  textAlign: "center",
+                }}
+              >
+                Hear the difference with our high-quality headphones.
+                <br />
+                Elevate your audio experience with our premium headphones.
+                <br /> Your music deserves the best, and that's what we offer.
+              </p>
+              <div className="text-center">
+                <Button variant="danger" size="sm">
+                  BUY NOW
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </Layout>
