@@ -161,7 +161,7 @@ export default function Body() {
           </div>
         </div>
         <CardGroup className="container-fluid my-5">
-          <Row xs={1} md={4} className="g-4">
+          <Row xs={2} md={4} className="g-4">
             <Col>
               <Card>
                 <Card.Img
@@ -169,7 +169,7 @@ export default function Body() {
                   src="https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg"
                 />
                 <Card.Body>
-                  <Card.Title className="fw-normal">
+                  <Card.Title className="fw-normal" style={{ height: "10rem" }}>
                     {showMore
                       ? `boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)`
                       : `boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones `}
@@ -240,7 +240,7 @@ export default function Body() {
                   src="https://m.media-amazon.com/images/I/61SSVxTSs3L._SY450_.jpg"
                 />
                 <Card.Body>
-                  <Card.Title className="fw-normal">
+                  <Card.Title className="fw-normal" style={{ height: "10rem" }}>
                     {showMore1
                       ? `Noise Pulse 2 Advanced Bluetooth Calling Watch with 1.85'' Display, 550 NITS Brightness, Smart DND, 10 Days Battery, 100 Sports Modes, Smart Watch for Men and Women - (Jet Black)`
                       : `Noise Pulse 2 Advanced Bluetooth Calling Watch`}
@@ -311,7 +311,7 @@ export default function Body() {
                   src="https://m.media-amazon.com/images/I/61oSoHc7VtL._SY450_.jpg"
                 />
                 <Card.Body>
-                  <Card.Title className="fw-normal">
+                  <Card.Title className="fw-normal" style={{ height: "10rem" }}>
                     {showMore2
                       ? `boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo Sound, 10HRS Playtime, TWS Feature, IPX4, Multi-Compatibility Mode(Black)`
                       : `boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo`}
@@ -382,7 +382,7 @@ export default function Body() {
                   src="https://m.media-amazon.com/images/I/81-fFXQdPTL._SX679_.jpg"
                 />
                 <Card.Body>
-                  <Card.Title className="fw-normal">
+                  <Card.Title className="fw-normal" style={{ height: "10rem" }}>
                     {showMore3
                       ? `Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage) | 6000mAh Battery | Upto 12GB RAM with RAM Plus`
                       : `Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage)`}
