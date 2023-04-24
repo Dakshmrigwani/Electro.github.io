@@ -4,7 +4,11 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { BsCart3, BsMoonStarsFill, BsSunFill } from "react-icons/bs";
-import { AiOutlineHeart } from "react-icons/ai";
+import {
+  AiOutlineHeart,
+  AiOutlineUserAdd,
+  AiOutlineUser,
+} from "react-icons/ai";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 
@@ -12,6 +16,10 @@ function NavBar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
+  };
+  const [isUserAdd, setIsUserAdd] = useState(false);
+  const UserAdded = () => {
+    setIsUserAdd(!isUserAdd);
   };
   return (
     <>
@@ -82,13 +90,17 @@ function NavBar() {
               <Button variant="outline-success">Search</Button>
             </Form>
             <Button
-              className="btn btn-light mb-1"
+              className="btn btn-light"
               style={{ boxShadow: "none" }}
               onClick={toggleDarkMode}
             >
               {isDarkMode ? <BsSunFill /> : <BsMoonStarsFill />}
             </Button>
-            <Button className="btn btn-light" style={{ boxShadow: "none" }}>
+            <Button
+              className="btn btn-light"
+              style={{ boxShadow: "none" }}
+              onClick={UserAdded}
+            >
               <Link to="/Pages/Wishlist">
                 <AiOutlineHeart className="text-dark fs-4" />
               </Link>
@@ -97,6 +109,13 @@ function NavBar() {
               <Link to="/pages/Cart">
                 <BsCart3 className="text-dark fs-4" />
               </Link>
+            </Button>
+            <Button
+              className="btn btn-light fs-5"
+              style={{ boxShadow: "none" }}
+              onClick={UserAdded}
+            >
+              {isUserAdd ? <AiOutlineUserAdd /> : <AiOutlineUser />}
             </Button>
           </Navbar.Collapse>
         </Container>

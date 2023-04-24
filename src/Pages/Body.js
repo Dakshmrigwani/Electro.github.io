@@ -26,8 +26,14 @@ export default function Body() {
     };
   }, []);
   const [showMore, setShowMore] = useState(false);
+  const [showMore1, setShowMore1] = useState(false);
+  const [showMore2, setShowMore2] = useState(false);
+  const [showMore3, setShowMore3] = useState(false);
 
   const handleToggle = () => setShowMore(!showMore);
+  const handleToggle1 = () => setShowMore1(!showMore1);
+  const handleToggle2 = () => setShowMore2(!showMore2);
+  const handleToggle3 = () => setShowMore3(!showMore3);
 
   const handleClose = () => setShow(false);
   return (
@@ -155,7 +161,7 @@ export default function Body() {
           </div>
         </div>
         <CardGroup className="container-fluid my-5">
-          <Row>
+          <Row xs={1} md={4} className="g-4">
             <Col>
               <Card>
                 <Card.Img
@@ -172,7 +178,10 @@ export default function Body() {
                     </span>
                   </Card.Title>
                   <Card.Text>
-                    <div style={{ display: "flex", alignItems: "center" }}>
+                    <div
+                      className="row row-cols-auto"
+                      style={{ display: "flex", alignItems: "center" }}
+                    >
                       <ReactStars
                         count={5}
                         onChange={ratingChanged}
@@ -180,26 +189,40 @@ export default function Body() {
                         color2={"#ffd700"}
                         value={4}
                         style={{ marginRight: "5px" }}
+                        className="col"
                       />
-                      <p style={{ margin: "0" }} className="ms-2">
+                      <p style={{ margin: "0" }} className="ms-2 col">
                         10,000
                       </p>
                     </div>
 
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <b className="fs-2">$100</b>
-                      <p className="fs-6 text-decoration-line-through">$130</p>
-                      <p className="mt-3 ms-3">(24% OFF)</p>
+                    <div
+                      style={{ display: "flex", alignItems: "center" }}
+                      className="row"
+                    >
+                      <div className="col">
+                        <b className="fs-2">$100</b>
+                        <p className="fs-6 text-decoration-line-through">
+                          $130
+                        </p>
+                      </div>
+                      <div className="col">
+                        <p className="mt-3 text-start">(24% OFF)</p>
+                      </div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center" }}>
+                    <div
+                      style={{ display: "flex", alignItems: "center" }}
+                      className="row row-cols-auto d-flex justify-content-center"
+                    >
                       <Button
                         variant="outline-light"
                         style={{ backgroundColor: "#7E90C8", color: "white" }}
+                        className="col"
                       >
                         Add To Cart
                       </Button>
                       <Button
-                        className="ms-2"
+                        className="ms-2 col"
                         variant="outline-light"
                         style={{ backgroundColor: "#8B5095", color: "white" }}
                       >
@@ -212,49 +235,215 @@ export default function Body() {
             </Col>
             <Col>
               <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img
+                  variant="top"
+                  src="https://m.media-amazon.com/images/I/61SSVxTSs3L._SY450_.jpg"
+                />
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
+                  <Card.Title className="fw-normal">
+                    {showMore1
+                      ? `Noise Pulse 2 Advanced Bluetooth Calling Watch with 1.85'' Display, 550 NITS Brightness, Smart DND, 10 Days Battery, 100 Sports Modes, Smart Watch for Men and Women - (Jet Black)`
+                      : `Noise Pulse 2 Advanced Bluetooth Calling Watch`}
+                    <span onClick={handleToggle1} className="fw-bolder">
+                      {showMore1 ? " ...Read Less" : " ...Read More"}
+                    </span>
+                  </Card.Title>
                   <Card.Text>
-                    This card has supporting text below as a natural lead-in to
-                    additional content.{" "}
+                    <div
+                      className="row row-cols-auto"
+                      style={{ display: "flex", alignItems: "center" }}
+                    >
+                      <ReactStars
+                        count={5}
+                        onChange={ratingChanged}
+                        size={24}
+                        color2={"#ffd700"}
+                        value={3.5}
+                        style={{ marginRight: "5px" }}
+                        className="col"
+                      />
+                      <p style={{ margin: "0" }} className="ms-2 col">
+                        6,000
+                      </p>
+                    </div>
+
+                    <div
+                      style={{ display: "flex", alignItems: "center" }}
+                      className="row"
+                    >
+                      <div className="col">
+                        <b className="fs-2">$100</b>
+                        <p className="fs-6 text-decoration-line-through">
+                          $300
+                        </p>
+                      </div>
+                      <div className="col">
+                        <p className="mt-3 text-start">(65% OFF)</p>
+                      </div>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center" }}
+                      className="row row-cols-auto d-flex justify-content-center"
+                    >
+                      <Button
+                        variant="outline-light"
+                        style={{ backgroundColor: "#7E90C8", color: "white" }}
+                        className="col"
+                      >
+                        Add To Cart
+                      </Button>
+                      <Button
+                        className="ms-2 col"
+                        variant="outline-light"
+                        style={{ backgroundColor: "#8B5095", color: "white" }}
+                      >
+                        Add To Wishlist
+                      </Button>
+                    </div>
                   </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </Card.Footer>
               </Card>
             </Col>
             <Col>
               <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img
+                  variant="top"
+                  src="https://m.media-amazon.com/images/I/61oSoHc7VtL._SY450_.jpg"
+                />
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
+                  <Card.Title className="fw-normal">
+                    {showMore2
+                      ? `boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo Sound, 10HRS Playtime, TWS Feature, IPX4, Multi-Compatibility Mode(Black)`
+                      : `boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo`}
+                    <span onClick={handleToggle2} className="fw-bolder">
+                      {showMore2 ? " ...Read Less" : " ...Read More"}
+                    </span>
+                  </Card.Title>
                   <Card.Text>
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This card has even longer
-                    content than the first to show that equal height action.
+                    <div
+                      className="row row-cols-auto"
+                      style={{ display: "flex", alignItems: "center" }}
+                    >
+                      <ReactStars
+                        count={5}
+                        onChange={ratingChanged}
+                        size={24}
+                        color2={"#ffd700"}
+                        value={4.5}
+                        style={{ marginRight: "5px" }}
+                        className="col"
+                      />
+                      <p style={{ margin: "0" }} className="ms-2 col">
+                        9,000
+                      </p>
+                    </div>
+
+                    <div
+                      style={{ display: "flex", alignItems: "center" }}
+                      className="row"
+                    >
+                      <div className="col">
+                        <b className="fs-2">$200</b>
+                        <p className="fs-6 text-decoration-line-through">
+                          $400
+                        </p>
+                      </div>
+                      <div className="col">
+                        <p className="mt-3 text-start">(50% OFF)</p>
+                      </div>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center" }}
+                      className="row row-cols-auto d-flex justify-content-center"
+                    >
+                      <Button
+                        variant="outline-light"
+                        style={{ backgroundColor: "#7E90C8", color: "white" }}
+                        className="col"
+                      >
+                        Add To Cart
+                      </Button>
+                      <Button
+                        className="ms-2 col"
+                        variant="outline-light"
+                        style={{ backgroundColor: "#8B5095", color: "white" }}
+                      >
+                        Add To Wishlist
+                      </Button>
+                    </div>
                   </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </Card.Footer>
               </Card>
             </Col>
             <Col>
               <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img
+                  variant="top"
+                  src="https://m.media-amazon.com/images/I/81-fFXQdPTL._SX679_.jpg"
+                />
                 <Card.Body>
-                  <Card.Title>Card title</Card.Title>
+                  <Card.Title className="fw-normal">
+                    {showMore3
+                      ? `Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage) | 6000mAh Battery | Upto 12GB RAM with RAM Plus`
+                      : `Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage)`}
+                    <span onClick={handleToggle3} className="fw-bolder">
+                      {showMore3 ? " ...Read Less" : " ...Read More"}
+                    </span>
+                  </Card.Title>
                   <Card.Text>
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This card has even longer
-                    content than the first to show that equal height action.
+                    <div
+                      className="row row-cols-auto"
+                      style={{ display: "flex", alignItems: "center" }}
+                    >
+                      <ReactStars
+                        count={5}
+                        onChange={ratingChanged}
+                        size={24}
+                        color2={"#ffd700"}
+                        value={4}
+                        style={{ marginRight: "5px" }}
+                        className="col"
+                      />
+                      <p style={{ margin: "0" }} className="ms-2 col">
+                        11,000
+                      </p>
+                    </div>
+
+                    <div
+                      style={{ display: "flex", alignItems: "center" }}
+                      className="row"
+                    >
+                      <div className="col">
+                        <b className="fs-2">$600</b>
+                        <p className="fs-6 text-decoration-line-through">
+                          $850
+                        </p>
+                      </div>
+                      <div className="col">
+                        <p className="mt-3 text-start">(29% OFF)</p>
+                      </div>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center" }}
+                      className="row row-cols-auto d-flex justify-content-center"
+                    >
+                      <Button
+                        variant="outline-light"
+                        style={{ backgroundColor: "#7E90C8", color: "white" }}
+                        className="col"
+                      >
+                        Add To Cart
+                      </Button>
+                      <Button
+                        className="ms-2 col"
+                        variant="outline-light"
+                        style={{ backgroundColor: "#8B5095", color: "white" }}
+                      >
+                        Add To Wishlist
+                      </Button>
+                    </div>
                   </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </Card.Footer>
               </Card>
             </Col>
           </Row>
