@@ -4,7 +4,7 @@ export default function HeadPhone() {
   return (
     <>
       <Layout>
-        <p>He</p>
+        <p>Headphone</p>
       </Layout>
     </>
   );
