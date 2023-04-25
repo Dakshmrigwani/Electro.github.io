@@ -369,6 +369,19 @@ export default function Cart() {
                         <div className="my-4">
                           <hr />
                         </div>
+                        <Row>
+                          <Col md={6}>
+                            <b>SubTotal</b>
+                            <p>Discount</p>
+                            <p>Delievery</p>
+                            <p>Tax</p>
+                          </Col>
+                          <Col md={6}>
+                            <div className="d-flex justify-content-end">
+                              <b>$80.00</b>
+                            </div>
+                          </Col>
+                        </Row>
                       </Card.Body>
                     </Card>
                   </div>
