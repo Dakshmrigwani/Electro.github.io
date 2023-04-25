@@ -21,106 +21,64 @@ export default function Cart() {
               </Link>
             </Button>
           </div>
-          <div className="d-flex align-items-center justify-content-center">
-            <div className="d-flex align-items-center flex-wrap">
-              <Row>
-                <Col>
-                  <div
-                    className="modal show"
-                    style={{ display: "block", position: "initial" }}
-                  >
-                    <Modal.Dialog size="xl">
-                      <Modal.Header>
-                        <Modal.Title>Cart</Modal.Title>
-                      </Modal.Header>
+          <div className="d-flex justify-content-center align-content-center mt-5">
+            <Row>
+              <Col md={8}>
+                <div className="">
+                  <div className="">
+                    <Card>
+                      <Card.Header>Cart</Card.Header>
 
-                      <Modal.Body>
-                        <Card style={{ width: "100%" }} className="container">
+                      <Card.Body>
+                        <Card className="w-100">
                           <Row>
-                            <Col>
-                              <Card.Img
-                                variant="top"
-                                className=""
-                                src="https://img.freepik.com/free-photo/black-headphones-digital-device_53876-96805.jpg?w=740&t=st=1681996660~exp=1681997260~hmac=4bef7fde7d3c00249db13c96e8e09b23a4c16784cc29ddb90c7e2ae3e0d432d5"
-                              />
+                            <Col md={4} lg={3} className="d-inline">
+                              <div style={{ width: "10rem" }}>
+                                <Card.Img
+                                  variant="top"
+                                  src="https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg"
+                                />
+                              </div>
                             </Col>
-                            <Col>
+                            <Col md={8} lg={9}>
                               <Card.Body>
                                 <Card.Title>
-                                  <div className="w-100">
-                                    boAt Stone 620 Bluetooth Speaker with 12W
-                                    RMS Stereo Sound
-                                  </div>
+                                  boAt Rockerz 550 Bluetooth Wireless Over Ear
+                                  Headphones
                                 </Card.Title>
                                 <Card.Text>
-                                  <div className="">
-                                    <Row>
-                                      <Col>
-                                        <Form.Control
-                                          aria-describedby="basic-addon1"
-                                          type="number"
-                                          placeholder="1"
-                                          size="sm"
-                                        />
-                                      </Col>
-                                      <Col>
-                                        <Form.Control
-                                          aria-describedby="basic-addon1"
-                                          type="number"
-                                          placeholder="XL"
-                                          size="sm"
-                                        />
-                                      </Col>
-                                      <Col>
-                                        <Form.Control
-                                          aria-describedby="basic-addon1"
-                                          type="text"
-                                          placeholder="blue"
-                                          size="sm"
-                                        />
-                                      </Col>
-                                      <Col>
-                                        <Row>
-                                          <AiOutlineHeart />
-                                          <p>Wishlist</p>
-                                        </Row>
-                                      </Col>
-                                      <Col>
-                                        <Row>
-                                          <AiOutlineDelete />
-                                          <p>Delete</p>
-                                        </Row>
-                                      </Col>
-                                    </Row>
-                                  </div>
+                                  Some quick example text to build on the card
+                                  title and make up the bulk of the card's
+                                  content.
                                 </Card.Text>
                                 <Button variant="primary">Go somewhere</Button>
                               </Card.Body>
                             </Col>
                           </Row>
                         </Card>
-                      </Modal.Body>
-                    </Modal.Dialog>
+                      </Card.Body>
+                    </Card>
                   </div>
-                </Col>
-                <Col>
-                  <div
-                    className="modal show"
-                    style={{ display: "block", position: "initial" }}
-                  >
-                    <Modal.Dialog size="sm">
-                      <Modal.Header>
-                        <Modal.Title>Modal title</Modal.Title>
-                      </Modal.Header>
-
-                      <Modal.Body>
-                        <p>Modal body text goes here.</p>
-                      </Modal.Body>
-                    </Modal.Dialog>
+                </div>
+              </Col>
+              <Col md={4}>
+                <div className="">
+                  <div className="">
+                    <Card style={{ width: "18rem" }}>
+                      <Card.Img variant="top" src="holder.js/100px180" />
+                      <Card.Body>
+                        <Card.Title>Card Title</Card.Title>
+                        <Card.Text>
+                          Some quick example text to build on the card title and
+                          make up the bulk of the card's content.
+                        </Card.Text>
+                        <Button variant="primary">Go somewhere</Button>
+                      </Card.Body>
+                    </Card>
                   </div>
-                </Col>
-              </Row>
-            </div>
+                </div>
+              </Col>
+            </Row>
           </div>
         </div>
       </LayOutNone>
