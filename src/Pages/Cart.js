@@ -25,12 +25,11 @@ export default function Cart() {
           </div>
           <div className="d-flex justify-content-center align-content-center mt-5 ">
             <Row>
-              <Col md={8}>
+              <Col lg={8}>
                 <div className="">
                   <div className="">
                     <Card>
                       <Card.Header>Cart</Card.Header>
-
                       <Card.Body className="d-grid gap-3">
                         <Card className="w-100">
                           <Row>
@@ -318,7 +317,7 @@ export default function Cart() {
                 </div>
               </Col>
               <Col md={4}>
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center mt-3 mt-md-0">
                   <div className="">
                     <Card style={{ width: "18rem" }}>
                       <Card.Body>
@@ -327,7 +326,7 @@ export default function Cart() {
                         </Card.Title>
 
                         <Row>
-                          <Col md={4}>
+                          <Col lg={4}>
                             <Button
                               variant="light"
                               className="text-dark"
@@ -370,18 +369,42 @@ export default function Cart() {
                           <hr />
                         </div>
                         <Row>
-                          <Col md={6}>
+                          <Col md={4}>
                             <b>SubTotal</b>
                             <p>Discount</p>
                             <p>Delievery</p>
                             <p>Tax</p>
                           </Col>
-                          <Col md={6}>
-                            <div className="d-flex justify-content-end">
-                              <b>$80.00</b>
-                            </div>
+                          <Col md={8} className="text-end">
+                            <b>$80.00</b>
+                            <p>(20% off) $16.39</p>
+                            <p>$0.00</p>
+                            <p>$-14.00</p>
                           </Col>
                         </Row>
+                        <Row>
+                          <Col md={4}>
+                            <b>Total</b>
+                          </Col>
+                          <Col md={8} className="text-end">
+                            <b>$78.76</b>
+                          </Col>
+                        </Row>
+                        <div className="d-flex flex-column gap-2 mt-3">
+                          <Row>
+                            <Button style={{ boxShadow: "none" }}>
+                              Proceed to checkout
+                            </Button>
+                          </Row>
+                          <Row>
+                            <Button
+                              variant="light"
+                              style={{ boxShadow: "none" }}
+                            >
+                              Continue Shopping
+                            </Button>
+                          </Row>
+                        </div>
                       </Card.Body>
                     </Card>
                   </div>
