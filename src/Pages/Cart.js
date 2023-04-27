@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import LayOutNone from "../Component/LayOutNone";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -11,7 +11,34 @@ import { AiOutlineHeart, AiOutlineDelete } from "react-icons/ai";
 import ReactStars from "react-stars";
 import InputGroup from "react-bootstrap/InputGroup";
 
+function reducer(state, action) {
+  switch (action.type) {
+    case "incremented_age": {
+      return {
+        age: state.age + 1,
+      };
+    }
+    case "decremented_age": {
+      return {
+        age: state.age - 1,
+      };
+    }
+  }
+  throw new Error();
+}
+
+const initialState = { age: 1 };
 export default function Cart() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  function handleButtonClick() {
+    dispatch({ type: "incremented_age" });
+  }
+
+  function handleDecrementAge() {
+    dispatch({ type: "decremented_age" });
+  }
+
   return (
     <>
       <LayOutNone>
@@ -70,32 +97,59 @@ export default function Cart() {
                                       <p className="text-start">(65% OFF)</p>
                                     </div>
                                   </div>
-                                  <div
-                                    style={{
-                                      alignItems: "center",
-                                    }}
-                                    className="row row-cols-auto d-flex justify-content-start"
-                                  >
-                                    <Button
-                                      variant="outline-light"
-                                      size="lg"
+
+                                  <Row>
+                                    <div
                                       style={{
-                                        backgroundColor: "#7E90C8",
-                                        color: "white",
+                                        alignItems: "center",
                                       }}
-                                      className="col-10"
+                                      className="row row-cols-auto d-flex justify-content-start"
                                     >
-                                      Add to cart
-                                    </Button>
-                                    <Button
-                                      variant="outline-light"
-                                      size="lg"
-                                      className="col-2 text-dark"
-                                      style={{ boxShadow: "none" }}
-                                    >
-                                      <AiOutlineDelete />
-                                    </Button>
-                                  </div>
+                                      <Col>
+                                        <select className="form-select">
+                                          <option selected>lg</option>
+                                          <option value="1">sm</option>
+                                          <option value="2">lg</option>
+                                          <option value="3">xl</option>
+                                        </select>
+                                      </Col>
+                                      <Col>
+                                        <div className="d-flex justify-content-center mb-3 mb-md-0">
+                                          <Button onClick={handleButtonClick}>
+                                            +
+                                          </Button>
+
+                                          <input value={state.age} />
+
+                                          <Button onClick={handleDecrementAge}>
+                                            -
+                                          </Button>
+                                        </div>
+                                      </Col>
+                                      <Col>
+                                        <select className="form-select">
+                                          <option selected>Blue</option>
+                                          <option value="1">Red</option>
+                                          <option value="2">Yellow</option>
+                                          <option value="3">Green</option>
+                                        </select>
+                                      </Col>
+                                    </div>
+                                    <div className="d-flex justify-content-end">
+                                      <Col>
+                                        <Button>
+                                          <AiOutlineHeart />
+                                        </Button>
+                                        <p>Wishlist</p>
+                                      </Col>
+                                      <Col>
+                                        <Button>
+                                          <AiOutlineDelete />
+                                        </Button>
+                                        <p>Delete</p>
+                                      </Col>
+                                    </div>
+                                  </Row>
                                 </Card.Text>
                               </Card.Body>
                             </Col>
