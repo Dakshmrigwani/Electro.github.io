@@ -104,7 +104,7 @@ export default function Cart() {
                                   }}
                                   className="row row-cols-auto d-flex justify-content-start"
                                 >
-                                  <Col md={2}>
+                                  <Col md={3} sm={6}>
                                     <select className="form-select">
                                       <option selected>lg</option>
                                       <option value="1">sm</option>
@@ -112,20 +112,23 @@ export default function Cart() {
                                       <option value="3">xl</option>
                                     </select>
                                   </Col>
-                                  <Col md={6}>
-                                    <div className="d-flex justify-content-center mb-3 mb-md-0">
+                                  <Col md={4} sm={12}>
+                                    <div className="d-flex  mb-3 mb-md-0">
                                       <Button onClick={handleButtonClick}>
                                         +
                                       </Button>
 
-                                      <input value={state.age} />
+                                      <input
+                                        value={state.age}
+                                        style={{ width: "5rem" }}
+                                      />
 
                                       <Button onClick={handleDecrementAge}>
                                         -
                                       </Button>
                                     </div>
                                   </Col>
-                                  <Col md={2}>
+                                  <Col md={3} sm={6}>
                                     <select className="form-select">
                                       <option selected>Blue</option>
                                       <option value="1">Red</option>
@@ -202,7 +205,7 @@ export default function Cart() {
                                   }}
                                   className="row row-cols-auto d-flex justify-content-start"
                                 >
-                                  <Col md={2}>
+                                  <Col md={3}>
                                     <select className="form-select">
                                       <option selected>lg</option>
                                       <option value="1">sm</option>
@@ -210,20 +213,23 @@ export default function Cart() {
                                       <option value="3">xl</option>
                                     </select>
                                   </Col>
-                                  <Col md={6}>
+                                  <Col md={4}>
                                     <div className="d-flex justify-content-center mb-3 mb-md-0">
                                       <Button onClick={handleButtonClick}>
                                         +
                                       </Button>
 
-                                      <input value={state.age} />
+                                      <input
+                                        value={state.age}
+                                        style={{ width: "5rem" }}
+                                      />
 
                                       <Button onClick={handleDecrementAge}>
                                         -
                                       </Button>
                                     </div>
                                   </Col>
-                                  <Col md={2}>
+                                  <Col md={3}>
                                     <select className="form-select">
                                       <option selected>Blue</option>
                                       <option value="1">Red</option>
