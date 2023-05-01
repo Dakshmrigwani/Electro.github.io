@@ -9,6 +9,7 @@ import WishList from "./Pages/Wishlist";
 import Cart from "./Pages/Cart";
 import SignIn from "./Pages/SignIn";
 
+
 function App() {
   return (
     <>
@@ -17,7 +18,6 @@ function App() {
           <Route path="/" element={<Body />} />
           <Route path="/pages/Body" element={<Body />} />
           <Route path="/Pages/Headphone" element={<HeadPhone />} />
-
           <Route path="/Pages/Speaker" element={<Speaker />} />
           <Route path="/Pages/Watches" element={<Watches />} />
           <Route path="/Pages/Smartphones" element={<Smartphones />} />
