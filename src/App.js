@@ -9,7 +9,6 @@ import WishList from "./Pages/Wishlist";
 import Cart from "./Pages/Cart";
 import SignIn from "./Pages/SignIn";
 
-
 function App() {
   return (
     <>
