@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import ReactStars from "react-stars";
 
 export default function HeadPhone() {
   return (
@@ -161,7 +162,7 @@ export default function HeadPhone() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={9}>dd</Col>
+            <Col md={9}></Col>
           </Row>
         </div>
       </Layout>
