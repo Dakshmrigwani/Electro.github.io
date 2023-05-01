@@ -110,14 +110,18 @@ function SignIn() {
             type="password"
           />
 
-          <div className="d-flex justify-content-between mx-4 mb-4">
-            <MDBCheckbox
-              name="flexCheck"
-              value=""
-              id="flexCheckDefault"
-              label="Remember me"
-            />
-            <a href="!#">Forgot password?</a>
+          <div className="row mb-5">
+            <div className="col-md-6 col-sm-12">
+              <MDBCheckbox
+                name="flexCheck"
+                value=""
+                id="flexCheckDefault"
+                label="Remember me"
+              />
+            </div>
+            <div className="col-md-6 col-sm-12 text-end">
+              <a href="!#">Forgot password?</a>
+            </div>
           </div>
 
           <MDBBtn className="mb-4 w-100">Sign in</MDBBtn>

@@ -64,18 +64,6 @@ function NavBar() {
               >
                 Smartphones
               </Link>
-              <Link
-                to="/Pages/About"
-                className="text-decoration-none text-dark me-2"
-              >
-                AboutUs
-              </Link>
-              <Link
-                to="/Pages/Services"
-                className="text-decoration-none text-dark"
-              >
-                Services
-              </Link>
             </Nav>
             <Form className="d-flex mr-auto" style={{ flex: "none" }}>
               <Form.Control
