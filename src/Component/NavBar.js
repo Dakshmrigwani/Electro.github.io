@@ -17,10 +17,7 @@ function NavBar() {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
-  const [isUserAdd, setIsUserAdd] = useState(false);
-  const UserAdded = () => {
-    setIsUserAdd(!isUserAdd);
-  };
+
   return (
     <>
       <Navbar bg="light" expand="lg" className="sticky-top">
@@ -96,11 +93,7 @@ function NavBar() {
             >
               {isDarkMode ? <BsSunFill /> : <BsMoonStarsFill />}
             </Button>
-            <Button
-              className="btn btn-light"
-              style={{ boxShadow: "none" }}
-              onClick={UserAdded}
-            >
+            <Button className="btn btn-light" style={{ boxShadow: "none" }}>
               <Link to="/Pages/Wishlist">
                 <AiOutlineHeart className="text-dark fs-4" />
               </Link>
@@ -113,9 +106,10 @@ function NavBar() {
             <Button
               className="btn btn-light fs-5"
               style={{ boxShadow: "none" }}
-              onClick={UserAdded}
             >
-              {isUserAdd ? <AiOutlineUserAdd /> : <AiOutlineUser />}
+              <Link to="/pages/SignIn">
+                <AiOutlineUser />
+              </Link>
             </Button>
           </Navbar.Collapse>
         </Container>
