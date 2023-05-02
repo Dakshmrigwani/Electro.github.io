@@ -10,21 +10,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import ReactStars from "react-stars";
 import { Link } from "react-router-dom";
-
-export const bodyList = [
-  {
-    id: 1,
-    image: "https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg",
-    LessTitle: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones ",
-    MoreTitle:
-      "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)",
-    ActPrice: 130,
-    DisPrice: 100,
-    Rating: 4,
-    reviews: 6000,
-    disPercent: 24,
-  },
-];
+import { bodyList } from "../Component/data";
 
 export default function Body() {
   const [show, setShow] = useState(false);

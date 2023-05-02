@@ -10,6 +10,7 @@ import Form from "react-bootstrap/Form";
 import { AiOutlineHeart, AiOutlineDelete } from "react-icons/ai";
 import ReactStars from "react-stars";
 import InputGroup from "react-bootstrap/InputGroup";
+import { CartList } from "../Component/data";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -26,29 +27,6 @@ function reducer(state, action) {
   }
   throw new Error();
 }
-
-const CartList = [
-  {
-    id: 1,
-    name: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones",
-    image: "https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg",
-    price: 300,
-    disPrice: 100,
-    stars: 4,
-    reviewCount: 3000,
-    discount: 50,
-  },
-  {
-    id: 2,
-    name: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones",
-    image: "https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg",
-    price: 300,
-    disPrice: 100,
-    stars: 4,
-    reviewCount: 3000,
-    discount: 50,
-  },
-];
 
 const initialState = { age: 1 };
 export default function Cart() {
