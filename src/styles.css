@@ -1,11 +1,15 @@
-.navbar-light {
-  background-color: #f8f9fa;
-  color: #212529;
+.light-theme {
+  --background-color: #f8f9fa;
+  --color: #212529;
 }
 
-.navbar-dark {
-  background-color: #343a40;
-  color: #f8f9fa;
+.dark-theme {
+  --background-color: #343a40;
+  --color: #f8f9fa;
+}
+.App {
+  background-color: var(--background-color);
+  color: var(--color);
 }
 .title-word {
   animation: color-animation 4s linear infinite;
@@ -72,4 +76,3 @@
   margin-top: 6rem;
   margin-bottom: 10rem;
 }
-

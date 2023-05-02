@@ -10,13 +10,17 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function NavBar() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [theme, setTheme] = useState(light - theme);
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    theme === "dark-theme" ? setTheme("light-theme") : setTheme("dark-theme");
   };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   return (
     <>
@@ -79,7 +83,7 @@ function NavBar() {
               style={{ boxShadow: "none" }}
               onClick={toggleDarkMode}
             >
-              {isDarkMode ? <BsSunFill /> : <BsMoonStarsFill />}
+              {theme ? <BsSunFill /> : <BsMoonStarsFill />}
             </Button>
             <Button className="btn btn-light" style={{ boxShadow: "none" }}>
               <Link to="/Pages/Wishlist">
