@@ -27,6 +27,29 @@ function reducer(state, action) {
   throw new Error();
 }
 
+const products = [
+  {
+    id: 1,
+    name: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones",
+    image: "https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg",
+    price: 300,
+    disPrice: 100,
+    stars: 4,
+    reviewCount: 3000,
+    discount: 50,
+  },
+  {
+    id: 2,
+    name: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones",
+    image: "https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg",
+    price: 300,
+    disPrice: 100,
+    stars: 4,
+    reviewCount: 3000,
+    discount: 50,
+  },
+];
+
 const initialState = { age: 1 };
 export default function Cart() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -58,207 +81,111 @@ export default function Cart() {
                     <Card>
                       <Card.Header>Cart</Card.Header>
                       <Card.Body className="d-grid gap-3">
-                        <Card className="w-100">
-                          <Row>
-                            <Col md={4} lg={3} className="d-inline">
-                              <div style={{ width: "10rem" }}>
-                                <Card.Img
-                                  variant="top"
-                                  src="https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg"
-                                />
-                              </div>
-                            </Col>
-                            <Col md={8} lg={9}>
-                              <Card.Body>
-                                <Card.Title>
-                                  boAt Rockerz 550 Bluetooth Wireless Over Ear
-                                  Headphones
-                                </Card.Title>
-                                <Card.Text>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      alignItems: "center",
-                                    }}
-                                    className="row"
-                                  >
-                                    <div className="col-6">
-                                      <b className="fs-2">$100</b>
-                                      <p className="fs-6 text-decoration-line-through">
-                                        $300
-                                      </p>
-                                    </div>
-                                    <div className="col-6">
-                                      <ReactStars value={4} />
-                                      <p>6000</p>
-                                    </div>
-
-                                    <div className="col">
-                                      <p className="text-start">(65% OFF)</p>
-                                    </div>
+                        {products.map((product) => (
+                          <div key={product.id}>
+                            <Card className="w-100">
+                              <Row>
+                                <Col md={4} lg={3} className="d-inline">
+                                  <div style={{ width: "10rem" }}>
+                                    <Card.Img
+                                      variant="top"
+                                      src={product.image}
+                                    />
                                   </div>
-                                </Card.Text>
-                                <Row
-                                  style={{
-                                    alignItems: "center",
-                                  }}
-                                  className="row row-cols-auto d-flex justify-content-start"
-                                >
-                                  <Col md={3} sm={6}>
-                                    <select className="form-select">
-                                      <option selected>lg</option>
-                                      <option value="1">sm</option>
-                                      <option value="2">lg</option>
-                                      <option value="3">xl</option>
-                                    </select>
-                                  </Col>
-                                  <Col md={4} sm={12}>
-                                    <div className="d-flex  mb-3 mb-md-0">
-                                      <Button onClick={handleButtonClick}>
-                                        +
-                                      </Button>
-
-                                      <input
-                                        value={state.age}
-                                        style={{ width: "5rem" }}
-                                      />
-
-                                      <Button onClick={handleDecrementAge}>
-                                        -
-                                      </Button>
-                                    </div>
-                                  </Col>
-                                  <Col md={3} sm={6}>
-                                    <select className="form-select">
-                                      <option selected>Blue</option>
-                                      <option value="1">Red</option>
-                                      <option value="2">Yellow</option>
-                                      <option value="3">Green</option>
-                                    </select>
-                                  </Col>
-
-                                  <Col md={2}>
-                                    <div className="d-flex justify-content-center">
-                                      <Button
-                                        variant="light"
-                                        style={{ boxShadow: "none" }}
+                                </Col>
+                                <Col md={8} lg={9}>
+                                  <Card.Body>
+                                    <Card.Title>{product.name}</Card.Title>
+                                    <Card.Text>
+                                      <div
+                                        style={{
+                                          display: "flex",
+                                          alignItems: "center",
+                                        }}
+                                        className="row"
                                       >
-                                        <AiOutlineHeart />
-                                      </Button>
-                                      <Button
-                                        variant="light"
-                                        style={{ boxShadow: "none" }}
-                                      >
-                                        <AiOutlineDelete />
-                                      </Button>
-                                    </div>
-                                  </Col>
-                                </Row>
-                              </Card.Body>
-                            </Col>
-                          </Row>
-                        </Card>
-                        <Card className="w-100"></Card>
-                        <Card className="w-100">
-                          <Row>
-                            <Col md={4} lg={3} className="d-inline">
-                              <div style={{ width: "10rem" }}>
-                                <Card.Img
-                                  variant="top"
-                                  src="https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg"
-                                />
-                              </div>
-                            </Col>
-                            <Col md={8} lg={9}>
-                              <Card.Body>
-                                <Card.Title>
-                                  boAt Rockerz 550 Bluetooth Wireless Over Ear
-                                  Headphones
-                                </Card.Title>
-                                <Card.Text>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      alignItems: "center",
-                                    }}
-                                    className="row"
-                                  >
-                                    <div className="col-6">
-                                      <b className="fs-2">$100</b>
-                                      <p className="fs-6 text-decoration-line-through">
-                                        $300
-                                      </p>
-                                    </div>
-                                    <div className="col-6">
-                                      <ReactStars value={4} />
-                                      <p>6000</p>
-                                    </div>
+                                        <div className="col-6">
+                                          <b className="fs-2">
+                                            ${product.disPrice}
+                                          </b>
+                                          <p className="fs-6 text-decoration-line-through">
+                                            ${product.price}
+                                          </p>
+                                        </div>
+                                        <div className="col-6">
+                                          <ReactStars value={product.stars} />
+                                          <p>{product.reviewCount}</p>
+                                        </div>
 
-                                    <div className="col">
-                                      <p className="text-start">(65% OFF)</p>
-                                    </div>
-                                  </div>
-                                </Card.Text>
-                                <Row
-                                  style={{
-                                    alignItems: "center",
-                                  }}
-                                  className="row row-cols-auto d-flex justify-content-start"
-                                >
-                                  <Col md={3}>
-                                    <select className="form-select">
-                                      <option selected>lg</option>
-                                      <option value="1">sm</option>
-                                      <option value="2">lg</option>
-                                      <option value="3">xl</option>
-                                    </select>
-                                  </Col>
-                                  <Col md={4}>
-                                    <div className="d-flex justify-content-center mb-3 mb-md-0">
-                                      <Button onClick={handleButtonClick}>
-                                        +
-                                      </Button>
+                                        <div className="col">
+                                          <p className="text-start">
+                                            ({product.discount}%off)
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </Card.Text>
+                                    <Row
+                                      style={{
+                                        alignItems: "center",
+                                      }}
+                                      className="row row-cols-auto d-flex justify-content-start"
+                                    >
+                                      <Col md={3} sm={6}>
+                                        <select className="form-select">
+                                          <option selected>lg</option>
+                                          <option value="1">sm</option>
+                                          <option value="2">lg</option>
+                                          <option value="3">xl</option>
+                                        </select>
+                                      </Col>
+                                      <Col md={4} sm={12}>
+                                        <div className="d-flex  mb-3 mb-md-0">
+                                          <Button onClick={handleButtonClick}>
+                                            +
+                                          </Button>
 
-                                      <input
-                                        value={state.age}
-                                        style={{ width: "5rem" }}
-                                      />
+                                          <input
+                                            value={state.age}
+                                            style={{ width: "5rem" }}
+                                          />
 
-                                      <Button onClick={handleDecrementAge}>
-                                        -
-                                      </Button>
-                                    </div>
-                                  </Col>
-                                  <Col md={3}>
-                                    <select className="form-select">
-                                      <option selected>Blue</option>
-                                      <option value="1">Red</option>
-                                      <option value="2">Yellow</option>
-                                      <option value="3">Green</option>
-                                    </select>
-                                  </Col>
+                                          <Button onClick={handleDecrementAge}>
+                                            -
+                                          </Button>
+                                        </div>
+                                      </Col>
+                                      <Col md={3} sm={6}>
+                                        <select className="form-select">
+                                          <option selected>Blue</option>
+                                          <option value="1">Red</option>
+                                          <option value="2">Yellow</option>
+                                          <option value="3">Green</option>
+                                        </select>
+                                      </Col>
 
-                                  <Col md={2}>
-                                    <div className="d-flex justify-content-center">
-                                      <Button
-                                        variant="light"
-                                        style={{ boxShadow: "none" }}
-                                      >
-                                        <AiOutlineHeart />
-                                      </Button>
-                                      <Button
-                                        variant="light"
-                                        style={{ boxShadow: "none" }}
-                                      >
-                                        <AiOutlineDelete />
-                                      </Button>
-                                    </div>
-                                  </Col>
-                                </Row>
-                              </Card.Body>
-                            </Col>
-                          </Row>
-                        </Card>
+                                      <Col md={2}>
+                                        <div className="d-flex justify-content-center">
+                                          <Button
+                                            variant="light"
+                                            style={{ boxShadow: "none" }}
+                                          >
+                                            <AiOutlineHeart />
+                                          </Button>
+                                          <Button
+                                            variant="light"
+                                            style={{ boxShadow: "none" }}
+                                          >
+                                            <AiOutlineDelete />
+                                          </Button>
+                                        </div>
+                                      </Col>
+                                    </Row>
+                                  </Card.Body>
+                                </Col>
+                              </Row>
+                            </Card>
+                          </div>
+                        ))}
                       </Card.Body>
                     </Card>
                   </div>

@@ -8,7 +8,7 @@ import Smartphones from "./Pages/Smartphones";
 import WishList from "./Pages/Wishlist";
 import Cart from "./Pages/Cart";
 import SignIn from "./Pages/SignIn";
-
+import Error from "./Pages/Error";
 function App() {
   return (
     <>
@@ -24,6 +24,7 @@ function App() {
           <Route path="/pages/WishList" element={<WishList />} />
           <Route path="/pages/Cart" element={<Cart />} />
           <Route path="/pages/SignIn" element={<SignIn />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </Router>
     </>
