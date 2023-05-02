@@ -10,6 +10,22 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import ReactStars from "react-stars";
 
+const bodyList = [
+  {
+    id: 1,
+    image: "https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg",
+    LessTitle: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones ",
+    MoreTitle:
+      "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)",
+    ActPrice: 130,
+    DisPrice: 100,
+    Rating: 4,
+    reviews: 6000,
+    disPercent: 24,
+  },
+  
+];
+
 export default function Body() {
   const [show, setShow] = useState(false);
   const ratingChanged = (newRating) => {
@@ -163,75 +179,82 @@ export default function Body() {
         <CardGroup className="container-fluid my-5">
           <Row xs={2} md={4} className="g-4">
             <Col>
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src="https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg"
-                />
-                <Card.Body>
-                  <Card.Title className="fw-normal">
-                    {showMore
-                      ? `boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)`
-                      : `boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones `}
-                    <span onClick={handleToggle} className="fw-bolder">
-                      {showMore ? " ...Read Less" : " ...Read More"}
-                    </span>
-                  </Card.Title>
-                  <Card.Text>
-                    <div
-                      className="row row-cols-auto"
-                      style={{ display: "flex", alignItems: "center" }}
-                    >
-                      <ReactStars
-                        count={5}
-                        onChange={ratingChanged}
-                        size={24}
-                        color2={"#ffd700"}
-                        value={4}
-                        style={{ marginRight: "5px" }}
-                        className="col"
-                      />
-                      <p style={{ margin: "0" }} className="ms-2 col">
-                        10,000
-                      </p>
-                    </div>
+              {bodyList.map((body) => (
+                <div key={body.id}>
+                  <Card>
+                    <Card.Img variant="top" src={body.image} />
+                    <Card.Body>
+                      <Card.Title className="fw-normal">
+                        {showMore ? body.MoreTitle : body.LessTitle}
+                        <span onClick={handleToggle} className="fw-bolder">
+                          {showMore ? " ...Read Less" : " ...Read More"}
+                        </span>
+                      </Card.Title>
+                      <Card.Text>
+                        <div
+                          className="row row-cols-auto"
+                          style={{ display: "flex", alignItems: "center" }}
+                        >
+                          <ReactStars
+                            count={body.rating}
+                            onChange={ratingChanged}
+                            size={24}
+                            color2={"#ffd700"}
+                            value={4}
+                            style={{ marginRight: "5px" }}
+                            className="col"
+                          />
+                          <p style={{ margin: "0" }} className="ms-2 col">
+                            {body.reviews}
+                          </p>
+                        </div>
 
-                    <div
-                      style={{ display: "flex", alignItems: "center" }}
-                      className="row"
-                    >
-                      <div className="col">
-                        <b className="fs-2">$100</b>
-                        <p className="fs-6 text-decoration-line-through">
-                          $130
-                        </p>
-                      </div>
-                      <div className="col">
-                        <p className="mt-3 text-start">(24% OFF)</p>
-                      </div>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center" }}
-                      className="row row-cols-auto d-flex justify-content-center"
-                    >
-                      <Button
-                        variant="outline-light"
-                        style={{ backgroundColor: "#7E90C8", color: "white" }}
-                        className="col"
-                      >
-                        Add To Cart
-                      </Button>
-                      <Button
-                        className="ms-2 col"
-                        variant="outline-light"
-                        style={{ backgroundColor: "#8B5095", color: "white" }}
-                      >
-                        Add To Wishlist
-                      </Button>
-                    </div>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+                        <div
+                          style={{ display: "flex", alignItems: "center" }}
+                          className="row"
+                        >
+                          <div className="col">
+                            <b className="fs-2">${body.ActPrice}</b>
+                            <p className="fs-6 text-decoration-line-through">
+                              ${body.DisPrice}
+                            </p>
+                          </div>
+                          <div className="col">
+                            <p className="mt-3 text-start">
+                              ({body.disPercent}%off)
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          style={{ display: "flex", alignItems: "center" }}
+                          className="row row-cols-auto d-flex justify-content-center"
+                        >
+                          <Button
+                            variant="outline-light"
+                            style={{
+                              backgroundColor: "#7E90C8",
+                              color: "white",
+                            }}
+                            className="col"
+                          >
+                            Add To Cart
+                          </Button>
+                          <Button
+                            className="ms-2 col"
+                            variant="outline-light"
+                            style={{
+                              backgroundColor: "#8B5095",
+                              color: "white",
+                            }}
+                          >
+                            Add To Wishlist
+                          </Button>
+                        </div>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </div>
+              ))}
             </Col>
             <Col>
               <Card>

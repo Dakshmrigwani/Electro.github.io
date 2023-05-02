@@ -27,7 +27,7 @@ function reducer(state, action) {
   throw new Error();
 }
 
-const products = [
+const CartList = [
   {
     id: 1,
     name: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones",
@@ -81,7 +81,7 @@ export default function Cart() {
                     <Card>
                       <Card.Header>Cart</Card.Header>
                       <Card.Body className="d-grid gap-3">
-                        {products.map((product) => (
+                        {CartList.map((product) => (
                           <div key={product.id}>
                             <Card className="w-100">
                               <Row>
