@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { bodyList } from "../Component/data";
 import Layout from "../Component/Layout";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Carousel from "react-bootstrap/Carousel";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+
+const images = [
+  "https://m.media-amazon.com/images/I/41ogno7CdvL._SS40_.jpg",
+  "https://m.media-amazon.com/images/I/51U8KSa8qsL._SS40_.jpg",
+  "https://m.media-amazon.com/images/I/41d6iHtmzAL._SS40_.jpg",
+  "https://m.media-amazon.com/images/I/418ugj3ZEBL._SS40_.jpg",
+  "https://m.media-amazon.com/images/I/41d6iHtmzAL._SS40_.jpg",
+];
 
 function ProductDetail() {
   const { productId } = useParams();
@@ -20,58 +29,7 @@ function ProductDetail() {
         {selectedProduct && (
           <div className="container-fluid my-5">
             <Row>
-              <Col md={4}>
-                <img
-                  src={selectedProduct.image}
-                  alt={selectedProduct.MoreTitle}
-                  style={{ width: "20rem" }}
-                />
-                <Carousel>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="holder.js/800x400?text=First slide&bg=373940"
-                      alt="First slide"
-                    />
-                    <Carousel.Caption>
-                      <h3>First slide label</h3>
-                      <p>
-                        Nulla vitae elit libero, a pharetra augue mollis
-                        interdum.
-                      </p>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="holder.js/800x400?text=Second slide&bg=282c34"
-                      alt="Second slide"
-                    />
-
-                    <Carousel.Caption>
-                      <h3>Second slide label</h3>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="holder.js/800x400?text=Third slide&bg=20232a"
-                      alt="Third slide"
-                    />
-
-                    <Carousel.Caption>
-                      <h3>Third slide label</h3>
-                      <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl
-                        consectetur.
-                      </p>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                </Carousel>
-              </Col>
+              <Col md={4}></Col>
               <Col md={5}>
                 <h2>{selectedProduct.MoreTitle}</h2>
                 <p>Price: ${selectedProduct.ActPrice}</p>
