@@ -10,18 +10,9 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 function NavBar() {
-  const [theme, setTheme] = useState(light - theme);
-  const toggleDarkMode = () => {
-    theme === "dark-theme" ? setTheme("light-theme") : setTheme("dark-theme");
-  };
-
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
-
   return (
     <>
       <Navbar bg="light" expand="lg" className="sticky-top">
@@ -78,13 +69,13 @@ function NavBar() {
               />
               <Button variant="outline-success">Search</Button>
             </Form>
-            <Button
-              className="btn btn-light"
-              style={{ boxShadow: "none" }}
-              onClick={toggleDarkMode}
+            {/* <Button 
+               className="btn btn-light" 
+              style={{ boxShadow: "none" }} 
+               onClick={toggleDarkMode} 
             >
               {theme ? <BsSunFill /> : <BsMoonStarsFill />}
-            </Button>
+            </Button> */}
             <Button className="btn btn-light" style={{ boxShadow: "none" }}>
               <Link to="/Pages/Wishlist">
                 <AiOutlineHeart className="text-dark fs-4" />
