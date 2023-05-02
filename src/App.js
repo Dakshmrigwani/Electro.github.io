@@ -9,6 +9,7 @@ import WishList from "./Pages/Wishlist";
 import Cart from "./Pages/Cart";
 import SignIn from "./Pages/SignIn";
 import Error from "./Pages/Error";
+import ProductDetail from "./Pages/ProductDetail";
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/pages/Cart" element={<Cart />} />
           <Route path="/pages/SignIn" element={<SignIn />} />
           <Route path="*" element={<Error />} />
+          <Route path="/bodyList/:id" element={<ProductDetail />} />
         </Routes>
       </Router>
     </>
