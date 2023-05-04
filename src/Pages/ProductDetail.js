@@ -116,6 +116,7 @@ function ProductDetail() {
                               size="sm"
                               variant="light"
                               className="mb-1"
+                              style={{ boxShadow: "none" }}
                             >
                               +
                             </Button>
@@ -130,6 +131,7 @@ function ProductDetail() {
                               variant="light"
                               onClick={handleDecrementAge}
                               className="mb-1"
+                              style={{ boxShadow: "none" }}
                             >
                               -
                             </Button>
