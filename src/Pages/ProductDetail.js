@@ -14,11 +14,36 @@ import { BsPencil } from "react-icons/bs";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 const images = [
-  "https://m.media-amazon.com/images/I/41ogno7CdvL._SS40_.jpg",
-  "https://m.media-amazon.com/images/I/51U8KSa8qsL._SS40_.jpg",
-  "https://m.media-amazon.com/images/I/41d6iHtmzAL._SS40_.jpg",
-  "https://m.media-amazon.com/images/I/418ugj3ZEBL._SS40_.jpg",
-  "https://m.media-amazon.com/images/I/41d6iHtmzAL._SS40_.jpg",
+  <div className="item">
+    <img
+      src="https://m.media-amazon.com/images/I/41ogno7CdvL._SS40_.jpg"
+      alt=""
+    />
+  </div>,
+  <div className="item">
+    <img
+      src="https://m.media-amazon.com/images/I/51U8KSa8qsL._SS40_.jpg"
+      alt=""
+    />
+  </div>,
+  <div className="item">
+    <img
+      src="https://m.media-amazon.com/images/I/41d6iHtmzAL._SS40_.jpg"
+      alt=""
+    />
+  </div>,
+  <div className="item">
+    <img
+      src="https://m.media-amazon.com/images/I/418ugj3ZEBL._SS40_.jpg"
+      alt=""
+    />
+  </div>,
+  <div className="item">
+    <img
+      src="https://m.media-amazon.com/images/I/41d6iHtmzAL._SS40_.jpg"
+      alt=""
+    />
+  </div>,
 ];
 
 function reducer(state, action) {
