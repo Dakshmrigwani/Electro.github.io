@@ -153,10 +153,26 @@ function ProductDetail() {
                             <b>$78.76</b>
                           </Col>
                         </Row>
+                        <Row>
+                          <Col md={4}>
+                            <b>Color</b>
+                          </Col>
+                          <Col md={8} className="text-end">
+                            <b>Red</b>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col md={5}>
+                            <b>Delievery</b>
+                          </Col>
+                          <Col md={7} className="text-end">
+                            <b>$78.76</b>
+                          </Col>
+                        </Row>
                         <div className="d-flex flex-column gap-2 mt-3">
                           <Row>
                             <Button style={{ boxShadow: "none" }}>
-                              Proceed to checkout
+                              Add to Cart
                             </Button>
                           </Row>
                           <Row>
@@ -164,7 +180,7 @@ function ProductDetail() {
                               variant="light"
                               style={{ boxShadow: "none" }}
                             >
-                              Continue Shopping
+                              Buy Now
                             </Button>
                           </Row>
                         </div>

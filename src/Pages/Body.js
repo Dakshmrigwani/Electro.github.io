@@ -11,6 +11,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import ReactStars from "react-stars";
 import { Link } from "react-router-dom";
 import { bodyList } from "../Component/data";
+import ProductDetail from "./ProductDetail"
 
 export default function Body() {
   const [show, setShow] = useState(false);
