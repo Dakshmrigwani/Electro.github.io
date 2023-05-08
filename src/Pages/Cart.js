@@ -2,7 +2,6 @@ import React, { useReducer } from "react";
 import LayOutNone from "../Component/LayOutNone";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Modal from "react-bootstrap/Modal";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
@@ -118,16 +117,26 @@ export default function Cart() {
                                       </Col>
                                       <Col md={4} sm={12}>
                                         <div className="d-flex  mb-3 mb-md-0">
-                                          <Button onClick={handleButtonClick}>
+                                          <Button
+                                            onClick={handleButtonClick}
+                                            size="sm"
+                                            className="mb-1"
+                                            style={{ boxShadow: "none" }}
+                                          >
                                             +
                                           </Button>
 
                                           <input
                                             value={state.age}
-                                            style={{ width: "5rem" }}
+                                            style={{ width: "1.8rem" }}
                                           />
 
-                                          <Button onClick={handleDecrementAge}>
+                                          <Button
+                                            size="sm"
+                                            onClick={handleDecrementAge}
+                                            className="mb-1"
+                                            style={{ boxShadow: "none" }}
+                                          >
                                             -
                                           </Button>
                                         </div>
