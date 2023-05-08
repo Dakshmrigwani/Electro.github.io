@@ -49,25 +49,12 @@ function SignIn() {
     },
     validationSchema,
     onSubmit: (values) => {
-      History.push("/Body");
+      navigate("/Body");
       console.log(values);
     },
   });
-  const handleSubmit = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      // Perform your form submission logic here
 
-      // Check if there are no form errors
-      if (Object.keys(errors).length === 0) {
-        // Navigate to "/Body"
-        navigate("/Body");
-      }
-
-      setSubmitting(false);
-    }, 500);
-  };
-
-  const { handleChange, values, errors, touched } = formik;
+  const { handleSubmit, handleChange, values, errors, touched } = formik;
 
   const [justifyActive, setJustifyActive] = React.useState("tab1");
 
@@ -203,7 +190,9 @@ function SignIn() {
             </div>
           </div>
           <form onSubmit={formik.handleSubmit}>
-            <MDBBtn className="mb-4 w-100">Sign in</MDBBtn>
+            <MDBBtn className="mb-4 w-100" type="button">
+              Sign in
+            </MDBBtn>
           </form>
           <p className="text-center">
             Not a member? <a href="#!">Register</a>
