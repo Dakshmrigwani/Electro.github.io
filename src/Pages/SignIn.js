@@ -33,7 +33,10 @@ function SignIn() {
       .required("Password is required")
       .matches(
         /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
-        "Password must contain at least 8 characters, 1 uppercase letter, 1 number, and 1 special character"
+        "Password must contain at least 8 characters",
+        "1 uppercase letter required",
+        "1 number required",
+        "1 special character required"
       ),
     email: Yup.string()
       .email("Invalid email address")
@@ -49,8 +52,8 @@ function SignIn() {
     },
     validationSchema,
     onSubmit: (values) => {
-      navigate("/Body");
-      console.log(values);
+      // navigate("/Body");
+      console.log(validationSchema(), values);
     },
   });
 
@@ -189,8 +192,8 @@ function SignIn() {
               <a href="!#">Forgot password?</a>
             </div>
           </div>
-          <form onSubmit={formik.handleSubmit}>
-            <MDBBtn className="mb-4 w-100" type="button">
+          <form onSubmit={handleSubmit}>
+            <MDBBtn className="mb-4 w-100" type="submit">
               Sign in
             </MDBBtn>
           </form>
@@ -322,7 +325,7 @@ function SignIn() {
               onChange={handleChange}
             />
           </div>
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <MDBBtn className="mb-4 w-100">Sign up</MDBBtn>
           </form>
         </MDBTabsPane>
