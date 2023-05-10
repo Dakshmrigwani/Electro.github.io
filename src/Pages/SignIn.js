@@ -21,6 +21,10 @@ function SignIn() {
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
+  const [showPassword1, setShowPassword1] = useState(false);
+  const togglePasswordVisibility1 = () => {
+    setShowPassword1((prevShowPassword1) => !prevShowPassword1);
+  };
   const navigate = useNavigate();
   const validationSchema = Yup.object({
     name: Yup.string()
@@ -33,11 +37,17 @@ function SignIn() {
       .required("Password is required")
       .matches(
         /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
-        "Password must contain at least 8 characters",
-        "1 uppercase letter required",
-        "1 number required",
-        "1 special character required"
+        "Password must contain at least 8 characters, 1 uppercase letter,1 number required,1 special character required,"
       ),
+    password1: Yup.string()
+      .required("Password is required")
+      .matches(
+        /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
+        "Password must contain at least 8 characters, 1 uppercase letter,1 number required,1 special character required,"
+      ),
+    email1: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
     email: Yup.string()
       .email("Invalid email address")
       .required("Email is required"),
@@ -49,10 +59,12 @@ function SignIn() {
       username: "",
       password: "",
       email: "",
+      password1: "",
+      email: "",
     },
     validationSchema,
     onSubmit: (values) => {
-      // navigate("/Body");
+      navigate("/Body");
       console.log(validationSchema(), values);
     },
   });
@@ -192,7 +204,7 @@ function SignIn() {
               <a href="!#">Forgot password?</a>
             </div>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={formik.handleSubmit}>
             <MDBBtn className="mb-4 w-100" type="submit">
               Sign in
             </MDBBtn>
@@ -278,43 +290,43 @@ function SignIn() {
           {touched.username && errors.username && (
             <div className="text-danger">{errors.username}</div>
           )}
-          <div label="email">Email address</div>
+          <div label="email1">Email address</div>
           <MDBInput
             wrapperClass="mb-4"
-            id="email"
-            name="email"
-            type="email"
-            value={values.email}
+            id="email1"
+            name="email1"
+            type="email1"
+            value={values.email1}
             onChange={handleChange}
             onBlur={formik.handleBlur}
-            error={touched.email && errors.email}
+            error={touched.email1 && errors.email1}
           />
-          {touched.email && errors.email && (
-            <div className="text-danger">{errors.email}</div>
+          {touched.email1 && errors.email1 && (
+            <div className="text-danger">{errors.email1}</div>
           )}
-          <div label="password">Password</div>
+          <div label="password1">Password</div>
 
           <MDBInput
             wrapperClass="mb-4 w-100 input-group"
-            id="password"
-            name="password"
-            type={showPassword ? "text" : "password"}
-            value={values.password}
+            id="password1"
+            name="password1"
+            type={showPassword1 ? "text" : "password"}
+            value={values.password1}
             onChange={handleChange}
             onBlur={formik.handleBlur}
-            error={touched.password && errors.password}
+            error={touched.password1 && errors.password1}
           >
             <button
               type="button"
               className="btn btn-outline-primary"
-              onClick={togglePasswordVisibility}
+              onClick={togglePasswordVisibility1}
             >
-              {showPassword ? <BsEyeSlash /> : <BsEye />}
+              {showPassword1 ? <BsEyeSlash /> : <BsEye />}
             </button>
           </MDBInput>
 
-          {touched.password && errors.password && (
-            <div className="text-danger ">{errors.password}</div>
+          {touched.password1 && errors.password1 && (
+            <div className="text-danger ">{errors.password1}</div>
           )}
 
           <div className="d-flex justify-content-center mb-4">
