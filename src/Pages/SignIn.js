@@ -60,7 +60,7 @@ function SignIn() {
       password: "",
       email: "",
       password1: "",
-      email: "",
+      email1: "",
     },
     validationSchema,
     onSubmit: (values) => {
