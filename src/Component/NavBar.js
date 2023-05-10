@@ -3,7 +3,8 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { BsCart3, BsMoonStarsFill, BsSunFill } from "react-icons/bs";
+import InputGroup from "react-bootstrap/InputGroup";
+import { BsCart3, BsMoonStarsFill, BsSunFill, BsSearch } from "react-icons/bs";
 import ReactSearchBox from "react-search-box";
 import {
   AiOutlineHeart,
@@ -83,15 +84,26 @@ function NavBar() {
                 Smartphones
               </Link>
             </Nav>
-            <Form className="d-flex mr-auto" style={{ flex: "none" }}>
-              <ReactSearchBox
-                placeholder="Search"
-                className="me-2"
-                data={data}
-                callback={(record) => console.log(record)}
-              />
-              <Button variant="outline-success">Search</Button>
+            <Form className="d-flex mr-auto">
+              <InputGroup>
+                <ReactSearchBox
+                  placeholder="Search product name"
+                  className="me-2"
+                  data={data}
+                  callback={(record) => console.log(record)}
+                  autoComplete="off"
+                  aria-describedby="basic-addon1"
+                />
+                <Button
+                  variant="outline-secondary"
+                  id="basic-addon1"
+                  style={{ boxShadow: "none" }}
+                >
+                  <BsSearch />
+                </Button>
+              </InputGroup>
             </Form>
+
             {/* <Button 
                className="btn btn-light" 
               style={{ boxShadow: "none" }} 
