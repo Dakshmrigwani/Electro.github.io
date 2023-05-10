@@ -77,3 +77,10 @@
   margin-top: 6rem;
   margin-bottom: 10rem;
 }
+.center-screen{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
