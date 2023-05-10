@@ -5,7 +5,7 @@ import "./styles.css";
 import ContentLoader from "react-content-loader";
 
 const MyLoader = () => (
-  <div className="d-flex  justify-content-center align-content-center flex-wrap">
+  <div className="d-flex justify-content-center align-items-center center-screen">
     <ContentLoader>
       <rect x="80" y="17" rx="4" ry="4" width="400" height="20" />
     </ContentLoader>
