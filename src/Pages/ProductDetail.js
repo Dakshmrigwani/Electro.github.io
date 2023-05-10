@@ -12,6 +12,7 @@ import AliceCarousel from "react-alice-carousel";
 import { CiLocationOn } from "react-icons/ci";
 import { BsPencil } from "react-icons/bs";
 import "react-alice-carousel/lib/alice-carousel.css";
+import ReactStars from "react-stars";
 
 const items = [
   <div className="item" data-value="1">
@@ -178,6 +179,7 @@ function ProductDetail() {
                 <h2>{selectedProduct.MoreTitle}</h2>
                 <p>Price: ${selectedProduct.ActPrice}</p>
                 <p>Discount: {selectedProduct.disPercent}%</p>
+                <ReactStars value={selectedProduct.Rating} />
                 <p>
                   Rating: {selectedProduct.Rating} ({selectedProduct.reviews}{" "}
                   reviews)

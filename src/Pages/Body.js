@@ -190,7 +190,7 @@ export default function Body() {
                             onChange={ratingChanged}
                             size={24}
                             color2={"#ffd700"}
-                            value={4}
+                            value={body.Rating}
                             style={{ marginRight: "5px" }}
                             className="col"
                           />
