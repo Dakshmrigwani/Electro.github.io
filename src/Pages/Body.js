@@ -11,7 +11,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import ReactStars from "react-stars";
 import { Link } from "react-router-dom";
 import { bodyList } from "../Component/data";
-import ProductDetail from "./ProductDetail"
+import ProductDetail from "./ProductDetail";
 
 export default function Body() {
   const [show, setShow] = useState(false);
@@ -165,302 +165,87 @@ export default function Body() {
         </div>
         <CardGroup className="container-fluid my-5">
           <Row xs={2} md={4} className="g-4">
-            <Col>
-              {bodyList.map((body) => (
-                <div key={body.id}>
-                  <Link
-                    to={`/bodyList/${body.id}`}
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
-                    <Card>
-                      <Card.Img variant="top" src={body.image} />
-                      <Card.Body>
-                        <Card.Title className="fw-normal">
-                          {showMore ? body.MoreTitle : body.LessTitle}
-                          <span onClick={handleToggle} className="fw-bolder">
-                            {showMore ? " ...Read Less" : " ...Read More"}
-                          </span>
-                        </Card.Title>
-                        <Card.Text>
-                          <div
-                            className="row row-cols-auto"
-                            style={{ display: "flex", alignItems: "center" }}
-                          >
-                            <ReactStars
-                              count={body.rating}
-                              onChange={ratingChanged}
-                              size={24}
-                              color2={"#ffd700"}
-                              value={4}
-                              style={{ marginRight: "5px" }}
-                              className="col"
-                            />
-                            <p style={{ margin: "0" }} className="ms-2 col">
-                              {body.reviews}
+            {bodyList.map((body) => (
+              <div key={body.id}>
+                <Link
+                  to={`/bodyList/${body.id}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <Card>
+                    <Card.Img variant="top" src={body.image} />
+                    <Card.Body>
+                      <Card.Title className="fw-normal">
+                        {showMore ? body.MoreTitle : body.LessTitle}
+                        <span onClick={handleToggle} className="fw-bolder">
+                          {showMore ? " ...Read Less" : " ...Read More"}
+                        </span>
+                      </Card.Title>
+                      <Card.Text>
+                        <div
+                          className="row row-cols-auto"
+                          style={{ display: "flex", alignItems: "center" }}
+                        >
+                          <ReactStars
+                            count={body.rating}
+                            onChange={ratingChanged}
+                            size={24}
+                            color2={"#ffd700"}
+                            value={4}
+                            style={{ marginRight: "5px" }}
+                            className="col"
+                          />
+                          <p style={{ margin: "0" }} className="ms-2 col">
+                            {body.reviews}
+                          </p>
+                        </div>
+
+                        <div
+                          style={{ display: "flex", alignItems: "center" }}
+                          className="row"
+                        >
+                          <div className="col">
+                            <b className="fs-2">${body.ActPrice}</b>
+                            <p className="fs-6 text-decoration-line-through">
+                              ${body.DisPrice}
                             </p>
                           </div>
-
-                          <div
-                            style={{ display: "flex", alignItems: "center" }}
-                            className="row"
-                          >
-                            <div className="col">
-                              <b className="fs-2">${body.ActPrice}</b>
-                              <p className="fs-6 text-decoration-line-through">
-                                ${body.DisPrice}
-                              </p>
-                            </div>
-                            <div className="col">
-                              <p className="mt-3 text-start">
-                                ({body.disPercent}%off)
-                              </p>
-                            </div>
+                          <div className="col">
+                            <p className="mt-3 text-start">
+                              ({body.disPercent}%off)
+                            </p>
                           </div>
-                          <div
-                            style={{ display: "flex", alignItems: "center" }}
-                            className="row row-cols-auto d-flex justify-content-center"
+                        </div>
+                        <div
+                          style={{ display: "flex", alignItems: "center" }}
+                          className="row row-cols-auto d-flex justify-content-center"
+                        >
+                          <Button
+                            variant="outline-light"
+                            style={{
+                              backgroundColor: "#7E90C8",
+                              color: "white",
+                            }}
+                            className="col"
                           >
-                            <Button
-                              variant="outline-light"
-                              style={{
-                                backgroundColor: "#7E90C8",
-                                color: "white",
-                              }}
-                              className="col"
-                            >
-                              Add To Cart
-                            </Button>
-                            <Button
-                              className="ms-2 col"
-                              variant="outline-light"
-                              style={{
-                                backgroundColor: "#8B5095",
-                                color: "white",
-                              }}
-                            >
-                              Add To Wishlist
-                            </Button>
-                          </div>
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Link>
-                </div>
-              ))}
-            </Col>
-            <Col>
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src="https://m.media-amazon.com/images/I/61SSVxTSs3L._SY450_.jpg"
-                />
-                <Card.Body>
-                  <Card.Title className="fw-normal">
-                    {showMore1
-                      ? `Noise Pulse 2 Advanced Bluetooth Calling Watch with 1.85'' Display, 550 NITS Brightness, Smart DND, 10 Days Battery, 100 Sports Modes, Smart Watch for Men and Women - (Jet Black)`
-                      : `Noise Pulse 2 Advanced Bluetooth Calling Watch`}
-                    <span onClick={handleToggle1} className="fw-bolder">
-                      {showMore1 ? " ...Read Less" : " ...Read More"}
-                    </span>
-                  </Card.Title>
-                  <Card.Text>
-                    <div
-                      className="row row-cols-auto"
-                      style={{ display: "flex", alignItems: "center" }}
-                    >
-                      <ReactStars
-                        count={5}
-                        onChange={ratingChanged}
-                        size={24}
-                        color2={"#ffd700"}
-                        value={3.5}
-                        style={{ marginRight: "5px" }}
-                        className="col"
-                      />
-                      <p style={{ margin: "0" }} className="ms-2 col">
-                        6,000
-                      </p>
-                    </div>
-
-                    <div
-                      style={{ display: "flex", alignItems: "center" }}
-                      className="row"
-                    >
-                      <div className="col">
-                        <b className="fs-2">$100</b>
-                        <p className="fs-6 text-decoration-line-through">
-                          $300
-                        </p>
-                      </div>
-                      <div className="col">
-                        <p className="mt-3 text-start">(65% OFF)</p>
-                      </div>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center" }}
-                      className="row row-cols-auto d-flex justify-content-center"
-                    >
-                      <Button
-                        variant="outline-light"
-                        style={{ backgroundColor: "#7E90C8", color: "white" }}
-                        className="col"
-                      >
-                        Add To Cart
-                      </Button>
-                      <Button
-                        className="ms-2 col"
-                        variant="outline-light"
-                        style={{ backgroundColor: "#8B5095", color: "white" }}
-                      >
-                        Add To Wishlist
-                      </Button>
-                    </div>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src="https://m.media-amazon.com/images/I/61oSoHc7VtL._SY450_.jpg"
-                />
-                <Card.Body>
-                  <Card.Title className="fw-normal">
-                    {showMore2
-                      ? `boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo Sound, 10HRS Playtime, TWS Feature, IPX4, Multi-Compatibility Mode(Black)`
-                      : `boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo`}
-                    <span onClick={handleToggle2} className="fw-bolder">
-                      {showMore2 ? " ...Read Less" : " ...Read More"}
-                    </span>
-                  </Card.Title>
-                  <Card.Text>
-                    <div
-                      className="row row-cols-auto"
-                      style={{ display: "flex", alignItems: "center" }}
-                    >
-                      <ReactStars
-                        count={5}
-                        onChange={ratingChanged}
-                        size={24}
-                        color2={"#ffd700"}
-                        value={4.5}
-                        style={{ marginRight: "5px" }}
-                        className="col"
-                      />
-                      <p style={{ margin: "0" }} className="ms-2 col">
-                        9,000
-                      </p>
-                    </div>
-
-                    <div
-                      style={{ display: "flex", alignItems: "center" }}
-                      className="row"
-                    >
-                      <div className="col">
-                        <b className="fs-2">$200</b>
-                        <p className="fs-6 text-decoration-line-through">
-                          $400
-                        </p>
-                      </div>
-                      <div className="col">
-                        <p className="mt-3 text-start">(50% OFF)</p>
-                      </div>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center" }}
-                      className="row row-cols-auto d-flex justify-content-center"
-                    >
-                      <Button
-                        variant="outline-light"
-                        style={{ backgroundColor: "#7E90C8", color: "white" }}
-                        className="col"
-                      >
-                        Add To Cart
-                      </Button>
-                      <Button
-                        className="ms-2 col"
-                        variant="outline-light"
-                        style={{ backgroundColor: "#8B5095", color: "white" }}
-                      >
-                        Add To Wishlist
-                      </Button>
-                    </div>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
-              <Card>
-                <Card.Img
-                  variant="top"
-                  src="https://m.media-amazon.com/images/I/81-fFXQdPTL._SX679_.jpg"
-                />
-                <Card.Body>
-                  <Card.Title className="fw-normal">
-                    {showMore3
-                      ? `Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage) | 6000mAh Battery | Upto 12GB RAM with RAM Plus`
-                      : `Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage)`}
-                    <span onClick={handleToggle3} className="fw-bolder">
-                      {showMore3 ? " ...Read Less" : " ...Read More"}
-                    </span>
-                  </Card.Title>
-                  <Card.Text>
-                    <div
-                      className="row row-cols-auto"
-                      style={{ display: "flex", alignItems: "center" }}
-                    >
-                      <ReactStars
-                        count={5}
-                        onChange={ratingChanged}
-                        size={24}
-                        color2={"#ffd700"}
-                        value={4}
-                        style={{ marginRight: "5px" }}
-                        className="col"
-                      />
-                      <p style={{ margin: "0" }} className="ms-2 col">
-                        11,000
-                      </p>
-                    </div>
-
-                    <div
-                      style={{ display: "flex", alignItems: "center" }}
-                      className="row"
-                    >
-                      <div className="col">
-                        <b className="fs-2">$600</b>
-                        <p className="fs-6 text-decoration-line-through">
-                          $850
-                        </p>
-                      </div>
-                      <div className="col">
-                        <p className="mt-3 text-start">(29% OFF)</p>
-                      </div>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center" }}
-                      className="row row-cols-auto d-flex justify-content-center"
-                    >
-                      <Button
-                        variant="outline-light"
-                        style={{ backgroundColor: "#7E90C8", color: "white" }}
-                        className="col"
-                      >
-                        Add To Cart
-                      </Button>
-                      <Button
-                        className="ms-2 col"
-                        variant="outline-light"
-                        style={{ backgroundColor: "#8B5095", color: "white" }}
-                      >
-                        Add To Wishlist
-                      </Button>
-                    </div>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+                            Add To Cart
+                          </Button>
+                          <Button
+                            className="ms-2 col"
+                            variant="outline-light"
+                            style={{
+                              backgroundColor: "#8B5095",
+                              color: "white",
+                            }}
+                          >
+                            Add To Wishlist
+                          </Button>
+                        </div>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </div>
+            ))}
           </Row>
         </CardGroup>
         <div className=" container my-5 pb-5" style={{ height: "5vh" }}>
