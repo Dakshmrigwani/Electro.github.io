@@ -17,31 +17,31 @@ import ReactStars from "react-stars";
 const items = [
   <div className="item" data-value="1">
     <img
-      src="https://m.media-amazon.com/images/I/41ogno7CdvL._SS40_.jpg"
+      src="https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg"
       alt=""
     />
   </div>,
   <div className="item" data-value="2">
     <img
-      src="https://m.media-amazon.com/images/I/51U8KSa8qsL._SS40_.jpg"
+      src="https://m.media-amazon.com/images/I/613W14SQzDL._SY450_.jpg"
       alt=""
     />
   </div>,
   <div className="item" data-value="3">
     <img
-      src="https://m.media-amazon.com/images/I/41d6iHtmzAL._SS40_.jpg"
+      src="https://m.media-amazon.com/images/I/61MzIrP7rFL._SY450_.jpg"
       alt=""
     />
   </div>,
   <div className="item" data-value="4">
     <img
-      src="https://m.media-amazon.com/images/I/418ugj3ZEBL._SS40_.jpg"
+      src="https://m.media-amazon.com/images/I/71UbF6PnUBL._SY450_.jpg"
       alt=""
     />
   </div>,
   <div className="item" data-value="5">
     <img
-      src="https://m.media-amazon.com/images/I/41d6iHtmzAL._SS40_.jpg"
+      src="https://m.media-amazon.com/images/I/61DzhtpDOLL._SY450_.jpgy"
       alt=""
     />
   </div>,
@@ -155,23 +155,33 @@ function ProductDetail() {
                   onSlideChange={syncMainBeforeChange}
                   onSlideChanged={syncMainAfterChange}
                   touchTracking={!thumbAnimation}
+                  autoWidth
                 />
                 <div className="thumbs">
-                  <AliceCarousel
-                    activeIndex={thumbIndex}
-                    autoWidth
-                    disableDotsControls
-                    disableButtonsControls
-                    items={thumbs}
-                    mouseTracking={false}
-                    onSlideChanged={syncThumbs}
-                    touchTracking={!mainAnimation}
-                  />
-                  <div className="btn-prev" onClick={slidePrev}>
-                    &lang;
-                  </div>
-                  <div className="btn-next" onClick={slideNext}>
-                    &rang;
+                  <div className="row">
+                    <div className="col-md-2">
+                      <div className="btn-prev" onClick={slidePrev}>
+                        &lang;
+                      </div>
+                    </div>
+                    <div className="col-md-8">
+                      <AliceCarousel
+                        activeIndex={thumbIndex}
+                        autoWidth
+                        disableDotsControls
+                        disableButtonsControls
+                        items={thumbs}
+                        mouseTracking={false}
+                        onSlideChanged={syncThumbs}
+                        touchTracking={!mainAnimation}
+                        
+                      />
+                    </div>
+                    <div className="col-md-2">
+                      <div className="btn-next" onClick={slideNext}>
+                        &rang;
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Col>
