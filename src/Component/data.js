@@ -401,54 +401,72 @@ export const Headphones = [
     description5:
       "Connectivity- Enjoy a wireless connectivity via its Bluetooth v5.0 and wired connectivity with its AUX port.",
   },
-  //   {
-  //     id:7,
-  //     image:"",
-  //     LessTitle:"",
-  //     MoreTitle:"",
-  //     ActPrice:,
-  //     DisPrice:,
-  //     Rating:,
-  //     reviews:,
-  //     disPercent:,
-  //     description1:"",
-  //     description2:"",
-  //     description3:"",
-  //     description4:"",
-  //     description5:"",
-  //   }
-  //   {
-  //     id:8,
-  //     image:"",
-  //     LessTitle:"",
-  //     MoreTitle:"",
-  //     ActPrice:,
-  //     DisPrice:,
-  //     Rating:,
-  //     reviews:,
-  //     disPercent:,
-  //     description1:"",
-  //     description2:"",
-  //     description3:"",
-  //     description4:"",
-  //     description5:"",
-  //   }
-  //   {
-  //     id:9,
-  //     image:"",
-  //     LessTitle:"",
-  //     MoreTitle:"",
-  //     ActPrice:,
-  //     DisPrice:,
-  //     Rating:,
-  //     reviews:,
-  //     disPercent:,
-  //     description1:"",
-  //     description2:"",
-  //     description3:"",
-  //     description4:"",
-  //     description5:"",
-  //   }
+  {
+    id: 7,
+    image: "https://m.media-amazon.com/images/I/61kFL7ywsZS._SY450_.jpg",
+    LessTitle: "JBL Tune 510BT, On Ear Wireless Headphones with Mic",
+    MoreTitle:
+      "JBL Tune 510BT, On Ear Wireless Headphones with Mic, up to 40 Hours Playtime, Pure Bass, Quick Charging, Dual Pairing, Bluetooth 5.0 & Voice Assistant Support for Mobile Phones (Black)",
+    ActPrice: 4449,
+    DisPrice: 2899,
+    Rating: 3.8,
+    reviews: 24743,
+    disPercent: 36,
+    description1:
+      "JBL PURE BASE SOUND: Packed with 32mm Dynamic drivers, the JBL Tune 510BT features the renowned JBL Pure Bass sound, which can be found in the most famous venues all around the world",
+    description2:
+      "UPTO 40 HOURS PLAYTIME: Designed for long playhours, the Tune 510BT allows you to Listen wirelessly upto 40 hours non-stop under optimal audio settings.",
+    description3:
+      "QUICK CHARGING: With its superior USB Type-C charging cable, a quick 5 min recharge of your Tune 510BT provides you with playtime upto 2 Hours while in a span of 2 hours, get your headphones completely charged up.",
+    description4:
+      "QUICK CHARGING: With its superior USB Type-C charging cable, a quick 5 min recharge of your Tune 510BT provides you with playtime upto 2 Hours while in a span of 2 hours, get your headphones completely charged up.",
+    description5:
+      "HANDS FREE CALLS: The button controls on the earcup of Tune 510BT, allows you to easily control your sound and manage your calls from your headphones.",
+  },
+  {
+    id: 8,
+    image: "https://m.media-amazon.com/images/I/61HBpQuLjVL._SY450_.jpg",
+    LessTitle: "Logitech H111 Wired On Ear Headphones With Mic Black",
+    MoreTitle: "Logitech H111 Wired On Ear Headphones With Mic Black",
+    ActPrice: 745,
+    DisPrice: 795,
+    Rating: 4,
+    reviews: 14603,
+    disPercent: 6,
+    description1:
+      "ADJUSTABLE HEADBAND This sturdy yet lightweight stereo headset has a broad range of adjustment. Ultra-soft foam ear cushions provide hours of comfort.",
+    description2:
+      "ROTATING MICROPHONE The boom mic can rotate 180° to be worn on the left or right and tucked out of the way when you’re not using it. The flexible mic can be positioned for better voice capture and background noise reduction",
+    description3:
+      "MULTI DEVICE HEADSET WITH NOISE CANCELLING MIC:The simple way to start talking when using computers, smartphones and tablets. Features a standard 3.5mm audio jack and is compatible with most operating systems and platforms. Get just what you need to hear and be heard clearly.",
+    description4:
+      "STEREO SOUND: Enjoy clear audio for calls, music, and games. A reliable headset for daily audio including video calls with family or colleagues. Frequency response (Headset): 20 Hz - 20 KHz",
+    description5:
+      "3.5MM AUDIO JACK CONNECTION:Simply plug the 3.5mm jack into your computer, smartphone or tablet and you’re ready to talk.",
+  },
+  {
+    id: 9,
+    image: "https://m.media-amazon.com/images/I/61HXCeozUjL._SY450_.jpg",
+    LessTitle:
+      "JBL Tune 760NC, Wireless Over Ear Noise Cancellation Headphones",
+    MoreTitle:
+      "JBL Tune 760NC, Wireless Over Ear Active Noise Cancellation Headphones with Mic, up to 50 Hours Playtime, Pure Bass, Dual Pairing, AUX & Voice Assistant Support for Mobile Phones (Black)",
+    ActPrice: 7999,
+    DisPrice: 4999,
+    Rating: 3.9,
+    reviews: 19507,
+    disPercent: 38,
+    description1:
+      "ACTIVE NOISE CANCELLATION: Tune out the Noise & Tune in to your Music with JBL Tune 760NC wireless headset.",
+    description2:
+      "JBL PURE BASS SOUND: For over 70 years, JBL has engineered the precise, impressive sound found in big venues around the world. These Bluetooth headphones reproduce that same JBL sound, punching out bass that’s both deep and powerful.",
+    description3:
+      "UP TO 50 HOURS PLAYTIME: Listen wirelessly for up to 35 hours with Active Noise Cancellation or up to 50 hours without Noise Cancellation for long-lasting fun. Recharge the battery quickly in 2 hours or enjoy endlessly in wired mode using the detachable AUX cable provided.",
+    description4:
+      "GOOGLE FAST PAIR: Thanks to Fast Pair enabled by Google, the JBL Tune 760NC are immediately connected to your Android device. You can also pair multiple devices just by tapping on the devices’ screen",
+    description5:
+      "DUAL PAIRING (MULTI-POINT CONNECTION): Allows you to effortlessly switch from one Bluetooth device to another. You can simply switch from a video on your tablet to a call on your mobile phone so that you’ll never miss a call.",
+  },
   //
 ];
 // export const Laptop = [
