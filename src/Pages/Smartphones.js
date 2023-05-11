@@ -14,8 +14,6 @@ import InputGroup from "react-bootstrap/InputGroup";
 export default function Smartphones() {
   const [showMore, setShowMore] = useState(false);
 
-  const handleToggle = () => setShowMore(!showMore);
-
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
@@ -201,7 +199,10 @@ export default function Smartphones() {
                         <Card.Body>
                           <Card.Title className="fw-normal ">
                             {showMore ? body.MoreTitle : body.LessTitle}
-                            <span onClick={handleToggle} className="fw-bolder">
+                            <span
+                              onClick={() => handleToggle(body.id)}
+                              className="fw-bolder"
+                            >
                               {showMore ? " ...Read Less" : " ...Read More"}
                             </span>
                           </Card.Title>

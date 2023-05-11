@@ -268,171 +268,192 @@ export const SmartPhones = [
   },
 ];
 
-// export const Headphones = [
-//   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-// ]
+export const Headphones = [
+  {
+    id: 1,
+    image: "https://m.media-amazon.com/images/I/61leGjTDm0L._SY450_.jpg",
+    LessTitle: "boAt Rockerz 558 Bluetooth Wireless Over Ear Headphones",
+    MoreTitle:
+      "boAt Rockerz 558 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation(Army Green)",
+    ActPrice: 4999,
+    DisPrice: 1999,
+    Rating: 4,
+    reviews: 34320,
+    disPercent: 64,
+    description1:
+      "Tap into instant wireless connectivity with the latest Bluetooth V5.0. Yes, Rockerz 558 on-ear headphones have IPX5 dust and water resistance making it perfect for sports and adventures.",
+    description2:
+      "Its 50mm dynamic drivers help pump out immersive audio all day long, Charging Time 2.5 hours",
+    description3:
+      "The mighty 500mAh battery capacity offers a superior playback time of up to 20 Hours It has been ergonomically designed and structured as an over-ear headphone to provide the best user experience",
+    description4:
+      "It comes with physical Noise Isolation feature for pure audio bliss",
+    description5:
+      "One can connect to boAt Rockerz 550 via not one but two modes, Bluetooth as well as AUX",
+  },
+  {
+    id: 2,
+    image: "https://m.media-amazon.com/images/I/51CHPyFpnoL._SX450_.jpg",
+    LessTitle: "Bose Quietcomfort 45 Bluetooth Wireless Over Ear Headphones",
+    MoreTitle:
+      "Bose Quietcomfort 45 Bluetooth Wireless Over Ear Headphones with Mic Noise Cancelling - White Smoke",
+    ActPrice: 29990,
+    DisPrice: 22497,
+    Rating: 4.5,
+    reviews: 12845,
+    disPercent: 25,
+    description1:
+      "Iconic quiet. Comfort. And sound. The first noise cancelling headphones are back, now with lightweight materials for premium comfort and proprietary acoustic technology for deep, clear audio. They’re not just an icon reborn – they’re the perfect balance of quiet, comfort, and sound.",
+    description2:
+      "High-fidelity audio – The TriPort acoustic architecture offers depth and fullness. Volume-optimized Active EQ maintains balanced performance at any volume, so bass stays consistent when turned down and the music remains clear when turned up.",
+    description3:
+      "Quiet and Aware Modes – Choose Quiet Mode for full noise cancelling, or Aware Mode to bring the outside into the around ear headphones and hear your environment and your music at the same time.",
+    description4:
+      "Over ear headphones – These comfortable wireless headphones are suitable for all-day wear. Crafted with plush synthetic leather and impact-resistant nylon, and designed with minimal clamping force, they’re as luxurious as they are durable.",
+    description5:
+      "Up to 24 hours battery life – Enjoy 24 hours of battery life from a single charge. A quick 15-minute charge offers 3 hours when you’re on the go, or plug in the included audio cable to listen for even longer in wired mode.",
+  },
+  {
+    id: 3,
+    image: "https://m.media-amazon.com/images/I/61WqF8Y6HTL._SY450_.jpg",
+    LessTitle: "boAt Rockerz 400 Bluetooth On Ear Headphones With Mic",
+    MoreTitle:
+      "boAt Rockerz 400 Bluetooth On Ear Headphones With Mic With Upto 8 Hours Playback & Soft Padded Ear Cushions(Grey/Green)",
+    ActPrice: 2900,
+    DisPrice: 998,
+    Rating: 4.1,
+    reviews: 20075,
+    disPercent: 66,
+    description1:
+      "With 40mm Drivers get ready to immerse in HD auditory experience with super extra bass to get the day going",
+    description2:
+      "Its lightweight and ergonomic design offers the comfort and ease while you listen to your favourite artists and have fun",
+    description3:
+      "The easy access integrated controls with built-in mic offers a smooth user experience and hands-free communication on the go",
+    description4:
+      "Stay immersed into Nirvana for extended durations with a playtime of up to 8 hours",
+    description5: "1 year warranty from the date of purchase",
+  },
+  {
+    id: 4,
+    image: "https://m.media-amazon.com/images/I/81lLGM7SKbL._SY450_.jpg",
+    LessTitle:
+      "ZEBRONICS Zeb-Thunder Wireless Bluetooth Over The Ear Headphone",
+    MoreTitle:
+      "ZEBRONICS Zeb-Thunder Wireless Bluetooth Over The Ear Headphone, FM, mSD, 9 hrs Playback with Mic (Blue)",
+    ActPrice: 1399,
+    DisPrice: 599,
+    Rating: 3.8,
+    reviews: 63459,
+    disPercent: 57,
+    description1:
+      "Comfortable Design: Beat the workday blues with music on Zeb-Thunder wireless headphone that comes in an ergonomic design a perfect fit and design for long hours use. Sensitivity : -113dB ±3dB. Microphone impedance : 1.2k Ω",
+    description2:
+      "Soft & comfortable earcups: Listen to music, podcasts and more for long hours with soft ear cups making it super comfortable for daily wear, All this with long playback time of 9 hours in BT mode.",
+    description3:
+      "9hrs* Playback Time: Fall in love with the audio experience with 9* hours of playback time to keep you going",
+    description4:
+      "Superior Sound Quality: Magnify every speck of sound with superior sound quality on Zeb-Thunder wireless headphone",
+    description5:
+      "Multi Connectivity Options: Be spoilt for choice with multi-connectivity options like like BT, 3.5mm AUX input, FM and MicroSD card",
+  },
+  {
+    id: 5,
+    image: "https://m.media-amazon.com/images/I/51xxA+6E+xL._SY450_.jpg",
+    LessTitle: "boAt Rockerz 450 Bluetooth On Ear Headphones with Mic",
+    MoreTitle:
+      "boAt Rockerz 450 Bluetooth On Ear Headphones with Mic, Upto 15 Hours Playback, 40MM Drivers, Padded Ear Cushions, Integrated Controls and Dual Modes(Luscious Black)",
+    ActPrice: 3990,
+    DisPrice: 1449,
+    Rating: 4.1,
+    reviews: 124790,
+    disPercent: 62,
+    description1:
+      "Playback- It provides a massive battery backup of upto 15 hours for a superior playback time. Charging Time : 3 Hours",
+    description2:
+      "Drivers- Its 40mm dynamic drivers help pump out immersive HD audio all day long.",
+    description3:
+      "Earcushions- It has been ergonomically designed and structured as an on-ear headphone to provide the best user experience with its comfortable padded earcushions and lightweight design",
+    description4:
+      "Controls- You can control your music without hiccups using the easy access controls, communicate seamlessly using the built-in mic, access voice assistant and always stay in the zone",
+    description5:
+      "Dual Modes- One can connect to boAt Rockerz 450 via not one but two modes, Bluetooth as well as AUX",
+  },
+  {
+    id: 6,
+    image: "https://m.media-amazon.com/images/I/61IN9K+dIcL._SY450_.jpg",
+    LessTitle: "boAt Rockerz 450 Pro Bluetooth Wireless On Ear Headphones",
+    MoreTitle:
+      "boAt Rockerz 450 Pro Bluetooth Wireless On Ear Headphones with Mic with 70 Hours Battery, 40Mm Drivers, Bluetooth V5.0 Padded Ear Cushions, Easy Access Controls and Voice Assistant(Aqua Blue)",
+    ActPrice: 3999,
+    DisPrice: 1999,
+    Rating: 4.1,
+    reviews: 112987,
+    disPercent: 50,
+    description1:
+      "Playback- Choose the real pro and leave all charging worries at bay as the Rockerz 450 Pro comes with a mountainous playback of upto 70 hours(at 60% vol.).",
+    description2:
+      "Drivers- The unbeatable boAt signature sound shines through no matter what you're playing with its 40mm drivers. The bass is tuned for a thumping experience that transports you to another world.",
+    description3:
+      "Controls- You can control your music without hiccups using the easy access controls, communicate seamlessly using the built-in mic, access voice assistant and always stay in the zone",
+    description4:
+      "Earcushions- It has been ergonomically designed and structured as an on-ear headphone to provide the best user experience with its comfortable padded earcushions and lightweight design",
+    description5:
+      "Connectivity- Enjoy a wireless connectivity via its Bluetooth v5.0 and wired connectivity with its AUX port.",
+  },
+  //   {
+  //     id:7,
+  //     image:"",
+  //     LessTitle:"",
+  //     MoreTitle:"",
+  //     ActPrice:,
+  //     DisPrice:,
+  //     Rating:,
+  //     reviews:,
+  //     disPercent:,
+  //     description1:"",
+  //     description2:"",
+  //     description3:"",
+  //     description4:"",
+  //     description5:"",
+  //   }
+  //   {
+  //     id:8,
+  //     image:"",
+  //     LessTitle:"",
+  //     MoreTitle:"",
+  //     ActPrice:,
+  //     DisPrice:,
+  //     Rating:,
+  //     reviews:,
+  //     disPercent:,
+  //     description1:"",
+  //     description2:"",
+  //     description3:"",
+  //     description4:"",
+  //     description5:"",
+  //   }
+  //   {
+  //     id:9,
+  //     image:"",
+  //     LessTitle:"",
+  //     MoreTitle:"",
+  //     ActPrice:,
+  //     DisPrice:,
+  //     Rating:,
+  //     reviews:,
+  //     disPercent:,
+  //     description1:"",
+  //     description2:"",
+  //     description3:"",
+  //     description4:"",
+  //     description5:"",
+  //   }
+  //
+];
 // export const Laptop = [
 //   {
-//     id:,
+//     id:1,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -448,7 +469,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:2,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -464,7 +485,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:3,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -480,7 +501,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:4,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -496,7 +517,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:5,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -512,7 +533,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:6,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -528,7 +549,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:7,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -544,7 +565,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:8,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -560,23 +581,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
+//     id:9,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -595,7 +600,7 @@ export const SmartPhones = [
 
 // export const Watches = [
 //   {
-//     id:,
+//     id:1,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -611,7 +616,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:2,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -627,7 +632,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:3,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -643,7 +648,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:4,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -659,7 +664,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:5,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -675,7 +680,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:6,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -691,7 +696,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:7,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -707,7 +712,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:8,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -723,23 +728,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
+//     id:9,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -758,7 +747,7 @@ export const SmartPhones = [
 
 // export const Speakers = [
 //   {
-//     id:,
+//     id:1,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -774,7 +763,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:2,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -790,7 +779,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:3,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -806,7 +795,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:4,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -822,7 +811,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:5,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -838,7 +827,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:6,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -854,7 +843,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:7,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -870,7 +859,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
+//     id:8,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",
@@ -886,23 +875,7 @@ export const SmartPhones = [
 //     description5:"",
 //   }
 //   {
-//     id:,
-//     image:"",
-//     LessTitle:"",
-//     MoreTitle:"",
-//     ActPrice:,
-//     DisPrice:,
-//     Rating:,
-//     reviews:,
-//     disPercent:,
-//     description1:"",
-//     description2:"",
-//     description3:"",
-//     description4:"",
-//     description5:"",
-//   }
-//   {
-//     id:,
+//     id:9,
 //     image:"",
 //     LessTitle:"",
 //     MoreTitle:"",

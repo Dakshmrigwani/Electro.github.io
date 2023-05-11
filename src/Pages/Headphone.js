@@ -1,20 +1,37 @@
 import React, { useState } from "react";
 import Layout from "../Component/Layout";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import ReactStars from "react-stars";
+import { BsCurrencyRupee } from "react-icons/bs";
+import { Headphones } from "../Component/data";
+import CardGroup from "react-bootstrap/CardGroup";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
-export default function HeadPhone() {
+export default function headphone() {
+  const [showMore, setShowMore] = useState(false);
+
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  };
+
   return (
     <>
       <Layout>
         <div className="container-fluid my-3">
           <Row>
+            {/* <div
+              className="offcanvas offcanvas-start d-flex d-md-none"
+              tabindex="-1"
+              id="offcanvasTop"
+              aria-labelledby="offcanvasTopLabel"
+            > */}
             <Col md={3} style={{ width: "15rem" }}>
-              <Card>
-                <Card.Body>
+              <Card className="scrollbar scrollbar-primary filter-section">
+                <Card.Body className="force-overflow">
                   <Card.Title>Filter</Card.Title>
                   <Card.Text>
                     <b>Brand</b>
@@ -162,7 +179,109 @@ export default function HeadPhone() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={9}></Col>
+            {/* </div> */}
+            <Col md={9}>
+              <CardGroup className="container-fluid my-5">
+                <Row xs={2} md={3} className="g-4">
+                  {/* <button
+                    className="btn btn-primary d-flex d-md-none"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasTop"
+                    aria-controls="offcanvasTop"
+                  > 
+                    Filter
+                  </button> */}
+                  {Headphones.map((body) => (
+                    <div key={body.id}>
+                      <Card>
+                        <Card.Img
+                          variant="top"
+                          src={body.image}
+                          style={{ height: "280px" }}
+                        />
+                        <Card.Body>
+                          <Card.Title className="fw-normal ">
+                            {showMore ? body.MoreTitle : body.LessTitle}
+                            <span
+                              onClick={() => handleToggle(body.id)}
+                              className="fw-bolder"
+                            >
+                              {showMore ? " ...Read Less" : " ...Read More"}
+                            </span>
+                          </Card.Title>
+                          <Card.Text>
+                            <div
+                              className="row row-cols-auto"
+                              style={{ display: "flex", alignItems: "center" }}
+                            >
+                              <ReactStars
+                                count={body.rating}
+                                onChange={ratingChanged}
+                                size={24}
+                                color2={"#ffd700"}
+                                value={body.Rating}
+                                style={{ marginRight: "5px" }}
+                                className="col"
+                              />
+                              <p style={{ margin: "0" }} className="ms-2 col">
+                                {body.reviews}
+                              </p>
+                            </div>
+
+                            <div
+                              style={{ display: "flex", alignItems: "center" }}
+                              className="row"
+                            >
+                              <div className="col">
+                                <b className="fs-2 d-flex">
+                                  <BsCurrencyRupee className="mt-2" />
+                                  {body.DisPrice}
+                                </b>
+                                <p className="fs-6 text-decoration-line-through">
+                                  <BsCurrencyRupee />
+                                  {body.ActPrice}
+                                </p>
+                              </div>
+                              <div className="col">
+                                <p className="mt-3 text-start">
+                                  ({body.disPercent}%off)
+                                </p>
+                              </div>
+                            </div>
+                            <div
+                              style={{ display: "flex", alignItems: "center" }}
+                              className="row row-cols-auto d-flex justify-content-center"
+                            >
+                              <Button
+                                variant="outline-light"
+                                style={{
+                                  backgroundColor: "#7E90C8",
+                                  color: "white",
+                                }}
+                                className="col"
+                              >
+                                Add To Cart
+                              </Button>
+                              <Button
+                                className="ms-2 col"
+                                variant="outline-light"
+                                style={{
+                                  backgroundColor: "#8B5095",
+                                  color: "white",
+                                }}
+                              >
+                                Add To Wishlist
+                              </Button>
+                            </div>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </div>
+                  ))}
+                </Row>
+              </CardGroup>
+            </Col>
           </Row>
         </div>
       </Layout>
