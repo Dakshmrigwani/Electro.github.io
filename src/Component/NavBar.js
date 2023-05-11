@@ -5,7 +5,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import InputGroup from "react-bootstrap/InputGroup";
 import { BsCart3, BsMoonStarsFill, BsSunFill, BsSearch } from "react-icons/bs";
-import ReactSearchBox from "react-search-box";
 import {
   AiOutlineHeart,
   AiOutlineUserAdd,
@@ -15,28 +14,6 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 function NavBar() {
-  const data = [
-    {
-      key: "john",
-      value: "John Doe",
-    },
-    {
-      key: "jane",
-      value: "Jane Doe",
-    },
-    {
-      key: "mary",
-      value: "Mary Phillips",
-    },
-    {
-      key: "robert",
-      value: "Robert",
-    },
-    {
-      key: "karius",
-      value: "Karius",
-    },
-  ];
   return (
     <>
       <Navbar bg="light" expand="lg" className="sticky-top">
@@ -86,12 +63,8 @@ function NavBar() {
             </Nav>
             <Form className="d-flex mr-auto">
               <InputGroup>
-                <ReactSearchBox
+                <Form.Control
                   placeholder="Search product name"
-                  className="me-2"
-                  data={data}
-                  callback={(record) => console.log(record)}
-                  autoComplete="off"
                   aria-describedby="basic-addon1"
                 />
                 <Button

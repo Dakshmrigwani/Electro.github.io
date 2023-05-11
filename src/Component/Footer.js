@@ -6,14 +6,18 @@ import {
   BsInstagram,
   BsLinkedin,
   BsGithub,
-  BsFillTelephoneFill
+  BsFillTelephoneFill,
 } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { CiLocationOn } from "react-icons/ci";
 import { SiGmail } from "react-icons/si";
 export default function Footer() {
   return (
-    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
+    <MDBFooter
+      bgColor="light"
+      className="text-center text-lg-start text-muted"
+      style={{ clear: "both" }}
+    >
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
           <span>Get connected with us on social networks:</span>

@@ -29,14 +29,8 @@ export default function Body() {
     };
   }, []);
   const [showMore, setShowMore] = useState(false);
-  const [showMore1, setShowMore1] = useState(false);
-  const [showMore2, setShowMore2] = useState(false);
-  const [showMore3, setShowMore3] = useState(false);
 
   const handleToggle = () => setShowMore(!showMore);
-  const handleToggle1 = () => setShowMore1(!showMore1);
-  const handleToggle2 = () => setShowMore2(!showMore2);
-  const handleToggle3 = () => setShowMore3(!showMore3);
 
   const handleClose = () => setShow(false);
   return (
