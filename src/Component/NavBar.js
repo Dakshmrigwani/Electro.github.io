@@ -49,7 +49,7 @@ function NavBar() {
                 Speakers
               </Link>
               <Link
-                to="/Pages/Watches"
+                to="/Pages/Watch"
                 className="text-decoration-none text-dark me-2"
               >
                 Watches

@@ -85,11 +85,10 @@
 }
 .scrollbar {
   float: left;
-  height: 35rem;
+  height: 30rem;
   width: 15rem;
   background: #fff;
   overflow-y: scroll;
-  margin-bottom: 25px;
 }
 .force-overflow {
   min-height: 450px;
@@ -108,7 +107,7 @@
 .filter-section {
   position: sticky;
   top: 0;
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 1rem);
   overflow-y: auto;
 }
 

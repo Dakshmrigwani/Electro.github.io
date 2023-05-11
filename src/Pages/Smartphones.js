@@ -3,6 +3,7 @@ import Layout from "../Component/Layout";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import ReactStars from "react-stars";
+import { BsCurrencyRupee } from "react-icons/bs";
 import { SmartPhones } from "../Component/data";
 import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
@@ -18,6 +19,7 @@ export default function Smartphones() {
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
+
   return (
     <>
       <Layout>
@@ -197,9 +199,12 @@ export default function Smartphones() {
                       <Card>
                         <Card.Img variant="top" src={body.image} />
                         <Card.Body>
-                          <Card.Title className="fw-normal">
+                          <Card.Title className="fw-normal ">
                             {showMore ? body.MoreTitle : body.LessTitle}
-                            <span onClick={handleToggle} className="fw-bolder">
+                            <span
+                              onClick={() => handleToggle(body.id)}
+                              className="fw-bolder"
+                            >
                               {showMore ? " ...Read Less" : " ...Read More"}
                             </span>
                           </Card.Title>
@@ -218,7 +223,7 @@ export default function Smartphones() {
                                 className="col"
                               />
                               <p style={{ margin: "0" }} className="ms-2 col">
-                                {body.reviews}
+                                {body.reviews} review
                               </p>
                             </div>
 
@@ -227,9 +232,13 @@ export default function Smartphones() {
                               className="row"
                             >
                               <div className="col">
-                                <b className="fs-2">${body.DisPrice}</b>
+                                <b className="fs-2 d-flex">
+                                  <BsCurrencyRupee className="mt-2" />
+                                  {body.DisPrice}
+                                </b>
                                 <p className="fs-6 text-decoration-line-through">
-                                  ${body.ActPrice}
+                                  <BsCurrencyRupee />
+                                  {body.ActPrice}
                                 </p>
                               </div>
                               <div className="col">
