@@ -206,7 +206,8 @@ export const SmartPhones = [
   {
     id: 7,
     image: "https://m.media-amazon.com/images/I/61LB+d0vheL._SX679_.jpg",
-    LessTitle: "OnePlus Nord CE 3 Lite 5G",
+    LessTitle:
+      "OnePlus Nord CE 3 Lite 5G (Chromatic Gray, 8GB RAM, 256GB Storage)",
     MoreTitle:
       "OnePlus Nord CE 3 Lite 5G (Chromatic Gray, 8GB RAM, 256GB Storage)",
     ActPrice: 21999,

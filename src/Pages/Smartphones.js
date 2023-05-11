@@ -199,7 +199,7 @@ export default function Smartphones() {
                       <Card>
                         <Card.Img variant="top" src={body.image} />
                         <Card.Body>
-                          <Card.Title className="fw-normal">
+                          <Card.Title className="fw-normal ">
                             {showMore ? body.MoreTitle : body.LessTitle}
                             <span onClick={handleToggle} className="fw-bolder">
                               {showMore ? " ...Read Less" : " ...Read More"}
