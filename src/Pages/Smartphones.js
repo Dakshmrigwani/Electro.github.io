@@ -14,6 +14,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 export default function Smartphones() {
   const [showMore, setShowMore] = useState(false);
 
+  const handleToggle = () => setShowMore(!showMore);
+
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
@@ -221,7 +223,7 @@ export default function Smartphones() {
                                 className="col"
                               />
                               <p style={{ margin: "0" }} className="ms-2 col">
-                                {body.reviews}
+                                {body.reviews} review
                               </p>
                             </div>
 

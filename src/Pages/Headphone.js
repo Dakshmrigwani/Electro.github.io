@@ -14,6 +14,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 export default function headphone() {
   const [showMore, setShowMore] = useState(false);
 
+  const handleToggle = () => setShowMore(!showMore);
+
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
@@ -225,7 +227,7 @@ export default function headphone() {
                                 className="col"
                               />
                               <p style={{ margin: "0" }} className="ms-2 col">
-                                {body.reviews}
+                                {body.reviews} review
                               </p>
                             </div>
 
