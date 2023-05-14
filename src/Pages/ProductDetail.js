@@ -14,49 +14,49 @@ import { BsPencil } from "react-icons/bs";
 import "react-alice-carousel/lib/alice-carousel.css";
 import ReactStars from "react-stars";
 
-const items = [
-  <div className="item" data-value="1">
-    <img
-      src="https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg"
-      alt=""
-    />
-  </div>,
-  <div className="item" data-value="2">
-    <img
-      src="https://m.media-amazon.com/images/I/613W14SQzDL._SY450_.jpg"
-      alt=""
-    />
-  </div>,
-  <div className="item" data-value="3">
-    <img
-      src="https://m.media-amazon.com/images/I/61MzIrP7rFL._SY450_.jpg"
-      alt=""
-    />
-  </div>,
-  <div className="item" data-value="4">
-    <img
-      src="https://m.media-amazon.com/images/I/71UbF6PnUBL._SY450_.jpg"
-      alt=""
-    />
-  </div>,
-  <div className="item" data-value="5">
-    <img
-      src="https://m.media-amazon.com/images/I/61DzhtpDOLL._SY450_.jpgy"
-      alt=""
-    />
-  </div>,
-];
+// const items = [
+//   <div className="item" data-value="1">
+//     <img
+//       src="https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg"
+//       alt=""
+//     />
+//   </div>,
+//   <div className="item" data-value="2">
+//     <img
+//       src="https://m.media-amazon.com/images/I/613W14SQzDL._SY450_.jpg"
+//       alt=""
+//     />
+//   </div>,
+//   <div className="item" data-value="3">
+//     <img
+//       src="https://m.media-amazon.com/images/I/61MzIrP7rFL._SY450_.jpg"
+//       alt=""
+//     />
+//   </div>,
+//   <div className="item" data-value="4">
+//     <img
+//       src="https://m.media-amazon.com/images/I/71UbF6PnUBL._SY450_.jpg"
+//       alt=""
+//     />
+//   </div>,
+//   <div className="item" data-value="5">
+//     <img
+//       src="https://m.media-amazon.com/images/I/61DzhtpDOLL._SY450_.jpgy"
+//       alt=""
+//     />
+//   </div>,
+// ];
 
-const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
-  return items.map((item, i) => (
-    <div
-      className="thumb"
-      onClick={() => (setThumbIndex(i), setThumbAnimation(true))}
-    >
-      {item}
-    </div>
-  ));
-};
+// const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
+//   return items.map((item, i) => (
+//     <div
+//       className="thumb"
+//       onClick={() => (setThumbIndex(i), setThumbAnimation(true))}
+//     >
+//       {item}
+//     </div>
+//   ));
+// };
 function reducer(state, action) {
   switch (action.type) {
     case "incremented_age": {
@@ -82,47 +82,47 @@ function ProductDetail() {
   const [mainAnimation, setMainAnimation] = useState(false);
   const [thumbIndex, setThumbIndex] = useState(0);
   const [thumbAnimation, setThumbAnimation] = useState(false);
-  const [thumbs] = useState(
-    thumbItems(items, [setThumbIndex, setThumbAnimation])
-  );
+  // const [thumbs] = useState(
+  //   thumbItems(items, [setThumbIndex, setThumbAnimation])
+  // );
 
-  const slideNext = () => {
-    if (!thumbAnimation && thumbIndex < thumbs.length - 1) {
-      setThumbAnimation(true);
-      setThumbIndex(thumbIndex + 1);
-    }
-  };
+  // const slideNext = () => {
+  //   if (!thumbAnimation && thumbIndex < thumbs.length - 1) {
+  //     setThumbAnimation(true);
+  //     setThumbIndex(thumbIndex + 1);
+  //   }
+  // };
 
-  const slidePrev = () => {
-    if (!thumbAnimation && thumbIndex > 0) {
-      setThumbAnimation(true);
-      setThumbIndex(thumbIndex - 1);
-    }
-  };
+  // const slidePrev = () => {
+  //   if (!thumbAnimation && thumbIndex > 0) {
+  //     setThumbAnimation(true);
+  //     setThumbIndex(thumbIndex - 1);
+  //   }
+  // };
 
-  const syncMainBeforeChange = (e) => {
-    setMainAnimation(true);
-  };
+  // const syncMainBeforeChange = (e) => {
+  //   setMainAnimation(true);
+  // };
 
-  const syncMainAfterChange = (e) => {
-    setMainAnimation(false);
+  // const syncMainAfterChange = (e) => {
+  //   setMainAnimation(false);
 
-    if (e.type === "action") {
-      setThumbIndex(e.item);
-      setThumbAnimation(false);
-    } else {
-      setMainIndex(thumbIndex);
-    }
-  };
+  //   if (e.type === "action") {
+  //     setThumbIndex(e.item);
+  //     setThumbAnimation(false);
+  //   } else {
+  //     setMainIndex(thumbIndex);
+  //   }
+  // };
 
-  const syncThumbs = (e) => {
-    setThumbIndex(e.item);
-    setThumbAnimation(false);
+  // const syncThumbs = (e) => {
+  //   setThumbIndex(e.item);
+  //   setThumbAnimation(false);
 
-    if (!mainAnimation) {
-      setMainIndex(e.item);
-    }
-  };
+  //   if (!mainAnimation) {
+  //     setMainIndex(e.item);
+  //   }
+  // };
 
   function handleButtonClick() {
     dispatch({ type: "incremented_age" });
@@ -144,7 +144,7 @@ function ProductDetail() {
           <div className="container-fluid my-5">
             <Row>
               <Col md={4}>
-                <AliceCarousel
+                {/* <AliceCarousel
                   activeIndex={mainIndex}
                   animationType="fadeout"
                   animationDuration={800}
@@ -183,7 +183,7 @@ function ProductDetail() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>*/}
               </Col>
               <Col md={5}>
                 <h2>{selectedProduct.MoreTitle}</h2>
@@ -194,10 +194,18 @@ function ProductDetail() {
                   Rating: {selectedProduct.Rating} ({selectedProduct.reviews}{" "}
                   reviews)
                 </p>
+                <b>Here are some details</b>
+                <ul className="mt-4">
+                  <li>{selectedProduct.description1}</li>
+                  <li>{selectedProduct.description2}</li>
+                  <li>{selectedProduct.description3}</li>
+                  <li>{selectedProduct.description4}</li>
+                  <li>{selectedProduct.description5}</li>
+                </ul>
               </Col>
               <Col md={3}>
                 <div className="d-flex justify-content-center mt-3 mt-md-0">
-                  <div className="position-fixed ">
+                  <div className="">
                     <Card style={{ width: "18rem" }}>
                       <Card.Body>
                         <Card.Title className="fs-6 text-secondary">
