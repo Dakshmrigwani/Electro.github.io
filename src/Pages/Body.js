@@ -161,83 +161,80 @@ export default function Body() {
           <Row xs={2} md={4} className="g-4">
             {bodyList.map((body) => (
               <div key={body.id}>
-                <Link
-                  to={`/bodyList/${body.id}`}
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  <Card>
-                    <Card.Img variant="top" src={body.image} />
-                    <Card.Body>
+                <Card>
+                  <Card.Img variant="top" src={body.image} />
+                  <Card.Body>
+                    <Link to={`/bodyList/${body.id}`} className="brandTitle">
                       <Card.Title className="fw-normal">
                         {showMore ? body.MoreTitle : body.LessTitle}
                         <span onClick={handleToggle} className="fw-bolder">
                           {showMore ? " ...Read Less" : " ...Read More"}
                         </span>
                       </Card.Title>
-                      <Card.Text>
-                        <div
-                          className="row row-cols-auto"
-                          style={{ display: "flex", alignItems: "center" }}
-                        >
-                          <ReactStars
-                            count={body.rating}
-                            onChange={ratingChanged}
-                            size={24}
-                            color2={"#ffd700"}
-                            value={body.Rating}
-                            style={{ marginRight: "5px" }}
-                            className="col"
-                          />
-                          <p style={{ margin: "0" }} className="ms-2 col">
-                            {body.reviews}
+                    </Link>
+                    <Card.Text>
+                      <div
+                        className="row row-cols-auto"
+                        style={{ display: "flex", alignItems: "center" }}
+                      >
+                        <ReactStars
+                          count={body.rating}
+                          onChange={ratingChanged}
+                          size={24}
+                          color2={"#ffd700"}
+                          value={body.Rating}
+                          style={{ marginRight: "5px" }}
+                          className="col"
+                        />
+                        <p style={{ margin: "0" }} className="ms-2 col">
+                          {body.reviews}
+                        </p>
+                      </div>
+
+                      <div
+                        style={{ display: "flex", alignItems: "center" }}
+                        className="row"
+                      >
+                        <div className="col">
+                          <b className="fs-2">${body.ActPrice}</b>
+                          <p className="fs-6 text-decoration-line-through">
+                            ${body.DisPrice}
                           </p>
                         </div>
-
-                        <div
-                          style={{ display: "flex", alignItems: "center" }}
-                          className="row"
-                        >
-                          <div className="col">
-                            <b className="fs-2">${body.ActPrice}</b>
-                            <p className="fs-6 text-decoration-line-through">
-                              ${body.DisPrice}
-                            </p>
-                          </div>
-                          <div className="col">
-                            <p className="mt-3 text-start">
-                              ({body.disPercent}%off)
-                            </p>
-                          </div>
+                        <div className="col">
+                          <p className="mt-3 text-start">
+                            ({body.disPercent}%off)
+                          </p>
                         </div>
-                        <div
-                          style={{ display: "flex", alignItems: "center" }}
-                          className="row row-cols-auto d-flex justify-content-center"
+                      </div>
+                      <div
+                        style={{ display: "flex", alignItems: "center" }}
+                        className="row row-cols-auto d-flex justify-content-center"
+                      >
+                        <Button
+                          variant="outline-light"
+                          style={{
+                            backgroundColor: "#7E90C8",
+                            color: "white",
+                          }}
+                          className="col"
                         >
-                          <Button
-                            variant="outline-light"
-                            style={{
-                              backgroundColor: "#7E90C8",
-                              color: "white",
-                            }}
-                            className="col"
-                          >
-                            Add To Cart
-                          </Button>
-                          <Button
-                            className="ms-2 col"
-                            variant="outline-light"
-                            style={{
-                              backgroundColor: "#8B5095",
-                              color: "white",
-                            }}
-                          >
-                            Add To Wishlist
-                          </Button>
-                        </div>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Link>
+                          Add To Cart
+                        </Button>
+                        <Button
+                          className="ms-2 col"
+                          variant="outline-light"
+                          style={{
+                            backgroundColor: "#8B5095",
+                            color: "white",
+                          }}
+                        >
+                          Add To Wishlist
+                        </Button>
+                      </div>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
               </div>
             ))}
           </Row>
