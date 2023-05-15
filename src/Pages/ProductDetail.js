@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from "react";
 import { useParams } from "react-router-dom";
-import { bodyList } from "../Component/data";
+import { ProductDetailData } from "../Component/data";
 import Layout from "../Component/Layout";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,7 +10,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import AliceCarousel from "react-alice-carousel";
 import { CiLocationOn } from "react-icons/ci";
-import { BsPencil } from "react-icons/bs";
+import { BsPencil, BsCurrencyRupee } from "react-icons/bs";
 import "react-alice-carousel/lib/alice-carousel.css";
 import ReactStars from "react-stars";
 
@@ -132,8 +132,7 @@ function ProductDetail() {
     dispatch({ type: "decremented_age" });
   }
 
-  // Find the selected product from the bodyList array
-  const selectedProduct = bodyList.find(
+  const selectedProduct = ProductDetailData.find(
     (product) => product.id === parseInt(productId)
   );
 
@@ -187,8 +186,19 @@ function ProductDetail() {
               </Col>
               <Col md={5}>
                 <h2>{selectedProduct.MoreTitle}</h2>
-                <p>Price: ${selectedProduct.ActPrice}</p>
-                <p>Discount: {selectedProduct.disPercent}%</p>
+                <p className="d-inline">
+                  <p className="fs-3 text-decoration-line-through d-inline">
+                    <BsCurrencyRupee />
+                    {selectedProduct.ActPrice}
+                  </p>
+                </p>
+                <p className="">
+                  <p className="fs-6 d-inline">
+                    <BsCurrencyRupee />
+                    {selectedProduct.DisPrice}
+                  </p>
+                </p>
+                <p>{selectedProduct.disPercent}% Off</p>
                 <ReactStars value={selectedProduct.Rating} />
                 <p>
                   Rating: {selectedProduct.Rating} ({selectedProduct.reviews}{" "}
@@ -218,6 +228,15 @@ function ProductDetail() {
                         <Row>
                           <Col md={6}>
                             <div className="d-grid">
+                              <Row>
+                                <Col md={8}>
+                                  <b>Delievery Date</b>
+                                </Col>
+                                <Col md={4}>
+                                  <b>3days</b>
+                                </Col>
+                              </Row>
+
                               <b>Sent To</b>
                               <div class="d-inline-flex">
                                 <span class="me-1">
@@ -268,36 +287,37 @@ function ProductDetail() {
                             </Button>
                           </Col>
                         </Row>
-                        <Row className="mt-2">
+                        <Row className="mt-3">
                           <Col md={4}>
-                            <b>Weight</b>
-                          </Col>
-                          <Col md={8} className="text-end">
-                            <b>500 g</b>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col md={4}>
-                            <b>Total</b>
+                            <b>Price</b>
                           </Col>
                           <Col md={8} className="text-end">
                             <b>$78.76</b>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col md={4}>
-                            <b>Color</b>
-                          </Col>
-                          <Col md={8} className="text-end">
-                            <b>Red</b>
                           </Col>
                         </Row>
                         <Row>
                           <Col md={5}>
-                            <b>Delievery</b>
+                            <b>Tax</b>
                           </Col>
                           <Col md={7} className="text-end">
-                            <b>$78.76</b>
+                            <b>$1.00</b>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col md={8}>
+                            <b>Delievery charge</b>
+                          </Col>
+                          <Col md={4} className="text-end">
+                            <b>$5.00</b>
+                          </Col>
+                        </Row>
+                        <hr />
+                        <Row>
+                          <Col md={6}>
+                            <b>Total</b>
+                          </Col>
+                          <Col md={6} className="text-end">
+                            <b>$84.76</b>
                           </Col>
                         </Row>
                         <div className="d-flex flex-column gap-2 mt-3">

@@ -1,24 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../Component/Layout";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import ReactStars from "react-stars";
 import { BsCurrencyRupee } from "react-icons/bs";
-import { Laptop } from "../Component/data";
+import { ProductDetailData } from "../Component/data";
 import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import { Link } from "react-router-dom";
 
 export default function Laptops() {
   const [showMore, setShowMore] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("Laptop");
+  const [filteredData, setFilteredData] = useState([]);
 
   const handleToggle = () => setShowMore(!showMore);
 
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
+  const handleFilter = (filterCriteria) => {
+    const filteredProducts = ProductDetailData.filter(
+      (product) => product.category === filterCriteria
+    );
+    setFilteredData(filteredProducts);
+  };
+
+  // Event handler example
+  const handleCategoryFilter = () => {
+    handleFilter(selectedCategory);
+  };
+
+  // useEffect hook example
+  useEffect(() => {
+    handleFilter(selectedCategory);
+  }, [selectedCategory]);
 
   return (
     <>
@@ -194,20 +213,25 @@ export default function Laptops() {
                   > 
                     Filter
                   </button> */}
-                  {Laptop.map((body) => (
+                  {filteredData.map((body) => (
                     <div key={body.id}>
                       <Card>
                         <Card.Img variant="top" src={body.image} />
                         <Card.Body>
-                          <Card.Title className="fw-normal ">
-                            {showMore ? body.MoreTitle : body.LessTitle}
-                            <span
-                              onClick={() => handleToggle(body.id)}
-                              className="fw-bolder"
-                            >
-                              {showMore ? " ...Read Less" : " ...Read More"}
-                            </span>
-                          </Card.Title>
+                          <Link
+                            to={`/AllProducts/${body.id}`}
+                            className="brandTitle"
+                          >
+                            <Card.Title className="fw-normal ">
+                              {showMore ? body.MoreTitle : body.LessTitle}
+                              <span
+                                onClick={() => handleToggle(body.id)}
+                                className="fw-bolder"
+                              >
+                                {showMore ? " ...Read Less" : " ...Read More"}
+                              </span>
+                            </Card.Title>
+                          </Link>
                           <Card.Text>
                             <div
                               className="row row-cols-auto"
