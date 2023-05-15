@@ -1,84 +1,3 @@
-export const bodyList = [
-  {
-    id: 1,
-    image: "https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg",
-    LessTitle: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones ",
-    MoreTitle:
-      "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)",
-    ActPrice: 130,
-    DisPrice: 100,
-    Rating: 4,
-    reviews: 6000,
-    disPercent: 24,
-    description1:
-      "Tap into instant wireless connectivity with the latest Bluetooth V5.0. Yes, Rockerz 558 on-ear headphones have IPX5 dust and water resistance making it perfect for sports and adventures.",
-    description2:
-      "Its 50mm dynamic drivers help pump out immersive audio all day long, Charging Time 2.5 hours",
-    description3:
-      "The mighty 500mAh battery capacity offers a superior playback time of up to 20 Hours It has been ergonomically designed and structured as an over-ear headphone to provide the best user experience",
-    description4:
-      "It comes with physical Noise Isolation feature for pure audio bliss",
-    description5:
-      "One can connect to boAt Rockerz 550 via not one but two modes, Bluetooth as well as AUX",
-  },
-  {
-    id: 2,
-    image: "https://m.media-amazon.com/images/I/61SSVxTSs3L._SY450_.jpg",
-    LessTitle: "Noise Pulse 2 Advanced Bluetooth Calling Watch",
-    MoreTitle:
-      "Noise Pulse 2 Advanced Bluetooth Calling Watch with 1.85'' Display, 550 NITS Brightness, Smart DND, 10 Days Battery, 100 Sports Modes, Smart Watch for Men and Women - (Jet Black)",
-    ActPrice: 300,
-    DisPrice: 100,
-    Rating: 3.5,
-    reviews: 6000,
-    disPercent: 65,
-  },
-  {
-    id: 3,
-    image: "https://m.media-amazon.com/images/I/61oSoHc7VtL._SY450_.jpg",
-    LessTitle: "boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo",
-    MoreTitle:
-      "boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo Sound, 10HRS Playtime, TWS Feature, IPX4, Multi-Compatibility Mode(Black)",
-    ActPrice: 400,
-    DisPrice: 200,
-    Rating: 4.5,
-    reviews: 9000,
-    disPercent: 50,
-    description1:
-      "Tap into instant wireless connectivity with the latest Bluetooth V5.0. Yes, Rockerz 558 on-ear headphones have IPX5 dust and water resistance making it perfect for sports and adventures.",
-    description2:
-      "Its 50mm dynamic drivers help pump out immersive audio all day long, Charging Time 2.5 hours",
-    description3:
-      "The mighty 500mAh battery capacity offers a superior playback time of up to 20 Hours It has been ergonomically designed and structured as an over-ear headphone to provide the best user experience",
-    description4:
-      "It comes with physical Noise Isolation feature for pure audio bliss",
-    description5:
-      "One can connect to boAt Rockerz 550 via not one but two modes, Bluetooth as well as AUX",
-  },
-  {
-    id: 4,
-    image: "https://m.media-amazon.com/images/I/81-fFXQdPTL._SX679_.jpg",
-    LessTitle: "Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage)",
-    MoreTitle:
-      "Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage) | 6000mAh Battery | Upto 12GB RAM with RAM Plus",
-    ActPrice: 800,
-    DisPrice: 650,
-    Rating: 4,
-    reviews: 11000,
-    disPercent: 29,
-    description1:
-      "6000mAh lithium-ion battery, 1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase",
-    description2:
-      "Upto 12GB RAM with RAM Plus | 128GB internal memory expandable up to 1TB| Dual Sim (Nano)",
-    description3:
-      "50MP+5MP+2MP Triple camera setup- True 50MP (F1.8) main camera +5MP(F2.2)+ 2MP (F2.4) | 8MP (F2.2) front cam",
-    description4:
-      "Android 12,One UI Core 4 with a powerful Octa Core Processor",
-    description5:
-      "16.72 centimeters (6.6-inch) FHD+ LCD - infinity O Display, FHD+ resolution with 1080 x 2408 pixels resolution, 401 PPI with 16M color",
-  },
-];
-
 export const CartList = [
   {
     id: 11,
@@ -102,7 +21,7 @@ export const CartList = [
   },
 ];
 
-export const SmartPhones = [
+export const ProductDetailData = [
   {
     id: 21,
     image: "https://m.media-amazon.com/images/I/81-fFXQdPTL._SX679_.jpg",
@@ -111,6 +30,7 @@ export const SmartPhones = [
       "Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage) | 6000mAh Battery | Upto 12GB RAM with RAM Plus",
     ActPrice: 17999,
     DisPrice: 11699,
+    category: `Smartphone`,
     Rating: 4,
     reviews: 11000,
     disPercent: 35,
@@ -133,6 +53,7 @@ export const SmartPhones = [
       "Samsung Galaxy M14 5G (ICY Silver, 4GB, 128GB Storage) | 50MP Triple Cam | 6000 mAh Battery | 5nm Octa-Core Processor | Android 13 | Without Charger",
     ActPrice: 17990,
     DisPrice: 13990,
+    category: `Smartphone`,
     Rating: 4,
     reviews: 21875,
     disPercent: 22,
@@ -156,6 +77,7 @@ export const SmartPhones = [
     ActPrice: 14999,
     DisPrice: 10999,
     Rating: 3.9,
+    category: `Smartphone`,
     reviews: 437,
     disPercent: 27,
     description1:
@@ -178,6 +100,7 @@ export const SmartPhones = [
     ActPrice: 11999,
     DisPrice: 8999,
     Rating: 4,
+    category: `Smartphone`,
     reviews: 17999,
     disPercent: 29,
     description1: "Camera: 13MP Rear Camera | 5MP Front Camera",
@@ -198,6 +121,7 @@ export const SmartPhones = [
       "realme narzo 50i Prime (Dark Blue 4GB RAM+64GB Storage) Octa-core Processor | 5000 mAh Battery",
     ActPrice: 9999,
     DisPrice: 7999,
+    category: `Smartphone`,
     Rating: 3,
     reviews: 3916,
     disPercent: 20,
@@ -220,6 +144,7 @@ export const SmartPhones = [
       "Redmi 12C (Lavender Purple, 4GB RAM, 64GB Storage) | High Performance Mediatek Helio G85 | Big 17cm(6.71) HD+ Display with 5000mAh(typ) Battery with 10W Charger in-Box",
     ActPrice: 13999,
     DisPrice: 8999,
+    category: `Smartphone`,
     Rating: 4,
     reviews: 412,
     disPercent: 36,
@@ -243,6 +168,7 @@ export const SmartPhones = [
     ActPrice: 21999,
     DisPrice: 17999,
     Rating: 3.9,
+    category: `Smartphone`,
     reviews: 1369,
     disPercent: 30,
     description1:
@@ -265,6 +191,7 @@ export const SmartPhones = [
     ActPrice: 7499,
     DisPrice: 5699,
     Rating: 3.2,
+    category: `Smartphone`,
     reviews: 365,
     disPercent: 24,
     description1: "4GB RAM with Memory Extension | 2GB RAM + 2GB Virtual RAM",
@@ -284,6 +211,7 @@ export const SmartPhones = [
     ActPrice: 17999,
     DisPrice: 15999,
     Rating: 3.9,
+    category: `Smartphone`,
     reviews: 4936,
     disPercent: 11,
     description1:
@@ -296,9 +224,6 @@ export const SmartPhones = [
     description5:
       "Battery: 5000 mAh large battery with 18W fast charging support and 22.5W fast charger in-box with Type-C connectivity",
   },
-];
-
-export const Headphones = [
   {
     id: 31,
     image: "https://m.media-amazon.com/images/I/61leGjTDm0L._SY450_.jpg",
@@ -308,6 +233,7 @@ export const Headphones = [
     ActPrice: 4999,
     DisPrice: 1999,
     Rating: 4,
+    category: `headphones`,
     reviews: 34320,
     disPercent: 64,
     description1:
@@ -329,6 +255,7 @@ export const Headphones = [
       "Bose Quietcomfort 45 Bluetooth Wireless Over Ear Headphones with Mic Noise Cancelling - White Smoke",
     ActPrice: 29990,
     DisPrice: 22497,
+    category: `headphones`,
     Rating: 4.5,
     reviews: 12845,
     disPercent: 25,
@@ -350,6 +277,7 @@ export const Headphones = [
     MoreTitle:
       "boAt Rockerz 400 Bluetooth On Ear Headphones With Mic With Upto 8 Hours Playback & Soft Padded Ear Cushions(Grey/Green)",
     ActPrice: 2900,
+    category: `headphones`,
     DisPrice: 998,
     Rating: 4.1,
     reviews: 20075,
@@ -372,6 +300,7 @@ export const Headphones = [
     MoreTitle:
       "ZEBRONICS Zeb-Thunder Wireless Bluetooth Over The Ear Headphone, FM, mSD, 9 hrs Playback with Mic (Blue)",
     ActPrice: 1399,
+    category: `headphones`,
     DisPrice: 599,
     Rating: 3.8,
     reviews: 63459,
@@ -396,6 +325,7 @@ export const Headphones = [
     ActPrice: 3990,
     DisPrice: 1449,
     Rating: 4.1,
+    category: `headphones`,
     reviews: 124790,
     disPercent: 62,
     description1:
@@ -418,6 +348,7 @@ export const Headphones = [
     ActPrice: 3999,
     DisPrice: 1999,
     Rating: 4.1,
+    category: `headphones`,
     reviews: 112987,
     disPercent: 50,
     description1:
@@ -439,6 +370,7 @@ export const Headphones = [
       "JBL Tune 510BT, On Ear Wireless Headphones with Mic, up to 40 Hours Playtime, Pure Bass, Quick Charging, Dual Pairing, Bluetooth 5.0 & Voice Assistant Support for Mobile Phones (Black)",
     ActPrice: 4449,
     DisPrice: 2899,
+    category: `headphones`,
     Rating: 3.8,
     reviews: 24743,
     disPercent: 36,
@@ -460,6 +392,7 @@ export const Headphones = [
     MoreTitle: "Logitech H111 Wired On Ear Headphones With Mic Black",
     ActPrice: 745,
     DisPrice: 795,
+    category: `headphones`,
     Rating: 4,
     reviews: 14603,
     disPercent: 6,
@@ -482,6 +415,7 @@ export const Headphones = [
     MoreTitle:
       "JBL Tune 760NC, Wireless Over Ear Active Noise Cancellation Headphones with Mic, up to 50 Hours Playtime, Pure Bass, Dual Pairing, AUX & Voice Assistant Support for Mobile Phones (Black)",
     ActPrice: 7999,
+    category: `headphones`,
     DisPrice: 4999,
     Rating: 3.9,
     reviews: 19507,
@@ -497,8 +431,6 @@ export const Headphones = [
     description5:
       "DUAL PAIRING (MULTI-POINT CONNECTION): Allows you to effortlessly switch from one Bluetooth device to another. You can simply switch from a video on your tablet to a call on your mobile phone so that you’ll never miss a call.",
   },
-];
-export const Laptop = [
   {
     id: 41,
     image:
@@ -509,6 +441,7 @@ export const Laptop = [
     DisPrice: 40990,
     Rating: 4.1,
     reviews: 1865,
+    category: `Laptop`,
     disPercent: 38,
     description1: `Processor: 12th Gen Intel Core i3-1215U | 6 Cores ( 2x P-core 1.2 / 4.4GHz, 4x E-core 0.9/ 3.3GHz) | 8 Threads | 10MB Cache;Display: 15.6" FHD (1920x1080)| TN Technology | 250Nits Brightness | Anti Glare; Memory and Storage: 8GB RAM DDR4-3200, Upgradable Up to 16GB | 512 GB SSD;OS and Software: Windows 11 Home 64 | Office Home and Student 2021 | Xbox GamePass Ultimate 3-month subscription`,
     description2: `Design: 4 side narrow bezel | 1.99 cm Thin & 1.63 kg Light || Smart Learning Features : Lenovo Aware | Whisper Voice | Eye Care;Battery Life: 3-Cell 45Wh | Upto 6 Hours | Rapid Charge (Up to 80% in 1 Hour)`,
@@ -526,6 +459,7 @@ export const Laptop = [
     Rating: 4.2,
     reviews: 163,
     disPercent: 30,
+    category: `Laptop`,
     description1: `Processor: 12th Gen Intel Core i3-1220P Processor 1.1 GHz (12M Cache, up to 4.4 GHz, 10 cores)`,
     description2: `Memory: 8GB DDR4 on board 3200MHz with | Storage: 512GB M.2 NVMe PCIe 3.0 SSD`,
     description3: `Operating System: Windows 11 Home with Lifetime validity | Software Included: Office Home and Student 2021 included with Lifetime validity`,
@@ -542,6 +476,7 @@ export const Laptop = [
     Rating: 4.3,
     reviews: 263,
     disPercent: 17,
+    category: `Laptop`,
     description1: `Processor: AMD Ryzen 5 4600H Mobile Processor (6-core/12-thread, 11MB Cache, 4.0 GHz max boost)`,
     description2: `Play over 100 high-quality PC games, plus new and upcoming blockbusters on day one like Halo Infinite, Forza Horizon 5, and Age of Empires IV with your new FA506IHRZ-HN111W and one month of Game Pass-including EA Play.`,
     description3: `With new games added all the time, there’s always something new to play. Age of Empires IV, Back 4 Blood, Battlefield V, Forza Horizon 5, Halo Infinite*, Knockout City, Microsoft Flight Simulator, Minecraft PC Bundle, Need for Speed Heat, Psychonauts2, The Sims 4, Titanfall 2, 12 Minutes`,
@@ -557,6 +492,7 @@ export const Laptop = [
     DisPrice: 38990,
     Rating: 3.5,
     reviews: 45,
+    category: `Laptop`,
     disPercent: 24,
     description1: `Processor: Intel Core i3-1115G4 Processor Laptop 3.0 GHz (6M Cache, up to 4.1 GHz, 2 cores)`,
     description2: `Memory: 8GB DDR4 RAM Laptop (on board) with | Storage: 512GB M.2 NVMe PCIe 3.0 SSD Laptop`,
@@ -572,6 +508,7 @@ export const Laptop = [
     ActPrice: 56261,
     DisPrice: 43990,
     Rating: 4,
+    category: `Laptop`,
     reviews: 1229,
     disPercent: 22,
     description1: `【6-core 12th Gen Intel Core i3-1215U】 8 threads and 10MB L3 cache deliver high performance and instant responsiveness. The Intel UHD graphics help you dive into crisp, stunning visuals.`,
@@ -589,6 +526,7 @@ export const Laptop = [
     DisPrice: 38490,
     Rating: 4.1,
     reviews: 1318,
+    category: `Laptop`,
     disPercent: 18,
     description1: `Processor:Intel Core i3-1115G4(up to 4.1 GHz with Intel Turbo Boost Technology(2g),6 MB L3 cache, 2 cores)|Memory: 8 GB DDR4-3200 SDRAM (1 x 8 GB)| Storage: 256 GB PCIe NVMe M.2 SSD`,
     description2: `Display & Graphics : 35.6 cm (14") diagonal, FHD, micro-edge,anti-glare, 250 nits, 141 ppi, 45%NTSC |Graphics: Intel UHD Graphics`,
@@ -603,6 +541,7 @@ export const Laptop = [
     MoreTitle: `HP 15s,11th Gen Intel Core i3-1115G4 8GB RAM/512GB SSD 15.6-inch(39.6 cm) Micro-Edge Anti-Glare FHD Laptop/Alexa Built-in/Win 11/Intel UHD Graphics/Dual Speakers/MS Office 2021/1.69 Kg, 15s-fq2673TU`,
     ActPrice: 50697,
     DisPrice: 40990,
+    category: `Laptop`,
     Rating: 4.1,
     reviews: 1229,
     disPercent: 19,
@@ -621,6 +560,7 @@ export const Laptop = [
     DisPrice: 28990,
     Rating: 4,
     reviews: 57,
+    category: `Laptop`,
     disPercent: 22,
     description1: `High Performance : Encounter high speed processing with the AMD Ryzen 3 3250U Processor of 2 cores and up to 3.5GHz of Max Turbo Boost`,
     description2: `OS : Windows 11 Home, Pre-Installed Software: MS Office Home and Student`,
@@ -637,6 +577,7 @@ export const Laptop = [
     DisPrice: 44580,
     Rating: 4.2,
     reviews: 830,
+    category: `Laptop`,
     disPercent: 18,
     description1: `Processor: AMD Ryzen 5 5500U (up to 4.0 GHz max boost clock(2i), 8 MB L3 cache, 6 cores, 12 threads)| Memory: 8 GB DDR4-3200 SDRAM (1 x 8 GB), Upto 16 GB DDR4-3200 MHz RAM (2 x 8 GB) | Storage: 512 GB PCIe NVMe M.2 SSD`,
     description2: `Operating System & Pre-installed Software: Windows 11 Home 64 Single Language| Microsoft Office Home & Student 2019 pre-installed`,
@@ -644,9 +585,7 @@ export const Laptop = [
     description4: `Features: Keyboard: Full-size island-style natural silver keyboard with numeric keypad,HP Imagepad with multi-touch gesture support,Precision Touchpad Support| Camera: HP True Vision 720p HD camera | Microphone: Integrated Dual array digital microphones| Audio: Dual Speakers| Alexa Built In | Networking: Realtek RTL8821CE 802.11b/g/n/ac (1x1) and Bluetooth 4.2 combo`,
     description5: `Display & Graphics: 39.6 cm (15.6") diagonal, FHD, micro-edge, anti-glare,Brightness: 250 nits, 141 ppi |Graphics: AMD Radeon Graphics`,
   },
-];
 
-export const Watches = [
   {
     id: 51,
     image: "https://m.media-amazon.com/images/I/61LO6l4zB4L._UX466_.jpg",
@@ -656,6 +595,7 @@ export const Watches = [
     DisPrice: 399,
     Rating: 4,
     reviews: 286,
+    category: `Watch`,
     disPercent: 82,
     description1: `Dial Color: Black | Case Color: Black; Strap Type: 22mm Soft Silicone Black Strap`,
     description2: `Case Material: IP Black Plated Brass Case`,
@@ -670,6 +610,7 @@ export const Watches = [
     MoreTitle: `boAt Xtend Smartwatch with Alexa Built-in, 1.69” HD Display, Multiple Watch Faces, Stress Monitor, Heart & SpO2 Monitoring, 14 Sports Modes, Sleep Monitor, 5 ATM & 7 Days Battery(Pitch Black)`,
     ActPrice: 7990,
     DisPrice: 2799,
+    category: `Watch`,
     Rating: 4.1,
     reviews: 57987,
     disPercent: 65,
@@ -688,6 +629,7 @@ export const Watches = [
     DisPrice: 1390,
     Rating: 3,
     reviews: 453,
+    category: `Watch`,
     disPercent: 86,
     description1: `Battery capacity:220mah, longer battery life Standby time?>30 days?Use time?>3-5 days Appearance material: Zinc alloy IP67 life waterproof`,
     description2: `Calorie?Heart Rate/Blood Pressure/Oxygen ?BT call?BT Music?Temperature?Monitoring?Sleep monitoring?call reminder?SMS Alerts?Social APP Message Reminder?Alarm clock reminder?A sedentary reminder?sport?Turn the wrist and shine the screen?Looking for bracelets?Looking for Phones?Remote Photography?Rejection of calls?Do Not Disturb?`,
@@ -702,6 +644,7 @@ export const Watches = [
     LessTitle: `NoiseFit Force Rugged Round Dial Bluetooth Calling Smart Watch`,
     MoreTitle: `NoiseFit Force Rugged Round Dial Bluetooth Calling Smart Watch with 1.32" HD screen, Functional Crown, 550 NITS, 7 days battery, AI Voice Assistance, 200+ Watch Faces, Heart Rate Tracker- (Teal Green)`,
     ActPrice: 5999,
+    category: `Watch`,
     DisPrice: 2999,
     Rating: 4,
     reviews: 1285,
@@ -721,6 +664,7 @@ export const Watches = [
     DisPrice: 266,
     Rating: 2.7,
     reviews: 122,
+    category: `Watch`,
     disPercent: 87,
     description1: `This Smartwatch includes more practical functions, Fitness Tracker (Pedometer, Calories, Distance), GPS tracking, Heart Rate Monitor, Blood Pressure Monitor, 8 Sports Modes, Sleep Monitor, Blood Oxygen Monitor, Breath Training, Call Notifications, SMS and APP Messages (WhatsAPP, Facebook, Messenger, Instagram...), Music & Camera Control, Brightness Adjustment, Weather Display, Sedentary & Water Drink Reminder`,
     description2: `Heart Rate Monitor and Blood Pressure and Blood Oxygen Monitor: By monitoring your heart rate, you can measure calories burned and check your cardio zones (Fat Burn, Cardio and Peak) to check the intensity of the exercises that are ideal for your goals. Blood Pressure smart watches intelligently measures SpO2, monitors blood oxygen and blood pressure levels, and monitors changes in your body.`,
@@ -736,6 +680,7 @@ export const Watches = [
     ActPrice: 9999,
     DisPrice: 2499,
     Rating: 3.9,
+    category: `Watch`,
     reviews: 8708,
     disPercent: 75,
     description1: `Largest 1.96" Display : View bigger on the screen with the industry’s largest 1.96" display covering every edge possible and providing a crystal-clear resolution of 240*282 pixels`,
@@ -752,6 +697,7 @@ export const Watches = [
     ActPrice: 3999,
     DisPrice: 1499,
     Rating: 4,
+    category: `Watch`,
     reviews: 10654,
     disPercent: 63,
     description1: `1.69" grand display: Get the rich immersive viewing experience on the 1.69" LCD display.;60 sports modes: Take your pick from a wide range of 60 sports modes. Accelerometer Sensor Yes, Charging Time 2.5 hours`,
@@ -769,6 +715,7 @@ export const Watches = [
     DisPrice: 379,
     Rating: 3.5,
     reviews: 4231,
+    category: `Watch`,
     disPercent: 81,
     description1: `Model number: SS-GR06612-BLK-CH;Dial Shape: Round`,
     description2: `Watch Movement Type: Quartz; Strap Color: Black`,
@@ -782,6 +729,7 @@ export const Watches = [
     LessTitle: `TIMEX Analog Men's Watch (Dial Colored Strap)`,
     MoreTitle: `TIMEX Analog Men's Watch (Dial Colored Strap) having leather strap and stainless steel patch`,
     ActPrice: 1595,
+    category: `Watch`,
     DisPrice: 1048,
     Rating: 4.1,
     reviews: 8765,
@@ -792,9 +740,7 @@ export const Watches = [
     description4: `Water Resistance Depth: 30 meters, Buckle Clasp`,
     description5: `Ideal for birthday, anniversary and wedding gift`,
   },
-];
 
-export const Speakers = [
   {
     id: 61,
     image: "https://m.media-amazon.com/images/I/71531ZiXJcL._SY450_.jpg",
@@ -805,6 +751,7 @@ export const Speakers = [
     DisPrice: 1999,
     Rating: 4.1,
     reviews: 3482,
+    category: `Speakers`,
     disPercent: 50,
     description1: `Get ready to be enthralled by the 12W RMS stereo sound on Stone 620 portable wireless speaker.`,
     description2: `It supports TWS functionality, meaning you can connect two Stone 620s together and play music on both of them simultaneously for twice the impact.`,
@@ -823,6 +770,7 @@ export const Speakers = [
     DisPrice: 1499,
     Rating: 4.1,
     reviews: 5750,
+    category: `Speakers`,
     disPercent: 25,
     description1: `Mini & Light : Compact design & extremely light weight and let’s you carry your music wherever you go. S.P.L : 115 DB`,
     description2: `Strong battery life that lasts up to 20 hours of battery life and lets you have an uninterrupted experience .`,
@@ -839,6 +787,7 @@ export const Speakers = [
     DisPrice: 6999,
     Rating: 4.4,
     reviews: 53765,
+    category: `Speakers`,
     disPercent: 36,
     description1: `JBL SIGNATURE SOUND: Enjoy JBL Pure Bass Sound with all new race track drivers that pump booming Bass in a compact package`,
     description2: `PARTYBOOST: PartyBoost allows you to pair two JBL PartyBoost-compatible speakers together for stereo sound or link multiple JBL PartyBoost-compatible speakers to pump up your party`,
@@ -857,6 +806,7 @@ export const Speakers = [
     DisPrice: 3999,
     Rating: 4.2,
     reviews: 15967,
+    category: `Speakers`,
     disPercent: 43,
     description1: `RGB- For complete listening experience get into an immersive sound and light show. Customizable lights allow you to creates the perfect vibe`,
     description2: `IP Rating- Carry your splashproof speakers to anywhere with IPX7 splash & water shield leaving behind the tension of water running over`,
@@ -874,6 +824,7 @@ export const Speakers = [
     ActPrice: 3490,
     DisPrice: 1699,
     Rating: 4.0,
+    category: `Speakers`,
     reviews: 4263,
     disPercent: 51,
     description1: `Power- Get ready to be enthralled by the 10W RMS stereo sound on Stone 352 portable wireless speakers.`,
@@ -892,6 +843,7 @@ export const Speakers = [
     DisPrice: 1699,
     Rating: 4.2,
     reviews: 4863,
+    category: `Speakers`,
     disPercent: 66,
     description1: `Experience the true immersive sound with a pumping driver delivering 10W of audio and connect to the music that you love`,
     description2: `Its powerful 1800mAh battery offers a playback time of up to 7 hours`,
@@ -910,6 +862,7 @@ export const Speakers = [
     DisPrice: 1199,
     Rating: 4.1,
     reviews: 8387,
+    category: `Speakers`,
     disPercent: 52,
     description1: `Stone 180 comes equipped with 1.75" Dynamic Drivers for powerful immersive sound`,
     description2: `Its power packed 800mAh battery ensures extended indulgence in musical bliss with up to 10 hours of play time, Charging Time : 1.5 Hours`,
@@ -927,6 +880,7 @@ export const Speakers = [
     DisPrice: 1099,
     Rating: 4.3,
     reviews: 37986,
+    category: `Speakers`,
     disPercent: 63,
     description1: `Small Frame. Big Sound- Roam 2 wireless speaker is designed to deliver loud and clear music by pumping out sharp trebles, detailed mids and punchy bass. Now enjoy more richer & immersive notes to fill your room with music.`,
     description2: `Heavy Bass - Small in size yet big on Bass, get the party started by taking your music up a notch with resonating bass of Roam 2. Dust and Waterproof`,
@@ -944,6 +898,7 @@ export const Speakers = [
     ActPrice: 499,
     DisPrice: 399,
     Rating: 4.0,
+    category: `Speakers`,
     reviews: 1561,
     disPercent: 20,
     description1: `Zeb-Pluto is a USB powered 2.0 speaker that comes in a compact size with volume control;It has Aux Connectivity and it is USB Powered`,
@@ -951,5 +906,87 @@ export const Speakers = [
     description3: `Frequency response 120Hz-15kHz;Line input 3.5mm jack`,
     description4: `1 Year warranty-from the date of purchase; Country of Origin: China`,
     description5: `Color Name:Black`,
+  },
+  {
+    id: 1,
+    image: "https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg",
+    LessTitle: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones ",
+    MoreTitle:
+      "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)",
+    ActPrice: 130,
+    DisPrice: 100,
+    Rating: 4,
+    category: `bodyList`,
+    reviews: 6000,
+    disPercent: 24,
+    description1:
+      "Tap into instant wireless connectivity with the latest Bluetooth V5.0. Yes, Rockerz 558 on-ear headphones have IPX5 dust and water resistance making it perfect for sports and adventures.",
+    description2:
+      "Its 50mm dynamic drivers help pump out immersive audio all day long, Charging Time 2.5 hours",
+    description3:
+      "The mighty 500mAh battery capacity offers a superior playback time of up to 20 Hours It has been ergonomically designed and structured as an over-ear headphone to provide the best user experience",
+    description4:
+      "It comes with physical Noise Isolation feature for pure audio bliss",
+    description5:
+      "One can connect to boAt Rockerz 550 via not one but two modes, Bluetooth as well as AUX",
+  },
+  {
+    id: 2,
+    image: "https://m.media-amazon.com/images/I/61SSVxTSs3L._SY450_.jpg",
+    LessTitle: "Noise Pulse 2 Advanced Bluetooth Calling Watch",
+    MoreTitle:
+      "Noise Pulse 2 Advanced Bluetooth Calling Watch with 1.85'' Display, 550 NITS Brightness, Smart DND, 10 Days Battery, 100 Sports Modes, Smart Watch for Men and Women - (Jet Black)",
+    ActPrice: 300,
+    DisPrice: 100,
+    category: `bodyList`,
+    Rating: 3.5,
+    reviews: 6000,
+    disPercent: 65,
+  },
+  {
+    id: 3,
+    image: "https://m.media-amazon.com/images/I/61oSoHc7VtL._SY450_.jpg",
+    LessTitle: "boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo",
+    MoreTitle:
+      "boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo Sound, 10HRS Playtime, TWS Feature, IPX4, Multi-Compatibility Mode(Black)",
+    ActPrice: 400,
+    DisPrice: 200,
+    category: `bodyList`,
+    Rating: 4.5,
+    reviews: 9000,
+    disPercent: 50,
+    description1:
+      "Tap into instant wireless connectivity with the latest Bluetooth V5.0. Yes, Rockerz 558 on-ear headphones have IPX5 dust and water resistance making it perfect for sports and adventures.",
+    description2:
+      "Its 50mm dynamic drivers help pump out immersive audio all day long, Charging Time 2.5 hours",
+    description3:
+      "The mighty 500mAh battery capacity offers a superior playback time of up to 20 Hours It has been ergonomically designed and structured as an over-ear headphone to provide the best user experience",
+    description4:
+      "It comes with physical Noise Isolation feature for pure audio bliss",
+    description5:
+      "One can connect to boAt Rockerz 550 via not one but two modes, Bluetooth as well as AUX",
+  },
+  {
+    id: 4,
+    image: "https://m.media-amazon.com/images/I/81-fFXQdPTL._SX679_.jpg",
+    LessTitle: "Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage)",
+    MoreTitle:
+      "Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage) | 6000mAh Battery | Upto 12GB RAM with RAM Plus",
+    ActPrice: 800,
+    category: `bodyList`,
+    DisPrice: 650,
+    Rating: 4,
+    reviews: 11000,
+    disPercent: 29,
+    description1:
+      "6000mAh lithium-ion battery, 1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase",
+    description2:
+      "Upto 12GB RAM with RAM Plus | 128GB internal memory expandable up to 1TB| Dual Sim (Nano)",
+    description3:
+      "50MP+5MP+2MP Triple camera setup- True 50MP (F1.8) main camera +5MP(F2.2)+ 2MP (F2.4) | 8MP (F2.2) front cam",
+    description4:
+      "Android 12,One UI Core 4 with a powerful Octa Core Processor",
+    description5:
+      "16.72 centimeters (6.6-inch) FHD+ LCD - infinity O Display, FHD+ resolution with 1080 x 2408 pixels resolution, 401 PPI with 16M color",
   },
 ];

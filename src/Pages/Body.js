@@ -10,10 +10,16 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import ReactStars from "react-stars";
 import { Link } from "react-router-dom";
-import { selectedProduct, bodyList } from "../Component/data";
+import {
+  selectedProduct,
+  bodyList,
+  ProductDetailData,
+} from "../Component/data";
 
 export default function Body() {
   const [show, setShow] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("bodyList");
+  const [filteredData, setFilteredData] = useState([]);
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
@@ -32,6 +38,24 @@ export default function Body() {
   const handleToggle = () => setShowMore(!showMore);
 
   const handleClose = () => setShow(false);
+
+  const handleFilter = (filterCriteria) => {
+    const filteredProducts = ProductDetailData.filter(
+      (product) => product.category === filterCriteria
+    );
+    setFilteredData(filteredProducts);
+  };
+
+  // Event handler example
+  const handleCategoryFilter = () => {
+    handleFilter(selectedCategory);
+  };
+
+  // useEffect hook example
+  useEffect(() => {
+    handleFilter(selectedCategory);
+  }, [selectedCategory]);
+
   return (
     <>
       <Layout>
@@ -158,15 +182,12 @@ export default function Body() {
         </div>
         <CardGroup className="container-fluid my-5">
           <Row xs={2} md={4} className="g-4">
-            {bodyList.map((body) => (
+            {filteredData.map((body) => (
               <div key={body.id}>
                 <Card>
                   <Card.Img variant="top" src={body.image} />
                   <Card.Body>
-                    <Link
-                      to={`/AllProducts/${body.id}`}
-                      className="brandTitle"
-                    >
+                    <Link to={`/AllProducts/${body.id}`} className="brandTitle">
                       <Card.Title className="fw-normal">
                         {showMore ? body.MoreTitle : body.LessTitle}
                         <span onClick={handleToggle} className="fw-bolder">

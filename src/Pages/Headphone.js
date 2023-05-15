@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../Component/Layout";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import ReactStars from "react-stars";
 import { BsCurrencyRupee } from "react-icons/bs";
-import { Headphones } from "../Component/data";
+import { ProductDetailData } from "../Component/data";
 import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -12,14 +12,32 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Link } from "react-router-dom";
 
-export default function headphone() {
+export default function Headphone() {
   const [showMore, setShowMore] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("headphones");
+  const [filteredData, setFilteredData] = useState([]);
 
   const handleToggle = () => setShowMore(!showMore);
 
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
+  const handleFilter = (filterCriteria) => {
+    const filteredProducts = ProductDetailData.filter(
+      (product) => product.category === filterCriteria
+    );
+    setFilteredData(filteredProducts);
+  };
+
+  // Event handler example
+  const handleCategoryFilter = () => {
+    handleFilter(selectedCategory);
+  };
+
+  // useEffect hook example
+  useEffect(() => {
+    handleFilter(selectedCategory);
+  }, [selectedCategory]);
 
   return (
     <>
@@ -195,13 +213,13 @@ export default function headphone() {
                   > 
                     Filter
                   </button> */}
-                  {Headphones.map((body) => (
+                  {filteredData.map((body) => (
                     <div key={body.id}>
                       <Card>
                         <Card.Img
                           variant="top"
                           src={body.image}
-                          style={{ height: "280px" }}
+                          style={{ height: "18rem" }}
                         />
                         <Card.Body>
                           <Link

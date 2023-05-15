@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../Component/Layout";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import ReactStars from "react-stars";
 import { BsCurrencyRupee } from "react-icons/bs";
-import { SmartPhones } from "../Component/data";
+import { ProductDetailData } from "../Component/data";
 import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -14,12 +14,30 @@ import { Link } from "react-router-dom";
 
 export default function Smartphones() {
   const [showMore, setShowMore] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("Smartphone");
+  const [filteredData, setFilteredData] = useState([]);
 
   const handleToggle = () => setShowMore(!showMore);
 
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
+  const handleFilter = (filterCriteria) => {
+    const filteredProducts = ProductDetailData.filter(
+      (product) => product.category === filterCriteria
+    );
+    setFilteredData(filteredProducts);
+  };
+
+  // Event handler example
+  const handleCategoryFilter = () => {
+    handleFilter(selectedCategory);
+  };
+
+  // useEffect hook example
+  useEffect(() => {
+    handleFilter(selectedCategory);
+  }, [selectedCategory]);
 
   return (
     <>
@@ -195,7 +213,7 @@ export default function Smartphones() {
                   > 
                     Filter
                   </button> */}
-                  {SmartPhones.map((body) => (
+                  {filteredData.map((body) => (
                     <div key={body.id}>
                       <Card>
                         <Card.Img variant="top" src={body.image} />
