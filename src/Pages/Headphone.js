@@ -10,6 +10,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import { Link } from "react-router-dom";
 
 export default function headphone() {
   const [showMore, setShowMore] = useState(false);
@@ -203,15 +204,20 @@ export default function headphone() {
                           style={{ height: "280px" }}
                         />
                         <Card.Body>
-                          <Card.Title className="fw-normal ">
-                            {showMore ? body.MoreTitle : body.LessTitle}
-                            <span
-                              onClick={() => handleToggle(body.id)}
-                              className="fw-bolder"
-                            >
-                              {showMore ? " ...Read Less" : " ...Read More"}
-                            </span>
-                          </Card.Title>
+                          <Link
+                            to={`/AllProducts/${body.id}`}
+                            className="brandTitle"
+                          >
+                            <Card.Title className="fw-normal ">
+                              {showMore ? body.MoreTitle : body.LessTitle}
+                              <span
+                                onClick={() => handleToggle(body.id)}
+                                className="fw-bolder"
+                              >
+                                {showMore ? " ...Read Less" : " ...Read More"}
+                              </span>
+                            </Card.Title>
+                          </Link>
                           <Card.Text>
                             <div
                               className="row row-cols-auto"

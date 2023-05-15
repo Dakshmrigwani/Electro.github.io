@@ -10,8 +10,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import ReactStars from "react-stars";
 import { Link } from "react-router-dom";
-import { bodyList } from "../Component/data";
-import ProductDetail from "./ProductDetail";
+import { selectedProduct, bodyList } from "../Component/data";
 
 export default function Body() {
   const [show, setShow] = useState(false);
@@ -164,7 +163,10 @@ export default function Body() {
                 <Card>
                   <Card.Img variant="top" src={body.image} />
                   <Card.Body>
-                    <Link to={`/bodyList/${body.id}`} className="brandTitle">
+                    <Link
+                      to={`/AllProducts/${body.id}`}
+                      className="brandTitle"
+                    >
                       <Card.Title className="fw-normal">
                         {showMore ? body.MoreTitle : body.LessTitle}
                         <span onClick={handleToggle} className="fw-bolder">

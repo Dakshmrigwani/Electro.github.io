@@ -81,7 +81,7 @@ export const bodyList = [
 
 export const CartList = [
   {
-    id: 1,
+    id: 11,
     name: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones",
     image: "https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg",
     price: 300,
@@ -91,7 +91,7 @@ export const CartList = [
     discount: 50,
   },
   {
-    id: 2,
+    id: 12,
     image: "https://m.media-amazon.com/images/I/81-fFXQdPTL._SX679_.jpg",
     name: "Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage)",
     price: 800,
@@ -104,7 +104,7 @@ export const CartList = [
 
 export const SmartPhones = [
   {
-    id: 1,
+    id: 21,
     image: "https://m.media-amazon.com/images/I/81-fFXQdPTL._SX679_.jpg",
     LessTitle: "Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage)",
     MoreTitle:
@@ -126,7 +126,7 @@ export const SmartPhones = [
       "16.72 centimeters (6.6-inch) FHD+ LCD - infinity O Display, FHD+ resolution with 1080 x 2408 pixels resolution, 401 PPI with 16M color",
   },
   {
-    id: 2,
+    id: 22,
     image: "https://m.media-amazon.com/images/I/817WWpaFo1L._SX679_.jpg",
     LessTitle: "Samsung Galaxy M14 5G (ICY Silver, 4GB, 128GB Storage) ",
     MoreTitle:
@@ -148,7 +148,7 @@ export const SmartPhones = [
       "Get up to 2 times of Android Updates & 4 times of Security Updates with Samsung Galaxy M14 5G",
   },
   {
-    id: 3,
+    id: 23,
     image: "https://m.media-amazon.com/images/I/71BANx-zuWL._SX679_.jpg",
     LessTitle: "Redmi 11 Prime (Flashy Black, 4GB RAM, 64GB Storage)",
     MoreTitle:
@@ -170,7 +170,7 @@ export const SmartPhones = [
       "Battery: 5000 mAh large battery with 18W fast charging support and 22.5W fast charger in-box and Type-C connectivity",
   },
   {
-    id: 4,
+    id: 24,
     image: "https://m.media-amazon.com/images/I/71kVEmAMyEL._SX679_.jpg",
     LessTitle: "Redmi 10A (Slate Grey, 4GB RAM, 64GB Storage)",
     MoreTitle:
@@ -191,7 +191,7 @@ export const SmartPhones = [
       "Memory, Storage & SIM:4GB RAM | 64GB storage expandable upto 512GB with dedicated SD card slot | Dual SIM (nano+nano) dual standby(4G+4G)",
   },
   {
-    id: 5,
+    id: 25,
     image: "https://m.media-amazon.com/images/I/81Te0dZU7nL._SX679_.jpg",
     LessTitle: "realme narzo 50i Prime (Dark Blue 4GB RAM+64GB Storage)",
     MoreTitle:
@@ -213,7 +213,7 @@ export const SmartPhones = [
       "4 GB RAM LPDDR4X Fast memory | 64 GB ROM UFS 2.2 | External storage is Expandable Up to 1TB",
   },
   {
-    id: 6,
+    id: 26,
     image: "https://m.media-amazon.com/images/I/81Zo3lcSZeL._SX569_.jpg",
     LessTitle: "Redmi 12C (Lavender Purple, 4GB RAM, 64GB Storage)",
     MoreTitle:
@@ -234,7 +234,7 @@ export const SmartPhones = [
       "Dual band Wifi support ensures better throughput and connectivity",
   },
   {
-    id: 7,
+    id: 27,
     image: "https://m.media-amazon.com/images/I/61LB+d0vheL._SX679_.jpg",
     LessTitle:
       "OnePlus Nord CE 3 Lite 5G (Chromatic Gray, 8GB RAM, 256GB Storage)",
@@ -257,7 +257,7 @@ export const SmartPhones = [
       "Battery & Charging: 5000 mAh with 67W SUPERVOOC Endurance Edition",
   },
   {
-    id: 8,
+    id: 28,
     image: "https://m.media-amazon.com/images/I/71zfaYItN8L._SX679_.jpg",
     LessTitle: "Nokia C12 Android 12 (Go Edition) Smartphone, All-Day Battery",
     MoreTitle:
@@ -276,7 +276,7 @@ export const SmartPhones = [
       "Android 12 Go Edition with 2 years of quarterly security updates",
   },
   {
-    id: 9,
+    id: 29,
     image: "https://m.media-amazon.com/images/I/81lAth+jv+L._SX679_.jpg",
     LessTitle: "Redmi 11 Prime 5G (Thunder Black, 6GB RAM, 128GB Storage)",
     MoreTitle:
@@ -300,7 +300,7 @@ export const SmartPhones = [
 
 export const Headphones = [
   {
-    id: 1,
+    id: 31,
     image: "https://m.media-amazon.com/images/I/61leGjTDm0L._SY450_.jpg",
     LessTitle: "boAt Rockerz 558 Bluetooth Wireless Over Ear Headphones",
     MoreTitle:
@@ -322,7 +322,7 @@ export const Headphones = [
       "One can connect to boAt Rockerz 550 via not one but two modes, Bluetooth as well as AUX",
   },
   {
-    id: 2,
+    id: 32,
     image: "https://m.media-amazon.com/images/I/51CHPyFpnoL._SX450_.jpg",
     LessTitle: "Bose Quietcomfort 45 Bluetooth Wireless Over Ear Headphones",
     MoreTitle:
@@ -344,7 +344,7 @@ export const Headphones = [
       "Up to 24 hours battery life – Enjoy 24 hours of battery life from a single charge. A quick 15-minute charge offers 3 hours when you’re on the go, or plug in the included audio cable to listen for even longer in wired mode.",
   },
   {
-    id: 3,
+    id: 33,
     image: "https://m.media-amazon.com/images/I/61WqF8Y6HTL._SY450_.jpg",
     LessTitle: "boAt Rockerz 400 Bluetooth On Ear Headphones With Mic",
     MoreTitle:
@@ -365,7 +365,7 @@ export const Headphones = [
     description5: "1 year warranty from the date of purchase",
   },
   {
-    id: 4,
+    id: 34,
     image: "https://m.media-amazon.com/images/I/81lLGM7SKbL._SY450_.jpg",
     LessTitle:
       "ZEBRONICS Zeb-Thunder Wireless Bluetooth Over The Ear Headphone",
@@ -388,7 +388,7 @@ export const Headphones = [
       "Multi Connectivity Options: Be spoilt for choice with multi-connectivity options like like BT, 3.5mm AUX input, FM and MicroSD card",
   },
   {
-    id: 5,
+    id: 35,
     image: "https://m.media-amazon.com/images/I/51xxA+6E+xL._SY450_.jpg",
     LessTitle: "boAt Rockerz 450 Bluetooth On Ear Headphones with Mic",
     MoreTitle:
@@ -410,7 +410,7 @@ export const Headphones = [
       "Dual Modes- One can connect to boAt Rockerz 450 via not one but two modes, Bluetooth as well as AUX",
   },
   {
-    id: 6,
+    id: 36,
     image: "https://m.media-amazon.com/images/I/61IN9K+dIcL._SY450_.jpg",
     LessTitle: "boAt Rockerz 450 Pro Bluetooth Wireless On Ear Headphones",
     MoreTitle:
@@ -432,7 +432,7 @@ export const Headphones = [
       "Connectivity- Enjoy a wireless connectivity via its Bluetooth v5.0 and wired connectivity with its AUX port.",
   },
   {
-    id: 7,
+    id: 37,
     image: "https://m.media-amazon.com/images/I/61kFL7ywsZS._SY450_.jpg",
     LessTitle: "JBL Tune 510BT, On Ear Wireless Headphones with Mic",
     MoreTitle:
@@ -454,7 +454,7 @@ export const Headphones = [
       "HANDS FREE CALLS: The button controls on the earcup of Tune 510BT, allows you to easily control your sound and manage your calls from your headphones.",
   },
   {
-    id: 8,
+    id: 38,
     image: "https://m.media-amazon.com/images/I/61HBpQuLjVL._SY450_.jpg",
     LessTitle: "Logitech H111 Wired On Ear Headphones With Mic Black",
     MoreTitle: "Logitech H111 Wired On Ear Headphones With Mic Black",
@@ -475,7 +475,7 @@ export const Headphones = [
       "3.5MM AUDIO JACK CONNECTION:Simply plug the 3.5mm jack into your computer, smartphone or tablet and you’re ready to talk.",
   },
   {
-    id: 9,
+    id: 39,
     image: "https://m.media-amazon.com/images/I/61HXCeozUjL._SY450_.jpg",
     LessTitle:
       "JBL Tune 760NC, Wireless Over Ear Noise Cancellation Headphones",
@@ -500,7 +500,7 @@ export const Headphones = [
 ];
 export const Laptop = [
   {
-    id: 1,
+    id: 41,
     image:
       "https://m.media-amazon.com/images/I/41mKVo5fjcL._SX300_SY300_QL70_FMwebp_.jpg",
     LessTitle: `Lenovo IdeaPad Slim 3 Intel Core i3 12th Gen 15.6" (39.62cm) FHD Thin & Light Laptop`,
@@ -517,7 +517,7 @@ export const Laptop = [
     description5: `Wireless Communication Technology: Wi-Fi; Human Interface Input: Keyboard; Software Included: Windows 11 Home 64, English; Resolution: 1080p`,
   },
   {
-    id: 2,
+    id: 42,
     image: "https://m.media-amazon.com/images/I/61W7nT5cCvL._SX679_.jpg",
     LessTitle: `ASUS Vivobook 15, Intel Core i3-1220P 12th Gen, 15.6" (39.62 cm) FHD, Thin and Laptop `,
     MoreTitle: `ASUS Vivobook 15, Intel Core i3-1220P 12th Gen, 15.6" (39.62 cm) FHD, Thin and Laptop (8GB/512GB SSD/Integrated Graphics/Windows 11/Office 2021/Alexa Built-in/FP Sensor/Blue/1.7 kg), X1502ZA-EJ381WS`,
@@ -533,7 +533,7 @@ export const Laptop = [
     description5: `Design: 1.80 ~ 1.84 cm Thin | 1.70 kg weight | Thin and Light Laptop | 42WHrs, 3S1P, 3-cell Li-ion | Up to 6 hours battery life ;Note: Battery life depends on conditions of usage`,
   },
   {
-    id: 3,
+    id: 43,
     image: "https://m.media-amazon.com/images/I/91zVSkGGZbS._SX679_.jpg",
     LessTitle: `ASUS TUF Gaming A15, 15.6-inch (39.62 cms) FHD 144Hz, AMD Ryzen 5 4600H`,
     MoreTitle: `ASUS TUF Gaming A15, 15.6-inch (39.62 cms) FHD 144Hz, AMD Ryzen 5 4600H, 4GB NVIDIA GeForce GTX 1650, Gaming Laptop (8GB/512GB SSD/Windows 11/Black/2.3 Kg), FA506IHRZ-HN111W`,
@@ -549,7 +549,7 @@ export const Laptop = [
     description5: `Operating System: Pre-installed Windows 11 Home with Lifetime Validity | Software Included: 1-month trial for new Microsoft 365 customers.`,
   },
   {
-    id: 4,
+    id: 44,
     image: "https://m.media-amazon.com/images/I/91Ue0E4Z8AL._SX679_.jpg",
     LessTitle: `ASUS Vivobook 14 2022, Intel Core i3-1115G4 11th Gen, 14" (35.56 cms) FHD`,
     MoreTitle: `ASUS Vivobook 14 2022, Intel Core i3-1115G4 11th Gen, 14" (35.56 cms) FHD, Thin & Light Laptop (8GB/512GB SSD/Win11/Office 2021/37WHr/Transparent Silver/1.60 kg), X1400EA-EK322WS`,
@@ -565,7 +565,7 @@ export const Laptop = [
     description5: `Design: 1.99 cm Thin | Thin and Light Laptop | 1.60 kg weight | 37WHrs, 2S1P, 2-cell Li-ion | Up to 6 hours battery life ;Note: Battery life depends on conditions of usage`,
   },
   {
-    id: 5,
+    id: 45,
     image: "https://m.media-amazon.com/images/I/71SWU+pL+LL._SX569_.jpg",
     LessTitle: `HP Laptop 15s, 12th Gen Intel Core i3-1215U, 15.6-inch (39.6 cm) FHD screen`,
     MoreTitle: `HP Laptop 15s, 12th Gen Intel Core i3-1215U, 15.6-inch (39.6 cm), FHD, 8GB DDR4, 512GB SSD, Thin & Light, Intel UHD Graphics, Backlit KB, Dual Speakers (Win 11, MSO 2021, Silver, 1.69 kg), fq5007TU`,
@@ -581,7 +581,7 @@ export const Laptop = [
     description5: `【Long battery life】 Fast charging 0% to 50% in 45 mins, up to 7 hours and 45 mins of battery life and up to 10 hours and 45 mins of video playback help you stay productive without frequent charging.`,
   },
   {
-    id: 6,
+    id: 46,
     image: "https://m.media-amazon.com/images/I/81WTprMJDRL._SX569_.jpg",
     LessTitle: `HP 14s, 11th Gen Intel Core i3-1115G4, 8GB RAM/256GB SSD 14-inch(35.6 cm)`,
     MoreTitle: `HP 14s, 11th Gen Intel Core i3-1115G4, 8GB RAM/256GB SSD 14-inch(35.6 cm) Micro-Edge, Anti-Glare, FHD Laptop/Alexa Built-in/Win 11/Intel UHD Graphics/Dual Speakers/MSO 2021/1.41 Kg, 14s-dy2507TU`,
@@ -597,7 +597,7 @@ export const Laptop = [
     description5: `【Long battery life】 Fast charging 0% to 50% in 45 mins, up to 7 hours and 45 mins of battery life and up to 10 hours and 45 mins of video playback help you stay productive without frequent charging.`,
   },
   {
-    id: 7,
+    id: 47,
     image: "https://m.media-amazon.com/images/I/816fcl3f8+L._SX569_.jpg",
     LessTitle: `HP 15s,11th Gen Intel Core i3-1115G4 8GB RAM/512GB SSD 15.6-inch(39.6 cm)`,
     MoreTitle: `HP 15s,11th Gen Intel Core i3-1115G4 8GB RAM/512GB SSD 15.6-inch(39.6 cm) Micro-Edge Anti-Glare FHD Laptop/Alexa Built-in/Win 11/Intel UHD Graphics/Dual Speakers/MS Office 2021/1.69 Kg, 15s-fq2673TU`,
@@ -613,7 +613,7 @@ export const Laptop = [
     description5: `【Long battery life】 Fast charging 0% to 50% in 45 mins, up to 7 hours and 45 mins of battery life and up to 10 hours and 45 mins of video playback help you stay productive without frequent charging.`,
   },
   {
-    id: 8,
+    id: 48,
     image: "https://m.media-amazon.com/images/I/7192azUcPgL._SX679_.jpg",
     LessTitle: `Acer One 14 Business Laptop AMD Ryzen 3 3250U Processor (8GB RAM/256GB SSD)`,
     MoreTitle: `Acer One 14 Business Laptop AMD Ryzen 3 3250U Processor (8GB RAM/256GB SSD/AMD Radeon Graphics/Windows 11 Home/MS Office Home and Student) Z2-493 with 35.56 cm (14.0") HD Display`,
@@ -629,7 +629,7 @@ export const Laptop = [
     description5: `Two memory DIMM slots for expandibility`,
   },
   {
-    id: 9,
+    id: 49,
     image: "https://m.media-amazon.com/images/I/71wQI936uhL._SX679_.jpg",
     LessTitle: `HP 15s- Ryzen 5-5500U 8GB RAM/512GB SSD 15.6 inch Micro-Edge Anti-Glare FHD Laptop`,
     MoreTitle: `HP 15s- Ryzen 5-5500U 8GB RAM/512GB SSD 15.6 inch(39cm) Micro-Edge Anti-Glare FHD Laptop (Natural Silver/AMD Radeon Graphics/Alexa/Dual Speakers/Fast Charge/Windows 11/MS Office), 15s-eq2144au`,
@@ -648,7 +648,7 @@ export const Laptop = [
 
 export const Watches = [
   {
-    id: 1,
+    id: 51,
     image: "https://m.media-amazon.com/images/I/61LO6l4zB4L._UX466_.jpg",
     LessTitle: `LOUIS DEVIN Silicone Strap Analog Wrist Watch for Men`,
     MoreTitle: `LOUIS DEVIN Silicone Strap Analog Wrist Watch for Men (Black/Blue/Red) | LD-BK054`,
@@ -664,7 +664,7 @@ export const Watches = [
     description5: `Bezel Function: No Bezel Available; Item Shape: Round`,
   },
   {
-    id: 2,
+    id: 52,
     image: "https://m.media-amazon.com/images/I/61IMRs+o0iL._SY450_.jpg",
     LessTitle: `boAt Xtend Smartwatch with Alexa Built-in, 1.69” HD Display`,
     MoreTitle: `boAt Xtend Smartwatch with Alexa Built-in, 1.69” HD Display, Multiple Watch Faces, Stress Monitor, Heart & SpO2 Monitoring, 14 Sports Modes, Sleep Monitor, 5 ATM & 7 Days Battery(Pitch Black)`,
@@ -680,7 +680,7 @@ export const Watches = [
     description5: `Sports Friendly- Its 14 sports mode and 5 ATM dust, splash and sweat resistance makes it the perfect fitness companion to have.`,
   },
   {
-    id: 3,
+    id: 53,
     image: "https://m.media-amazon.com/images/I/61U9zG+M2OL._SY679_.jpg",
     LessTitle: `IBS Ultra Seris 8 Smart Watch Men Two Watch`,
     MoreTitle: `IBS Ultra Seris 8 Smart Watch Men Two Watch NFC Door Unlock Smartwatch Bluetooth Call Wireless Charge Fitness Bracelet (Ultra T-800 Orange)`,
@@ -696,7 +696,7 @@ export const Watches = [
     description5: `Case Material: IP Black Plated Brass Case`,
   },
   {
-    id: 4,
+    id: 54,
     image:
       "https://m.media-amazon.com/images/I/519qCLoSPjL._SX300_SY300_QL70_FMwebp_.jpg",
     LessTitle: `NoiseFit Force Rugged Round Dial Bluetooth Calling Smart Watch`,
@@ -713,7 +713,7 @@ export const Watches = [
     description5: `Multiple sports modes: Indulge in the routine of your preference with several sports modes to choose from`,
   },
   {
-    id: 5,
+    id: 55,
     image: "https://m.media-amazon.com/images/I/61ZjlBOp+rL._SY450_.jpg",
     LessTitle: `ID-116 Smartwatch for Men's Womens Boys Girls Smart Fitness Watch`,
     MoreTitle: `ID-116 Smartwatch for Men's Womens Boys Girls, Bluetooth Smart Fitness Band Watch with Heart Rate Activity Tracker Step & Sports Activity Tracker Smart Watch `,
@@ -729,7 +729,7 @@ export const Watches = [
     description5: `PAI (Personal Activity Intelligence) . Single matrix to track your all fitness related activities.Water proof Smart fitness Band with Bluetooth And Heart Rate sensor, Activity Recorder, Sleep Monitor, Calorie Counter, Call Notifications, Alarm, Message, Usb Charging Supports smart phones, Tablets and PC's and also support Android and IOS`,
   },
   {
-    id: 6,
+    id: 56,
     image: "https://m.media-amazon.com/images/I/71XWJeRo9kL._SY450_.jpg",
     LessTitle: `Fire-Boltt Gladiator Biggest Display SmartWatch Blue tooth Calling`,
     MoreTitle: `Fire-Boltt Gladiator 1.96" Biggest Display Smart Watch with Bluetooth Calling, Voice Assistant &123 Sports Modes, 8 Unique UI Interactions, SpO2, 24/7 Heart Rate Tracking (Light Gold)`,
@@ -745,7 +745,7 @@ export const Watches = [
     description5: `In Built Speaker & Microphone - With Latest Technology and Chipset the speaker and microphone are very strong and clear for excellent quality calls, listen to music on the watch as well.`,
   },
   {
-    id: 7,
+    id: 57,
     image: "https://m.media-amazon.com/images/I/61C8hl-ZMfL._SY450_.jpg",
     LessTitle: `Noise ColorFit Pulse Grand Smart Watch with 1.69" HD Display`,
     MoreTitle: `Noise ColorFit Pulse Grand Smart Watch with 1.69"(4.29cm) HD Display, 60 Sports Modes, 150 Watch Faces, Fast Charge, Spo2, Stress, Sleep, Heart Rate Monitoring & IP68 Waterproof (Electric Blue)`,
@@ -761,7 +761,7 @@ export const Watches = [
     description5: `Included Components: Smartwatch, Magnetic Charger, User Manual, Warranty Card; Connectivity Technology: Usb; Item Type Name: Smartwatch; Compatible Devices: Smartphone`,
   },
   {
-    id: 8,
+    id: 58,
     image: "https://m.media-amazon.com/images/I/51oldet9suL.jpg",
     LessTitle: `SWISSTYLE Analog Men's Watch (Black Dial Black Colored Strap)`,
     MoreTitle: `SWISSTYLE Analog Men's Watch (Black Dial Black Colored Strap) with the old mettalic style having royality touch`,
@@ -777,7 +777,7 @@ export const Watches = [
     description5: `Display Type: Analog`,
   },
   {
-    id: 9,
+    id: 59,
     image: "https://m.media-amazon.com/images/I/71Kx6rgmlRS._UX466_.jpg",
     LessTitle: `TIMEX Analog Men's Watch (Dial Colored Strap)`,
     MoreTitle: `TIMEX Analog Men's Watch (Dial Colored Strap) having leather strap and stainless steel patch`,
@@ -796,7 +796,7 @@ export const Watches = [
 
 export const Speakers = [
   {
-    id: 1,
+    id: 61,
     image: "https://m.media-amazon.com/images/I/71531ZiXJcL._SY450_.jpg",
     LessTitle: "boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo Sound",
     MoreTitle:
@@ -813,7 +813,7 @@ export const Speakers = [
     description5: `You can also control playback, attend calls and activate smart voice assistant with ease courtesy easy access controls and built-in mic`,
   },
   {
-    id: 2,
+    id: 62,
     image:
       "https://m.media-amazon.com/images/I/41A8Dj-be8L._SX300_SY300_QL70_FMwebp_.jpg",
     LessTitle: "MI Outdoor Bluetooth Speaker (5W) Up to 20 Hours Battery Life",
@@ -831,7 +831,7 @@ export const Speakers = [
     description5: `Bluetooth 5.0 Dual mode : Let’s you  connect to two devices simultaneously without having to reconnect every time and makes your music experience seamless, Frequency response : 20 hz- 20 kHz`,
   },
   {
-    id: 3,
+    id: 63,
     image: "https://m.media-amazon.com/images/I/71g0JM2SXvL._SY450_.jpg",
     LessTitle: `JBL Flip 5 Wireless Portable Bluetooth Speaker, Signature Sound`,
     MoreTitle: `JBL Flip 5 Wireless Portable Bluetooth Speaker, Signature Sound with Powerful Bass Radiator, Vibrant Colors with Rugged Design, PartyBoost, IPX7 Waterproof & Type C (Without Mic, Black)`,
@@ -847,7 +847,7 @@ export const Speakers = [
     description5: `WHATS IN THE BOX: 1 x JBL Flip 5 Speaker, 1 x Type C USB cable, 1 x Quick Start Guide, 1 x Safety Sheet, 1 x Warranty Card`,
   },
   {
-    id: 4,
+    id: 64,
     image:
       "https://m.media-amazon.com/images/I/41cWCPkJyNL._SX300_SY300_QL70_FMwebp_.jpg",
     LessTitle: "boAt Stone 1208 Bluetooth Speaker with Upto 9 Hours Playback",
@@ -865,7 +865,7 @@ export const Speakers = [
     description5: `Multiple Modes- Compatible with both Android and iOS. For perfect with everything - wired input, TF card, and AUX`,
   },
   {
-    id: 5,
+    id: 65,
     image:
       "https://m.media-amazon.com/images/I/41TAKjYMgxL._SX300_SY300_QL70_FMwebp_.jpg",
     LessTitle: "boAt Stone 352 Bluetooth Speaker with 10W RMS Stereo Sound",
@@ -883,7 +883,7 @@ export const Speakers = [
     description5: `Controls- You can control playback and adjust volume levels with ease courtesy easy to access controls`,
   },
   {
-    id: 6,
+    id: 66,
     image: "https://m.media-amazon.com/images/I/71YXa2+AyNL._SY450_.jpg",
     LessTitle: "boAt Stone 650 10W Bluetooth Speaker Upto 7 Hours Playback",
     MoreTitle:
@@ -900,7 +900,7 @@ export const Speakers = [
     description5: `1 year warranty from the date of purchase`,
   },
   {
-    id: 7,
+    id: 67,
     image: "https://m.media-amazon.com/images/I/71vI6nfLtYL._SY450_.jpg",
     LessTitle:
       "boAt Stone 180 5W Bluetooth Speaker with Upto 10 Hours Playback",
@@ -918,7 +918,7 @@ export const Speakers = [
     description5: `Stone 180 supports instant wireless connectivity with latest Bluetooth v5.0`,
   },
   {
-    id: 8,
+    id: 68,
     image: "https://m.media-amazon.com/images/I/81QP3C+rTbL._SY450_.jpg",
     LessTitle: "Mivi Roam 2 Bluetooth 5W Portable Speaker,24 Hours Playtime",
     MoreTitle:
@@ -934,20 +934,22 @@ export const Speakers = [
     description4: `24 Hours Play Time â The only portable 5W speaker which gives you not 4or 5 but a whopping 24hrs playtime at 70% volume. Now, there is nothing else that can top that`,
     description5: `The wireless speaker is a perfect device for High-Definition audio with a 24 hours playback time. Mivi’s latest wireless speaker, Mivi Roam 2 is a MUST BUY, for sure.`,
   },
-    {
-      id:9,
-      image:"https://m.media-amazon.com/images/I/71k8be3rnGL._SX679_.jpg",
-      LessTitle:"Zebronics Zeb-Pluto 2.0 Multimedia Speaker with Aux Connectivity",
-      MoreTitle:"Zebronics Zeb-Pluto 2.0 Multimedia Speaker with Aux Connectivity,USB Powered and Volume Control",
-      ActPrice:499,
-      DisPrice:399,
-      Rating:4.0,
-      reviews:1561,
-      disPercent:20,
-      description1:`Zeb-Pluto is a USB powered 2.0 speaker that comes in a compact size with volume control;It has Aux Connectivity and it is USB Powered`,
-      description2:`Output power 5W RMS (2.5W x 2);Impedance 3Ω`,
-      description3:`Frequency response 120Hz-15kHz;Line input 3.5mm jack`,
-      description4:`1 Year warranty-from the date of purchase; Country of Origin: China`,
-      description5:`Color Name:Black`,
-    }
+  {
+    id: 69,
+    image: "https://m.media-amazon.com/images/I/71k8be3rnGL._SX679_.jpg",
+    LessTitle:
+      "Zebronics Zeb-Pluto 2.0 Multimedia Speaker with Aux Connectivity",
+    MoreTitle:
+      "Zebronics Zeb-Pluto 2.0 Multimedia Speaker with Aux Connectivity,USB Powered and Volume Control",
+    ActPrice: 499,
+    DisPrice: 399,
+    Rating: 4.0,
+    reviews: 1561,
+    disPercent: 20,
+    description1: `Zeb-Pluto is a USB powered 2.0 speaker that comes in a compact size with volume control;It has Aux Connectivity and it is USB Powered`,
+    description2: `Output power 5W RMS (2.5W x 2);Impedance 3Ω`,
+    description3: `Frequency response 120Hz-15kHz;Line input 3.5mm jack`,
+    description4: `1 Year warranty-from the date of purchase; Country of Origin: China`,
+    description5: `Color Name:Black`,
+  },
 ];

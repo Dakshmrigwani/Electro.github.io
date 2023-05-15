@@ -1,6 +1,12 @@
 import React, { useState, useReducer } from "react";
 import { useParams } from "react-router-dom";
-import { bodyList } from "../Component/data";
+import {
+  bodyList,
+  Speakers,
+  Watches,
+  Laptop,
+  Headphones,
+} from "../Component/data";
 import Layout from "../Component/Layout";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -75,6 +81,14 @@ function reducer(state, action) {
 
 const initialState = { age: 1 };
 
+export const AllProducts = Object.values({
+  bodyList,
+  Speakers,
+  Watches,
+  Laptop,
+  Headphones,
+});
+
 function ProductDetail() {
   const { productId } = useParams();
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -132,8 +146,7 @@ function ProductDetail() {
     dispatch({ type: "decremented_age" });
   }
 
-  // Find the selected product from the bodyList array
-  const selectedProduct = bodyList.find(
+  const selectedProduct = AllProducts.find(
     (product) => product.id === parseInt(productId)
   );
 
