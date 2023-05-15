@@ -56,7 +56,7 @@ function ProductDetail() {
     <>
       <Layout>
         {selectedProduct && (
-          <div className="container-fluid my-5">
+          <div className="container my-5">
             <Row>
               <Col md={4}>
                 <Carousel
@@ -67,6 +67,7 @@ function ProductDetail() {
                   showThumbs={true}
                   thumbWidth={80}
                   dynamicHeight={false}
+                  className=""
                 >
                   <div>
                     <img src={selectedProduct.image} alt="" />
