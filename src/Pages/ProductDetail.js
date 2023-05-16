@@ -39,6 +39,8 @@ function ProductDetail() {
   const [mainAnimation, setMainAnimation] = useState(false);
   const [thumbIndex, setThumbIndex] = useState(0);
   const [thumbAnimation, setThumbAnimation] = useState(false);
+  const tax = 50.0;
+  const deliveryCharge = 50.0;
 
   function handleButtonClick() {
     dispatch({ type: "incremented_age" });
@@ -51,6 +53,14 @@ function ProductDetail() {
   const selectedProduct = ProductDetailData.find(
     (product) => product.id === parseInt(productId)
   );
+
+  const total = (
+    selectedProduct.DisPrice * state.age +
+    tax +
+    deliveryCharge
+  ).toFixed(2);
+
+  const price = (selectedProduct.DisPrice * state.age).toFixed(2);
 
   return (
     <>
@@ -199,7 +209,7 @@ function ProductDetail() {
                           <Col md={8} className="text-end">
                             <b>
                               <BsCurrencyRupee />
-                              {selectedProduct.DisPrice}
+                              {price}
                             </b>
                           </Col>
                         </Row>
@@ -233,7 +243,7 @@ function ProductDetail() {
                           <Col md={6} className="text-end">
                             <b>
                               <BsCurrencyRupee />
-                              84.76
+                              {total}
                             </b>
                           </Col>
                         </Row>
