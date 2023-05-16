@@ -21,11 +21,14 @@ function SignIn() {
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
+  
   const [showPassword1, setShowPassword1] = useState(false);
   const togglePasswordVisibility1 = () => {
     setShowPassword1((prevShowPassword1) => !prevShowPassword1);
   };
+
   const navigate = useNavigate();
+
   const validationSchema = Yup.object({
     name: Yup.string()
       .max(15, "Name must be 15 characters or less")
@@ -37,13 +40,13 @@ function SignIn() {
       .required("Password is required")
       .matches(
         /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
-        "Password must contain at least 8 characters, 1 uppercase letter,1 number required,1 special character required,"
+        "Password must contain at least 8 characters, 1 uppercase letter, 1 number, and 1 special character"
       ),
     password1: Yup.string()
       .required("Password is required")
       .matches(
         /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
-        "Password must contain at least 8 characters, 1 uppercase letter,1 number required,1 special character required,"
+        "Password must contain at least 8 characters, 1 uppercase letter, 1 number, and 1 special character"
       ),
     email1: Yup.string()
       .email("Invalid email address")
@@ -57,27 +60,26 @@ function SignIn() {
     initialValues: {
       name: "",
       username: "",
-      password: "",
-      email: "",
       password1: "",
       email1: "",
+      password:'',
+      email:'',
     },
     validationSchema,
     onSubmit: (values) => {
-      navigate("/Body");
-      console.log(validationSchema(), values);
+      navigate("/Pages/Body");
     },
   });
 
+
   const { handleSubmit, handleChange, values, errors, touched } = formik;
 
-  const [justifyActive, setJustifyActive] = React.useState("tab1");
+  const [justifyActive, setJustifyActive] = useState("tab1");
 
   const handleJustifyClick = (value) => {
     if (value === justifyActive) {
       return;
     }
-
     setJustifyActive(value);
   };
 
@@ -110,49 +112,6 @@ function SignIn() {
         <MDBTabsPane show={justifyActive === "tab1"}>
           <div className="text-center mb-3">
             <p>Sign in with:</p>
-
-            <div
-              className="d-flex justify-content-between mx-auto"
-              style={{ width: "40%" }}
-            >
-              <MDBBtn
-                tag="a"
-                color="none"
-                className="m-1"
-                style={{ color: "#1266f1" }}
-              >
-                <MDBIcon fab icon="facebook-f" size="sm" />
-              </MDBBtn>
-
-              <MDBBtn
-                tag="a"
-                color="none"
-                className="m-1"
-                style={{ color: "#1266f1" }}
-              >
-                <MDBIcon fab icon="twitter" size="sm" />
-              </MDBBtn>
-
-              <MDBBtn
-                tag="a"
-                color="none"
-                className="m-1"
-                style={{ color: "#1266f1" }}
-              >
-                <MDBIcon fab icon="google" size="sm" />
-              </MDBBtn>
-
-              <MDBBtn
-                tag="a"
-                color="none"
-                className="m-1"
-                style={{ color: "#1266f1" }}
-              >
-                <MDBIcon fab icon="github" size="sm" />
-              </MDBBtn>
-            </div>
-
-            <p className="text-center mt-3">or:</p>
           </div>
           <div label="email">Email address</div>
           <MDBInput
@@ -204,7 +163,7 @@ function SignIn() {
               <a href="!#">Forgot password?</a>
             </div>
           </div>
-          <form onSubmit={formik.handleSubmit}>
+          <form  onSubmit={formik.handleSubmit}>
             <MDBBtn className="mb-4 w-100" type="submit">
               Sign in
             </MDBBtn>
@@ -217,49 +176,7 @@ function SignIn() {
         <MDBTabsPane show={justifyActive === "tab2"}>
           <div className="text-center mb-3">
             <p>Sign in with:</p>
-
-            <div
-              className="d-flex justify-content-between mx-auto"
-              style={{ width: "40%" }}
-            >
-              <MDBBtn
-                tag="a"
-                color="none"
-                className="m-1"
-                style={{ color: "#1266f1" }}
-              >
-                <MDBIcon fab icon="facebook-f" size="sm" />
-              </MDBBtn>
-
-              <MDBBtn
-                tag="a"
-                color="none"
-                className="m-1"
-                style={{ color: "#1266f1" }}
-              >
-                <MDBIcon fab icon="twitter" size="sm" />
-              </MDBBtn>
-
-              <MDBBtn
-                tag="a"
-                color="none"
-                className="m-1"
-                style={{ color: "#1266f1" }}
-              >
-                <MDBIcon fab icon="google" size="sm" />
-              </MDBBtn>
-
-              <MDBBtn
-                tag="a"
-                color="none"
-                className="m-1"
-                style={{ color: "#1266f1" }}
-              >
-                <MDBIcon fab icon="github" size="sm" />
-              </MDBBtn>
-            </div>
-
-            <p className="text-center mt-3">or:</p>
+           
           </div>
 
           <div label="name">Name</div>
@@ -337,7 +254,7 @@ function SignIn() {
               onChange={handleChange}
             />
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={formik.handleSubmit}>
             <MDBBtn className="mb-4 w-100">Sign up</MDBBtn>
           </form>
         </MDBTabsPane>
