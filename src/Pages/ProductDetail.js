@@ -39,6 +39,8 @@ function ProductDetail() {
   const [mainAnimation, setMainAnimation] = useState(false);
   const [thumbIndex, setThumbIndex] = useState(0);
   const [thumbAnimation, setThumbAnimation] = useState(false);
+  const tax = 50.0;
+  const deliveryCharge = 50.0;
 
   function handleButtonClick() {
     dispatch({ type: "incremented_age" });
@@ -51,6 +53,14 @@ function ProductDetail() {
   const selectedProduct = ProductDetailData.find(
     (product) => product.id === parseInt(productId)
   );
+
+  const total = (
+    selectedProduct.DisPrice * state.age +
+    tax +
+    deliveryCharge
+  ).toFixed(2);
+
+  const price = (selectedProduct.DisPrice * state.age).toFixed(2);
 
   return (
     <>
@@ -197,7 +207,10 @@ function ProductDetail() {
                             <b>Price</b>
                           </Col>
                           <Col md={8} className="text-end">
-                            <b>$78.76</b>
+                            <b>
+                              <BsCurrencyRupee />
+                              {price}
+                            </b>
                           </Col>
                         </Row>
                         <Row>
@@ -205,7 +218,10 @@ function ProductDetail() {
                             <b>Tax</b>
                           </Col>
                           <Col md={7} className="text-end">
-                            <b>$1.00</b>
+                            <b>
+                              <BsCurrencyRupee />
+                              50.00
+                            </b>
                           </Col>
                         </Row>
                         <Row>
@@ -213,7 +229,10 @@ function ProductDetail() {
                             <b>Delievery charge</b>
                           </Col>
                           <Col md={4} className="text-end">
-                            <b>$5.00</b>
+                            <b>
+                              <BsCurrencyRupee />
+                              50.00
+                            </b>
                           </Col>
                         </Row>
                         <hr />
@@ -222,7 +241,10 @@ function ProductDetail() {
                             <b>Total</b>
                           </Col>
                           <Col md={6} className="text-end">
-                            <b>$84.76</b>
+                            <b>
+                              <BsCurrencyRupee />
+                              {total}
+                            </b>
                           </Col>
                         </Row>
                         <div className="d-flex flex-column gap-2 mt-3">
