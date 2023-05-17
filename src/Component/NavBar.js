@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import InputGroup from "react-bootstrap/InputGroup";
 import { BsCart3, BsMoonStarsFill, BsSunFill, BsSearch } from "react-icons/bs";
+import SearchBar from "./SearchBar"
 import {
   AiOutlineHeart,
   AiOutlineUserAdd,
@@ -61,21 +62,7 @@ function NavBar() {
                 Smartphones
               </Link>
             </Nav>
-            <Form className="d-flex mr-auto">
-              <InputGroup>
-                <Form.Control
-                  placeholder="Search product name"
-                  aria-describedby="basic-addon1"
-                />
-                <Button
-                  variant="outline-secondary"
-                  id="basic-addon1"
-                  style={{ boxShadow: "none" }}
-                >
-                  <BsSearch />
-                </Button>
-              </InputGroup>
-            </Form>
+            <SearchBar/>
 
             {/* <Button 
                className="btn btn-light" 
