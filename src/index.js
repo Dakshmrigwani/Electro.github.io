@@ -5,7 +5,7 @@ import "./styles.css";
 import ContentLoader from "react-content-loader";
 
 const MyLoader = () => (
-  <div className="center-screen me-5 me-md-none">
+  <div className="center-screen">
     <ContentLoader>
       <rect x="80" y="17" rx="4" ry="4" width="400" height="20" />
     </ContentLoader>
