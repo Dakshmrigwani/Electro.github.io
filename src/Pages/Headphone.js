@@ -11,11 +11,14 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Link } from "react-router-dom";
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
 
 export default function Headphone() {
   const [showMore, setShowMore] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("headphones");
   const [filteredData, setFilteredData] = useState([]);
+  const [show , setShow] = useState(false)
 
   const handleToggle = () => setShowMore(!showMore);
 
@@ -39,18 +42,30 @@ export default function Headphone() {
     handleFilter(selectedCategory);
   }, [selectedCategory]);
 
+const handleShow  = () => setShow(true)
+const handleClose = () => setShow(false)
   return (
     <>
       <Layout>
         <div className="container-fluid my-3">
           <Row>
-            {/* <div
-              className="offcanvas offcanvas-start d-flex d-md-none"
-              tabindex="-1"
-              id="offcanvasTop"
-              aria-labelledby="offcanvasTopLabel"
-            > */}
-            <Col md={3} style={{ width: "15rem" }}>
+            <Button
+              variant="primary" className="d-lg-none"
+              onClick={handleShow}
+            >Open filter section
+              </Button>
+              <offcanvas show={show} onHide={handleClose}>
+                  <Offcanvas.Header closeButton>
+                      <Offcanvas.Title>Filter</Offcanvas.Title>
+                  </Offcanvas.Header>
+                  <Offcanvas.Body>
+                    <p className="mb-0">
+                      This is content within an <code>.offcanvas-lg</code>.
+                    </p>
+                  </Offcanvas.Body>
+              </offcanvas>
+              
+            <Col md={3} className="d-none d-md-flex" style={{ width: "15rem" }}>
               <Card className="scrollbar scrollbar-primary filter-section">
                 <Card.Body className="force-overflow">
                   <Card.Title>Filter</Card.Title>
@@ -200,8 +215,7 @@ export default function Headphone() {
                 </Card.Body>
               </Card>
             </Col>
-            {/* </div> */}
-            <Col md={9}>
+            <Col md={9} sm={12}>
               <CardGroup className="container-fluid my-5">
                 <Row xs={2} md={3} className="g-4">
                   {/* <button
