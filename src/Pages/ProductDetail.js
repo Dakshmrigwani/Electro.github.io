@@ -171,11 +171,11 @@ function ProductDetail() {
                             </div>
                           </Col>
                         </Row>
-                        <Row className="mt-3">
-                          <Col md={4}>
+                        <div className="mt-3 row">
+                          <span className="col-4">
                             <b>Quantity</b>
-                          </Col>
-                          <Col md={8} className="text-end">
+                          </span>
+                          <span className="col-8" className="text-end">
                             <Button
                               onClick={handleButtonClick}
                               size="sm"
@@ -200,53 +200,53 @@ function ProductDetail() {
                             >
                               -
                             </Button>
-                          </Col>
-                        </Row>
-                        <Row className="mt-3">
-                          <Col md={4}>
+                          </span>
+                        </div>
+                        <div className="mt-3 row">
+                           <span className="col-5">
                             <b>Price</b>
-                          </Col>
-                          <Col md={8} className="text-end">
+                          </span>
+                           <span className="col-7 text-end">
                             <b>
                               <BsCurrencyRupee />
                               {price}
                             </b>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col md={5}>
+                          </span>
+                        </div>
+                        <div className="row">
+                          <span className="col-5">
                             <b>Tax</b>
-                          </Col>
-                          <Col md={7} className="text-end">
+                          </span>
+                          <span className="col-7 text-end">
                             <b>
                               <BsCurrencyRupee />
                               50.00
                             </b>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col md={8}>
+                          </span>
+                        </div>
+                        <div className="row">
+                          <span className="col-8">
                             <b>Delievery charge</b>
-                          </Col>
-                          <Col md={4} className="text-end">
+                          </span>
+                          <span className="text-end col-4">
                             <b>
                               <BsCurrencyRupee />
                               50.00
                             </b>
-                          </Col>
-                        </Row>
+                          </span>
+                        </div>
                         <hr />
-                        <Row>
-                          <Col md={6}>
+                        <div className="row">
+                          <span className="col-6">
                             <b>Total</b>
-                          </Col>
-                          <Col md={6} className="text-end">
+                          </span>
+                          <span className="text-end col-6">
                             <b>
                               <BsCurrencyRupee />
                               {total}
                             </b>
-                          </Col>
-                        </Row>
+                          </span>
+                        </div>
                         <div className="d-flex flex-column gap-2 mt-3">
                           <Row>
                             <Button style={{ boxShadow: "none" }}>
