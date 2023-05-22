@@ -175,7 +175,7 @@ function ProductDetail() {
                           <span className="col-4">
                             <b>Quantity</b>
                           </span>
-                          <span className="col-8" className="text-end">
+                          <span className="col-8 text-end">
                             <Button
                               onClick={handleButtonClick}
                               size="sm"
