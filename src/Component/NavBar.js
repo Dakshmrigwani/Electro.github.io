@@ -62,7 +62,7 @@ function NavBar() {
                 Smartphones
               </Link>
             </Nav>
-            <SearchBar/>
+            <SearchBar className="increase_on_click"/>
 
             {/* <Button 
                className="btn btn-light" 

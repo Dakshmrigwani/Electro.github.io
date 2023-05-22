@@ -13,7 +13,7 @@ export default function SearchBar(){
                 <Form.Control
                   placeholder="Search product name"
                   aria-describedby="basic-addon1"
-                  className="increase_on_click"
+                  
                 />
                 <Button
                   variant="outline-secondary"

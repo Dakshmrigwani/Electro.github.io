@@ -1199,7 +1199,7 @@ export const ProductDetailData = [
   {
     id: 1,
     image: "https://m.media-amazon.com/images/I/61ljxTBpTCL._SY450_.jpg",
-    LessTitle: "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones ",
+    LessTitle: "boAt Rockerz Bluetooth Wireless Ear Headphones ",
     MoreTitle:
       "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)",
     ActPrice: 130,
@@ -1255,7 +1255,7 @@ export const ProductDetailData = [
   {
     id: 3,
     image: "https://m.media-amazon.com/images/I/61oSoHc7VtL._SY450_.jpg",
-    LessTitle: "boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo",
+    LessTitle: "boAt Stone 620 Bluetooth Speaker with 12W RMS",
     MoreTitle:
       "boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo Sound, 10HRS Playtime, TWS Feature, IPX4, Multi-Compatibility Mode(Black)",
     ActPrice: 400,
