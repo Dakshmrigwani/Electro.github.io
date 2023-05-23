@@ -354,8 +354,8 @@ export default function Smartphones() {
             </Col>
             {/* </div> */}
             <Col md={9}>
-              <CardGroup className="container-fluid my-5">
-                <Row xs={2} md={3} className="g-4">
+              <CardGroup className="container-fluid my-5 ">
+                <Row xs={1} md={3} className="g-4">
                   {/* <button
                     className="btn btn-primary d-flex d-md-none"
                     type="button"
@@ -367,7 +367,8 @@ export default function Smartphones() {
                   </button> */}
                   {filteredData.map((body) => (
                     <div key={body.id}>
-                      <Card>
+                      
+                      <Card className="row">
                         <Card.Img variant="top" src={body.image} />
                         <Card.Body>
                           <Link
