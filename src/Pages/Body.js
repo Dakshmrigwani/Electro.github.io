@@ -181,7 +181,7 @@ export default function Body() {
           </div>
         </div>
         <CardGroup className="container-fluid my-5">
-          <Row xs={2} md={4} className="g-4">
+          <Row xs={1} md={4} className="g-4">
             {filteredData.map((body) => (
               <div key={body.id}>
                 <Card>

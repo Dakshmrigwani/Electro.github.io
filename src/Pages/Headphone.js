@@ -358,7 +358,7 @@ export default function Headphone() {
             </Col>
             <Col md={9} sm={12}>
               <CardGroup className="container-fluid my-5">
-                <Row xs={2} md={3} className="g-4">
+                <Row xs={1} md={3} className="g-4">
                   {/* <button
                     className="btn btn-primary d-flex d-md-none"
                     type="button"
