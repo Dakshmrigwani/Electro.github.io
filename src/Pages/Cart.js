@@ -57,7 +57,7 @@ export default function Cart() {
                   <div className="">
                     <Card>
                       <Card.Header>Cart</Card.Header>
-                      <Card.Body className="d-grid gap-3">
+                      <Card.Body className="d-flex flex-column gap-3">
                         {CartList.map((product) => (
                           <div key={product.id}>
                             <Card className="w-100">
@@ -101,57 +101,58 @@ export default function Cart() {
                                         </div>
                                       </div>
                                     </Card.Text>
-                                    <Row
+                                    <div
                                       style={{
                                         alignItems: "center",
                                       }}
-                                      className="row row-cols-auto d-flex justify-content-start"
+                                      className="row "
                                     >
-                                      <Col md={3} sm={6}>
+                                      <div className="col-md-3 col-4">
                                         <select className="form-select">
                                           <option selected>lg</option>
                                           <option value="1">sm</option>
                                           <option value="2">lg</option>
                                           <option value="3">xl</option>
                                         </select>
-                                      </Col>
-                                      <Col md={4} sm={12}>
-                                        <div className="d-flex  mb-3 mb-md-0">
-                                          <Button
-                                            onClick={handleButtonClick}
-                                            size="sm"
-                                            className="mb-1"
-                                            style={{ boxShadow: "none" }}
-                                          >
-                                            +
-                                          </Button>
+                                      </div>
+                                      <div className="col-md-3 col-4">
+                                        <div className="d-flex">
+                                         <Button
+                                              onClick={handleButtonClick}
+                                              size="sm"
+                                              variant="primary"
+                                              className="mb-1"
+                                              style={{ boxShadow: "none" }}
+                                            >
+                                              +
+                                            </Button>
 
-                                          <input
-                                            value={state.age}
-                                            style={{ width: "1.8rem" }}
-                                          />
+                                            <input
+                                              value={state.age}
+                                              style={{ width: "2rem" }}
+                                            />
 
-                                          <Button
-                                            size="sm"
-                                            onClick={handleDecrementAge}
-                                            className="mb-1"
-                                            style={{ boxShadow: "none" }}
-                                          >
-                                            -
-                                          </Button>
+                                            <Button
+                                              size="sm"
+                                              variant="primary"
+                                              onClick={handleDecrementAge}
+                                              className="mb-1"
+                                              style={{ boxShadow: "none" }}
+                                            >
+                                              -
+                                            </Button>
                                         </div>
-                                      </Col>
-                                      <Col md={3} sm={6}>
+                                      </div>
+                                      <div className="col-md-3 col-4">
                                         <select className="form-select">
                                           <option selected>Blue</option>
                                           <option value="1">Red</option>
                                           <option value="2">Yellow</option>
                                           <option value="3">Green</option>
                                         </select>
-                                      </Col>
+                                      </div>
 
-                                      <Col md={2}>
-                                        <div className="d-flex justify-content-center">
+                                       <div className="col-md-3 col-4">
                                           <Button
                                             variant="light"
                                             style={{ boxShadow: "none" }}
@@ -165,8 +166,8 @@ export default function Cart() {
                                             <AiOutlineDelete />
                                           </Button>
                                         </div>
-                                      </Col>
-                                    </Row>
+                                      
+                                    </div>
                                   </Card.Body>
                                 </Col>
                               </Row>
@@ -230,20 +231,20 @@ export default function Cart() {
                         <div className="my-4">
                           <hr />
                         </div>
-                        <Row>
-                          <Col md={4}>
+                        <div className="row">
+                          <div className="col-4">
                             <b>SubTotal</b>
                             <p>Discount</p>
                             <p>Delievery</p>
                             <p>Tax</p>
-                          </Col>
-                          <Col md={8} className="text-end">
+                          </div>
+                          <div className="text-end col-8">
                             <b>$80.00</b>
                             <p>(20% off) $16.39</p>
                             <p>$0.00</p>
                             <p>$-14.00</p>
-                          </Col>
-                        </Row>
+                          </div>
+                        </div>
                         <Row>
                           <Col md={4}>
                             <b>Total</b>
