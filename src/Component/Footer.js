@@ -49,11 +49,9 @@ export default function Footer() {
         <MDBContainer className="text-center text-md-start mt-5">
           <MDBRow className="mt-3">
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Company name</h6>
+              <h6 className="text-uppercase fw-bold mb-4">Electro</h6>
               <p>
-                Here you can use rows and columns to organize your footer
-                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
+                Here you can find products related electroinc items . great offers with great products
               </p>
             </MDBCol>
 
@@ -61,28 +59,28 @@ export default function Footer() {
               <h6 className="text-uppercase fw-bold mb-4">Products</h6>
               <p>
                 <a href="#!" className="text-reset">
-                  Angular
+                  Headphone
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  React
+                  Smartphone
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  Vue
+                  Watches
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  Laravel
+                  Speakers
                 </a>
               </p>
             </MDBCol>
 
             <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
+              <h6 className="text-uppercase fw-bold mb-4">Company</h6>
               <p>
                 <a href="#!" className="text-reset">
                   Pricing
@@ -90,7 +88,7 @@ export default function Footer() {
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  Settings
+                  About us
                 </a>
               </p>
               <p>
