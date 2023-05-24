@@ -15,18 +15,16 @@ export default function Wishlist() {
     <>
       <LayOutNone>
         <div className="container">
-          <Row>
-            <Col>
-              <div className="d-flex justify-content-start mt-2">
+          
+            <div className="d-flex d-md-none gap-2">
+              <div className=" mt-2">
                 <Button className="outline-primary">
                   <Link to="/" className="text-decoration-none text-light ">
                     Back to Home Page
                   </Link>
                 </Button>
               </div>
-            </Col>
-            <Col>
-              <div className="d-flex justify-content-end mt-2">
+              <div className=" mt-2">
                 <Button className="outline-primary">
                   <Link
                     to="/Pages/Cart"
@@ -35,9 +33,30 @@ export default function Wishlist() {
                     Back to Cart Page
                   </Link>
                 </Button>
+            </div>
+          </div>
+          <div className="row d-none d-md-flex">
+              <div className="col-6 mt-2">
+                <Button className="outline-primary">
+                  <Link to="/" className="text-decoration-none text-light ">
+                    Back to Home Page
+                  </Link>
+                </Button>
               </div>
-            </Col>
-          </Row>
+            
+              <div className="col-6 mt-2">
+                <div className="d-flex justify-content-end">
+                <Button className="outline-primary">
+                  <Link
+                    to="/Pages/Cart"
+                    className="text-decoration-none text-light "
+                  >
+                    Back to Cart Page
+                  </Link>
+                </Button>
+            </div>
+          </div>
+          </div>
           <div className="d-flex justify-content-center align-content-center mt-5">
             <div className="">
               <div className="">
