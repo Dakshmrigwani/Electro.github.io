@@ -153,6 +153,7 @@ export default function Cart() {
                                       </div>
 
                                        <div className="col-md-3 col-4">
+                                         <div className="d-flex gap-2 mt-2 mt-md-0">
                                           <Button
                                             variant="light"
                                             style={{ boxShadow: "none" }}
@@ -165,6 +166,7 @@ export default function Cart() {
                                           >
                                             <AiOutlineDelete />
                                           </Button>
+                                          </div>
                                         </div>
                                       
                                     </div>
@@ -245,14 +247,14 @@ export default function Cart() {
                             <p>$-14.00</p>
                           </div>
                         </div>
-                        <Row>
-                          <Col md={4}>
+                        <div className="row">
+                          <div className="col-4">
                             <b>Total</b>
-                          </Col>
-                          <Col md={8} className="text-end">
+                          </div>
+                          <div className="text-end col-8">
                             <b>$78.76</b>
-                          </Col>
-                        </Row>
+                          </div>
+                        </div>
                         <div className="d-flex flex-column gap-2 mt-3">
                           <Row>
                             <Button style={{ boxShadow: "none" }}>
