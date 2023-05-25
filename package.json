@@ -9,7 +9,7 @@
   "main": "src/index.js",
   "dependencies": {
     "@reduxjs/toolkit": "1.9.3",
-    "bootstrap": "5.2.3",
+    "bootstrap": "^5.2.3",
     "formik": "^2.2.9",
     "loader-utils": "3.2.1",
     "mdb-react-ui-kit": "6.0.0",
