@@ -85,8 +85,9 @@ export const ProductDetailData = [
     Ram: `4GB`,
     RangePrice: `13000-14000`,
     disPercentFilter: `20 - 30`,
+     ratingFilter: `4 - 4.5`,
     Rating: 4,
-    ratingFilter: `4 - 4.5`,
+   
     reviews: 21875,
     disPercent: 22,
     description1:
