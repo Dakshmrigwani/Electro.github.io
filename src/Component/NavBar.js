@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 function NavBar() {
+  
   return (
     <>
       <Navbar bg="light" expand="lg" className="sticky-top">
@@ -63,7 +64,8 @@ function NavBar() {
               </Link>
             </Nav>
             <SearchBar className="increase_on_click"/>
-
+            
+           
             {/* <Button 
                className="btn btn-light" 
               style={{ boxShadow: "none" }} 
