@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import { BsSearch } from "react-icons/bs";
 import { ProductDetailData } from "./data";
+import { Link } from "react-router-dom";
+
 
 export default function SearchBar() {
   const [query, setQuery] = useState("");
@@ -31,12 +33,16 @@ export default function SearchBar() {
       {query ? (
         <div className="position-absolute end-0 top-100">
           <div className="card">
-            <div className="card-body" style={{ width: "500px", overflow: "auto" }}>
+            <div className="card-body" style={{ width: "40rem", overflow: "auto" }}>
               {ProductDetailData.filter((product) =>
                 product.LessTitle.toLowerCase().includes(query)
               ).map((product) => (
                 <div key={product.id}>
-                  <div className="">{product.LessTitle}</div>
+                  
+                    <Link to={`/AllProducts/${product.id}`}className="brandTitle">
+                      {product.LessTitle}
+                    </Link>
+                  
                 </div>
               ))}
             </div>
