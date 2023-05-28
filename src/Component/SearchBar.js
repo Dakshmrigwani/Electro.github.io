@@ -32,8 +32,8 @@ export default function SearchBar() {
       </Form>
       {query ? (
         <div className="position-absolute end-0 top-100">
-          <div className="card">
-            <div className="card-body" style={{ width: "40rem", overflow: "auto" }}>
+          <div className="card w-75">
+            <div className="card-body" style={{ overflow: "auto" }}>
               {ProductDetailData.filter((product) =>
                 product.LessTitle.toLowerCase().includes(query)
               ).map((product) => (
@@ -47,7 +47,8 @@ export default function SearchBar() {
               ))}
             </div>
           </div>
-        </div>
+          </div>
+        
       ) : null}
     </>
   );
