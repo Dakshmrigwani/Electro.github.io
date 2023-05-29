@@ -11,8 +11,7 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Link } from "react-router-dom";
-import Success from "../Component/Sucess";
-import Failure from "../Component/Failure";
+
 
 export default function Watches() {
   const [showMore, setShowMore] = useState(false);
@@ -440,12 +439,11 @@ export default function Watches() {
                                   color: "white",
                                 }}
                                 className="col"
-                                data-bs-toggle="modal" 
-                                data-bs-target="#exampleModalsuccess"
+                                
                               >
                                 Add To Cart
                               </Button>
-                              <Success/>
+                              
                               <Button
                                 className="ms-2 col"
                                 variant="outline-light"
@@ -453,11 +451,11 @@ export default function Watches() {
                                   backgroundColor: "#8B5095",
                                   color: "white",
                                 }}
-                                data-bs-toggle="modal" data-bs-target="#exampleModalunsucess"
+                                
                               >
                                 Add To Wishlist
                               </Button>
-                              <Failure/>
+                              
                             </div>
                           </Card.Text>
                         </Card.Body>

@@ -15,7 +15,7 @@ export default function Success(){
                     
                 </div>
                 <div className="modal-body d-flex flex-column justify-content-center align-items-center w-100">
-                    <b>Item added to cart</b>
+                    <b>Payment Successful</b>
                     <p>Thank you for buying our product</p>
                 </div>
                 <div className="modal-footer border-0 d-flex justify-content-center w-100">
