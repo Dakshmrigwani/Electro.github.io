@@ -15,7 +15,7 @@ export default function Failure(){
                     
                 </div>
                 <div className="modal-body d-flex flex-column justify-content-center align-items-center w-100">
-                    <b>Payment UnSuccessful</b>
+                    <b>Remove from cart</b>
                     <p>Please check it and try again</p>
                 </div>
                 <div className="modal-footer border-0 d-flex justify-content-center w-100">
