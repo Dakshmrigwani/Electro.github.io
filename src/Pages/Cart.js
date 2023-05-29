@@ -10,6 +10,8 @@ import { AiOutlineHeart, AiOutlineDelete } from "react-icons/ai";
 import ReactStars from "react-stars";
 import InputGroup from "react-bootstrap/InputGroup";
 import { CartList } from "../Component/data";
+import Success from "../Component/Sucess";
+import Failure from "../Component/Failure";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -257,17 +259,21 @@ export default function Cart() {
                         </div>
                         <div className="d-flex flex-column gap-2 mt-3">
                           <Row>
-                            <Button style={{ boxShadow: "none" }}>
-                              Proceed to checkout
+                            <Button data-bs-toggle="modal" 
+                                data-bs-target="#exampleModalsuccess" style={{ boxShadow: "none" }}>
+                              Buy Now
                             </Button>
+                            <Success/>
                           </Row>
                           <Row>
                             <Button
                               variant="light"
+                              data-bs-toggle="modal" data-bs-target="#exampleModalunsucess"
                               style={{ boxShadow: "none" }}
                             >
-                              Continue Shopping
+                             CANCEL
                             </Button>
+                            <Failure/>
                           </Row>
                         </div>
                       </Card.Body>
