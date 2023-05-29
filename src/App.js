@@ -10,9 +10,13 @@ import Cart from "./Pages/Cart";
 import SignIn from "./Pages/SignIn";
 import Error from "./Pages/Error";
 import ProductDetail from "./Pages/ProductDetail";
+import { Provider } from 'react-redux';
+import Store from './Store/Store';
+
 function App() {
   return (
     <>
+     {/* <Provider Store={Store}> */}
       <Router>
         <Routes>
           <Route path="/" element={<Body />} />
@@ -29,6 +33,7 @@ function App() {
           <Route path="/AllProducts/:productId" element={<ProductDetail />} />
         </Routes>
       </Router>
+      {/* </Provider> */}
     </>
   );
 }

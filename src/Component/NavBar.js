@@ -24,7 +24,11 @@ function NavBar() {
             <Link to="/Pages/Body" className="text-decoration-none text-dark">
               Electro.
             </Link>
+            
           </Navbar.Brand>
+          <div className="d-flex d-lg-none justify-content-center ">
+              <SearchBar className="increase_on_click"/>
+            </div>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -63,7 +67,9 @@ function NavBar() {
                 Smartphones
               </Link>
             </Nav>
+            <span className="d-none d-lg-flex">
             <SearchBar className="increase_on_click"/>
+            </span>
             
            
             {/* <Button 
