@@ -356,15 +356,7 @@ export default function Speaker() {
             <Col md={9}>
               <CardGroup className="container-fluid my-5">
                 <Row xs={1} md={3} className="g-4">
-                  {/* <button
-                    className="btn btn-primary d-flex d-md-none"
-                    type="button"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasTop"
-                    aria-controls="offcanvasTop"
-                  > 
-                    Filter
-                  </button> */}
+                  
                   {filteredData.map((body) => (
                     <div key={body.id}>
                       <Card>
