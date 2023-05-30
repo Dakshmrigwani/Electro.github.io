@@ -115,7 +115,7 @@ function SignIn() {
           </div>
           <div label="email">Email address</div>
           <MDBInput
-            wrapperClass="mb-4"
+            
             id="email"
             name="email"
             type="email"
@@ -181,7 +181,7 @@ function SignIn() {
 
           <div label="name">Name</div>
           <MDBInput
-            wrapperClass="mb-4"
+            
             id="name"
             name="name"
             type="text"
@@ -195,7 +195,7 @@ function SignIn() {
           )}
           <div label="username">Username</div>
           <MDBInput
-            wrapperClass="mb-4"
+            
             id="username"
             name="username"
             type="text"
@@ -209,7 +209,7 @@ function SignIn() {
           )}
           <div label="email1">Email address</div>
           <MDBInput
-            wrapperClass="mb-4"
+            
             id="email1"
             name="email1"
             type="email1"
