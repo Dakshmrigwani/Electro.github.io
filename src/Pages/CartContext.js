@@ -12,6 +12,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Success from "../Component/Sucess";
 import Failure from "../Component/Failure";
 import {cartContext} from "./Cart"
+import {BsEmojiSmile} from "react-icons/bs"
 
 function reducer(state, action) {
   switch (action.type) {
@@ -63,7 +64,13 @@ export default function CartContext() {
                     <Card>
                       <Card.Header>Cart</Card.Header>
                       <Card.Body className="d-flex flex-column gap-3">
-                        {CartList.map((product) => (
+                        {CartList.length === 0 ? (
+                          <div className="d-flex flex-column justify-content-center">
+                              <BsEmojiSmile/>
+                              <p>No content found</p>
+                          </div>
+                        ) : (
+                          CartList.map((product) => (
                           <div key={product.id}>
                             <Card className="w-100">
                               <Row>
@@ -180,7 +187,8 @@ export default function CartContext() {
                               </Row>
                             </Card>
                           </div>
-                        ))}
+                        ))
+                        )}
                       </Card.Body>
                     </Card>
                   </div>
