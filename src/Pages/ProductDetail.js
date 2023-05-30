@@ -47,8 +47,10 @@ function ProductDetail() {
   }
 
   function handleDecrementAge() {
+  if (state.age > 1) {
     dispatch({ type: "decremented_age" });
   }
+}
 
   const selectedProduct = ProductDetailData.find(
     (product) => product.id === parseInt(productId)

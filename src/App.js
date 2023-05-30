@@ -10,8 +10,8 @@ import Cart from "./Pages/Cart";
 import SignIn from "./Pages/SignIn";
 import Error from "./Pages/Error";
 import ProductDetail from "./Pages/ProductDetail";
-import { Provider } from 'react-redux';
-import Store from './Store/Store';
+// import { Provider } from 'react-redux';
+// import Store from './Store/Store';
 
 function App() {
   return (

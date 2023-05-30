@@ -41,8 +41,10 @@ export default function CartContext() {
   }
 
   function handleDecrementAge() {
+  if (state.age > 1) {
     dispatch({ type: "decremented_age" });
   }
+}
   
   const CartList = useContext(cartContext)
     return(
