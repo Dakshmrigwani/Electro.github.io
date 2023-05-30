@@ -190,7 +190,6 @@ export default function CartContext() {
                         )}
                       </Card.Body>
                     </Card>
-                  
               </Col>
               <Col md={4}>
                 <div className="d-flex justify-content-center mt-3 mt-md-0">
