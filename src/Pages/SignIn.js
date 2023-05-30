@@ -15,6 +15,13 @@ import {
   MDBInput,
   MDBCheckbox,
 } from "mdb-react-ui-kit";
+import {
+  BsTwitter,
+  BsInstagram,
+  BsLinkedin,
+} from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
+import { SiGmail } from "react-icons/si";
 
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
@@ -110,9 +117,7 @@ function SignIn() {
 
       <MDBTabsContent>
         <MDBTabsPane show={justifyActive === "tab1"}>
-          <div className="text-center mb-3">
-            <p>Sign in with:</p>
-          </div>
+          
           <div label="email">Email address</div>
           <MDBInput
             
@@ -168,16 +173,11 @@ function SignIn() {
               Sign in
             </MDBBtn>
           </form>
-          <p className="text-center">
-            Not a member? <a href="#!">Register</a>
-          </p>
+          
         </MDBTabsPane>
 
         <MDBTabsPane show={justifyActive === "tab2"}>
-          <div className="text-center mb-3">
-            <p>Sign in with:</p>
-           
-          </div>
+          
 
           <div label="name">Name</div>
           <MDBInput
@@ -259,6 +259,14 @@ function SignIn() {
           </form>
         </MDBTabsPane>
       </MDBTabsContent>
+      <div className="d-flex justify-content-center">
+      <div className="d-flex flex-column text-center">
+        <p>Sign in with</p>
+        <div className="d-flex gap-3">
+        <BsInstagram/> <BsLinkedin/> <BsTwitter/> <FcGoogle/> <SiGmail/>
+        </div>
+        </div>
+      </div>
     </MDBContainer>
   );
 }
