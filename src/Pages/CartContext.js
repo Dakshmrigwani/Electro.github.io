@@ -66,7 +66,9 @@ export default function CartContext() {
                       <Card.Body className="d-flex flex-column gap-3">
                         {CartList.length === 0 ? (
                           <div className="d-flex flex-column justify-content-center">
+                            <div className="d-flex justify-content-center">
                               <BsEmojiSmile/>
+                            </div>
                               <p>No content found</p>
                           </div>
                         ) : (
