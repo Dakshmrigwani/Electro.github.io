@@ -141,6 +141,7 @@ export default function CartContext() {
                                             <input
                                               value={state.age}
                                               style={{ width: "2rem" }}
+                                              readonly
                                             />
 
                                             <Button
