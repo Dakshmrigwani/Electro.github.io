@@ -59,16 +59,13 @@ export default function CartContext() {
           <div className="d-flex justify-content-center align-content-center mt-5 ">
             <Row>
               <Col lg={8}>
-                <div className="">
-                  <div className="">
+                
                     <Card>
                       <Card.Header>Cart</Card.Header>
                       <Card.Body className="d-flex flex-column gap-3">
                         {CartList.length === 0 ? (
                           <div className="d-flex flex-column justify-content-center">
-                            <div className="d-flex justify-content-center">
                               <BsEmojiSmile/>
-                            </div>
                               <p>No content found</p>
                           </div>
                         ) : (
@@ -193,8 +190,7 @@ export default function CartContext() {
                         )}
                       </Card.Body>
                     </Card>
-                  </div>
-                </div>
+                  
               </Col>
               <Col md={4}>
                 <div className="d-flex justify-content-center mt-3 mt-md-0">
