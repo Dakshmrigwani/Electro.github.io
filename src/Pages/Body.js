@@ -15,6 +15,7 @@ import {
   bodyList,
   ProductDetailData,
 } from "../Component/data";
+import Cart from "./Cart"
 
 export default function Body() {
   const [show, setShow] = useState(false);
@@ -50,11 +51,28 @@ export default function Body() {
   const handleCategoryFilter = () => {
     handleFilter(selectedCategory);
   };
+  
+  let cartItems = [];
+  const addToCart = (value) => {
+  const itemExists = cartItems.some((item) => item.id === value.id);
+
+  if (!itemExists) {
+    cartItems.push(value);
+    console.log(cartItems, "cart");
+  }
+};
+
+// const addToCart = (value) => {
+//   setCartItems([...cartItems, value]);
+//   console.log(cartItems, "cart");
+// };
 
   // useEffect hook example
   useEffect(() => {
     handleFilter(selectedCategory);
   }, [selectedCategory]);
+  
+  <Cart items = {cartItems}/>
 
   return (
     <>
@@ -220,9 +238,11 @@ export default function Body() {
                             color: "white",
                           }}
                           className="col"
+                          onClick = {() => addToCart(body)}
                         >
                           Add To Cart
                         </Button>
+                        
                         <Button
                           className="ms-2 col"
                           variant="outline-light"
@@ -300,6 +320,7 @@ export default function Body() {
             </div>
           </div>
         </div>
+        
       </Layout>
     </>
   );

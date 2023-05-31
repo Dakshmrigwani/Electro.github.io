@@ -1,4 +1,3 @@
-
 import React, { useContext, useReducer } from "react";
 import LayOutNone from "../Component/LayOutNone";
 import Button from "react-bootstrap/Button";
@@ -12,9 +11,6 @@ import Success from "../Component/Success";
 import Failure from "../Component/Failure";
 import { cartContext } from "../Pages/Cart";
 import { BsEmojiSmile } from "react-icons/bs";
-// import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart } from '../Slices/CartSlice';
-
 
 function reducer(state, action) {
   switch (action.type) {
@@ -44,7 +40,6 @@ const initialState = {};
 
 export default function CartContext() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  // const cartItems = useSelector((state) => state.cart);
 
   function handleIncrementQuantity(productId) {
     dispatch({ type: "increment_quantity", payload: { productId } });
