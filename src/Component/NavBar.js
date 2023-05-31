@@ -70,15 +70,6 @@ function NavBar() {
             <span className="d-none d-lg-flex">
             <SearchBar className="increase_on_click"/>
             </span>
-            
-           
-            {/* <Button 
-               className="btn btn-light" 
-              style={{ boxShadow: "none" }} 
-               onClick={toggleDarkMode} 
-            >
-              {theme ? <BsSunFill /> : <BsMoonStarsFill />}
-            </Button> */}
             <Button className="btn btn-light" style={{ boxShadow: "none" }}>
               <Link to="/Pages/Wishlist">
                 <AiOutlineHeart className="text-dark fs-4" />

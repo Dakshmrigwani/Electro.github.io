@@ -134,7 +134,7 @@ function SignIn() {
           )}
           <div label="password">Password</div>
           <MDBInput
-            wrapperClass="mb-4 w-100 input-group"
+            wrapperClass="w-100 input-group"
             id="password"
             name="password"
             type={showPassword ? "text" : "password"}
@@ -224,7 +224,7 @@ function SignIn() {
           <div label="password1">Password</div>
 
           <MDBInput
-            wrapperClass="mb-4 w-100 input-group"
+            wrapperClass="w-100 input-group"
             id="password1"
             name="password1"
             type={showPassword1 ? "text" : "password"}
@@ -243,7 +243,7 @@ function SignIn() {
           </MDBInput>
 
           {touched.password1 && errors.password1 && (
-            <div className="text-danger ">{errors.password1}</div>
+            <div className="text-danger mb-4">{errors.password1}</div>
           )}
 
           <div className="d-flex justify-content-center mb-4">
