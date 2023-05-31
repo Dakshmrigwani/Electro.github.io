@@ -15,8 +15,8 @@ export default function Wishlist() {
     <>
       <LayOutNone>
         <div className="container">
-            <div className="d-flex d-md-none gap-5">
-              <div className="mt-2">
+            <div className="d-flex d-md-none gap-2">
+              <div className=" mt-2">
                 <Button className="outline-primary">
                   <Link to="/" className="text-decoration-none text-light ">
                     Back to Home Page
