@@ -9,7 +9,7 @@ import ReactStars from "react-stars";
 import InputGroup from "react-bootstrap/InputGroup";
 import Success from "../Component/Success";
 import Failure from "../Component/Failure";
-import { cartContext } from "./Cart";
+import { cartContext } from "../Pages/Cart";
 import { BsEmojiSmile } from "react-icons/bs";
 
 function reducer(state, action) {
