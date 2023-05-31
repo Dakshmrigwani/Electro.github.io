@@ -71,11 +71,12 @@ export default function CartContext() {
           </div>
           <div className="d-flex flex-column justify-content-center align-content-center mt-5">
             <div className="row">
-            <div className="col col-md-8">
+            <div className={`col${CartList.length === 0 ? '' : ' col-md-8'}`}>
               {CartList.length === 0 ? (
-                <div className="d-flex flex-column justify-content-center align-items-center w-100 display-4">
+                <div className="d-flex flex-column justify-content-center align-items-center h-100 display-4 col-0">
                   <BsEmojiSmile />
                   <p>No content found</p>
+                  <p className="text-center">Please add the item to the cart</p>
                 </div>
               ) : (
                 <>
