@@ -54,6 +54,9 @@ export default function CartContext() {
   CartList.forEach((product) => {
     initialState[product.id] = 1;
   });
+  
+  const showDeliveryCard =
+    CartList.some((product) => product.disPrice !== null && product.disPrice !== undefined && product.disPrice !== 0);
 
   return (
     <>
@@ -70,7 +73,7 @@ export default function CartContext() {
             <div className="row">
             <div className="col col-md-8">
               {CartList.length === 0 ? (
-                <div className="d-flex flex-column justify-content-center">
+                <div className="d-flex flex-column justify-content-center align-items-center w-100 display-4">
                   <BsEmojiSmile />
                   <p>No content found</p>
                 </div>
@@ -191,6 +194,7 @@ export default function CartContext() {
                 </>
               )}
             </div>
+            {showDeliveryCard && (
             <div className="col col-md-4">
               <div className="d-flex justify-content-center mt-3 mt-md-0">
                 <Card>
@@ -247,6 +251,7 @@ export default function CartContext() {
                 </Card>
               </div>
             </div>
+            )}
             </div>
           </div>
         </div>
