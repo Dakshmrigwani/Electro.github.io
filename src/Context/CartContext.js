@@ -122,7 +122,7 @@ export default function CartContext() {
                                 }}
                                 className="row "
                               >
-                                <div className="col-md-3 col-4">
+                                <div className="col-md-4 col-lg-3 col-4">
                                   <select className="form-select">
                                     <option selected>lg</option>
                                     <option value="1">sm</option>
@@ -130,7 +130,7 @@ export default function CartContext() {
                                     <option value="3">xl</option>
                                   </select>
                                 </div>
-                                <div className="col-md-3 col-4">
+                                <div className="col-md-4 col-lg-3 col-4">
                                   <div className="d-flex">
                                     <Button
                                       onClick={() =>
@@ -161,7 +161,7 @@ export default function CartContext() {
                                     </Button>
                                   </div>
                                 </div>
-                                <div className="col-md-3 col-4">
+                                <div className="col-md-4 col-lg-3 col-4">
                                   <select className="form-select">
                                     <option selected>Blue</option>
                                     <option value="1">Red</option>
@@ -169,7 +169,7 @@ export default function CartContext() {
                                     <option value="3">Green</option>
                                   </select>
                                 </div>
-                                <div className="col-md-3 col-4">
+                                <div className="col-lg-3 col-4">
                                   <div className="d-flex gap-2 mt-2 mt-md-0">
                                     <Button
                                       variant="light"
@@ -198,8 +198,8 @@ export default function CartContext() {
             {showDeliveryCard && (
             <div className="col col-md-4">
               <div className="d-flex justify-content-center mt-3 mt-md-0">
-                <Card>
-                  <Card.Body style={{width:"18rem"}}>
+                <Card style={{width:'18rem'}}>
+                  <Card.Body>
                     <b>Delivery</b>
                     <div className="row">
                       <div className="col">
