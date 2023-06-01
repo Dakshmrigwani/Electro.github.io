@@ -16,11 +16,14 @@ import {
   ProductDetailData,
 } from "../Component/data";
 import Cart from "./Cart"
+import {cartItems , addToCart} from "./items"
 
 export default function Body() {
   const [show, setShow] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("bodyList");
   const [filteredData, setFilteredData] = useState([]);
+  // const [cartItems, setCartItems] = useState([]);
+
   const ratingChanged = (newRating) => {
     console.log(newRating);
   };
@@ -52,15 +55,24 @@ export default function Body() {
     handleFilter(selectedCategory);
   };
   
-  let cartItems = [];
-  const addToCart = (value) => {
-  const itemExists = cartItems.some((item) => item.id === value.id);
+//   const addToCart = useCallback((value) => {
+//   const itemExists = cartItems.some((item) => item.id === value.id);
 
-  if (!itemExists) {
-    cartItems.push(value);
-    console.log(cartItems, "cart");
-  }
-};
+//   if (!itemExists) {
+//     setCartItems((prevItems) => [...prevItems, value]);
+//     console.log(cartItems, "cart");
+//   }
+// }, [cartItems]);
+  
+//   let cartItems = [];
+//   const addToCart = (value) => {
+//   const itemExists = cartItems.some((item) => item.id === value.id);
+
+//   if (!itemExists) {
+//     cartItems.push(value);
+//     console.log(cartItems, "cart");
+//   }
+// };
 
 // const addToCart = (value) => {
 //   setCartItems([...cartItems, value]);
