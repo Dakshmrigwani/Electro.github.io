@@ -15,7 +15,7 @@ import {
   bodyList,
   ProductDetailData,
 } from "../Component/data";
-import { addToCart} from "./items"
+import { addToCart , addToWishlist} from "./items"
 
 export default function Body() {
   const [show, setShow] = useState(false);
@@ -261,6 +261,7 @@ export default function Body() {
                             backgroundColor: "#8B5095",
                             color: "white",
                           }}
+                          onClick={()=>addToWishlist(body)}
                         >
                           Add To Wishlist
                         </Button>

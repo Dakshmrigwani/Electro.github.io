@@ -1,6 +1,7 @@
 // Load cart items from localStorage
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+// Remove item from cart
 const removeFromCart = (value) => {
   const itemIndex = cartItems.findIndex((item) => item.id === value.id);
 
@@ -11,6 +12,10 @@ const removeFromCart = (value) => {
   }
 };
 
+// Load wishlist items from localStorage
+const wishItems = JSON.parse(localStorage.getItem("WishItems")) || [];
+
+// Add item to cart
 const addToCart = (value) => {
   const itemExists = cartItems.some((item) => item.id === value.id);
 
@@ -21,7 +26,30 @@ const addToCart = (value) => {
   }
 };
 
-const items = () => {
+// Remove item from wishlist
+const removeFromWishlist = (value) => {
+  const itemIndexWishlist = wishItems.findIndex((item) => item.id === value.id);
+
+  if (itemIndexWishlist !== -1) {
+    wishItems.splice(itemIndexWishlist, 1);
+    console.log(wishItems, "Removed from Wishlist");
+    saveWishlistItemsToLocalStorage(); // Save updated wishlist items to localStorage
+  }
+};
+
+// Add item to wishlist
+const addToWishlist = (value) => {
+  const itemExistsWishlist = wishItems.some((item) => item.id === value.id);
+
+  if (!itemExistsWishlist) {
+    wishItems.push(value);
+    console.log(wishItems, "Added to wishlist");
+    saveWishlistItemsToLocalStorage(); // Save updated wishlist items to localStorage
+  }
+};
+
+// Get cart items
+const getCartItems = () => {
   return cartItems;
 };
 
@@ -30,5 +58,17 @@ const saveCartItemsToLocalStorage = () => {
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };
 
-export { cartItems, addToCart, removeFromCart };
-export default items;
+// Save wishlist items to localStorage
+const saveWishlistItemsToLocalStorage = () => {
+  localStorage.setItem("WishItems", JSON.stringify(wishItems));
+};
+
+export {
+  cartItems,
+  wishItems,
+  addToCart,
+  removeFromCart,
+  addToWishlist,
+  removeFromWishlist,
+  getCartItems,
+};

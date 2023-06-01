@@ -11,6 +11,7 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Link } from "react-router-dom";
+import {addToCart} from "./items"
 
 export default function Laptops() {
   const [showMore, setShowMore] = useState(false);
@@ -434,6 +435,7 @@ export default function Laptops() {
                                   color: "white",
                                 }}
                                 className="col"
+                                onClick = {() => addToCart(body)}
                               >
                                 Add To Cart
                               </Button>

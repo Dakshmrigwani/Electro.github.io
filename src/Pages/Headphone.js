@@ -12,6 +12,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Link } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import {addToCart} from "./items"
 
 
 export default function Headphone() {
@@ -440,6 +441,7 @@ export default function Headphone() {
                                   backgroundColor: "#7E90C8",
                                   color: "white",
                                 }}
+                                onClick = {() => addToCart(body)}
                                 className="col"
                               >
                                 Add To Cart
