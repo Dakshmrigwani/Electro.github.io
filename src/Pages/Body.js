@@ -16,6 +16,8 @@ import {
   ProductDetailData,
 } from "../Component/data";
 import { addToCart , addToWishlist} from "./items"
+import { BsCurrencyRupee } from "react-icons/bs";
+
 
 export default function Body() {
   const [show, setShow] = useState(false);
@@ -195,7 +197,7 @@ export default function Body() {
                 <Card>
                   <Card.Img variant="top" src={body.image} />
                   <Card.Body>
-                    <Link to={`/AllProducts/${body.id}`} className="brandTitle">
+                    <Link to={`/AllProducts/<BsCurrencyRupee/>{body.id}`} className="brandTitle">
                       <Card.Title className="fw-normal">
                         {showMore ? body.MoreTitle : body.LessTitle}
                         <span onClick={handleToggle} className="fw-bolder">
@@ -227,9 +229,9 @@ export default function Body() {
                         className="row"
                       >
                         <div className="col">
-                          <b className="fs-2">${body.ActPrice}</b>
+                          <b className="fs-2"><BsCurrencyRupee/>{body.ActPrice}</b>
                           <p className="fs-6 text-decoration-line-through">
-                            ${body.DisPrice}
+                            <BsCurrencyRupee/>{body.DisPrice}
                           </p>
                         </div>
                         <div className="col">

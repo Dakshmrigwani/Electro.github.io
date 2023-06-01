@@ -8,26 +8,28 @@ import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { AiOutlineHeart, AiOutlineDelete } from "react-icons/ai";
-import {BsEmojiSmile} from "react-icons/bs"
+import {BsEmojiSmile, BsCurrencyRupee} from "react-icons/bs"
 import ReactStars from "react-stars";
-import {addToWishlist , removeFromWishlist , wishItems} from "../Pages/items"
+import { removeFromWishlist , wishItems} from "../Pages/items"
 
 export default function WishContext() {
-    const [wishList , setWishList] = useState([])
+//     const [wishList , setWishList] = useState([])
+//     console.log(wishItems)
     
-    useEffect(() => {
-    const savedWishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
-    setWishList(savedWishItems);
-    savedWishItems.forEach((product) => {
-      dispatch({ type: "increment_quantity", payload: { productId: product.id } });
-    });
-  }, []);
+//     useEffect(() => {
+//     const savedWishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
+//     setWishList(savedWishItems);
+//     console.log(wishList,"21")
+//     savedWishItems.forEach((product) => {
+//       dispatch({ type: "increment_quantity", payload: { productId: product.id } });
+//     });
+//   }, []);
   
-  function handleRemoveFromWish(product) {
-    removeFromWishlist(product);
-    const updatedWishList = wishList.filter((item) => item.id !== product.id);
-    setWishList(updatedWishList);
-  }
+//   function handleRemoveFromWish(product) {
+//     removeFromWishlist(product);
+//     const updatedWishList = wishList.filter((item) => item.id !== product.id);
+//     setWishList(updatedWishList);
+//   }
   return (
     <>
         <LayOutNone>
@@ -74,7 +76,7 @@ export default function WishContext() {
             </div>
           </div>
           <div className="d-flex justify-content-center align-content-center mt-5">
-            {wishList.length === 0 ? (
+            {wishItems.length === 0 ? (
               <div className="d-flex flex-column justify-content-center align-items-center h-100 display-4 col-0">
                 <BsEmojiSmile />
                 <p>No content found</p>
@@ -82,13 +84,14 @@ export default function WishContext() {
               </div>
             ) : (
               <>
-                {wishList.map((product) => (
+                {wishItems.map((product) => (
                   <div key={product.id}>
+                      <div className="d-flex flex-column gap-3">
                     <Card>
                       <Card.Header>Wishlist</Card.Header>
 
-                      <Card.Body className="d-grid gap-3">
-                        <Card className="w-100">
+                      <Card.Body >
+                        <Card className="">
                           <Row>
                             <Col md={4} lg={3} className="d-inline">
                               <div style={{ width: "10rem" }}>
@@ -108,10 +111,10 @@ export default function WishContext() {
                                   >
                                     <div className="col-6">
                                       <b className="fs-2">
-                                        {product.DisPrice}
+                                        <BsCurrencyRupee/>{product.DisPrice}
                                       </b>
                                       <p className="fs-6 text-decoration-line-through">
-                                        {product.ActPrice}
+                                        <BsCurrencyRupee/>{product.ActPrice}
                                       </p>
                                     </div>
                                     <div className="col-6">
@@ -160,6 +163,7 @@ export default function WishContext() {
                         </Card>
                       </Card.Body>
                     </Card>
+                    </div>
                   </div>
                 ))}
               </>

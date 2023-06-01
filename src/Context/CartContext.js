@@ -12,6 +12,7 @@ import Success from "../Component/Success";
 import Failure from "../Component/Failure";
 import { cartContext } from "../Pages/Cart";
 import { removeFromCart } from "../Pages/items";
+import {BsCurrencyRupee} from "react-icons/bs"
 function reducer(state, action) {
   switch (action.type) {
     case "increment_quantity": {
@@ -118,9 +119,9 @@ function handleDecrementQuantity(productId) {
                                     className="row"
                                   >
                                     <div className="col-6">
-                                      <b className="fs-2">${product.DisPrice}</b>
+                                      <b className="fs-2"><BsCurrencyRupee/>{product.DisPrice}</b>
                                       <p className="fs-6 text-decoration-line-through">
-                                        ${product.ActPrice}
+                                        <BsCurrencyRupee/>{product.ActPrice}
                                       </p>
                                     </div>
                                     <div className="col-6">
@@ -220,16 +221,16 @@ function handleDecrementQuantity(productId) {
                           </div>
                           <div className="col">
                             <b>
-                              {cartList.reduce(
+                              <BsCurrencyRupee/>{cartList.reduce(
                                 (total, product) =>
                                   total + product.DisPrice * state[product.id],
                                 0
                               ).toFixed(2)}
                             </b>
-                            <p className="mt-3">$50</p>
-                            <p>$50</p>
+                            <p className="mt-3"><BsCurrencyRupee/>50</p>
+                            <p><BsCurrencyRupee/>50</p>
                             <b>
-                              {(
+                              <BsCurrencyRupee/>{(
                                 100 +
                                 cartList.reduce(
                                   (total, product) =>
