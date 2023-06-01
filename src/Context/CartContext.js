@@ -56,7 +56,7 @@ export default function CartContext() {
   });
   
   const showDeliveryCard =
-    CartList.some((product) => product.disPrice !== null && product.disPrice !== undefined && product.disPrice !== 0);
+    CartList.some((product) => product.DisPrice !== null && product.DisPrice !== undefined && product.DisPrice !== 0);
 
   return (
     <>
@@ -93,7 +93,7 @@ export default function CartContext() {
                           </div>
                           <div className="col-md-8">
                             <div className="card-body">
-                              <h5 className="card-title">{product.name}</h5>
+                              <h5 className="card-title">{product.LessTitle}</h5>
                               <div className="card-text">
                                 <div
                                   style={{
@@ -104,15 +104,15 @@ export default function CartContext() {
                                 >
                                   <div className="col-6">
                                     <b className="fs-2">
-                                      ${product.disPrice}
+                                      ${product.DisPrice}
                                     </b>
                                     <p className="fs-6 text-decoration-line-through">
-                                      ${product.price}
+                                      ${product.ActPrice}
                                     </p>
                                   </div>
                                   <div className="col-6">
-                                    <ReactStars value={product.stars} />
-                                    <p>{product.reviewCount}</p>
+                                    <ReactStars value={product.Rating} />
+                                    <p>{product.reviews}</p>
                                   </div>
                                 </div>
                               </div>
@@ -212,7 +212,7 @@ export default function CartContext() {
                         <b>
                           {CartList.reduce(
                             (total, product) =>
-                              total + product.disPrice * state[product.id],
+                              total + product.DisPrice * state[product.id],
                             0
                           ).toFixed(2)}
                         </b>
@@ -223,7 +223,7 @@ export default function CartContext() {
                             100 +
                             CartList.reduce(
                               (total, product) =>
-                                total + product.disPrice * state[product.id],
+                                total + product.DisPrice * state[product.id],
                               0
                             )
                           ).toFixed(2)}

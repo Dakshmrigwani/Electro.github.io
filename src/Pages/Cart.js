@@ -1,17 +1,16 @@
 import React, { createContext } from "react";
 import { CartList } from "../Component/data";
-import CartContext from "../Context/CartContext"
+import CartContext from "../Context/CartContext";
+import {cartItems} from "./items"
 
-export const cartContext = createContext()
-
+export const cartContext = createContext();
 
 export default function Cart() {
+  console.log(cartItems)
 
   return (
-    <>
-     <cartContext.Provider value={CartList}>
-        <CartContext />
-      </cartContext.Provider>
-    </>
+    <cartContext.Provider value={cartItems}>
+      <CartContext />
+    </cartContext.Provider>
   );
 }
