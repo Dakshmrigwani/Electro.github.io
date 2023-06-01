@@ -76,10 +76,9 @@ export default function WishContext() {
           <div className="d-flex justify-content-center align-content-center mt-5">
             {wishList.length === 0 ? (
               <div className="d-flex flex-column justify-content-center align-items-center h-100 display-4 col-0">
-                {/* Assuming you have imported `BsEmojiSmile` */}
                 <BsEmojiSmile />
                 <p>No content found</p>
-                <p className="text-center">Please add the item to the cart</p>
+                <p className="text-center">Please add the item to the Wishlist</p>
               </div>
             ) : (
               <>

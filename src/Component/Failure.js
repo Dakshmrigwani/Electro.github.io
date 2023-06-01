@@ -19,7 +19,7 @@ export default function Failure(){
                     <p>Please check it and try again</p>
                 </div>
                 <div className="modal-footer border-0 d-flex justify-content-center w-100">
-                    <button type="button" data-bs-dismiss="modal" class="btn btn-primary w-100">Close</button>
+                    <button type="button" data-bs-dismiss="modal" className="btn btn-primary w-100">Close</button>
                 </div>
                 
                 </div>

@@ -180,11 +180,11 @@ export default function Body() {
         </Carousel>
         <div className="container-fluid p-5">
           <div className="text-center">
-            <h2 class="title">
-              <span class="title-word title-word-1">Welcome</span>
-              <span class="title-word title-word-2">to</span>
-              <span class="title-word title-word-3">our</span>
-              <span class="title-word title-word-4">website</span>
+            <h2 className="title">
+              <span className="title-word title-word-1">Welcome</span>
+              <span className="title-word title-word-2">to</span>
+              <span className="title-word title-word-3">our</span>
+              <span className="title-word title-word-4">website</span>
             </h2>
           </div>
         </div>

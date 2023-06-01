@@ -155,8 +155,8 @@ function ProductDetail() {
                               </Row>
 
                               <b>Sent To</b>
-                              <div class="d-inline-flex">
-                                <span class="me-1">
+                              <div className="d-inline-flex">
+                                <span className="me-1">
                                   <CiLocationOn />
                                 </span>
                                 <span

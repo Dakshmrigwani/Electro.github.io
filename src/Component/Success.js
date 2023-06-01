@@ -19,7 +19,7 @@ export default function Success(){
                     <p>Thank you for buying our product</p>
                 </div>
                 <div className="modal-footer border-0 d-flex justify-content-center w-100">
-                    <button type="button" data-bs-dismiss="modal" class="btn btn-primary w-100">Close</button>
+                    <button type="button" data-bs-dismiss="modal" className="btn btn-primary w-100">Close</button>
                 </div>
                 
                 </div>
