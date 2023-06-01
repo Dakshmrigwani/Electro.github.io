@@ -11,6 +11,7 @@ import Success from "../Component/Success";
 import Failure from "../Component/Failure";
 import { cartContext } from "../Pages/Cart";
 import { BsEmojiSmile } from "react-icons/bs";
+import {removeFromCart} from "../Pages/items"
 
 function reducer(state, action) {
   switch (action.type) {
@@ -180,6 +181,7 @@ export default function CartContext() {
                                     <Button
                                       variant="light"
                                       style={{ boxShadow: "none" }}
+                                      onClick={()=>removeFromCart(product)}
                                     >
                                       <AiOutlineDelete />
                                     </Button>
