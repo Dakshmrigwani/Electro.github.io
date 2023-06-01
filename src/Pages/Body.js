@@ -15,8 +15,7 @@ import {
   bodyList,
   ProductDetailData,
 } from "../Component/data";
-import Cart from "./Cart"
-import {cartItems , addToCart} from "./items"
+import { addToCart} from "./items"
 
 export default function Body() {
   const [show, setShow] = useState(false);

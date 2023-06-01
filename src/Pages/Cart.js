@@ -1,5 +1,4 @@
 import React, { createContext } from "react";
-import { CartList } from "../Component/data";
 import CartContext from "../Context/CartContext";
 import {cartItems} from "./items"
 
