@@ -16,6 +16,8 @@ import {
   ProductDetailData,
 } from "../Component/data";
 import { addToCart , addToWishlist} from "./items"
+import { BsCurrencyRupee } from "react-icons/bs";
+
 
 export default function Body() {
   const [show, setShow] = useState(false);
@@ -180,11 +182,11 @@ export default function Body() {
         </Carousel>
         <div className="container-fluid p-5">
           <div className="text-center">
-            <h2 class="title">
-              <span class="title-word title-word-1">Welcome</span>
-              <span class="title-word title-word-2">to</span>
-              <span class="title-word title-word-3">our</span>
-              <span class="title-word title-word-4">website</span>
+            <h2 className="title">
+              <span className="title-word title-word-1">Welcome</span>
+              <span className="title-word title-word-2">to</span>
+              <span className="title-word title-word-3">our</span>
+              <span className="title-word title-word-4">website</span>
             </h2>
           </div>
         </div>
@@ -195,7 +197,7 @@ export default function Body() {
                 <Card>
                   <Card.Img variant="top" src={body.image} />
                   <Card.Body>
-                    <Link to={`/AllProducts/${body.id}`} className="brandTitle">
+                    <Link to={`/AllProducts/<BsCurrencyRupee/>{body.id}`} className="brandTitle">
                       <Card.Title className="fw-normal">
                         {showMore ? body.MoreTitle : body.LessTitle}
                         <span onClick={handleToggle} className="fw-bolder">
@@ -227,9 +229,9 @@ export default function Body() {
                         className="row"
                       >
                         <div className="col">
-                          <b className="fs-2">${body.ActPrice}</b>
+                          <b className="fs-2"><BsCurrencyRupee/>{body.ActPrice}</b>
                           <p className="fs-6 text-decoration-line-through">
-                            ${body.DisPrice}
+                            <BsCurrencyRupee/>{body.DisPrice}
                           </p>
                         </div>
                         <div className="col">

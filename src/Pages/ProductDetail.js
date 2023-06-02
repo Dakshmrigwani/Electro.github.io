@@ -13,6 +13,7 @@ import { BsPencil, BsCurrencyRupee } from "react-icons/bs";
 import ReactStars from "react-stars";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import {addToCart , addToWishlist} from "./items"
 
 function reducer(state, action) {
   switch (action.type) {
@@ -155,8 +156,8 @@ function ProductDetail() {
                               </Row>
 
                               <b>Sent To</b>
-                              <div class="d-inline-flex">
-                                <span class="me-1">
+                              <div className="d-inline-flex">
+                                <span className="me-1">
                                   <CiLocationOn />
                                 </span>
                                 <span
@@ -251,7 +252,7 @@ function ProductDetail() {
                         </div>
                         <div className="d-flex flex-column gap-2 mt-3">
                           <Row>
-                            <Button style={{ boxShadow: "none" }}>
+                            <Button style={{ boxShadow: "none" }} onClick={()=>addToWishlist(selectedProduct)}>
                               Add to Cart
                             </Button>
                           </Row>
@@ -259,8 +260,9 @@ function ProductDetail() {
                             <Button
                               variant="light"
                               style={{ boxShadow: "none" }}
+                              onClick={()=>addToWishlist(selectedProduct)}
                             >
-                              Buy Now
+                              Add to Wishlist
                             </Button>
                           </Row>
                         </div>

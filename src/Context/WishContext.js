@@ -8,22 +8,19 @@ import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { AiOutlineHeart, AiOutlineDelete } from "react-icons/ai";
-import {BsEmojiSmile} from "react-icons/bs"
+import {BsEmojiSmile, BsCurrencyRupee} from "react-icons/bs"
 import ReactStars from "react-stars";
-import {addToWishlist , removeFromWishlist , wishItems} from "../Pages/items"
+import { removeFromWishlist , wishItems} from "../Pages/items"
 
 export default function WishContext() {
-    const [wishList , setWishList] = useState([])
-    
-    useEffect(() => {
+    const [wishList, setWishList] = useState([]);
+
+  useEffect(() => {
     const savedWishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
     setWishList(savedWishItems);
-    savedWishItems.forEach((product) => {
-      dispatch({ type: "increment_quantity", payload: { productId: product.id } });
-    });
   }, []);
-  
-  function handleRemoveFromWish(product) {
+
+  function handleRemoveFromWishlist(product) {
     removeFromWishlist(product);
     const updatedWishList = wishList.filter((item) => item.id !== product.id);
     setWishList(updatedWishList);
@@ -76,20 +73,20 @@ export default function WishContext() {
           <div className="d-flex justify-content-center align-content-center mt-5">
             {wishList.length === 0 ? (
               <div className="d-flex flex-column justify-content-center align-items-center h-100 display-4 col-0">
-                {/* Assuming you have imported `BsEmojiSmile` */}
                 <BsEmojiSmile />
                 <p>No content found</p>
-                <p className="text-center">Please add the item to the cart</p>
+                <p className="text-center">Please add the item to the Wishlist</p>
               </div>
             ) : (
               <>
-                {wishList.map((product) => (
-                  <div key={product.id}>
+                      <div className="d-flex flex-column gap-3">
+                
                     <Card>
                       <Card.Header>Wishlist</Card.Header>
-
-                      <Card.Body className="d-grid gap-3">
-                        <Card className="w-100">
+                      {wishList.map((product) => (
+                  <div key={product.id}>
+                      <Card.Body >
+                        <Card className="">
                           <Row>
                             <Col md={4} lg={3} className="d-inline">
                               <div style={{ width: "10rem" }}>
@@ -109,10 +106,10 @@ export default function WishContext() {
                                   >
                                     <div className="col-6">
                                       <b className="fs-2">
-                                        {product.DisPrice}
+                                        <BsCurrencyRupee/>{product.DisPrice}
                                       </b>
                                       <p className="fs-6 text-decoration-line-through">
-                                        {product.ActPrice}
+                                        <BsCurrencyRupee/>{product.ActPrice}
                                       </p>
                                     </div>
                                     <div className="col-6">
@@ -149,7 +146,7 @@ export default function WishContext() {
                                       size="lg"
                                       className="col-2 text-dark"
                                       style={{ boxShadow: "none" }}
-                                      onClick={()=>removeFromWishlist(product)}
+                                      onClick={()=>handleRemoveFromWishlist(product)}
                                     >
                                       <AiOutlineDelete />
                                     </Button>
@@ -160,9 +157,10 @@ export default function WishContext() {
                           </Row>
                         </Card>
                       </Card.Body>
+                      </div>
+                      ))}
                     </Card>
-                  </div>
-                ))}
+                </div>
               </>
             )}
           </div>

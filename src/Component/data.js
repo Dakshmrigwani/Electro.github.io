@@ -1255,8 +1255,8 @@ export const ProductDetailData = [
     LessTitle: "boAt Rockerz Bluetooth Wireless Ear Headphones ",
     MoreTitle:
       "boAt Rockerz 550 Bluetooth Wireless Over Ear Headphones with Mic Upto 20 Hours Playback, 50MM Drivers, Soft Padded Ear Cushions and Physical Noise Isolation (Red)",
-    ActPrice: 130,
-    DisPrice: 100,
+    ActPrice: 800,
+    DisPrice: 600,
     Rating: 4,
     category: `bodyList`,
     reviews: 6000,
@@ -1283,8 +1283,8 @@ export const ProductDetailData = [
     LessTitle: "Noise Pulse 2 Advanced Bluetooth Calling Watch",
     MoreTitle:
       "Noise Pulse 2 Advanced Bluetooth Calling Watch with 1.85'' Display, 550 NITS Brightness, Smart DND, 10 Days Battery, 100 Sports Modes, Smart Watch for Men and Women - (Jet Black)",
-    ActPrice: 300,
-    DisPrice: 100,
+    ActPrice: 900,
+    DisPrice: 800,
     category: `bodyList`,
     image1: "https://m.media-amazon.com/images/I/61nAoz3GpRL._SY450_.jpg",
     image2: "https://m.media-amazon.com/images/I/619g-acf-GL._SY450_.jpg",
@@ -1293,7 +1293,7 @@ export const ProductDetailData = [
     image5: "https://m.media-amazon.com/images/I/71QGrEqdLeL._SY450_.jpg",
     Rating: 3.5,
     reviews: 6000,
-    disPercent: 65,
+    disPercent: 25,
     description1:
       `"Massive 1.85" display: See everyday data clearly under the brightest sun on the 1.85'' TFT LCD that sports 550 nits of brightness and the highest screen-to-body ratio.`,
     description2:
@@ -1311,8 +1311,8 @@ export const ProductDetailData = [
     LessTitle: "boAt Stone 620 Bluetooth Speaker with 12W RMS",
     MoreTitle:
       "boAt Stone 620 Bluetooth Speaker with 12W RMS Stereo Sound, 10HRS Playtime, TWS Feature, IPX4, Multi-Compatibility Mode(Black)",
-    ActPrice: 400,
-    DisPrice: 200,
+    ActPrice: 1400,
+    DisPrice: 700,
     category: `bodyList`,
     Rating: 4.5,
     reviews: 9000,
@@ -1339,9 +1339,9 @@ export const ProductDetailData = [
     LessTitle: "Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage)",
     MoreTitle:
       "Samsung Galaxy M13 (Aqua Green, 6GB, 128GB Storage) | 6000mAh Battery | Upto 12GB RAM with RAM Plus",
-    ActPrice: 800,
+    ActPrice: 8000,
     category: `bodyList`,
-    DisPrice: 650,
+    DisPrice: 6500,
     Rating: 4,
     image1: "https://m.media-amazon.com/images/I/71Rp7CjAp0L._SX679_.jpg",
     image2: "https://m.media-amazon.com/images/I/81vp0PrWedL._SX679_.jpg",

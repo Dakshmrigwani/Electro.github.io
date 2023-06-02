@@ -5,7 +5,7 @@ import {wishItems} from "./items"
 export const cartContext = createContext();
 
 export default function Wishlist() {
-  console.log(wishItems)
+  console.log(wishItems , "8")
 
   return (
     <cartContext.Provider value={wishItems}>

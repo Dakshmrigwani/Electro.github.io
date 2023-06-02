@@ -11,7 +11,7 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Link } from "react-router-dom";
-import {addToCart} from "./items"
+import {addToCart , addToWishlist} from "./items"
 
 export default function Smartphones() {
   const [showMore, setShowMore] = useState(false);
@@ -443,6 +443,7 @@ export default function Smartphones() {
                               <Button
                                 className="ms-2 col"
                                 variant="outline-light"
+                                onClick={()=>addToWishlist(body)}
                                 style={{
                                   backgroundColor: "#8B5095",
                                   color: "white",
