@@ -12,8 +12,6 @@ const removeFromCart = (value) => {
   }
 };
 
-// Load wishlist items from localStorage
-const wishItems = JSON.parse(localStorage.getItem("WishItems")) || [];
 
 // Add item to cart
 const addToCart = (value) => {
@@ -25,6 +23,9 @@ const addToCart = (value) => {
     saveCartItemsToLocalStorage(); // Save updated cart items to localStorage
   }
 };
+
+const wishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
+
 
 // Remove item from wishlist
 const removeFromWishlist = (value) => {
@@ -60,7 +61,7 @@ const saveCartItemsToLocalStorage = () => {
 
 // Save wishlist items to localStorage
 const saveWishlistItemsToLocalStorage = () => {
-  localStorage.setItem("WishItems", JSON.stringify(wishItems));
+  localStorage.setItem("wishItems", JSON.stringify(wishItems));
 };
 
 export {

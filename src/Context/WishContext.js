@@ -13,23 +13,18 @@ import ReactStars from "react-stars";
 import { removeFromWishlist , wishItems} from "../Pages/items"
 
 export default function WishContext() {
-//     const [wishList , setWishList] = useState([])
-//     console.log(wishItems)
-    
-//     useEffect(() => {
-//     const savedWishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
-//     setWishList(savedWishItems);
-//     console.log(wishList,"21")
-//     savedWishItems.forEach((product) => {
-//       dispatch({ type: "increment_quantity", payload: { productId: product.id } });
-//     });
-//   }, []);
-  
-//   function handleRemoveFromWish(product) {
-//     removeFromWishlist(product);
-//     const updatedWishList = wishList.filter((item) => item.id !== product.id);
-//     setWishList(updatedWishList);
-//   }
+    const [wishList, setWishList] = useState([]);
+
+  useEffect(() => {
+    const savedWishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
+    setWishList(savedWishItems);
+  }, []);
+
+  function handleRemoveFromWishlist(product) {
+    removeFromWishlist(product);
+    const updatedWishList = wishList.filter((item) => item.id !== product.id);
+    setWishList(updatedWishList);
+  }
   return (
     <>
         <LayOutNone>
@@ -76,7 +71,7 @@ export default function WishContext() {
             </div>
           </div>
           <div className="d-flex justify-content-center align-content-center mt-5">
-            {wishItems.length === 0 ? (
+            {wishList.length === 0 ? (
               <div className="d-flex flex-column justify-content-center align-items-center h-100 display-4 col-0">
                 <BsEmojiSmile />
                 <p>No content found</p>
@@ -84,12 +79,12 @@ export default function WishContext() {
               </div>
             ) : (
               <>
-                {wishItems.map((product) => (
-                  <div key={product.id}>
                       <div className="d-flex flex-column gap-3">
+                
                     <Card>
                       <Card.Header>Wishlist</Card.Header>
-
+                      {wishList.map((product) => (
+                  <div key={product.id}>
                       <Card.Body >
                         <Card className="">
                           <Row>
@@ -151,7 +146,7 @@ export default function WishContext() {
                                       size="lg"
                                       className="col-2 text-dark"
                                       style={{ boxShadow: "none" }}
-                                      onClick={()=>removeFromWishlist(product)}
+                                      onClick={()=>handleRemoveFromWishlist(product)}
                                     >
                                       <AiOutlineDelete />
                                     </Button>
@@ -162,10 +157,10 @@ export default function WishContext() {
                           </Row>
                         </Card>
                       </Card.Body>
+                      </div>
+                      ))}
                     </Card>
-                    </div>
-                  </div>
-                ))}
+                </div>
               </>
             )}
           </div>
