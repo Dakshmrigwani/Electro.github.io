@@ -19,11 +19,19 @@ export default function WishContext() {
     const savedWishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
     setWishList(savedWishItems);
   }, []);
+  
+  
 
   function handleRemoveFromWishlist(product) {
     removeFromWishlist(product);
     const updatedWishList = wishList.filter((item) => item.id !== product.id);
     setWishList(updatedWishList);
+  }
+  
+  const dataTransfer = (product) => {
+    addToCart(product)
+    handleRemoveFromWishlist(product)
+    
   }
   return (
     <>
@@ -137,7 +145,7 @@ export default function WishContext() {
                                         color: "white",
                                       }}
                                       className="col-10"
-                                      onClick = {() => addToCart(product)}
+                                      onClick = {() => dataTransfer(product)}
                                       
                                     >
                                       Add to cart
