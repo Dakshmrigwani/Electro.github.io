@@ -10,7 +10,7 @@ import Form from "react-bootstrap/Form";
 import { AiOutlineHeart, AiOutlineDelete } from "react-icons/ai";
 import {BsEmojiSmile, BsCurrencyRupee} from "react-icons/bs"
 import ReactStars from "react-stars";
-import { removeFromWishlist , wishItems} from "../Pages/items"
+import { removeFromWishlist , wishItems , addToCart} from "../Pages/items"
 
 export default function WishContext() {
     const [wishList, setWishList] = useState([]);
@@ -137,6 +137,7 @@ export default function WishContext() {
                                         color: "white",
                                       }}
                                       className="col-10"
+                                      onClick = {() => addToCart(product)}
                                       
                                     >
                                       Add to cart
