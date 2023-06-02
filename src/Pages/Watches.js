@@ -11,7 +11,7 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Link } from "react-router-dom";
-import {addToCart} from "./items"
+import {addToCart ,addToWishlist} from "./items"
 
 export default function Watches() {
   const [showMore, setShowMore] = useState(false);
@@ -452,6 +452,7 @@ export default function Watches() {
                                   backgroundColor: "#8B5095",
                                   color: "white",
                                 }}
+                                onClick={()=>addToWishlist(body)}
                                 
                               >
                                 Add To Wishlist
