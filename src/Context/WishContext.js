@@ -10,7 +10,7 @@ import Form from "react-bootstrap/Form";
 import { AiOutlineHeart, AiOutlineDelete } from "react-icons/ai";
 import {BsEmojiSmile, BsCurrencyRupee} from "react-icons/bs"
 import ReactStars from "react-stars";
-import { removeFromWishlist , wishItems} from "../Pages/items"
+import { removeFromWishlist , wishItems , addToCart} from "../Pages/items"
 
 export default function WishContext() {
     const [wishList, setWishList] = useState([]);
@@ -19,11 +19,19 @@ export default function WishContext() {
     const savedWishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
     setWishList(savedWishItems);
   }, []);
+  
+  
 
   function handleRemoveFromWishlist(product) {
     removeFromWishlist(product);
     const updatedWishList = wishList.filter((item) => item.id !== product.id);
     setWishList(updatedWishList);
+  }
+  
+  const dataTransfer = (product) => {
+    addToCart(product)
+    handleRemoveFromWishlist(product)
+    
   }
   return (
     <>
@@ -137,6 +145,7 @@ export default function WishContext() {
                                         color: "white",
                                       }}
                                       className="col-10"
+                                      onClick = {() => dataTransfer(product)}
                                       
                                     >
                                       Add to cart

@@ -67,6 +67,9 @@ function handleDecrementQuantity(productId) {
     setCartList(updatedCartList);
   }
 
+function RemoveAllProduct(){
+  return initialState
+}
   const showDeliveryCard = cartList.some(
     (product) =>
       product.DisPrice !== null &&
