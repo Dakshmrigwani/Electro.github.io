@@ -19,58 +19,59 @@ function NavBar() {
     <>
       <Navbar bg="light" expand="lg" className="sticky-top">
         <Container fluid>
-          <div className="d-flex">
-            <span className="order-2 order-lg-1">
-              <Navbar.Brand>
+          <span className="order-2 order-lg-1">
+            <Navbar.Brand>
+              <Link
+                to="/Pages/Body"
+                className="text-decoration-none text-dark ms-2"
+              >
+                Electro.
+              </Link>
+            </Navbar.Brand>
+          </span>
+          <span className="order-1 order-lg-2">
+            <Navbar.Toggle
+              aria-controls="navbarScroll"
+              style={{ width: "50px" }}
+            />
+            <Navbar.Collapse id="navbarScroll">
+              <Nav
+                className="me-auto my-2 my-lg-0"
+                style={{ maxHeight: "120px" }}
+              >
                 <Link
-                  to="/Pages/Body"
-                  className="text-decoration-none text-dark"
+                  to="/Pages/Headphone"
+                  className="text-decoration-none text-dark me-2"
                 >
-                  Electro.
+                  Headphone
                 </Link>
-              </Navbar.Brand>
-            </span>
-            <span className="order-1 order-lg-2">
-              <Navbar.Toggle aria-controls="navbarScroll" />
-              <Navbar.Collapse id="navbarScroll">
-                <Nav
-                  className="me-auto my-2 my-lg-0"
-                  style={{ maxHeight: "120px" }}
+                <Link
+                  to="/Pages/Laptops"
+                  className="text-decoration-none text-dark me-2"
                 >
-                  <Link
-                    to="/Pages/Headphone"
-                    className="text-decoration-none text-dark me-2"
-                  >
-                    Headphone
-                  </Link>
-                  <Link
-                    to="/Pages/Laptops"
-                    className="text-decoration-none text-dark me-2"
-                  >
-                    Laptops
-                  </Link>
-                  <Link
-                    to="/Pages/Speaker"
-                    className="text-decoration-none text-dark me-2"
-                  >
-                    Speakers
-                  </Link>
-                  <Link
-                    to="/Pages/Watch"
-                    className="text-decoration-none text-dark me-2"
-                  >
-                    Watches
-                  </Link>
-                  <Link
-                    to="/Pages/Smartphones"
-                    className="text-decoration-none text-dark me-2"
-                  >
-                    Smartphones
-                  </Link>
-                </Nav>
-              </Navbar.Collapse>
-            </span>
-          </div>
+                  Laptops
+                </Link>
+                <Link
+                  to="/Pages/Speaker"
+                  className="text-decoration-none text-dark me-2"
+                >
+                  Speakers
+                </Link>
+                <Link
+                  to="/Pages/Watch"
+                  className="text-decoration-none text-dark me-2"
+                >
+                  Watches
+                </Link>
+                <Link
+                  to="/Pages/Smartphones"
+                  className="text-decoration-none text-dark me-2"
+                >
+                  Smartphones
+                </Link>
+              </Nav>
+            </Navbar.Collapse>
+          </span>
           <span className="d-flex d-sm-none">
             <Button className="btn btn-light" style={{ boxShadow: "none" }}>
               <Link to="/Pages/Wishlist">
