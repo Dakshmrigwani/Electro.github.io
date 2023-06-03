@@ -15,9 +15,8 @@ import {
   bodyList,
   ProductDetailData,
 } from "../Component/data";
-import { addToCart , addToWishlist} from "./items"
+import { addToCart, addToWishlist } from "./items";
 import { BsCurrencyRupee } from "react-icons/bs";
-
 
 export default function Body() {
   const [show, setShow] = useState(false);
@@ -55,36 +54,36 @@ export default function Body() {
   const handleCategoryFilter = () => {
     handleFilter(selectedCategory);
   };
-  
-//   const addToCart = useCallback((value) => {
-//   const itemExists = cartItems.some((item) => item.id === value.id);
 
-//   if (!itemExists) {
-//     setCartItems((prevItems) => [...prevItems, value]);
-//     console.log(cartItems, "cart");
-//   }
-// }, [cartItems]);
-  
-//   let cartItems = [];
-//   const addToCart = (value) => {
-//   const itemExists = cartItems.some((item) => item.id === value.id);
+  //   const addToCart = useCallback((value) => {
+  //   const itemExists = cartItems.some((item) => item.id === value.id);
 
-//   if (!itemExists) {
-//     cartItems.push(value);
-//     console.log(cartItems, "cart");
-//   }
-// };
+  //   if (!itemExists) {
+  //     setCartItems((prevItems) => [...prevItems, value]);
+  //     console.log(cartItems, "cart");
+  //   }
+  // }, [cartItems]);
 
-// const addToCart = (value) => {
-//   setCartItems([...cartItems, value]);
-//   console.log(cartItems, "cart");
-// };
+  //   let cartItems = [];
+  //   const addToCart = (value) => {
+  //   const itemExists = cartItems.some((item) => item.id === value.id);
+
+  //   if (!itemExists) {
+  //     cartItems.push(value);
+  //     console.log(cartItems, "cart");
+  //   }
+  // };
+
+  // const addToCart = (value) => {
+  //   setCartItems([...cartItems, value]);
+  //   console.log(cartItems, "cart");
+  // };
 
   // useEffect hook example
   useEffect(() => {
     handleFilter(selectedCategory);
   }, [selectedCategory]);
-  
+
   // <Cart items = {cartItems}/>
 
   return (
@@ -141,7 +140,6 @@ export default function Body() {
               alt="First slide"
               style={{ height: "40rem" }}
             />
-           
           </Carousel.Item>
           <Carousel.Item interval={500}>
             <img
@@ -150,7 +148,6 @@ export default function Body() {
               alt="Second slide"
               style={{ height: "40rem" }}
             />
-            
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -159,7 +156,6 @@ export default function Body() {
               alt="Third slide"
               style={{ height: "40rem" }}
             />
-            
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -168,7 +164,6 @@ export default function Body() {
               alt="Third slide"
               style={{ height: "40rem" }}
             />
-           
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -177,7 +172,6 @@ export default function Body() {
               alt="Third slide"
               style={{ height: "40rem" }}
             />
-            
           </Carousel.Item>
         </Carousel>
         <div className="container-fluid p-5">
@@ -197,7 +191,7 @@ export default function Body() {
                 <Card>
                   <Card.Img variant="top" src={body.image} />
                   <Card.Body>
-                    <Link to={`/AllProducts/<BsCurrencyRupee/>{body.id}`} className="brandTitle">
+                    <Link to={`/AllProducts/${body.id}`} className="brandTitle">
                       <Card.Title className="fw-normal">
                         {showMore ? body.MoreTitle : body.LessTitle}
                         <span onClick={handleToggle} className="fw-bolder">
@@ -229,9 +223,13 @@ export default function Body() {
                         className="row"
                       >
                         <div className="col">
-                          <b className="fs-2"><BsCurrencyRupee/>{body.ActPrice}</b>
+                          <b className="fs-2">
+                            <BsCurrencyRupee />
+                            {body.ActPrice}
+                          </b>
                           <p className="fs-6 text-decoration-line-through">
-                            <BsCurrencyRupee/>{body.DisPrice}
+                            <BsCurrencyRupee />
+                            {body.DisPrice}
                           </p>
                         </div>
                         <div className="col">
@@ -251,11 +249,11 @@ export default function Body() {
                             color: "white",
                           }}
                           className="col"
-                          onClick = {() => addToCart(body)}
+                          onClick={() => addToCart(body)}
                         >
                           Add To Cart
                         </Button>
-                        
+
                         <Button
                           className="ms-2 col"
                           variant="outline-light"
@@ -263,7 +261,7 @@ export default function Body() {
                             backgroundColor: "#8B5095",
                             color: "white",
                           }}
-                          onClick={()=>addToWishlist(body)}
+                          onClick={() => addToWishlist(body)}
                         >
                           Add To Wishlist
                         </Button>
@@ -334,7 +332,6 @@ export default function Body() {
             </div>
           </div>
         </div>
-        
       </Layout>
     </>
   );
