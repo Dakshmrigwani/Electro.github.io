@@ -38,28 +38,29 @@ export default function SearchBar() {
             <BsSearch />
           </Button>
         </InputGroup>
-      </Form>
-      {query && showResults ? (
-        <div className="position-absolute end-0">
-          <div className="card w-75 mt-5">
-            <div className="card-body" style={{ overflow: "auto" }}>
-              {ProductDetailData.filter((product) =>
-                product.LessTitle.toLowerCase().includes(query)
-              ).map((product) => (
-                <div key={product.id}>
-                  <Link
-                    to={`/AllProducts/${product.id}`}
-                    className="brandTitle"
-                    onClick={handleLinkClick}
-                  >
-                    {product.LessTitle}
-                  </Link>
-                </div>
-              ))}
+
+        {query && showResults ? (
+          <div className="position-absolute end-0">
+            <div className="card w-75 mt-5">
+              <div className="card-body" style={{ overflow: "auto" }}>
+                {ProductDetailData.filter((product) =>
+                  product.LessTitle.toLowerCase().includes(query)
+                ).map((product) => (
+                  <div key={product.id}>
+                    <Link
+                      to={`/AllProducts/${product.id}`}
+                      className="brandTitle"
+                      onClick={handleLinkClick}
+                    >
+                      {product.LessTitle}
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      ) : null}
+        ) : null}
+      </Form>
     </>
   );
 }
