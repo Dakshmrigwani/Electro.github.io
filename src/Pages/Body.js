@@ -15,14 +15,18 @@ import {
   bodyList,
   ProductDetailData,
 } from "../Component/data";
-import { addToCart , addToWishlist} from "./items"
+import { addToCart, addToWishlist } from "./items";
 import { BsCurrencyRupee } from "react-icons/bs";
-
 
 export default function Body() {
   const [show, setShow] = useState(false);
+  const [show1, setShow1] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("bodyList");
   const [filteredData, setFilteredData] = useState([]);
+  const [email, setEmail] = useState("");
+  const [emailIsValid, setEmailIsValid] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
   // const [cartItems, setCartItems] = useState([]);
 
   const ratingChanged = (newRating) => {
@@ -43,6 +47,7 @@ export default function Body() {
   const handleToggle = () => setShowMore(!showMore);
 
   const handleClose = () => setShow(false);
+  const handleClose1 = () => setShow1(false);
 
   const handleFilter = (filterCriteria) => {
     const filteredProducts = ProductDetailData.filter(
@@ -55,36 +60,55 @@ export default function Body() {
   const handleCategoryFilter = () => {
     handleFilter(selectedCategory);
   };
-  
-//   const addToCart = useCallback((value) => {
-//   const itemExists = cartItems.some((item) => item.id === value.id);
 
-//   if (!itemExists) {
-//     setCartItems((prevItems) => [...prevItems, value]);
-//     console.log(cartItems, "cart");
-//   }
-// }, [cartItems]);
-  
-//   let cartItems = [];
-//   const addToCart = (value) => {
-//   const itemExists = cartItems.some((item) => item.id === value.id);
+  const handleSubmit = () => {
+    // Perform email validation here (e.g., using regular expressions)
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    const isValid = emailRegex.test(email);
+    setEmailIsValid(isValid);
 
-//   if (!itemExists) {
-//     cartItems.push(value);
-//     console.log(cartItems, "cart");
-//   }
-// };
+    if (isValid) {
+      // Perform any necessary actions with the valid email
+      // (e.g., sending it to the server or storing it in state)
+      // You can replace the console.log with the desired action
+      console.log("Email submitted:", email);
 
-// const addToCart = (value) => {
-//   setCartItems([...cartItems, value]);
-//   console.log(cartItems, "cart");
-// };
+      // Clear the email field and show the "Thank you" modal
+      setEmail("");
+      setShow1(false);
+      setSubmitted(true);
+    }
+  };
+
+  //   const addToCart = useCallback((value) => {
+  //   const itemExists = cartItems.some((item) => item.id === value.id);
+
+  //   if (!itemExists) {
+  //     setCartItems((prevItems) => [...prevItems, value]);
+  //     console.log(cartItems, "cart");
+  //   }
+  // }, [cartItems]);
+
+  //   let cartItems = [];
+  //   const addToCart = (value) => {
+  //   const itemExists = cartItems.some((item) => item.id === value.id);
+
+  //   if (!itemExists) {
+  //     cartItems.push(value);
+  //     console.log(cartItems, "cart");
+  //   }
+  // };
+
+  // const addToCart = (value) => {
+  //   setCartItems([...cartItems, value]);
+  //   console.log(cartItems, "cart");
+  // };
 
   // useEffect hook example
   useEffect(() => {
     handleFilter(selectedCategory);
   }, [selectedCategory]);
-  
+
   // <Cart items = {cartItems}/>
 
   return (
@@ -104,8 +128,16 @@ export default function Body() {
                 placeholder="Email address"
                 aria-label="Email address"
                 aria-describedby="basic-addon2"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                isInvalid={!emailIsValid}
               />
-              <Button variant="outline-danger" id="button-addon2">
+
+              <Button
+                variant="outline-danger"
+                id="button-addon2"
+                onClick={handleSubmit}
+              >
                 Submit
               </Button>
             </InputGroup>
@@ -133,6 +165,20 @@ export default function Body() {
             </div>
           </Modal.Body>
         </Modal>
+        <Modal show1={submitted} onHide={handleClose1}>
+          <Modal.Header closeButton>
+            <Modal.Title>Thank You!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p className="text-center fs-4">
+              Thank you for submitting your email!
+            </p>
+            <button className="btn btn-primary w-100" onClick={handleClose}>
+              close
+            </button>
+          </Modal.Body>
+        </Modal>
+
         <Carousel className="container-fluid my-4">
           <Carousel.Item interval={1000}>
             <img
@@ -141,7 +187,6 @@ export default function Body() {
               alt="First slide"
               style={{ height: "40rem" }}
             />
-           
           </Carousel.Item>
           <Carousel.Item interval={500}>
             <img
@@ -150,7 +195,6 @@ export default function Body() {
               alt="Second slide"
               style={{ height: "40rem" }}
             />
-            
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -159,7 +203,6 @@ export default function Body() {
               alt="Third slide"
               style={{ height: "40rem" }}
             />
-            
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -168,7 +211,6 @@ export default function Body() {
               alt="Third slide"
               style={{ height: "40rem" }}
             />
-           
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -177,7 +219,6 @@ export default function Body() {
               alt="Third slide"
               style={{ height: "40rem" }}
             />
-            
           </Carousel.Item>
         </Carousel>
         <div className="container-fluid p-5">
@@ -197,7 +238,7 @@ export default function Body() {
                 <Card>
                   <Card.Img variant="top" src={body.image} />
                   <Card.Body>
-                    <Link to={`/AllProducts/<BsCurrencyRupee/>{body.id}`} className="brandTitle">
+                    <Link to={`/AllProducts/${body.id}`} className="brandTitle">
                       <Card.Title className="fw-normal">
                         {showMore ? body.MoreTitle : body.LessTitle}
                         <span onClick={handleToggle} className="fw-bolder">
@@ -229,9 +270,13 @@ export default function Body() {
                         className="row"
                       >
                         <div className="col">
-                          <b className="fs-2"><BsCurrencyRupee/>{body.ActPrice}</b>
+                          <b className="fs-2">
+                            <BsCurrencyRupee />
+                            {body.ActPrice}
+                          </b>
                           <p className="fs-6 text-decoration-line-through">
-                            <BsCurrencyRupee/>{body.DisPrice}
+                            <BsCurrencyRupee />
+                            {body.DisPrice}
                           </p>
                         </div>
                         <div className="col">
@@ -251,11 +296,11 @@ export default function Body() {
                             color: "white",
                           }}
                           className="col"
-                          onClick = {() => addToCart(body)}
+                          onClick={() => addToCart(body)}
                         >
                           Add To Cart
                         </Button>
-                        
+
                         <Button
                           className="ms-2 col"
                           variant="outline-light"
@@ -263,7 +308,7 @@ export default function Body() {
                             backgroundColor: "#8B5095",
                             color: "white",
                           }}
-                          onClick={()=>addToWishlist(body)}
+                          onClick={() => addToWishlist(body)}
                         >
                           Add To Wishlist
                         </Button>
@@ -334,7 +379,6 @@ export default function Body() {
             </div>
           </div>
         </div>
-        
       </Layout>
     </>
   );
