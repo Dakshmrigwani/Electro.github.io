@@ -20,8 +20,13 @@ import { BsCurrencyRupee } from "react-icons/bs";
 
 export default function Body() {
   const [show, setShow] = useState(false);
+  const [show1, setShow1] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("bodyList");
   const [filteredData, setFilteredData] = useState([]);
+  const [email, setEmail] = useState("");
+  const [emailIsValid, setEmailIsValid] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
   // const [cartItems, setCartItems] = useState([]);
 
   const ratingChanged = (newRating) => {
@@ -42,6 +47,7 @@ export default function Body() {
   const handleToggle = () => setShowMore(!showMore);
 
   const handleClose = () => setShow(false);
+  const handleClose1 = () => setShow1(false);
 
   const handleFilter = (filterCriteria) => {
     const filteredProducts = ProductDetailData.filter(
@@ -53,6 +59,25 @@ export default function Body() {
   // Event handler example
   const handleCategoryFilter = () => {
     handleFilter(selectedCategory);
+  };
+
+  const handleSubmit = () => {
+    // Perform email validation here (e.g., using regular expressions)
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    const isValid = emailRegex.test(email);
+    setEmailIsValid(isValid);
+
+    if (isValid) {
+      // Perform any necessary actions with the valid email
+      // (e.g., sending it to the server or storing it in state)
+      // You can replace the console.log with the desired action
+      console.log("Email submitted:", email);
+
+      // Clear the email field and show the "Thank you" modal
+      setEmail("");
+      setShow1(false);
+      setSubmitted(true);
+    }
   };
 
   //   const addToCart = useCallback((value) => {
@@ -103,8 +128,16 @@ export default function Body() {
                 placeholder="Email address"
                 aria-label="Email address"
                 aria-describedby="basic-addon2"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                isInvalid={!emailIsValid}
               />
-              <Button variant="outline-danger" id="button-addon2">
+
+              <Button
+                variant="outline-danger"
+                id="button-addon2"
+                onClick={handleSubmit}
+              >
                 Submit
               </Button>
             </InputGroup>
@@ -132,6 +165,20 @@ export default function Body() {
             </div>
           </Modal.Body>
         </Modal>
+        <Modal show1={submitted} onHide={handleClose1}>
+          <Modal.Header closeButton>
+            <Modal.Title>Thank You!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p className="text-center fs-4">
+              Thank you for submitting your email!
+            </p>
+            <button className="btn btn-primary w-100" onClick={handleClose}>
+              close
+            </button>
+          </Modal.Body>
+        </Modal>
+
         <Carousel className="container-fluid my-4">
           <Carousel.Item interval={1000}>
             <img
