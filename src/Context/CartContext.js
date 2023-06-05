@@ -11,7 +11,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Success from "../Component/Success";
 import Failure from "../Component/Failure";
 import { cartContext } from "../Pages/Cart";
-import { removeFromCart, removeAllProduct } from "../Pages/items";
+import { removeFromCart } from "../Pages/items";
 import { BsCurrencyRupee } from "react-icons/bs";
 function reducer(state, action) {
   switch (action.type) {
@@ -66,12 +66,6 @@ export default function CartContext() {
     removeFromCart(product);
     const updatedCartList = cartList.filter((item) => item.id !== product.id);
     setCartList(updatedCartList);
-  }
-
-  function handleRemoveAllProduct() {
-    removeAllProduct();
-    const deleteAllItem = cartList.splice(0, item.length);
-    setCartList(deleteAllItem);
   }
 
   const showDeliveryCard = cartList.some(
@@ -279,7 +273,6 @@ export default function CartContext() {
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModalsuccess"
                           style={{ boxShadow: "none" }}
-                          onClick={handleRemoveAllProduct}
                         >
                           Buy Now
                         </button>
