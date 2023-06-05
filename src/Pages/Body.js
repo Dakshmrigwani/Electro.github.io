@@ -270,11 +270,11 @@ export default function Body() {
                         <div className="col">
                           <b className="fs-2">
                             <BsCurrencyRupee />
-                            {body.ActPrice}
+                            {body.DisPrice}
                           </b>
                           <p className="fs-6 text-decoration-line-through">
                             <BsCurrencyRupee />
-                            {body.DisPrice}
+                            {body.ActPrice}
                           </p>
                         </div>
                         <div className="col">

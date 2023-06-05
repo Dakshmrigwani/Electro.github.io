@@ -11,8 +11,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Success from "../Component/Success";
 import Failure from "../Component/Failure";
 import { cartContext } from "../Pages/Cart";
-import { removeFromCart } from "../Pages/items";
-import {BsCurrencyRupee} from "react-icons/bs"
+import { removeFromCart, removeAllProduct } from "../Pages/items";
+import { BsCurrencyRupee } from "react-icons/bs";
 function reducer(state, action) {
   switch (action.type) {
     case "increment_quantity": {
@@ -37,7 +37,6 @@ function reducer(state, action) {
   }
 }
 
-
 const initialState = {};
 
 export default function CartContext() {
@@ -48,18 +47,20 @@ export default function CartContext() {
     const savedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartList(savedCartItems);
     savedCartItems.forEach((product) => {
-      dispatch({ type: "increment_quantity", payload: { productId: product.id } });
+      dispatch({
+        type: "increment_quantity",
+        payload: { productId: product.id },
+      });
     });
   }, []);
 
- function handleIncrementQuantity(productId) {
-  dispatch({ type: "increment_quantity", payload: { productId } });
-}
+  function handleIncrementQuantity(productId) {
+    dispatch({ type: "increment_quantity", payload: { productId } });
+  }
 
-function handleDecrementQuantity(productId) {
-  dispatch({ type: "decrement_quantity", payload: { productId } });
-}
-
+  function handleDecrementQuantity(productId) {
+    dispatch({ type: "decrement_quantity", payload: { productId } });
+  }
 
   function handleRemoveFromCart(product) {
     removeFromCart(product);
@@ -67,9 +68,12 @@ function handleDecrementQuantity(productId) {
     setCartList(updatedCartList);
   }
 
-function RemoveAllProduct(){
-  return initialState
-}
+  function handleRemoveAllProduct() {
+    removeAllProduct();
+    const deleteAllItem = cartList.splice(0, item.length);
+    setCartList(deleteAllItem);
+  }
+
   const showDeliveryCard = cartList.some(
     (product) =>
       product.DisPrice !== null &&
@@ -95,7 +99,9 @@ function RemoveAllProduct(){
                   <div className="d-flex flex-column justify-content-center align-items-center h-100 display-4 col-0">
                     <BsEmojiSmile />
                     <p>No content found</p>
-                    <p className="text-center">Please add the item to the cart</p>
+                    <p className="text-center">
+                      Please add the item to the cart
+                    </p>
                   </div>
                 ) : (
                   <>
@@ -112,7 +118,9 @@ function RemoveAllProduct(){
                             </div>
                             <div className="col-md-8">
                               <div className="card-body">
-                                <h5 className="card-title">{product.LessTitle}</h5>
+                                <h5 className="card-title">
+                                  {product.LessTitle}
+                                </h5>
                                 <div className="card-text">
                                   <div
                                     style={{
@@ -122,9 +130,13 @@ function RemoveAllProduct(){
                                     className="row"
                                   >
                                     <div className="col-6">
-                                      <b className="fs-2"><BsCurrencyRupee/>{product.DisPrice}</b>
+                                      <b className="fs-2">
+                                        <BsCurrencyRupee />
+                                        {product.DisPrice}
+                                      </b>
                                       <p className="fs-6 text-decoration-line-through">
-                                        <BsCurrencyRupee/>{product.ActPrice}
+                                        <BsCurrencyRupee />
+                                        {product.ActPrice}
                                       </p>
                                     </div>
                                     <div className="col-6">
@@ -150,7 +162,9 @@ function RemoveAllProduct(){
                                   <div className="col-md-4 col-lg-3 col-4">
                                     <div className="d-flex">
                                       <Button
-                                        onClick={() => handleIncrementQuantity(product.id)}
+                                        onClick={() =>
+                                          handleIncrementQuantity(product.id)
+                                        }
                                         size="sm"
                                         variant="primary"
                                         className="mb-1"
@@ -166,7 +180,9 @@ function RemoveAllProduct(){
                                       <Button
                                         size="sm"
                                         variant="primary"
-                                        onClick={() => handleDecrementQuantity(product.id)}
+                                        onClick={() =>
+                                          handleDecrementQuantity(product.id)
+                                        }
                                         className="mb-1"
                                         style={{ boxShadow: "none" }}
                                       >
@@ -193,7 +209,9 @@ function RemoveAllProduct(){
                                       <Button
                                         variant="light"
                                         style={{ boxShadow: "none" }}
-                                        onClick={() => handleRemoveFromCart(product)}
+                                        onClick={() =>
+                                          handleRemoveFromCart(product)
+                                        }
                                       >
                                         <AiOutlineDelete />
                                       </Button>
@@ -224,20 +242,32 @@ function RemoveAllProduct(){
                           </div>
                           <div className="col">
                             <b>
-                              <BsCurrencyRupee/>{cartList.reduce(
-                                (total, product) =>
-                                  total + product.DisPrice * state[product.id],
-                                0
-                              ).toFixed(2)}
+                              <BsCurrencyRupee />
+                              {cartList
+                                .reduce(
+                                  (total, product) =>
+                                    total +
+                                    product.DisPrice * state[product.id],
+                                  0
+                                )
+                                .toFixed(2)}
                             </b>
-                            <p className="mt-3"><BsCurrencyRupee/>50</p>
-                            <p><BsCurrencyRupee/>50</p>
+                            <p className="mt-3">
+                              <BsCurrencyRupee />
+                              50
+                            </p>
+                            <p>
+                              <BsCurrencyRupee />
+                              50
+                            </p>
                             <b>
-                              <BsCurrencyRupee/>{(
+                              <BsCurrencyRupee />
+                              {(
                                 100 +
                                 cartList.reduce(
                                   (total, product) =>
-                                    total + product.DisPrice * state[product.id],
+                                    total +
+                                    product.DisPrice * state[product.id],
                                   0
                                 )
                               ).toFixed(2)}
@@ -249,6 +279,7 @@ function RemoveAllProduct(){
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModalsuccess"
                           style={{ boxShadow: "none" }}
+                          onClick={handleRemoveAllProduct}
                         >
                           Buy Now
                         </button>

@@ -12,6 +12,12 @@ const removeFromCart = (value) => {
   }
 };
 
+const removeAllProduct = () => {
+  cartItems.length = 0; // Empty the cartItems array
+  console.log(cartItems, "All products removed from cart");
+  saveCartItemsToLocalStorage(); // Save updated cart items to localStorage
+};
+
 // Add item to cart
 const addToCart = (value) => {
   const itemExists = cartItems.some((item) => item.id === value.id);
@@ -70,4 +76,5 @@ export {
   addToWishlist,
   removeFromWishlist,
   getCartItems,
+  removeAllProduct
 };
