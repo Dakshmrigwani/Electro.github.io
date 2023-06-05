@@ -5,7 +5,7 @@ import {cartItems} from "./items"
 export const cartContext = createContext();
 
 export default function Cart() {
-  console.log(cartItems)
+  console.log(cartItems , "total")
 
   return (
     <cartContext.Provider value={cartItems}>

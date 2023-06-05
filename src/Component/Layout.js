@@ -5,8 +5,8 @@ import Footer from "./Footer";
 function Layout({ children }) {
   return (
     <div>
-      <NavBar className="z-1" />
-      <main className="z-2">{children}</main>
+      <NavBar />
+      <main>{children}</main>
       <Footer />
     </div>
   );

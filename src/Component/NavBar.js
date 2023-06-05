@@ -8,7 +8,8 @@ import { BsCart3 } from "react-icons/bs";
 import SearchBar from "./SearchBar";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import React from "react";
+import React , {useEffect} from "react";
+import { cartItems } from "../Pages/items";
 
 function NavBar() {
   return (
@@ -106,9 +107,9 @@ function NavBar() {
                 <Link to="/pages/Cart">
                   <span className="position-relative">
                     <BsCart3 className="text-dark fs-4" />
-                    {/* <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1">
-                      <span className="">1</span>
-                    </span> */}
+                    <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1">
+                      <span className="">{cartItems.length}</span>
+                    </span>
                   </span>
                 </Link>
               </Button>

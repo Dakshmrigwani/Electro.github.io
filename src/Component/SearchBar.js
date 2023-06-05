@@ -41,7 +41,7 @@ export default function SearchBar() {
 
         {query && showResults ? (
           <div className="position-absolute top-100">
-            <div className="card">
+            <div className="card h-100">
               <div className="card-body" style={{ overflow: "auto" }}>
                 {ProductDetailData.filter((product) =>
                   product.LessTitle.toLowerCase().includes(query)
