@@ -47,13 +47,13 @@ const addToWishlist = (value) => {
   }
 };
 
-// Get cart items
 const getCartItems = () => {
   return cartItems;
 };
 
 // Save cart items to localStorage
 const saveCartItemsToLocalStorage = () => {
+  
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };
 
