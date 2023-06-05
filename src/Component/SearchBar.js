@@ -15,20 +15,25 @@ export default function SearchBar() {
     setQuery("");
   };
 
+  const handleInputChange = (e) => {
+    const inputValue = e.target.value.toLowerCase();
+    setQuery(inputValue);
+    setShowResults(inputValue !== "");
+  };
+
+  const filteredProducts = ProductDetailData.filter((product) =>
+    product.LessTitle.toLowerCase().includes(query)
+  );
+
   return (
     <>
-      <Form
-        className="d-flex mr-auto position-relative"
-        onChange={(e) => {
-          setQuery(e.target.value);
-          setShowResults(true);
-        }}
-      >
+      <Form className="d-flex mr-auto position-relative">
         <InputGroup>
           <Form.Control
             placeholder="Search product name"
             aria-describedby="basic-addon1"
             value={query}
+            onChange={handleInputChange}
           />
           <Button
             variant="outline-secondary"
@@ -38,14 +43,14 @@ export default function SearchBar() {
             <BsSearch />
           </Button>
         </InputGroup>
+      </Form>
 
-        {query && showResults ? (
-          <div className="position-absolute top-100">
-            <div className="card h-100">
-              <div className="card-body" style={{ overflow: "auto" }}>
-                {ProductDetailData.filter((product) =>
-                  product.LessTitle.toLowerCase().includes(query)
-                ).map((product) => (
+      {query && showResults ? (
+        <div className="position-absolute top-100">
+          <div className="card h-100">
+            <div className="card-body" style={{ overflow: "auto" }}>
+              {filteredProducts.length > 0 ? (
+                filteredProducts.map((product) => (
                   <div key={product.id}>
                     <Link
                       to={`/AllProducts/${product.id}`}
@@ -55,12 +60,16 @@ export default function SearchBar() {
                       {product.LessTitle}
                     </Link>
                   </div>
-                ))}
-              </div>
+                ))
+              ) : (
+                <div className="card-text px-5">
+                  <p>No Results Found</p>
+                </div>
+              )}
             </div>
           </div>
-        ) : null}
-      </Form>
+        </div>
+      ) : null}
     </>
   );
 }
