@@ -40,7 +40,7 @@ export default function SearchBar() {
         </InputGroup>
 
         {query && showResults ? (
-          <div className="position-absolute  top-100 end-0 translate-middle-x">
+          <div className="position-absolute top-100">
             <div className="card">
               <div className="card-body" style={{ overflow: "auto" }}>
                 {ProductDetailData.filter((product) =>
