@@ -4,13 +4,9 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import InputGroup from "react-bootstrap/InputGroup";
-import { BsCart3, BsMoonStarsFill, BsSunFill, BsSearch } from "react-icons/bs";
+import { BsCart3 } from "react-icons/bs";
 import SearchBar from "./SearchBar";
-import {
-  AiOutlineHeart,
-  AiOutlineUserAdd,
-  AiOutlineUser,
-} from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import React from "react";
 
@@ -98,12 +94,22 @@ function NavBar() {
             <div className="d-none d-sm-flex justify-content-end order-1 order-sm-2">
               <Button className="btn btn-light" style={{ boxShadow: "none" }}>
                 <Link to="/Pages/Wishlist">
-                  <AiOutlineHeart className="text-dark fs-4" />
+                  <span className="position-relative">
+                    <AiOutlineHeart className="text-dark fs-4" />
+                    {/* <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1">
+                      <span className="">1</span>
+                    </span> */}
+                  </span>
                 </Link>
               </Button>
               <Button className="btn btn-light" style={{ boxShadow: "none" }}>
                 <Link to="/pages/Cart">
-                  <BsCart3 className="text-dark fs-4" />
+                  <span className="position-relative">
+                    <BsCart3 className="text-dark fs-4" />
+                    {/* <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1">
+                      <span className="">1</span>
+                    </span> */}
+                  </span>
                 </Link>
               </Button>
               <Button
@@ -111,7 +117,9 @@ function NavBar() {
                 style={{ boxShadow: "none" }}
               >
                 <Link to="/pages/SignIn">
-                  <AiOutlineUser />
+                  <span>
+                    <AiOutlineUser />
+                  </span>
                 </Link>
               </Button>
             </div>

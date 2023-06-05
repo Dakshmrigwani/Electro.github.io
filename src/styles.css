@@ -121,9 +121,9 @@
   color: #5c8cba;
   text-decoration: none;
 }
-.increase_on_click{
-  width:10rem;
+.increase_on_click {
+  width: 10rem;
 }
-.increase_on_click:focused{
-  width:20rem;
+.increase_on_click:focused {
+  width: 20rem;
 }
