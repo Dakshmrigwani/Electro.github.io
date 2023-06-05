@@ -11,7 +11,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Success from "../Component/Success";
 import Failure from "../Component/Failure";
 import { cartContext } from "../Pages/Cart";
-import { removeFromCart } from "../Pages/items";
+import { removeFromCart, addToWishlist } from "../Pages/items";
 import { BsCurrencyRupee } from "react-icons/bs";
 function reducer(state, action) {
   switch (action.type) {
@@ -197,6 +197,7 @@ export default function CartContext() {
                                       <Button
                                         variant="light"
                                         style={{ boxShadow: "none" }}
+                                        onClick={() => addToWishlist(product)}
                                       >
                                         <AiOutlineHeart />
                                       </Button>
