@@ -1,6 +1,5 @@
 // Load cart items from localStorage
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-
 // Remove item from cart
 const removeFromCart = (value) => {
   const itemIndex = cartItems.findIndex((item) => item.id === value.id);
@@ -12,13 +11,14 @@ const removeFromCart = (value) => {
   }
 };
 
-// Add item to cart
+// Add item to car
 const addToCart = (value) => {
   const itemExists = cartItems.some((item) => item.id === value.id);
 
   if (!itemExists) {
     cartItems.push(value);
     console.log(cartItems, "Added to cart");
+
     saveCartItemsToLocalStorage(); // Save updated cart items to localStorage
   }
 };
@@ -53,7 +53,6 @@ const getCartItems = () => {
 
 // Save cart items to localStorage
 const saveCartItemsToLocalStorage = () => {
-  
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };
 
