@@ -13,7 +13,7 @@ import { BsPencil, BsCurrencyRupee } from "react-icons/bs";
 import ReactStars from "react-stars";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {addToCart , addToWishlist} from "./items"
+import { addToCart, addToWishlist } from "./items";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -48,10 +48,10 @@ function ProductDetail() {
   }
 
   function handleDecrementAge() {
-  if (state.age > 1) {
-    dispatch({ type: "decremented_age" });
+    if (state.age > 1) {
+      dispatch({ type: "decremented_age" });
+    }
   }
-}
 
   const selectedProduct = ProductDetailData.find(
     (product) => product.id === parseInt(productId)
@@ -206,10 +206,10 @@ function ProductDetail() {
                           </span>
                         </div>
                         <div className="mt-3 row">
-                           <span className="col-5">
+                          <span className="col-5">
                             <b>Price</b>
                           </span>
-                           <span className="col-7 text-end">
+                          <span className="col-7 text-end">
                             <b>
                               <BsCurrencyRupee />
                               {price}
@@ -252,7 +252,10 @@ function ProductDetail() {
                         </div>
                         <div className="d-flex flex-column gap-2 mt-3">
                           <Row>
-                            <Button style={{ boxShadow: "none" }} onClick={()=>addToWishlist(selectedProduct)}>
+                            <Button
+                              style={{ boxShadow: "none" }}
+                              onClick={() => addToCart(selectedProduct)}
+                            >
                               Add to Cart
                             </Button>
                           </Row>
@@ -260,7 +263,7 @@ function ProductDetail() {
                             <Button
                               variant="light"
                               style={{ boxShadow: "none" }}
-                              onClick={()=>addToWishlist(selectedProduct)}
+                              onClick={() => addToWishlist(selectedProduct)}
                             >
                               Add to Wishlist
                             </Button>
