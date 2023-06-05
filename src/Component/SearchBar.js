@@ -40,8 +40,8 @@ export default function SearchBar() {
         </InputGroup>
 
         {query && showResults ? (
-          <div className="position-absolute end-0">
-            <div className="card w-75 mt-5">
+          <div className="position-absolute  top-100 end-0 translate-middle-x">
+            <div className="card">
               <div className="card-body" style={{ overflow: "auto" }}>
                 {ProductDetailData.filter((product) =>
                   product.LessTitle.toLowerCase().includes(query)

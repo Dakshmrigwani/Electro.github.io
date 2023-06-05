@@ -109,8 +109,6 @@ export default function Body() {
     handleFilter(selectedCategory);
   }, [selectedCategory]);
 
-  // <Cart items = {cartItems}/>
-
   return (
     <>
       <Layout>

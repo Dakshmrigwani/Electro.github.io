@@ -12,7 +12,6 @@ const removeFromCart = (value) => {
   }
 };
 
-
 // Add item to cart
 const addToCart = (value) => {
   const itemExists = cartItems.some((item) => item.id === value.id);
@@ -25,7 +24,6 @@ const addToCart = (value) => {
 };
 
 const wishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
-
 
 // Remove item from wishlist
 const removeFromWishlist = (value) => {
