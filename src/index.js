@@ -3,9 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./styles.css";
 import ContentLoader from "react-content-loader";
-// import store from "./store"
-import { Provider } from 'react-redux';
-
 
 const MyLoader = () => (
   <div className="center-screen">
@@ -28,10 +25,10 @@ const RootComponent = () => {
   return (
     <React.StrictMode>
       {isLoading ? (
-        <MyLoader /> 
+        <MyLoader />
       ) : (
         // <Provider store={store}>
-          <App className="App" /> 
+        <App className="App" />
         // </Provider>
       )}
     </React.StrictMode>
