@@ -21,3 +21,12 @@ i have added add to cart functionality in wishlist so that when you click on tha
 
 there is sign in so that the user can sign in and add validation using yup and formik 
 
+what will come
+
+add filter functionality in product page
+
+show toast when you add a product to the cart or wishlist
+
+show quantity in icon of cart and wishlist
+
+display your name in right side where user icon has been added 
