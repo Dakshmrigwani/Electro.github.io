@@ -88,8 +88,8 @@ function NavBar() {
               </Link>
             </Button>
           </span>
-          <div className="d-flex gap-3">
-            <span className="d-flex justify-content-center order-2 order-sm-1">
+          <div className="d-flex justify-content-center align-items-center w-100 gap-3">
+            <span className="d-flex order-2 order-sm-1">
               <SearchBar className="increase_on_click" />
             </span>
             <div className="d-none d-sm-flex justify-content-end order-1 order-sm-2">
