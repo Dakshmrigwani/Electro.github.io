@@ -11,7 +11,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Success from "../Component/Success";
 import Failure from "../Component/Failure";
 import { cartContext } from "../Pages/Cart";
-import { removeFromCart, addToWishlist } from "../Pages/items";
+import { removeFromCart, addToWishlist , clearCart } from "../Pages/items";
 import { BsCurrencyRupee } from "react-icons/bs";
 function reducer(state, action) {
   switch (action.type) {
@@ -274,6 +274,7 @@ export default function CartContext() {
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModalsuccess"
                           style={{ boxShadow: "none" }}
+                          onClick={clearCart}
                         >
                           Buy Now
                         </button>
