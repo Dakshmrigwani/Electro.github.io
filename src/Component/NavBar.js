@@ -88,10 +88,16 @@ function NavBar() {
               </Link>
             </Button>
           </span>
-          <div className="d-flex justify-content-center align-items-center w-100 gap-3">
+          <div className="d-flex d-lg-none justify-content-center align-items-center w-100 gap-3">
             <span className="d-flex order-2 order-sm-1">
               <SearchBar className="increase_on_click" />
             </span>
+          </div>
+          <div className="d-none d-lg-flex gap-3">
+            <span className="d-flex order-2 order-sm-1">
+              <SearchBar className="increase_on_click" />
+            </span>
+
             <div className="d-none d-sm-flex justify-content-end order-1 order-sm-2">
               <Button className="btn btn-light" style={{ boxShadow: "none" }}>
                 <Link to="/Pages/Wishlist">
