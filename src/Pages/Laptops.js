@@ -20,13 +20,12 @@ export default function Laptops() {
 
   const handleToggle = () => setShowMore(!showMore);
 
- 
   const handleFilter = (filterCriteria) => {
     const filteredProducts = ProductDetailData.filter(
       (product) => product.category === filterCriteria
     );
     setFilteredData(filteredProducts);
-  }
+  };
 
   // useEffect hook example
   useEffect(() => {
@@ -181,6 +180,13 @@ export default function Laptops() {
                       <Button variant="primary" style={{ boxShadow: "none" }}>
                         Apply
                       </Button>
+                      <Button
+                        variant="danger"
+                        className="ms-3"
+                        style={{ boxShadow: "none" }}
+                      >
+                        Clear
+                      </Button>
                     </Card.Body>
                   </Card>
                 </div>
@@ -275,13 +281,19 @@ export default function Laptops() {
                   <Button variant="primary" style={{ boxShadow: "none" }}>
                     Apply
                   </Button>
+                  <Button
+                    variant="danger"
+                    className="ms-3"
+                    style={{ boxShadow: "none" }}
+                  >
+                    Clear
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={9} sm={12}>
               <CardGroup className="container-fluid my-5">
                 <Row xs={1} md={3} className="g-4">
-                  
                   {filteredData.map((body) => (
                     <div key={body.id}>
                       <Card>
