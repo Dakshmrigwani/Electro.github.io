@@ -29,11 +29,16 @@ export default function Body() {
 
   // const [cartItems, setCartItems] = useState([]);
 
-  
+  const storedEmail = localStorage.getItem("email");
+
 
   useEffect(() => {
-      setShow(true);
-  }, []);
+    if (storedEmail) {
+      setShow(false);
+      setShow1(true);
+      setSubmitted(true);
+    }
+  }, [storedEmail]);
   
   const [showMore, setShowMore] = useState(false);
 
@@ -53,26 +58,28 @@ export default function Body() {
   const handleCategoryFilter = () => {
     handleFilter(selectedCategory);
   };
+  
 
-  const handleSubmit = () => {
-    // Perform email validation here (e.g., using regular expressions)
+   const handleSubmit = () => {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     const isValid = emailRegex.test(email);
     setEmailIsValid(isValid);
-    setEmail("")
-    setShow(false);
-    setShow1(true)
-    setSubmitted(true);
+    setEmail("");
 
     if (isValid) {
-      // Perform any necessary actions with the valid email
-      // (e.g., sending it to the server or storing it in state)
-      // You can replace the console.log with the desired action
       console.log("Email submitted:", email);
-
-      // Clear the email field and show the "Thank you" modal
-      
+      localStorage.setItem("email", email);
+      setShow(false);
+      setShow1();
+      setSubmitted(true);
     }
+  };;
+  
+  const handleUnsubscribe = () => {
+    localStorage.removeItem("email");
+    setShow(true);
+    setShow1(false);
+    setSubmitted(false);
   };
 
   //   const addToCart = useCallback((value) => {
@@ -107,69 +114,69 @@ export default function Body() {
   return (
     <>
       <Layout>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Subscribe Us</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <p className="text-center fs-4">
-              Subscribe our E-mail and get <br />
-              <b>more exciting offers</b>
-            </p>
-            <InputGroup className="mb-3 mt-5">
-              <Form.Control
-                placeholder="Email address"
-                aria-label="Email address"
-                aria-describedby="basic-addon2"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-
-              <Button
-                variant="outline-danger"
-                id="button-addon2"
-                onClick={handleSubmit}
-              >
-                Submit
-              </Button>
-            </InputGroup>
-            <div className="text-end">
-              <small className="text-center">
-                <p>
-                  By providing your email address
-                  <br />
-                  you agree to our&nbsp;
-                  <p
-                    className="text-decoration-underline"
-                    style={{ display: "inline-block" }}
-                  >
-                    privacy policy
-                  </p>
-                  &nbsp;and&nbsp;
-                  <p
-                    className="text-decoration-underline"
-                    style={{ display: "inline-block" }}
-                  >
-                    Terms and conditions
-                  </p>
+        <Modal show={!storedEmail && show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Subscribe Us</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p className="text-center fs-4">
+            Subscribe to our newsletter and get <br />
+            <b>more exciting offers</b>
+          </p>
+          <InputGroup className="mb-3 mt-5">
+            <Form.Control
+              placeholder="Email address"
+              aria-label="Email address"
+              aria-describedby="basic-addon2"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <Button
+              variant="outline-danger"
+              id="button-addon2"
+              onClick={handleSubmit}
+            >
+              Submit
+            </Button>
+          </InputGroup>
+          <div className="text-end">
+            <small className="text-center">
+              <p>
+                By providing your email address
+                <br />
+                you agree to our&nbsp;
+                <p
+                  className="text-decoration-underline"
+                  style={{ display: "inline-block" }}
+                >
+                  privacy policy
                 </p>
-              </small>
-            </div>
-          </Modal.Body>
-        </Modal>
+                &nbsp;and&nbsp;
+                <p
+                  className="text-decoration-underline"
+                  style={{ display: "inline-block" }}
+                >
+                  terms and conditions
+                </p>
+              </p>
+            </small>
+          </div>
+        </Modal.Body>
+      </Modal>
+
+      {storedEmail && show1 && (
         <Modal show={show1} onHide={handleClose1}>
           <Modal.Header closeButton>
-            <Modal.Title>Thank You!</Modal.Title>
+            <Modal.Title>Thank you for subscribing!</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p className="text-center fs-4">
-              Thank you for submitting your email!
-            </p>
-            <button className="btn btn-primary w-100" onClick={handleClose1}>
-              close
-            </button>
+            <p>You have successfully subscribed with the email: {storedEmail}</p>
+            <Button variant="danger" className="w-100" onClick={handleUnsubscribe}>
+              Unsubscribe
+            </Button>
           </Modal.Body>
         </Modal>
+      )}
 
         <Carousel className="container-fluid my-4">
           <Carousel.Item interval={1000}>

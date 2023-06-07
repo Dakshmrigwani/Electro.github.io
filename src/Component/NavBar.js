@@ -68,7 +68,7 @@ function NavBar() {
               </Navbar.Collapse>
             </span>
           </div>
-          <span className="d-flex d-sm-none">
+          <span className="d-flex d-lg-none">
             <Button className="btn btn-light" style={{ boxShadow: "none" }}>
               <Link to="/Pages/Wishlist">
                 <AiOutlineHeart className="text-dark fs-4" />
