@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import InputGroup from "react-bootstrap/InputGroup";
 import { BsCart3 } from "react-icons/bs";
 import SearchBar from "./SearchBar";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";

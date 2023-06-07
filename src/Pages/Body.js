@@ -34,14 +34,9 @@ export default function Body() {
   };
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
       setShow(true);
-    }, );
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
   }, []);
+  
   const [showMore, setShowMore] = useState(false);
 
   const handleToggle = () => setShowMore(!showMore);
