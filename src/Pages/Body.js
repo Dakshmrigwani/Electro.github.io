@@ -29,9 +29,7 @@ export default function Body() {
 
   // const [cartItems, setCartItems] = useState([]);
 
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
+  
 
   useEffect(() => {
       setShow(true);
@@ -247,7 +245,6 @@ export default function Body() {
                       >
                         <ReactStars
                           count={body.rating}
-                          onChange={ratingChanged}
                           size={24}
                           color2={"#ffd700"}
                           value={body.Rating}
