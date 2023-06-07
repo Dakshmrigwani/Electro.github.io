@@ -20,9 +20,7 @@ export default function Watches() {
 
   const handleToggle = () => setShowMore(!showMore);
 
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
+
   const handleFilter = (filterCriteria) => {
     const filteredProducts = ProductDetailData.filter(
       (product) => product.category === filterCriteria
@@ -396,7 +394,6 @@ export default function Watches() {
                             >
                               <ReactStars
                                 count={body.rating}
-                                onChange={ratingChanged}
                                 size={24}
                                 color2={"#ffd700"}
                                 value={body.Rating}
