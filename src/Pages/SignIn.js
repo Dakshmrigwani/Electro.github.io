@@ -73,11 +73,20 @@ function SignIn() {
       email:'',
     },
     validationSchema,
-    onSubmit: (values) => {
-      navigate("/Pages/Body");
+    onSubmit: values => {
+      if ((formik.values.email && formik.values.password) ) {
+        navigate("/Pages/Body");
+      }
+      else if
+        (formik.values.email1 && formik.values.password1 && formik.values.username && formik.values.name)
+        {
+          navigate("/Pages/Body");
+        }
+       else {
+        console.log("Please fill the form");
+      }
     },
   });
-
 
   const { handleSubmit, handleChange, values, errors, touched } = formik;
 
@@ -117,154 +126,136 @@ function SignIn() {
 
       <MDBTabsContent>
         <MDBTabsPane show={justifyActive === "tab1"}>
-          
-          <div label="email">Email address</div>
-          <MDBInput
-            
-            id="email"
-            name="email"
-            type="email"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={formik.handleBlur}
-            error={touched.email && errors.email}
-          />
-          {touched.email && errors.email && (
-            <div className="text-danger">{errors.email}</div>
-          )}
-          <div label="password">Password</div>
-          <MDBInput
-            wrapperClass="w-100 input-group"
-            id="password"
-            name="password"
-            type={showPassword ? "text" : "password"}
-            value={values.password}
-            onChange={handleChange}
-            onBlur={formik.handleBlur}
-            error={touched.password && errors.password}
-          >
-            <button
-              type="button"
-              className="btn btn-outline-primary"
-              onClick={togglePasswordVisibility}
+          <form onSubmit={handleSubmit}>
+            <div label="email">Email address</div>
+            <MDBInput
+              id="email"
+              name="email"
+              type="email"
+              value={formik.values.email}
+              onChange={handleChange}
+              onBlur={formik.handleBlur}
+              error={touched.email && errors.email}
+            />
+            {touched.email && errors.email && (
+              <div className="text-danger">{errors.email}</div>
+            )}
+            <div label="password">Password</div>
+            <MDBInput
+              wrapperClass="w-100 input-group"
+              id="password"
+              name="password"
+              type={showPassword ? "text" : "password"}
+              value={formik.values.password}
+              onChange={handleChange}
+              onBlur={formik.handleBlur}
+              error={touched.password && errors.password}
             >
-              {showPassword ? <BsEyeSlash /> : <BsEye />}
-            </button>
-          </MDBInput>
-          {touched.password && errors.password && (
-            <div className="text-danger">{errors.password}</div>
-          )}
+              <button
+                type="button"
+                className="btn btn-outline-primary"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? <BsEyeSlash /> : <BsEye />}
+              </button>
+            </MDBInput>
+            {touched.password && errors.password && (
+              <div className="text-danger">{errors.password}</div>
+            )}
 
-          <div className="row mb-5">
-            <div className="col-md-6 col-sm-12">
-              <MDBCheckbox
-                name="flexCheck"
-                value=""
-                id="flexCheckDefault"
-                label="Remember me"
-              />
-            </div>
-            <div className="col-md-6 col-sm-12 text-end">
-              <a href="!#">Forgot password?</a>
-            </div>
-          </div>
-          <form  onSubmit={formik.handleSubmit}>
-            <MDBBtn className="mb-4 w-100" type="submit">
+            <MDBBtn className="mt-4 w-100" type="submit">
               Sign in
             </MDBBtn>
           </form>
-          
         </MDBTabsPane>
 
         <MDBTabsPane show={justifyActive === "tab2"}>
-          
-
-          <div label="name">Name</div>
-          <MDBInput
-            
-            id="name"
-            name="name"
-            type="text"
-            value={values.name}
-            onChange={handleChange}
-            onBlur={formik.handleBlur}
-            error={touched.name && errors.name}
-          />
-          {touched.name && errors.name && (
-            <div className="text-danger">{errors.name}</div>
-          )}
-          <div label="username">Username</div>
-          <MDBInput
-            
-            id="username"
-            name="username"
-            type="text"
-            value={values.username}
-            onChange={handleChange}
-            onBlur={formik.handleBlur}
-            error={touched.username && errors.username}
-          />
-          {touched.username && errors.username && (
-            <div className="text-danger">{errors.username}</div>
-          )}
-          <div label="email1">Email address</div>
-          <MDBInput
-            
-            id="email1"
-            name="email1"
-            type="email1"
-            value={values.email1}
-            onChange={handleChange}
-            onBlur={formik.handleBlur}
-            error={touched.email1 && errors.email1}
-          />
-          {touched.email1 && errors.email1 && (
-            <div className="text-danger">{errors.email1}</div>
-          )}
-          <div label="password1">Password</div>
-
-          <MDBInput
-            wrapperClass="w-100 input-group"
-            id="password1"
-            name="password1"
-            type={showPassword1 ? "text" : "password"}
-            value={values.password1}
-            onChange={handleChange}
-            onBlur={formik.handleBlur}
-            error={touched.password1 && errors.password1}
-          >
-            <button
-              type="button"
-              className="btn btn-outline-primary"
-              onClick={togglePasswordVisibility1}
-            >
-              {showPassword1 ? <BsEyeSlash /> : <BsEye />}
-            </button>
-          </MDBInput>
-
-          {touched.password1 && errors.password1 && (
-            <div className="text-danger mb-4">{errors.password1}</div>
-          )}
-
-          <div className="d-flex justify-content-center mb-4">
-            <MDBCheckbox
-              name="agreeToTerms"
-              id="flexCheckDefault"
-              label="I have read and agree to the terms"
+          <form onSubmit={handleSubmit}>
+            <div label="name">Name</div>
+            <MDBInput
+              id="name"
+              name="name"
+              type="text"
+              value={formik.values.name}
               onChange={handleChange}
+              onBlur={formik.handleBlur}
+              error={touched.name && errors.name}
             />
-          </div>
-          <form onSubmit={formik.handleSubmit}>
-            <MDBBtn className="mb-4 w-100">Sign up</MDBBtn>
+            {touched.name && errors.name && (
+              <div className="text-danger">{errors.name}</div>
+            )}
+            <div label="username">Username</div>
+            <MDBInput
+              id="username"
+              name="username"
+              type="text"
+              value={formik.values.username}
+              onChange={handleChange}
+              onBlur={formik.handleBlur}
+              error={touched.username && errors.username}
+            />
+            {touched.username && errors.username && (
+              <div className="text-danger">{errors.username}</div>
+            )}
+            <div label="email1">Email address</div>
+            <MDBInput
+              id="email1"
+              name="email1"
+              type="email1"
+              value={formik.values.email1}
+              onChange={handleChange}
+              onBlur={formik.handleBlur}
+              error={touched.email1 && errors.email1}
+            />
+            {touched.email1 && errors.email1 && (
+              <div className="text-danger">{errors.email1}</div>
+            )}
+            <div label="password1">Password</div>
+
+            <MDBInput
+              wrapperClass="w-100 input-group"
+              id="password1"
+              name="password1"
+              type={showPassword1 ? "text" : "password"}
+              value={formik.values.password1}
+              onChange={handleChange}
+              onBlur={formik.handleBlur}
+              error={touched.password1 && errors.password1}
+            >
+              <button
+                type="button"
+                className="btn btn-outline-primary"
+                onClick={togglePasswordVisibility1}
+              >
+                {showPassword1 ? <BsEyeSlash /> : <BsEye />}
+              </button>
+            </MDBInput>
+
+            {touched.password1 && errors.password1 && (
+              <div className="text-danger mb-4">{errors.password1}</div>
+            )}
+
+            <div className="d-flex justify-content-center mb-4">
+              <MDBCheckbox
+                name="agreeToTerms"
+                id="flexCheckDefault"
+                label="I have read and agree to the terms"
+                onChange={handleChange}
+              />
+            </div>
+            <MDBBtn className="mb-4 w-100" type="submit">
+              Sign up
+            </MDBBtn>
           </form>
         </MDBTabsPane>
       </MDBTabsContent>
       <div className="d-flex justify-content-center">
-      <div className="d-flex flex-column text-center">
-        <p>Sign in with</p>
-        <div className="d-flex gap-3">
-        <BsInstagram/> <BsLinkedin/> <BsTwitter/> <FcGoogle/> <SiGmail/>
-        </div>
+        <div className="d-flex flex-column text-center">
+          <p>Sign in with</p>
+          <div className="d-flex gap-3">
+            <BsInstagram /> <BsLinkedin /> <BsTwitter /> <FcGoogle />{" "}
+            <SiGmail />
+          </div>
         </div>
       </div>
     </MDBContainer>

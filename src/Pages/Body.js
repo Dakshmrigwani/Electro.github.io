@@ -34,14 +34,9 @@ export default function Body() {
   };
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
       setShow(true);
-    }, 10000);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
   }, []);
+  
   const [showMore, setShowMore] = useState(false);
 
   const handleToggle = () => setShowMore(!showMore);
@@ -66,6 +61,10 @@ export default function Body() {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     const isValid = emailRegex.test(email);
     setEmailIsValid(isValid);
+    setEmail("")
+    setShow(false);
+    setShow1(true)
+    setSubmitted(true);
 
     if (isValid) {
       // Perform any necessary actions with the valid email
@@ -74,9 +73,7 @@ export default function Body() {
       console.log("Email submitted:", email);
 
       // Clear the email field and show the "Thank you" modal
-      setEmail("");
-      setShow1(false);
-      setSubmitted(true);
+      
     }
   };
 
@@ -128,7 +125,6 @@ export default function Body() {
                 aria-describedby="basic-addon2"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                isInvalid={!emailIsValid}
               />
 
               <Button
@@ -163,7 +159,7 @@ export default function Body() {
             </div>
           </Modal.Body>
         </Modal>
-        <Modal show1={submitted} onHide={handleClose1}>
+        <Modal show={show1} onHide={handleClose1}>
           <Modal.Header closeButton>
             <Modal.Title>Thank You!</Modal.Title>
           </Modal.Header>
@@ -171,7 +167,7 @@ export default function Body() {
             <p className="text-center fs-4">
               Thank you for submitting your email!
             </p>
-            <button className="btn btn-primary w-100" onClick={handleClose}>
+            <button className="btn btn-primary w-100" onClick={handleClose1}>
               close
             </button>
           </Modal.Body>
