@@ -58,7 +58,6 @@ export default function Body() {
   const handleCategoryFilter = () => {
     handleFilter(selectedCategory);
   };
-  
 
    const handleSubmit = () => {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
@@ -70,7 +69,7 @@ export default function Body() {
       console.log("Email submitted:", email);
       localStorage.setItem("email", email);
       setShow(false);
-      setShow1();
+      setShow1(true);
       setSubmitted(true);
     }
   };;
