@@ -195,6 +195,13 @@ export default function Speaker() {
                   <Button variant="primary" style={{ boxShadow: "none" }}>
                     Apply
                   </Button>
+                  <Button
+                    variant="danger"
+                    className="ms-3"
+                    style={{ boxShadow: "none" }}
+                  >
+                    Clear
+                  </Button>
                 </Card.Body>
               </Card>
                     </div>
@@ -347,6 +354,13 @@ export default function Speaker() {
                   </Card.Text>
                   <Button variant="primary" style={{ boxShadow: "none" }}>
                     Apply
+                  </Button>
+                  <Button
+                    variant="danger"
+                    className="ms-3"
+                    style={{ boxShadow: "none" }}
+                  >
+                    Clear
                   </Button>
                 </Card.Body>
               </Card>
