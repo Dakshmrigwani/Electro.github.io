@@ -26,17 +26,12 @@ export default function Laptops() {
       (product) => product.category === filterCriteria
     );
     setFilteredData(filteredProducts);
-  };
-
-  // Event handler example
-  const handleCategoryFilter = () => {
-    handleFilter(selectedCategory);
-  };
+  }
 
   // useEffect hook example
   useEffect(() => {
     handleFilter(selectedCategory);
-  }, [selectedCategory]);
+  }, []);
 
   return (
     <>
@@ -283,19 +278,10 @@ export default function Laptops() {
                 </Card.Body>
               </Card>
             </Col>
-            {/* </div> */}
             <Col md={9} sm={12}>
               <CardGroup className="container-fluid my-5">
                 <Row xs={1} md={3} className="g-4">
-                  {/* <button
-                    className="btn btn-primary d-flex d-md-none"
-                    type="button"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasTop"
-                    aria-controls="offcanvasTop"
-                  > 
-                    Filter
-                  </button> */}
+                  
                   {filteredData.map((body) => (
                     <div key={body.id}>
                       <Card>
