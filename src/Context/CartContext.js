@@ -134,7 +134,7 @@ export default function CartContext() {
                                       </p>
                                     </div>
                                     <div className="col-6">
-                                      <ReactStars value={product.Rating} />
+                                      <ReactStars value={product.Rating} edit={false} />
                                       <p>{product.reviews}</p>
                                     </div>
                                   </div>
