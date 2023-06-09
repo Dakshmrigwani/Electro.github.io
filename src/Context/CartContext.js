@@ -11,7 +11,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Success from "../Component/Success";
 import Failure from "../Component/Failure";
 import { cartContext } from "../Pages/Cart";
-import { removeFromCart, addToWishlist , clearCart } from "../Pages/items";
+import { removeFromCart, addToWishlist, clearCart } from "../Pages/items";
 import { BsCurrencyRupee } from "react-icons/bs";
 function reducer(state, action) {
   switch (action.type) {
@@ -134,7 +134,10 @@ export default function CartContext() {
                                       </p>
                                     </div>
                                     <div className="col-6">
-                                      <ReactStars value={product.Rating} edit={false} />
+                                      <ReactStars
+                                        value={product.Rating}
+                                        edit={false}
+                                      />
                                       <p>{product.reviews}</p>
                                     </div>
                                   </div>
@@ -145,16 +148,8 @@ export default function CartContext() {
                                   }}
                                   className="row "
                                 >
-                                  <div className="col-md-4 col-lg-3 col-4">
-                                    <select className="form-select">
-                                      <option selected>lg</option>
-                                      <option value="1">sm</option>
-                                      <option value="2">lg</option>
-                                      <option value="3">xl</option>
-                                    </select>
-                                  </div>
-                                  <div className="col-md-4 col-lg-3 col-4">
-                                    <div className="d-flex">
+                                  <div className="col-md-4 col-lg-4 col-4">
+                                    <div className="d-flex justify-content-center">
                                       <Button
                                         onClick={() =>
                                           handleIncrementQuantity(product.id)
@@ -168,7 +163,10 @@ export default function CartContext() {
                                       </Button>
                                       <input
                                         value={state[product.id]}
-                                        style={{ width: "2rem" }}
+                                        style={{
+                                          width: "2rem",
+                                          height: "2rem",
+                                        }}
                                         readOnly
                                       />
                                       <Button
@@ -184,7 +182,7 @@ export default function CartContext() {
                                       </Button>
                                     </div>
                                   </div>
-                                  <div className="col-md-4 col-lg-3 col-4">
+                                  <div className="col-md-4 col-lg-4 col-4">
                                     <select className="form-select">
                                       <option selected>Blue</option>
                                       <option value="1">Red</option>
@@ -192,7 +190,7 @@ export default function CartContext() {
                                       <option value="3">Green</option>
                                     </select>
                                   </div>
-                                  <div className="col-lg-3 col-4">
+                                  <div className="col-lg-4 col-4">
                                     <div className="d-flex gap-2 mt-2 mt-md-0">
                                       <Button
                                         variant="light"
@@ -274,7 +272,6 @@ export default function CartContext() {
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModalsuccess"
                           style={{ boxShadow: "none" }}
-                          onClick={clearCart}
                         >
                           Buy Now
                         </button>
