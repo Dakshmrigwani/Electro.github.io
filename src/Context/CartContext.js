@@ -67,6 +67,8 @@ export default function CartContext() {
     const updatedCartList = cartList.filter((item) => item.id !== product.id);
     setCartList(updatedCartList);
   }
+  
+  
 
   const showDeliveryCard = cartList.some(
     (product) =>
@@ -272,6 +274,7 @@ export default function CartContext() {
                           data-bs-toggle="modal"
                           data-bs-target="#exampleModalsuccess"
                           style={{ boxShadow: "none" }}
+                          onClick={clearCart}
                         >
                           Buy Now
                         </button>
