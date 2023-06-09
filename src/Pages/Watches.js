@@ -106,7 +106,7 @@ export default function Watches() {
                             <Form.Check
                               type="checkbox"
                               id="LOUIS"
-                              label="JBL"
+                              label="louis"
                               onChange={(e) => {
                                 if (e.target.checked) {
                                   setBrandFilters([...brandFilters, "LOUIS"]);
@@ -507,7 +507,7 @@ export default function Watches() {
                         <Form.Check
                           type="checkbox"
                           id="LOUIS"
-                          label="JBL"
+                          label="louis"
                           onChange={(e) => {
                             if (e.target.checked) {
                               setBrandFilters([...brandFilters, "LOUIS"]);
@@ -843,7 +843,6 @@ export default function Watches() {
             <Col md={9}>
               <CardGroup className="container-fluid my-5">
                 <Row xs={1} md={3} className="g-4">
-                  
                   {filteredData.map((body) => (
                     <div key={body.id}>
                       <Card>
