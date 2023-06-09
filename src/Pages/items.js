@@ -23,17 +23,13 @@ const addToCart = (value) => {
   }
 };
 
-const removeAllItems = (value) => {
-  const allItems = cartItems.splice(0, cartItems);
+const clearCart = () => {
+  cartItems.length = 0;
+  saveCartItemsToLocalStorage(); // Save the updated cart items to localStorage
 
-  if (!allItems) {
-    cartItems.push(value);
-    console.log(cartItems, "removed all item");
-
-    saveCartItemsToLocalStorage(); // Save updated cart items to localStorage
-  }
+  const clearCartEvent = new CustomEvent("cartCleared");
+  document.dispatchEvent(clearCartEvent); // Trigger the custom event
 };
-
 const wishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
 
 // Remove item from wishlist
@@ -80,5 +76,5 @@ export {
   addToWishlist,
   removeFromWishlist,
   getCartItems,
-  removeAllItems,
+  clearCart
 };
