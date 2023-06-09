@@ -401,6 +401,7 @@ export default function Speaker() {
                                 value={body.Rating}
                                 style={{ marginRight: "5px" }}
                                 className="col"
+                                edit={false}
                               />
                               <p style={{ margin: "0" }} className="ms-2 col">
                                 {body.reviews} review

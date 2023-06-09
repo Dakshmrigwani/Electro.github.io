@@ -117,7 +117,7 @@ function ProductDetail() {
                   </p>
                 </p>
                 <p>{selectedProduct.disPercent}% Off</p>
-                <ReactStars value={selectedProduct.Rating} />
+                <ReactStars value={selectedProduct.Rating} edit={false} />
                 <p>
                   Rating: {selectedProduct.Rating} ({selectedProduct.reviews}{" "}
                   reviews)
