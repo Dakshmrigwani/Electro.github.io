@@ -7,7 +7,10 @@ export default function Error() {
     <>
       <Layout>
         <div classsName="container">
-          <div className="d-grid justify-content-center my-5 ">
+          <div
+            className="d-flex flex-column justify-content-center align-items-center"
+            style={{ height: "100vh" }}
+          >
             <div classsName="row">
               <h2 className="text-center">404 Error Occured</h2>
               <p>OOPS ! Error occured , Go back to home page </p>
