@@ -54,7 +54,6 @@ export const ProductDetailData = [
     disPercentFilter: `20 - 30`,
     ratingFilter: `4 - 4.5`,
     Rating: 4,
-
     reviews: 21875,
     disPercent: 22,
     description1:
@@ -316,6 +315,10 @@ export const ProductDetailData = [
     image5: "https://m.media-amazon.com/images/I/61Bv8qxxp8L._SY450_.jpg",
     Rating: 4,
     category: `headphones`,
+    brand: `boAt`,
+    RangePrice: `4000 - 5000`,
+    disPercentFilter: `60 - 70`,
+    ratingFilter: `3.5 - 4`,
     reviews: 34320,
     disPercent: 64,
     description1:
@@ -346,6 +349,10 @@ export const ProductDetailData = [
     Rating: 4.5,
     reviews: 12845,
     disPercent: 25,
+    brand: `Bose`,
+    RangePrice: `25000 - 30000`,
+    disPercentFilter: `20 - 30`,
+    ratingFilter: `4 - 4.5`,
     description1:
       "Iconic quiet. Comfort. And sound. The first noise cancelling headphones are back, now with lightweight materials for premium comfort and proprietary acoustic technology for deep, clear audio. They’re not just an icon reborn – they’re the perfect balance of quiet, comfort, and sound.",
     description2:
@@ -373,6 +380,10 @@ export const ProductDetailData = [
     DisPrice: 998,
     Rating: 4.1,
     reviews: 20075,
+    brand: `boAt`,
+    RangePrice: `2500 - 3000`,
+    disPercentFilter: `60 - 70`,
+    ratingFilter: `4 - 4.5`,
     disPercent: 66,
     description1:
       "With 40mm Drivers get ready to immerse in HD auditory experience with super extra bass to get the day going",
@@ -402,6 +413,10 @@ export const ProductDetailData = [
     Rating: 3.8,
     reviews: 63459,
     disPercent: 57,
+    brand: `Zebronics`,
+    RangePrice: `500 -1000`,
+    disPercentFilter: `50 - 60`,
+    ratingFilter: `3.5 - 4`,
     description1:
       "Comfortable Design: Beat the workday blues with music on Zeb-Thunder wireless headphone that comes in an ergonomic design a perfect fit and design for long hours use. Sensitivity : -113dB ±3dB. Microphone impedance : 1.2k Ω",
     description2:
@@ -429,6 +444,10 @@ export const ProductDetailData = [
     Rating: 4.1,
     category: `headphones`,
     reviews: 124790,
+    brand: `boAt`,
+    RangePrice: `1000 - 2000`,
+    disPercentFilter: `60 - 70`,
+    ratingFilter: `4 - 4.5`,
     disPercent: 62,
     description1:
       "Playback- It provides a massive battery backup of upto 15 hours for a superior playback time. Charging Time : 3 Hours",
@@ -458,6 +477,10 @@ export const ProductDetailData = [
     category: `headphones`,
     reviews: 112987,
     disPercent: 50,
+    brand: `boAt`,
+    RangePrice: `1000 - 2000`,
+    disPercentFilter: `50 - 60`,
+    ratingFilter: `4 - 4.5`,
     description1:
       "Playback- Choose the real pro and leave all charging worries at bay as the Rockerz 450 Pro comes with a mountainous playback of upto 70 hours(at 60% vol.).",
     description2:
@@ -485,6 +508,10 @@ export const ProductDetailData = [
     category: `headphones`,
     Rating: 3.8,
     reviews: 24743,
+    brand: `JBL`,
+    RangePrice: `2000 - 3000`,
+    disPercentFilter: `20 - 30`,
+    ratingFilter: `4 - 4.5`,
     disPercent: 36,
     description1:
       "JBL PURE BASE SOUND: Packed with 32mm Dynamic drivers, the JBL Tune 510BT features the renowned JBL Pure Bass sound, which can be found in the most famous venues all around the world",
@@ -512,6 +539,10 @@ export const ProductDetailData = [
     category: `headphones`,
     Rating: 4,
     reviews: 14603,
+    brand: `Logitech`,
+    RangePrice: `500 - 1000`,
+    disPercentFilter: `0 - 10`,
+    ratingFilter: `4 - 4.5`,
     disPercent: 6,
     description1:
       "ADJUSTABLE HEADBAND This sturdy yet lightweight stereo headset has a broad range of adjustment. Ultra-soft foam ear cushions provide hours of comfort.",
@@ -540,6 +571,10 @@ export const ProductDetailData = [
     category: `headphones`,
     DisPrice: 4999,
     Rating: 3.9,
+    brand: `JBL`,
+    RangePrice: `4000 - 5000`,
+    disPercentFilter: `30 - 40`,
+    ratingFilter: `3.5 - 4`,
     reviews: 19507,
     disPercent: 38,
     description1:
