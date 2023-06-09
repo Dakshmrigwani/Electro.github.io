@@ -505,409 +505,341 @@ export default function Headphone() {
                 <Card.Body className="force-overflow">
                   <Card.Title>Filter</Card.Title>
                   <Card.Text>
-                        <b>Brand</b>
-                        <ul style={{ listStyleType: "none", padding: 0 }}>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox1"
-                              label="JBL"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setBrandFilters([...brandFilters, "JBL"]);
-                                } else {
-                                  setBrandFilters(
-                                    brandFilters.filter(
-                                      (brand) => brand !== "JBL"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox1"
-                              label="boAt"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setBrandFilters([...brandFilters, "boAt"]);
-                                } else {
-                                  setBrandFilters(
-                                    brandFilters.filter(
-                                      (brand) => brand !== "boAt"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox1"
-                              label="Logitech"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setBrandFilters([
-                                    ...brandFilters,
-                                    "Logitech",
-                                  ]);
-                                } else {
-                                  setBrandFilters(
-                                    brandFilters.filter(
-                                      (brand) => brand !== "Logitech"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox1"
-                              label="Bose"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setBrandFilters([...brandFilters, "Bose"]);
-                                } else {
-                                  setBrandFilters(
-                                    brandFilters.filter(
-                                      (brand) => brand !== "Bose"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox1"
-                              label="Zebronics"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setBrandFilters([
-                                    ...brandFilters,
-                                    "Zebronics",
-                                  ]);
-                                } else {
-                                  setBrandFilters(
-                                    brandFilters.filter(
-                                      (brand) => brand !== "Zebronics"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                        </ul>
-                        <b>Price</b>
-                        <ul style={{ listStyleType: "none", padding: 0 }}>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox5"
-                              label="500 - 1000"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setPriceFilters([
-                                    ...priceFilters,
-                                    "500 - 1000",
-                                  ]);
-                                } else {
-                                  setPriceFilters(
-                                    priceFilters.filter(
-                                      (price) => price !== "500 - 1000"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox5"
-                              label="1000 - 2000"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setPriceFilters([
-                                    ...priceFilters,
-                                    "1000 - 2000",
-                                  ]);
-                                } else {
-                                  setPriceFilters(
-                                    priceFilters.filter(
-                                      (price) => price !== "1000 - 2000"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox5"
-                              label="2000 - 3000"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setPriceFilters([
-                                    ...priceFilters,
-                                    "2000 - 3000",
-                                  ]);
-                                } else {
-                                  setPriceFilters(
-                                    priceFilters.filter(
-                                      (price) => price !== "2000 - 3000"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox5"
-                              label="4000 - 5000"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setPriceFilters([
-                                    ...priceFilters,
-                                    "4000 - 5000",
-                                  ]);
-                                } else {
-                                  setPriceFilters(
-                                    priceFilters.filter(
-                                      (price) => price !== "4000 - 5000"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox5"
-                              label="2500 - 3000"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setPriceFilters([
-                                    ...priceFilters,
-                                    "2500 - 3000",
-                                  ]);
-                                } else {
-                                  setPriceFilters(
-                                    priceFilters.filter(
-                                      (price) => price !== "2500 - 3000"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                        </ul>
+                    <b>Brand</b>
+                    <ul style={{ listStyleType: "none", padding: 0 }}>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox1"
+                          label="JBL"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setBrandFilters([...brandFilters, "JBL"]);
+                            } else {
+                              setBrandFilters(
+                                brandFilters.filter((brand) => brand !== "JBL")
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox1"
+                          label="boAt"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setBrandFilters([...brandFilters, "boAt"]);
+                            } else {
+                              setBrandFilters(
+                                brandFilters.filter((brand) => brand !== "boAt")
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox1"
+                          label="Logitech"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setBrandFilters([...brandFilters, "Logitech"]);
+                            } else {
+                              setBrandFilters(
+                                brandFilters.filter(
+                                  (brand) => brand !== "Logitech"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox1"
+                          label="Bose"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setBrandFilters([...brandFilters, "Bose"]);
+                            } else {
+                              setBrandFilters(
+                                brandFilters.filter((brand) => brand !== "Bose")
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox1"
+                          label="Zebronics"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setBrandFilters([...brandFilters, "Zebronics"]);
+                            } else {
+                              setBrandFilters(
+                                brandFilters.filter(
+                                  (brand) => brand !== "Zebronics"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                    </ul>
+                    <b>Price</b>
+                    <ul style={{ listStyleType: "none", padding: 0 }}>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox5"
+                          label="500 - 1000"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setPriceFilters([...priceFilters, "500 - 1000"]);
+                            } else {
+                              setPriceFilters(
+                                priceFilters.filter(
+                                  (price) => price !== "500 - 1000"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox5"
+                          label="1000 - 2000"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setPriceFilters([...priceFilters, "1000 - 2000"]);
+                            } else {
+                              setPriceFilters(
+                                priceFilters.filter(
+                                  (price) => price !== "1000 - 2000"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox5"
+                          label="2000 - 3000"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setPriceFilters([...priceFilters, "2000 - 3000"]);
+                            } else {
+                              setPriceFilters(
+                                priceFilters.filter(
+                                  (price) => price !== "2000 - 3000"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox5"
+                          label="4000 - 5000"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setPriceFilters([...priceFilters, "4000 - 5000"]);
+                            } else {
+                              setPriceFilters(
+                                priceFilters.filter(
+                                  (price) => price !== "4000 - 5000"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox5"
+                          label="2500 - 3000"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setPriceFilters([...priceFilters, "2500 - 3000"]);
+                            } else {
+                              setPriceFilters(
+                                priceFilters.filter(
+                                  (price) => price !== "2500 - 3000"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                    </ul>
 
-                        <b>Discount</b>
-                        <ul style={{ listStyleType: "none", padding: 0 }}>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox13"
-                              label="30% - 40%"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setDiscountFilters([
-                                    ...discountFilters,
-                                    "30 - 40",
-                                  ]);
-                                } else {
-                                  setDiscountFilters(
-                                    discountFilters.filter(
-                                      (discount) => discount !== "30 - 40"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox13"
-                              label="0% - 10%"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setDiscountFilters([
-                                    ...discountFilters,
-                                    "0 - 10",
-                                  ]);
-                                } else {
-                                  setDiscountFilters(
-                                    discountFilters.filter(
-                                      (discount) => discount !== "0 - 10"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox13"
-                              label="20% - 30%"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setDiscountFilters([
-                                    ...discountFilters,
-                                    "20 - 30",
-                                  ]);
-                                } else {
-                                  setDiscountFilters(
-                                    discountFilters.filter(
-                                      (discount) => discount !== "20 - 30"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox13"
-                              label="50% - 60%"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setDiscountFilters([
-                                    ...discountFilters,
-                                    "50 - 60",
-                                  ]);
-                                } else {
-                                  setDiscountFilters(
-                                    discountFilters.filter(
-                                      (discount) => discount !== "50 - 60"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox13"
-                              label="60% - 70%"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setDiscountFilters([
-                                    ...discountFilters,
-                                    "60 - 70",
-                                  ]);
-                                } else {
-                                  setDiscountFilters(
-                                    discountFilters.filter(
-                                      (discount) => discount !== "60 - 70"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                        </ul>
-                        <b>Rating</b>
-                        <ul style={{ listStyleType: "none", padding: 0 }}>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox13"
-                              label="3.5 - 4"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setRatingFilters([
-                                    ...ratingFilters,
-                                    "3.5 - 4",
-                                  ]);
-                                } else {
-                                  setRatingFilters(
-                                    ratingFilters.filter(
-                                      (rating) => rating !== "3.5 - 4"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                          <li
-                            style={{ display: "block", alignItems: "center" }}
-                          >
-                            <Form.Check
-                              type="checkbox"
-                              id="checkbox13"
-                              label="4 - 4.5"
-                              onChange={(e) => {
-                                if (e.target.checked) {
-                                  setRatingFilters([
-                                    ...ratingFilters,
-                                    "4 - 4.5",
-                                  ]);
-                                } else {
-                                  setRatingFilters(
-                                    ratingFilters.filter(
-                                      (rating) => rating !== "4 - 4.5"
-                                    )
-                                  );
-                                }
-                              }}
-                            />
-                          </li>
-                        </ul>
-                      </Card.Text>
+                    <b>Discount</b>
+                    <ul style={{ listStyleType: "none", padding: 0 }}>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="30% - 40%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "30 - 40",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "30 - 40"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="0% - 10%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "0 - 10",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "0 - 10"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="20% - 30%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "20 - 30",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "20 - 30"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="50% - 60%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "50 - 60",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "50 - 60"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="60% - 70%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "60 - 70",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "60 - 70"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                    </ul>
+                    <b>Rating</b>
+                    <ul style={{ listStyleType: "none", padding: 0 }}>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="3.5 - 4"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setRatingFilters([...ratingFilters, "3.5 - 4"]);
+                            } else {
+                              setRatingFilters(
+                                ratingFilters.filter(
+                                  (rating) => rating !== "3.5 - 4"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="4 - 4.5"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setRatingFilters([...ratingFilters, "4 - 4.5"]);
+                            } else {
+                              setRatingFilters(
+                                ratingFilters.filter(
+                                  (rating) => rating !== "4 - 4.5"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                    </ul>
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
             <Col md={9} sm={12}>
               <CardGroup className="container-fluid my-5">
                 <Row xs={1} md={3} className="g-4">
-                  
                   {filteredData.map((body) => (
                     <div key={body.id}>
                       <Card>
@@ -943,6 +875,7 @@ export default function Headphone() {
                                 value={body.Rating}
                                 style={{ marginRight: "5px" }}
                                 className="col"
+                                edit={false}
                               />
                               <p style={{ margin: "0" }} className="ms-2 col">
                                 {body.reviews} review

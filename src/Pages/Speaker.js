@@ -11,203 +11,448 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Link } from "react-router-dom";
-import {addToCart , addToWishlist} from "./items"
+import { addToCart, addToWishlist } from "./items";
 
 export default function Speaker() {
   const [showMore, setShowMore] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Speakers");
   const [filteredData, setFilteredData] = useState([]);
+  const [brandFilters, setBrandFilters] = useState([]);
+  const [priceFilters, setPriceFilters] = useState([]);
+  const [discountFilters, setDiscountFilters] = useState([]);
+  const [ratingFilters, setRatingFilters] = useState([]);
 
   const handleToggle = () => setShowMore(!showMore);
 
-
-  const handleFilter = (filterCriteria) => {
-    const filteredProducts = ProductDetailData.filter(
-      (product) => product.category === filterCriteria
+  const handleFilter = () => {
+    let filteredProducts = ProductDetailData.filter(
+      (product) => product.category === selectedCategory
     );
+
+    if (brandFilters.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        brandFilters.includes(product.brand)
+      );
+    }
+
+    if (priceFilters.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        priceFilters.includes(product.RangePrice)
+      );
+    }
+
+    if (discountFilters.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        discountFilters.includes(product.disPercentFilter)
+      );
+    }
+
+    if (ratingFilters.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        ratingFilters.includes(product.ratingFilter)
+      );
+    }
+
     setFilteredData(filteredProducts);
   };
 
-  // Event handler example
-  const handleCategoryFilter = () => {
-    handleFilter(selectedCategory);
-  };
-
-  // useEffect hook example
   useEffect(() => {
-    handleFilter(selectedCategory);
-  }, [selectedCategory]);
+    handleFilter();
+  }, [
+    selectedCategory,
+    brandFilters,
+    priceFilters,
+    discountFilters,
+    ratingFilters,
+  ]);
 
   return (
     <>
       <Layout>
         <div className="container-fluid my-3">
           <Row>
-            <a className="btn btn-primary d-flex d-md-none w-50 ms-4" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-  Open filter</a>
-              <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                  <div className="offcanvas-body">
-                    <div>
-                      <Card className="scrollbar scrollbar-primary filter-section">
-                <Card.Body className="force-overflow">
-                  <Card.Title>Filter</Card.Title>
-                  <Card.Text>
-                    <b>Brand</b>
-                    <ul style={{ listStyleType: "none", padding: 0 }}>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">Samsung</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">Realme</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">OnePlus</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">Redmi</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">Apple</label>
-                      </li>
-                    </ul>
-                    <b>Price</b>
-                    <ul style={{ listStyleType: "none", padding: 0 }}>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">$200 or less</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">$300 or $500</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">$500 or $800</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">$800 or $1000</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">$1000 or more</label>
-                      </li>
-                    </ul>
-                    <b>Internal Memory</b>
-                    <ul style={{ listStyleType: "none", padding: 0 }}>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">less than 32 GB</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">32 GB</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">64 GB</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">128 GB</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">256 GB</label>
-                      </li>
-                    </ul>
-                    <b>Battery Capacity</b>
-                    <ul style={{ listStyleType: "none", padding: 0 }}>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">less than 999mah</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">1000 - 1999 mah</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">2000 - 2999 mah</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">3000 - 3999 mah</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">4000 - 4999 mah</label>
-                      </li>
-                    </ul>
-                    <b>Discount</b>
-                    <ul style={{ listStyleType: "none", padding: 0 }}>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">10%off or less</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">20%off or less</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">30%off or less</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">40%off or less</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">50%off or less</label>
-                      </li>
-                    </ul>
-                    <b>RAM</b>
-                    <ul style={{ listStyleType: "none", padding: 0 }}>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">2 to 3.9 Gb</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">4 to 7.9 Gb</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">8 to 15.9 Gb</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">16 to 31.9 Gb</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">32 to 63.9 Gb</label>
-                      </li>
-                    </ul>
-                  </Card.Text>
-                  <Button variant="primary" style={{ boxShadow: "none" }}>
-                    Apply
-                  </Button>
-                  <Button
-                    variant="danger"
-                    className="ms-3"
-                    style={{ boxShadow: "none" }}
-                  >
-                    Clear
-                  </Button>
-                </Card.Body>
-              </Card>
-                    </div>
-                    
-                  </div>
-               </div>
+            <a
+              className="btn btn-primary d-flex d-md-none w-50 ms-4"
+              data-bs-toggle="offcanvas"
+              href="#offcanvasExample"
+              role="button"
+              aria-controls="offcanvasExample"
+            >
+              Open filter
+            </a>
+            <div
+              className="offcanvas offcanvas-start"
+              tabindex="-1"
+              id="offcanvasExample"
+              aria-labelledby="offcanvasExampleLabel"
+            >
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+              <div className="offcanvas-body">
+                <div>
+                  <Card className="scrollbar scrollbar-primary filter-section">
+                    <Card.Body className="force-overflow">
+                      <Card.Title>Filter</Card.Title>
+                      <Card.Text>
+                        <b>Brand</b>
+                        <ul style={{ listStyleType: "none", padding: 0 }}>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox1"
+                              label="JBL"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setBrandFilters([...brandFilters, "JBL"]);
+                                } else {
+                                  setBrandFilters(
+                                    brandFilters.filter(
+                                      (brand) => brand !== "JBL"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox1"
+                              label="boAt"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setBrandFilters([...brandFilters, "boAt"]);
+                                } else {
+                                  setBrandFilters(
+                                    brandFilters.filter(
+                                      (brand) => brand !== "boAt"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox1"
+                              label="Mivi"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setBrandFilters([...brandFilters, "Mivi"]);
+                                } else {
+                                  setBrandFilters(
+                                    brandFilters.filter(
+                                      (brand) => brand !== "Mivi"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                        </ul>
+                        <b>Price</b>
+                        <ul style={{ listStyleType: "none", padding: 0 }}>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox5"
+                              label="under 500"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setPriceFilters([
+                                    ...priceFilters,
+                                    "under 500",
+                                  ]);
+                                } else {
+                                  setPriceFilters(
+                                    priceFilters.filter(
+                                      (price) => price !== "under 500"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox5"
+                              label="1000 - 2000"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setPriceFilters([
+                                    ...priceFilters,
+                                    "1000 - 2000",
+                                  ]);
+                                } else {
+                                  setPriceFilters(
+                                    priceFilters.filter(
+                                      (price) => price !== "1000 - 2000"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox5"
+                              label="3000 - 4000"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setPriceFilters([
+                                    ...priceFilters,
+                                    "3000 - 4000",
+                                  ]);
+                                } else {
+                                  setPriceFilters(
+                                    priceFilters.filter(
+                                      (price) => price !== "3000 - 4000"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox5"
+                              label="6000 - 7000"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setPriceFilters([
+                                    ...priceFilters,
+                                    "6000 - 7000",
+                                  ]);
+                                } else {
+                                  setPriceFilters(
+                                    priceFilters.filter(
+                                      (price) => price !== "6000 - 7000"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                        </ul>
+
+                        <b>Discount</b>
+                        <ul style={{ listStyleType: "none", padding: 0 }}>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox13"
+                              label="50% - 60%"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setDiscountFilters([
+                                    ...discountFilters,
+                                    "50 - 60",
+                                  ]);
+                                } else {
+                                  setDiscountFilters(
+                                    discountFilters.filter(
+                                      (discount) => discount !== "50 - 60"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox13"
+                              label="20% - 30%"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setDiscountFilters([
+                                    ...discountFilters,
+                                    "20 - 30",
+                                  ]);
+                                } else {
+                                  setDiscountFilters(
+                                    discountFilters.filter(
+                                      (discount) => discount !== "20 - 30"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox13"
+                              label="30% - 40%"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setDiscountFilters([
+                                    ...discountFilters,
+                                    "30 - 40",
+                                  ]);
+                                } else {
+                                  setDiscountFilters(
+                                    discountFilters.filter(
+                                      (discount) => discount !== "30 - 40"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox13"
+                              label="40% - 50%"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setDiscountFilters([
+                                    ...discountFilters,
+                                    "40 - 50",
+                                  ]);
+                                } else {
+                                  setDiscountFilters(
+                                    discountFilters.filter(
+                                      (discount) => discount !== "40 - 50"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox13"
+                              label="50% - 60%"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setDiscountFilters([
+                                    ...discountFilters,
+                                    "50 - 60",
+                                  ]);
+                                } else {
+                                  setDiscountFilters(
+                                    discountFilters.filter(
+                                      (discount) => discount !== "50 - 60"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox13"
+                              label="60% - 70%"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setDiscountFilters([
+                                    ...discountFilters,
+                                    "60 - 70",
+                                  ]);
+                                } else {
+                                  setDiscountFilters(
+                                    discountFilters.filter(
+                                      (discount) => discount !== "60 - 70"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                        </ul>
+                        <b>Rating</b>
+                        <ul style={{ listStyleType: "none", padding: 0 }}>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox13"
+                              label="3.5 - 4"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setRatingFilters([
+                                    ...ratingFilters,
+                                    "3.5 - 4",
+                                  ]);
+                                } else {
+                                  setRatingFilters(
+                                    ratingFilters.filter(
+                                      (rating) => rating !== "3.5 - 4"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                          <li
+                            style={{ display: "block", alignItems: "center" }}
+                          >
+                            <Form.Check
+                              type="checkbox"
+                              id="checkbox13"
+                              label="4 - 4.5"
+                              onChange={(e) => {
+                                if (e.target.checked) {
+                                  setRatingFilters([
+                                    ...ratingFilters,
+                                    "4 - 4.5",
+                                  ]);
+                                } else {
+                                  setRatingFilters(
+                                    ratingFilters.filter(
+                                      (rating) => rating !== "4 - 4.5"
+                                    )
+                                  );
+                                }
+                              }}
+                            />
+                          </li>
+                        </ul>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </div>
+              </div>
+            </div>
             <Col md={3} className="d-none d-md-flex" style={{ width: "15rem" }}>
               <Card className="scrollbar scrollbar-primary filter-section">
                 <Card.Body className="force-overflow">
@@ -216,160 +461,305 @@ export default function Speaker() {
                     <b>Brand</b>
                     <ul style={{ listStyleType: "none", padding: 0 }}>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">Samsung</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox1"
+                          label="JBL"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setBrandFilters([...brandFilters, "JBL"]);
+                            } else {
+                              setBrandFilters(
+                                brandFilters.filter((brand) => brand !== "JBL")
+                              );
+                            }
+                          }}
+                        />
                       </li>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">Realme</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox1"
+                          label="boAt"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setBrandFilters([...brandFilters, "boAt"]);
+                            } else {
+                              setBrandFilters(
+                                brandFilters.filter((brand) => brand !== "boAt")
+                              );
+                            }
+                          }}
+                        />
                       </li>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">OnePlus</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">Redmi</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">Apple</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox1"
+                          label="Mivi"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setBrandFilters([...brandFilters, "Mivi"]);
+                            } else {
+                              setBrandFilters(
+                                brandFilters.filter((brand) => brand !== "Mivi")
+                              );
+                            }
+                          }}
+                        />
                       </li>
                     </ul>
                     <b>Price</b>
                     <ul style={{ listStyleType: "none", padding: 0 }}>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">$200 or less</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox5"
+                          label="under 500"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setPriceFilters([...priceFilters, "under 500"]);
+                            } else {
+                              setPriceFilters(
+                                priceFilters.filter(
+                                  (price) => price !== "under 500"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">$300 or $500</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox5"
+                          label="1000 - 2000"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setPriceFilters([...priceFilters, "1000 - 2000"]);
+                            } else {
+                              setPriceFilters(
+                                priceFilters.filter(
+                                  (price) => price !== "1000 - 2000"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">$500 or $800</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox5"
+                          label="3000 - 4000"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setPriceFilters([...priceFilters, "3000 - 4000"]);
+                            } else {
+                              setPriceFilters(
+                                priceFilters.filter(
+                                  (price) => price !== "3000 - 4000"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">$800 or $1000</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">$1000 or more</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox5"
+                          label="6000 - 7000"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setPriceFilters([...priceFilters, "6000 - 7000"]);
+                            } else {
+                              setPriceFilters(
+                                priceFilters.filter(
+                                  (price) => price !== "6000 - 7000"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                     </ul>
-                    <b>Internal Memory</b>
-                    <ul style={{ listStyleType: "none", padding: 0 }}>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">less than 32 GB</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">32 GB</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">64 GB</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">128 GB</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">256 GB</label>
-                      </li>
-                    </ul>
-                    <b>Battery Capacity</b>
-                    <ul style={{ listStyleType: "none", padding: 0 }}>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">less than 999mah</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">1000 - 1999 mah</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">2000 - 2999 mah</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">3000 - 3999 mah</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">4000 - 4999 mah</label>
-                      </li>
-                    </ul>
+
                     <b>Discount</b>
                     <ul style={{ listStyleType: "none", padding: 0 }}>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">10%off or less</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="50% - 60%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "50 - 60",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "50 - 60"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">20%off or less</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="20% - 30%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "20 - 30",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "20 - 30"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">30%off or less</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="30% - 40%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "30 - 40",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "30 - 40"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">40%off or less</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="40% - 50%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "40 - 50",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "40 - 50"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">50%off or less</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="50% - 60%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "50 - 60",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "50 - 60"
+                                )
+                              );
+                            }
+                          }}
+                        />
+                      </li>
+                      <li style={{ display: "block", alignItems: "center" }}>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="60% - 70%"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setDiscountFilters([
+                                ...discountFilters,
+                                "60 - 70",
+                              ]);
+                            } else {
+                              setDiscountFilters(
+                                discountFilters.filter(
+                                  (discount) => discount !== "60 - 70"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                     </ul>
-                    <b>RAM</b>
+                    <b>Rating</b>
                     <ul style={{ listStyleType: "none", padding: 0 }}>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">2 to 3.9 Gb</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="3.5 - 4"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setRatingFilters([...ratingFilters, "3.5 - 4"]);
+                            } else {
+                              setRatingFilters(
+                                ratingFilters.filter(
+                                  (rating) => rating !== "3.5 - 4"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                       <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">4 to 7.9 Gb</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">8 to 15.9 Gb</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">16 to 31.9 Gb</label>
-                      </li>
-                      <li style={{ display: "block", alignItems: "center" }}>
-                        <input type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox1">32 to 63.9 Gb</label>
+                        <Form.Check
+                          type="checkbox"
+                          id="checkbox13"
+                          label="4 - 4.5"
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setRatingFilters([...ratingFilters, "4 - 4.5"]);
+                            } else {
+                              setRatingFilters(
+                                ratingFilters.filter(
+                                  (rating) => rating !== "4 - 4.5"
+                                )
+                              );
+                            }
+                          }}
+                        />
                       </li>
                     </ul>
                   </Card.Text>
-                  <Button variant="primary" style={{ boxShadow: "none" }}>
-                    Apply
-                  </Button>
-                  <Button
-                    variant="danger"
-                    className="ms-3"
-                    style={{ boxShadow: "none" }}
-                  >
-                    Clear
-                  </Button>
                 </Card.Body>
               </Card>
             </Col>
-            {/* </div> */}
             <Col md={9}>
               <CardGroup className="container-fluid my-5">
                 <Row xs={1} md={3} className="g-4">
-                  
                   {filteredData.map((body) => (
                     <div key={body.id}>
                       <Card>
@@ -439,7 +829,7 @@ export default function Speaker() {
                                   color: "white",
                                 }}
                                 className="col"
-                                onClick = {() => addToCart(body)}
+                                onClick={() => addToCart(body)}
                               >
                                 Add To Cart
                               </Button>
@@ -450,7 +840,7 @@ export default function Speaker() {
                                   backgroundColor: "#8B5095",
                                   color: "white",
                                 }}
-                                onClick={()=>addToWishlist(body)}
+                                onClick={() => addToWishlist(body)}
                               >
                                 Add To Wishlist
                               </Button>
