@@ -56,7 +56,7 @@ export default function Smartphones() {
 
     if (ramFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        ramFilters.includes(product.disRamFilter)
+        ramFilters.includes(product.Ram)
       );
     }
 
