@@ -11,7 +11,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Success from "../Component/Success";
 import Failure from "../Component/Failure";
 import { cartContext } from "../Pages/Cart";
-import { removeFromCart, addToWishlist, clearCart } from "../Pages/items";
+import { removeFromCart, addToWishlist, removeAllItems } from "../Pages/items";
 import { BsCurrencyRupee } from "react-icons/bs";
 function reducer(state, action) {
   switch (action.type) {
@@ -67,6 +67,8 @@ export default function CartContext() {
     const updatedCartList = cartList.filter((item) => item.id !== product.id);
     setCartList(updatedCartList);
   }
+  
+  
 
   const showDeliveryCard = cartList.some(
     (product) =>

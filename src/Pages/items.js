@@ -23,6 +23,17 @@ const addToCart = (value) => {
   }
 };
 
+const removeAllItems = (value) => {
+  const allItems = cartItems.splice(0, cartItems);
+
+  if (!allItems) {
+    cartItems.push(value);
+    console.log(cartItems, "removed all item");
+
+    saveCartItemsToLocalStorage(); // Save updated cart items to localStorage
+  }
+};
+
 const wishItems = JSON.parse(localStorage.getItem("wishItems")) || [];
 
 // Remove item from wishlist
@@ -69,4 +80,5 @@ export {
   addToWishlist,
   removeFromWishlist,
   getCartItems,
+  removeAllItems,
 };
