@@ -8,10 +8,15 @@ import { BsCart3 } from "react-icons/bs";
 import SearchBar from "./SearchBar";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import { cartItems, wishItems } from "../Pages/items";
+import Modal from "react-bootstrap/Modal";
 
 function NavBar() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <Navbar bg="light" expand="lg" className="sticky-top">
@@ -28,44 +33,92 @@ function NavBar() {
               </Navbar.Brand>
             </span>
             <span className="order-1 order-lg-2">
-              <Navbar.Toggle aria-controls="navbarScroll" />
-              <Navbar.Collapse id="navbarScroll">
-                <Nav
-                  className="me-auto my-2 my-lg-0"
-                  style={{ maxHeight: "120px" }}
+              <Navbar.Toggle
+                aria-controls="navbarScroll"
+                onClick={handleShow}
+                className="position-relative"
+              />
+              <Modal
+                show={show}
+                onHide={handleClose}
+                size="lg"
+                dialogClassName="custom-modal"
+                className="position-absolute start-0"
+              >
+                <Modal.Header className="border-0" closeButton />
+                <Modal.Body>
+                  <Nav
+                    className="ms-5 my-2 my-lg-0 brandTitle"
+                    style={{ maxHeight: "120px" }}
+                  >
+                    <Link
+                      to="/Pages/Headphone"
+                      className="text-decoration-none text-dark me-2"
+                    >
+                      Headphone
+                    </Link>
+                    <Link
+                      to="/Pages/Laptops"
+                      className="text-decoration-none text-dark me-2"
+                    >
+                      Laptops
+                    </Link>
+                    <Link
+                      to="/Pages/Speaker"
+                      className="text-decoration-none text-dark me-2"
+                    >
+                      Speakers
+                    </Link>
+                    <Link
+                      to="/Pages/Watch"
+                      className="text-decoration-none text-dark me-2"
+                    >
+                      Watches
+                    </Link>
+                    <Link
+                      to="/Pages/Smartphones"
+                      className="text-decoration-none text-dark me-2"
+                    >
+                      Smartphones
+                    </Link>
+                  </Nav>
+                </Modal.Body>
+              </Modal>
+              <Nav
+                className="d-none d-lg-flex me-auto my-2 my-lg-0"
+                style={{ maxHeight: "120px" }}
+              >
+                <Link
+                  to="/Pages/Headphone"
+                  className="text-decoration-none text-dark me-2"
                 >
-                  <Link
-                    to="/Pages/Headphone"
-                    className="text-decoration-none text-dark me-2"
-                  >
-                    Headphone
-                  </Link>
-                  <Link
-                    to="/Pages/Laptops"
-                    className="text-decoration-none text-dark me-2"
-                  >
-                    Laptops
-                  </Link>
-                  <Link
-                    to="/Pages/Speaker"
-                    className="text-decoration-none text-dark me-2"
-                  >
-                    Speakers
-                  </Link>
-                  <Link
-                    to="/Pages/Watch"
-                    className="text-decoration-none text-dark me-2"
-                  >
-                    Watches
-                  </Link>
-                  <Link
-                    to="/Pages/Smartphones"
-                    className="text-decoration-none text-dark me-2"
-                  >
-                    Smartphones
-                  </Link>
-                </Nav>
-              </Navbar.Collapse>
+                  Headphone
+                </Link>
+                <Link
+                  to="/Pages/Laptops"
+                  className="text-decoration-none text-dark me-2"
+                >
+                  Laptops
+                </Link>
+                <Link
+                  to="/Pages/Speaker"
+                  className="text-decoration-none text-dark me-2"
+                >
+                  Speakers
+                </Link>
+                <Link
+                  to="/Pages/Watch"
+                  className="text-decoration-none text-dark me-2"
+                >
+                  Watches
+                </Link>
+                <Link
+                  to="/Pages/Smartphones"
+                  className="text-decoration-none text-dark me-2"
+                >
+                  Smartphones
+                </Link>
+              </Nav>
             </span>
           </div>
           <span className="d-flex d-lg-none">
