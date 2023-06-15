@@ -1,6 +1,8 @@
 # Electro
 this is the electro website where i am using bootstrap, reactjs, yup , formik and redux toolkit and many more
 
+hosted - https://electro-dakshproject.netlify.app/
+
 What inside
 
 there is an amazing ui for ecommerce website i have used bootstrap 5 and react bootstrap
