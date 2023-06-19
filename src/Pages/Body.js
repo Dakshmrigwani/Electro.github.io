@@ -25,22 +25,21 @@ export default function Body() {
   const [filteredData, setFilteredData] = useState([]);
   const [email, setEmail] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [showMore, setShowMore] = useState(false);
+  const [showThankYouModal, setShowThankYouModal] = useState(false);
 
   // const [cartItems, setCartItems] = useState([]);
 
   const storedEmail = localStorage.getItem("email");
 
-
   useEffect(() => {
     if (storedEmail) {
-      setShow(false);
       setShow1(true);
-      setSubmitted(true);
+      setShowThankYouModal(true);
+    } else {
+      setShow(true);
     }
   }, [storedEmail]);
-  
-  const [showMore, setShowMore] = useState(false);
 
   const handleToggle = () => setShowMore(!showMore);
 
@@ -59,7 +58,7 @@ export default function Body() {
     handleFilter(selectedCategory);
   };
 
-   const handleSubmit = () => {
+  const handleSubmit = () => {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     const isValid = emailRegex.test(email);
     setEmailIsValid(isValid);
@@ -68,17 +67,16 @@ export default function Body() {
     if (isValid) {
       console.log("Email submitted:", email);
       localStorage.setItem("email", email);
+      setEmailSubmitted(true); // Set emailSubmitted to true when email is submitted
       setShow(false);
       setShow1();
-      setSubmitted(true);
     }
-  };;
+  };
 
   const handleUnsubscribe = () => {
     localStorage.removeItem("email");
     setShow(true);
     setShow1(false);
-    setSubmitted(false);
   };
 
   //   const addToCart = useCallback((value) => {
@@ -114,68 +112,74 @@ export default function Body() {
     <>
       <Layout>
         <Modal show={!storedEmail && show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Subscribe Us</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p className="text-center fs-4">
-            Subscribe to our newsletter and get <br />
-            <b>more exciting offers</b>
-          </p>
-          <InputGroup className="mb-3 mt-5">
-            <Form.Control
-              placeholder="Email address"
-              aria-label="Email address"
-              aria-describedby="basic-addon2"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <Button
-              variant="outline-danger"
-              id="button-addon2"
-              onClick={handleSubmit}
-            >
-              Submit
-            </Button>
-          </InputGroup>
-          <div className="text-end">
-            <small className="text-center">
-              <p>
-                By providing your email address
-                <br />
-                you agree to our&nbsp;
-                <p
-                  className="text-decoration-underline"
-                  style={{ display: "inline-block" }}
-                >
-                  privacy policy
-                </p>
-                &nbsp;and&nbsp;
-                <p
-                  className="text-decoration-underline"
-                  style={{ display: "inline-block" }}
-                >
-                  terms and conditions
-                </p>
-              </p>
-            </small>
-          </div>
-        </Modal.Body>
-      </Modal>
-
-      {storedEmail && show1 && (
-        <Modal show={show1} onHide={handleClose1}>
           <Modal.Header closeButton>
-            <Modal.Title>Thank you for subscribing!</Modal.Title>
+            <Modal.Title>Subscribe Us</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>You have successfully subscribed with the email: {storedEmail}</p>
-            <Button variant="danger" className="w-100" onClick={handleUnsubscribe}>
-              Unsubscribe
-            </Button>
+            <p className="text-center fs-4">
+              Subscribe to our newsletter and get <br />
+              <b>more exciting offers</b>
+            </p>
+            <InputGroup className="mb-3 mt-5">
+              <Form.Control
+                placeholder="Email address"
+                aria-label="Email address"
+                aria-describedby="basic-addon2"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <Button
+                variant="outline-danger"
+                id="button-addon2"
+                onClick={handleSubmit}
+              >
+                Submit
+              </Button>
+            </InputGroup>
+            <div className="text-end">
+              <small className="text-center">
+                <p>
+                  By providing your email address
+                  <br />
+                  you agree to our&nbsp;
+                  <p
+                    className="text-decoration-underline"
+                    style={{ display: "inline-block" }}
+                  >
+                    privacy policy
+                  </p>
+                  &nbsp;and&nbsp;
+                  <p
+                    className="text-decoration-underline"
+                    style={{ display: "inline-block" }}
+                  >
+                    terms and conditions
+                  </p>
+                </p>
+              </small>
+            </div>
           </Modal.Body>
         </Modal>
-      )}
+
+        {storedEmail && show1 && showThankYouModal && (
+          <Modal show={show1} onHide={handleClose1}>
+            <Modal.Header closeButton>
+              <Modal.Title>Thank you for subscribing!</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p>
+                You have successfully subscribed with the email: {storedEmail}
+              </p>
+              <Button
+                variant="danger"
+                className="w-100"
+                onClick={handleUnsubscribe}
+              >
+                Unsubscribe
+              </Button>
+            </Modal.Body>
+          </Modal>
+        )}
 
         <Carousel className="container-fluid my-4">
           <Carousel.Item interval={1000}>

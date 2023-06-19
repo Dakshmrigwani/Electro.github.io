@@ -33,14 +33,8 @@ function NavBar() {
               </Navbar.Brand>
             </span>
             <span className="order-1 order-lg-2">
-              <Navbar.Toggle
-                aria-controls="navbarScroll"
-                style={{ position: "absolute" }}
-              />
-              <Navbar.Collapse
-                id="navbarScroll"
-                style={{ position: "relative", width: "100%", }}
-              >
+              <Navbar.Toggle aria-controls="navbarScroll" />
+              <Navbar.Collapse id="navbarScroll">
                 <Nav
                   className="me-auto my-2 my-lg-0"
                   style={{ maxHeight: "120px" }}
