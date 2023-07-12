@@ -86,15 +86,20 @@ export default function Smartphones() {
       <Layout>
         <div className="container-fluid my-3">
           <Row>
-            <a
-              className="btn btn-primary d-flex d-md-none w-50 ms-4"
-              data-bs-toggle="offcanvas"
-              href="#offcanvasExample"
-              role="button"
-              aria-controls="offcanvasExample"
+          <div
+              className="d-flex d-lg-none"
+              style={{ maxWidth: "10rem", height: "fit-content" }}
             >
-              Open filter
-            </a>
+              <a
+                className="btn btn-primary  ms-4"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasExample"
+                role="button"
+                aria-controls="offcanvasExample"
+              >
+                Open filter
+              </a>
+            </div>
             <div
               className="offcanvas offcanvas-start"
               tabindex="-1"

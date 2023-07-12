@@ -72,15 +72,20 @@ export default function Headphone() {
       <Layout>
         <div className="container-fluid my-3">
           <Row>
-            <a
-              className="btn btn-primary d-flex d-md-none w-50 ms-4"
-              data-bs-toggle="offcanvas"
-              href="#offcanvasExample"
-              role="button"
-              aria-controls="offcanvasExample"
+            <div
+              className="d-flex d-lg-none"
+              style={{ maxWidth: "10rem", height: "fit-content" }}
             >
-              Open filter
-            </a>
+              <a
+                className="btn btn-primary  ms-4"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasExample"
+                role="button"
+                aria-controls="offcanvasExample"
+              >
+                Open filter
+              </a>
+            </div>
             <div
               className="offcanvas offcanvas-start"
               tabindex="-1"
@@ -500,7 +505,7 @@ export default function Headphone() {
                 </div>
               </div>
             </div>
-            <Col md={3} className="d-none d-md-flex" style={{ width: "15rem" }}>
+            <Col md={3} className="d-none d-lg-flex" style={{ width: "15rem" }}>
               <Card className="scrollbar scrollbar-primary filter-section">
                 <Card.Body className="force-overflow">
                   <Card.Title>Filter</Card.Title>
@@ -839,7 +844,7 @@ export default function Headphone() {
             </Col>
             <Col md={9} sm={12}>
               <CardGroup className="container-fluid my-5">
-                <Row xs={1} md={3} className="g-4">
+                <Row xs={1} sm={1} md={3} className="g-4">
                   {filteredData.map((body) => (
                     <div key={body.id}>
                       <Card>

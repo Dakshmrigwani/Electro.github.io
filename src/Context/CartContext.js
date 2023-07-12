@@ -90,7 +90,7 @@ export default function CartContext() {
           </div>
           <div className="d-flex flex-column justify-content-center align-content-center mt-5">
             <div className="row">
-              <div className={`col${cartList.length === 0 ? "" : " col-md-8"}`}>
+              <div className={`col-12${cartList.length === 0 ? "" : " col-md-8"}`}>
                 {cartList.length === 0 ? (
                   <div className="d-flex flex-column justify-content-center align-items-center h-100 display-4 col-0">
                     <BsEmojiSmile />
@@ -105,14 +105,14 @@ export default function CartContext() {
                       <div key={product.id}>
                         <div className="card mb-3">
                           <div className="row g-0">
-                            <div className="col-md-4">
+                            <div className="col-lg-4">
                               <img
                                 src={product.image}
                                 className="img-fluid rounded-start"
                                 alt="..."
                               />
                             </div>
-                            <div className="col-md-8">
+                            <div className="col-lg-8">
                               <div className="card-body">
                                 <h5 className="card-title">
                                   {product.LessTitle}
@@ -150,7 +150,7 @@ export default function CartContext() {
                                   }}
                                   className="row "
                                 >
-                                  <div className="col-md-4 col-lg-4 col-4">
+                                  <div className="col-md-4 col-lg-4 col-12">
                                     <div className="d-flex justify-content-center">
                                       <Button
                                         onClick={() =>
@@ -184,7 +184,7 @@ export default function CartContext() {
                                       </Button>
                                     </div>
                                   </div>
-                                  <div className="col-md-4 col-lg-4 col-4">
+                                  <div className="col-md-4 col-lg-4 col-12">
                                     <select className="form-select">
                                       <option selected>Blue</option>
                                       <option value="1">Red</option>
@@ -192,7 +192,7 @@ export default function CartContext() {
                                       <option value="3">Green</option>
                                     </select>
                                   </div>
-                                  <div className="col-lg-4 col-4">
+                                  <div className="col-lg-4 col-12">
                                     <div className="d-flex gap-2 mt-2 mt-md-0">
                                       <Button
                                         variant="light"
@@ -223,7 +223,7 @@ export default function CartContext() {
                 )}
               </div>
               {showDeliveryCard && (
-                <div className="col col-md-4">
+                <div className="col-12 col-md-4">
                   <div className="d-flex justify-content-center mt-3 mt-md-0">
                     <Card style={{ width: "18rem" }}>
                       <Card.Body>
