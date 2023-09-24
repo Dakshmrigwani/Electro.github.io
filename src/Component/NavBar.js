@@ -28,7 +28,7 @@ function NavBar() {
                   to="/Pages/Body"
                   className="text-decoration-none text-dark"
                 >
-                  Electro.
+                  <img src="./Electro-logo.png" alt="logo"/>
                 </Link>
               </Navbar.Brand>
             </span>
