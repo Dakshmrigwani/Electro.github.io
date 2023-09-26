@@ -181,8 +181,8 @@ export default function Body() {
           </Modal>
         )}
 
-        <Carousel className="container-fluid my-4">
-          <Carousel.Item interval={1000}>
+        <Carousel className=" mb-4" fade indicators={false}>
+          <Carousel.Item interval={2000}>
             <img
               className="d-block w-100"
               src="https://img.freepik.com/free-photo/black-headphones-digital-device_53876-96805.jpg?w=740&t=st=1681996660~exp=1681997260~hmac=4bef7fde7d3c00249db13c96e8e09b23a4c16784cc29ddb90c7e2ae3e0d432d5"

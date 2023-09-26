@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
+import Logo from "./Electro-logo.png"
 import Navbar from "react-bootstrap/Navbar";
 import InputGroup from "react-bootstrap/InputGroup";
 import { BsCart3 } from "react-icons/bs";
@@ -19,53 +20,55 @@ function NavBar() {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Navbar bg="light" expand="lg" className="sticky-top">
+      <Navbar bg="dark" expand="lg" className="sticky-top">
         <Container fluid>
           <div className="d-flex">
             <span className="order-2 order-lg-1">
-              <Navbar.Brand>
+             
+                <div class="imglogo">
                 <Link
                   to="/Pages/Body"
-                  className="text-decoration-none text-dark"
+                  className="text-decoration-none text-dark "
                 >
-                  <img src="./Electro-logo.png" alt="logo"/>
+                  <img src={Logo} alt="logo"/>
                 </Link>
-              </Navbar.Brand>
+                </div>
+              
             </span>
-            <span className="order-1 order-lg-2">
+            <span className="d-flex align-items-center ms-3 order-1 order-lg-2">
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav
                   className="me-auto my-2 my-lg-0"
-                  style={{ maxHeight: "120px" }}
+                 
                 >
                   <Link
                     to="/Pages/Headphone"
-                    className="text-decoration-none text-dark me-2"
+                    className="text-decoration-none text-light me-2"
                   >
                     Headphone
                   </Link>
                   <Link
                     to="/Pages/Laptops"
-                    className="text-decoration-none text-dark me-2"
+                    className="text-decoration-none text-light me-2"
                   >
                     Laptops
                   </Link>
                   <Link
                     to="/Pages/Speaker"
-                    className="text-decoration-none text-dark me-2"
+                    className="text-decoration-none text-light me-2"
                   >
                     Speakers
                   </Link>
                   <Link
                     to="/Pages/Watch"
-                    className="text-decoration-none text-dark me-2"
+                    className="text-decoration-none text-light me-2"
                   >
                     Watches
                   </Link>
                   <Link
                     to="/Pages/Smartphones"
-                    className="text-decoration-none text-dark me-2"
+                    className="text-decoration-none text-light me-2"
                   >
                     Smartphones
                   </Link>
@@ -74,22 +77,22 @@ function NavBar() {
             </span>
           </div>
           <span className="d-flex d-lg-none">
-            <Button className="btn btn-light" style={{ boxShadow: "none" }}>
+            <Button className="btn bg-dark border-0" style={{ boxShadow: "none" }}>
               <Link to="/Pages/Wishlist">
-                <AiOutlineHeart className="text-dark fs-4" />
+                <AiOutlineHeart className="text-light fs-4" />
               </Link>
             </Button>
-            <Button className="btn btn-light" style={{ boxShadow: "none" }}>
+            <Button className="btn bg-dark border-0" style={{ boxShadow: "none" }}>
               <Link to="/pages/Cart">
-                <BsCart3 className="text-dark fs-4" />
+                <BsCart3 className="text-light fs-4" />
               </Link>
             </Button>
             <Button
-              className="btn btn-light fs-5"
+              className="btn bg-dark border-0 fs-5"
               style={{ boxShadow: "none" }}
             >
               <Link to="/pages/SignIn">
-                <AiOutlineUser />
+                <AiOutlineUser className="text-light fs-4" />
               </Link>
             </Button>
           </span>
@@ -104,10 +107,10 @@ function NavBar() {
             </span>
 
             <div className="d-none d-sm-flex justify-content-end order-1 order-sm-2">
-              <Button className="btn btn-light" style={{ boxShadow: "none" }}>
+              <Button className="btn bg-dark border-0" style={{ boxShadow: "none" }}>
                 <Link to="/Pages/Wishlist">
                   <span className="position-relative">
-                    <AiOutlineHeart className="text-dark fs-4" />
+                    <AiOutlineHeart className="text-light fs-4" />
                     {wishItems.length === 0 ? (
                       ""
                     ) : (
@@ -118,10 +121,10 @@ function NavBar() {
                   </span>
                 </Link>
               </Button>
-              <Button className="btn btn-light" style={{ boxShadow: "none" }}>
+              <Button className="btn bg-dark border-0" style={{ boxShadow: "none" }}>
                 <Link to="/pages/Cart">
                   <span className="position-relative">
-                    <BsCart3 className="text-dark fs-4" />
+                    <BsCart3 className="text-light fs-4" />
 
                     <span className="">
                       {cartItems.length === 0 ? (
@@ -136,12 +139,12 @@ function NavBar() {
                 </Link>
               </Button>
               <Button
-                className="btn btn-light fs-5"
+                className="btn bg-dark border-0 fs-5"
                 style={{ boxShadow: "none" }}
               >
                 <Link to="/pages/SignIn">
                   <span>
-                    <AiOutlineUser />
+                    <AiOutlineUser className="text-light" />
                   </span>
                 </Link>
               </Button>

@@ -35,13 +35,7 @@ export default function SearchBar() {
             value={query}
             onChange={handleInputChange}
           />
-          <Button
-            variant="outline-secondary"
-            id="basic-addon1"
-            style={{ boxShadow: "none" }}
-          >
-            <BsSearch />
-          </Button>
+         
         </InputGroup>
       </Form>
 
