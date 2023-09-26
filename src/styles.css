@@ -75,6 +75,9 @@
   height: 100%;
   max-height: 50px;
 }
+.navbar-toggler{
+  background-color: cyan !important;
+}
 .imglogofooter img{
   height: 100%;
   max-height: 100px;

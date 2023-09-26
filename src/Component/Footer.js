@@ -70,7 +70,7 @@ export default function Footer() {
               <div className="d-flex flex-column text-light">
                 <div className="d-flex flex-column mb-4">
                   <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-                  <div className="d-flex align-items-center gap-4 text-decoration-none">
+                  <div className="d-flex flex-column flex-md-row align-items-center gap-4 text-decoration-none">
                   <p>
                   <Link
                     to="/Pages/Headphone"
@@ -126,7 +126,7 @@ export default function Footer() {
 
                 <div className="d-flex flex-column mb-4 text-light">
                   <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                  <div className="d-flex align-items-center gap-4">
+                  <div className="d-flex flex-column flex-md-row align-items-center gap-4">
                   <p>
                     <CiLocationOn className="me-2" />
                     New York, NY 10012, US
