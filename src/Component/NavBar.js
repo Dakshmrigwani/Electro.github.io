@@ -1,17 +1,17 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
+
 import Nav from "react-bootstrap/Nav";
 import Logo from "./Electro-logo.png"
 import Navbar from "react-bootstrap/Navbar";
-import InputGroup from "react-bootstrap/InputGroup";
+
 import { BsCart3 } from "react-icons/bs";
 import SearchBar from "./SearchBar";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { cartItems, wishItems } from "../Pages/items";
-import Modal from "react-bootstrap/Modal";
+
 
 function NavBar() {
   const [show, setShow] = useState(false);

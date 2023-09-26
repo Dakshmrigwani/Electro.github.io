@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Logo from "./Electro-logo.png"
 import { MDBFooter, MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import { AiFillFacebook } from "react-icons/ai";
 import {
@@ -11,14 +13,15 @@ import {
 import { FcGoogle } from "react-icons/fc";
 import { CiLocationOn } from "react-icons/ci";
 import { SiGmail } from "react-icons/si";
+
 export default function Footer() {
   return (
     <MDBFooter
-      bgColor="light"
+      bgColor="dark"
       className="text-center text-lg-start text-muted"
       style={{ clear: "both" }}
     >
-      <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <section className="d-flex justify-content-center justify-content-lg-between text-light p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
           <span>Get connected with us on social networks:</span>
         </div>
@@ -45,91 +48,113 @@ export default function Footer() {
         </div>
       </section>
 
-      <section className="">
-        <MDBContainer className="text-center text-md-start mt-5">
+      <section className="container-fluid">
+        <div className="text-center text-md-start mt-5 text-light">
           <MDBRow className="mt-3">
-            <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
+            <MDBCol md="5" sm="12" className="mx-auto mb-4">
+            <div class="imglogofooter">
+                <Link
+                  to="/Pages/Body"
+                  className="text-decoration-none text-dark "
+                >
+                  <img src={Logo} alt="logo"/>
+                </Link>
+                </div>
               <h6 className="text-uppercase fw-bold mb-4">Electro</h6>
               <p>
-                Here you can find products related electroinc items . great offers with great products
+                Here you can find products related to electronic items. Great offers with great products.
               </p>
             </MDBCol>
 
-            <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-              <p>
-                <a href="#!" className="text-reset">
-                  Headphone
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Smartphone
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Watches
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Speakers
-                </a>
-              </p>
-            </MDBCol>
+            <MDBCol md="7" sm="12" className="mx-auto mb-4">
+              <div className="d-flex flex-column text-light">
+                <div className="d-flex flex-column mb-4">
+                  <h6 className="text-uppercase fw-bold mb-4">Products</h6>
+                  <div className="d-flex align-items-center gap-4 text-decoration-none">
+                  <p>
+                  <Link
+                    to="/Pages/Headphone"
+                    className="text-decoration-none text-light me-2"
+                  >
+                    <a  className="text-reset text-decoration-none">
+                      Headphone
+                    </a>
+                    </Link>
+                  </p>
+                  <p>
+                  <Link
+                    to="/Pages/Smartphones"
+                    className="text-decoration-none text-light me-2"
+                  >
+                    <a  className="text-reset text-decoration-none">
+                      Smartphone
+                    </a>
+                    </Link>
+                  </p>
+                  <p>
+                  <Link
+                    to="/Pages/Watches"
+                    className="text-decoration-none text-light me-2"
+                  >
+                    <a  className="text-reset text-decoration-none">
+                      Watches
+                    </a>
+                    </Link>
+                  </p>
+                  <p>
+                  <Link
+                    to="/Pages/Speaker"
+                    className="text-decoration-none text-light me-2"
+                  >
+                    <a  className="text-reset text-decoration-none">
+                      Speakers
+                    </a>
+                    </Link>
+                  </p>
+                  <p>
+                  <Link
+                    to="/Pages/Laptops"
+                    className="text-decoration-none text-light me-2"
+                  >
+                    <a  className="text-reset text-decoration-none">
+                      Laptops
+                    </a>
+                    </Link>
+                  </p>
+                  </div>
+                </div>
 
-            <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Company</h6>
-              <p>
-                <a href="#!" className="text-reset">
-                  Pricing
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  About us
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Orders
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Help
-                </a>
-              </p>
-            </MDBCol>
-
-            <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-              <p>
-                <CiLocationOn className="me-2" />
-                New York, NY 10012, US
-              </p>
-              <p>
-                <SiGmail className="me-2" />
-                info@example.com
-              </p>
-              <p>
-                <BsFillTelephoneFill className="me-2" />+ 01 234 567 88
-              </p>
-              <p>
-                <BsFillTelephoneFill className="me-2" />+ 01 234 567 89
-              </p>
+                <div className="d-flex flex-column mb-4 text-light">
+                  <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+                  <div className="d-flex align-items-center gap-4">
+                  <p>
+                    <CiLocationOn className="me-2" />
+                    New York, NY 10012, US
+                  </p>
+                  <p>
+                    <SiGmail className="me-2" />
+                    info@example.com
+                  </p>
+                  <p>
+                    <BsFillTelephoneFill className="me-2" />+ 01 234 567 88
+                  </p>
+                  <p>
+                    <BsFillTelephoneFill className="me-2" />+ 01 234 567 89
+                  </p>
+                  </div>
+                </div>
+              </div>
             </MDBCol>
           </MDBRow>
-        </MDBContainer>
+        </div>
       </section>
 
       <div
-        className="text-center p-4"
+        className="text-center p-4 text-light"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
         © 2023 Copyright
-        <a className="text-reset fw-bold ms-2" href="#">
+        <a className="text-reset fw-bold ms-2 text-decoration-none" href="#">
           Electro.com
         </a>
       </div>
