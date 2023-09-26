@@ -71,8 +71,7 @@ export default function Headphone() {
     <>
       <Layout>
         <div className="container-fluid my-3">
-          <Row>
-            <div
+        <div
               className="d-flex d-lg-none"
               style={{ maxWidth: "10rem", height: "fit-content" }}
             >
@@ -505,7 +504,9 @@ export default function Headphone() {
                 </div>
               </div>
             </div>
-            <Col md={3} className="d-none d-lg-flex" style={{ width: "15rem" }}>
+          <Row>
+            
+            <Col md={2} className="d-none d-lg-flex" >
               <Card className="scrollbar scrollbar-primary filter-section">
                 <Card.Body className="force-overflow">
                   <Card.Title>Filter</Card.Title>
@@ -842,10 +843,12 @@ export default function Headphone() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={9} sm={12}>
-              <CardGroup className="container-fluid my-5">
-                <Row xs={1} sm={1} md={3} className="g-4">
+            <Col md={10} sm={12}>
+              <div className="container-fluid my-4">
+                <Row >
+                
                   {filteredData.map((body) => (
+                    <Col md={4} sm={12}>
                     <div key={body.id}>
                       <Card>
                         <Card.Img
@@ -938,9 +941,11 @@ export default function Headphone() {
                         </Card.Body>
                       </Card>
                     </div>
+                    </Col>
                   ))}
+                  
                 </Row>
-              </CardGroup>
+              </div>
             </Col>
           </Row>
         </div>

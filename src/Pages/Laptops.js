@@ -383,7 +383,7 @@ export default function Laptops() {
                 </div>
               </div>
             </div>
-            <Col md={3} className="d-none d-md-flex" style={{ width: "15rem" }}>
+            <Col md={2} className="d-none d-md-flex">
               <Card className="scrollbar scrollbar-primary filter-section">
                 <Card.Body className="force-overflow">
                   <Card.Title>Filter</Card.Title>
@@ -665,10 +665,11 @@ export default function Laptops() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={9} sm={12}>
-              <CardGroup className="container-fluid my-5">
+            <Col md={10} sm={12}>
+              <div className=" my-4">
                 <Row xs={1} md={3} className="g-4">
                   {filteredData.map((body) => (
+                     <Col md={4} sm={12}>
                     <div key={body.id}>
                       <Card>
                         <Card.Img variant="top" src={body.image} />
@@ -757,9 +758,10 @@ export default function Laptops() {
                         </Card.Body>
                       </Card>
                     </div>
+                    </Col>
                   ))}
                 </Row>
-              </CardGroup>
+              </div>
             </Col>
           </Row>
         </div>
