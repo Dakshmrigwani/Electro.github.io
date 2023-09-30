@@ -27,7 +27,7 @@ export default function SearchBar() {
 
   return (
     <>
-      <Form className="d-flex mr-auto position-relative ">
+      <Form className="d-flex ">
         <InputGroup>
           <Form.Control
             placeholder="Search product name"

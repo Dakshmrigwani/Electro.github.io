@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from "react";
+import ReactImageZoom from 'react-image-zoom';
 import { useParams } from "react-router-dom";
 import { ProductDetailData } from "../Component/data";
 import Layout from "../Component/Layout";
