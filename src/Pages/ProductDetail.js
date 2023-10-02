@@ -18,8 +18,8 @@ import ReactStars from "react-stars";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { addToCart, addToWishlist } from "./items";
-import { useSelector, useDispatch } from 'react-redux';
-import { deleteComment } from '../store/CommentSlice';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { deleteComment } from '../store/CommentSlice';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -49,8 +49,8 @@ function ProductDetail() {
   const tax = 50.0;
   const deliveryCharge = 50.0;
 
-  const comments = useSelector((state) => state.comments);
-  const Dispatch = useDispatch();
+  // const comments = useSelector((state) => state.comments);
+  // const Dispatch = useDispatch();
 
   const handleDelete = (id) => {
     dispatch(deleteComment(id));
@@ -300,7 +300,7 @@ function ProductDetail() {
                         <div className="col-md-8">
                           <div className="card-body">
                             <h5 className="card-title">Sherlyn</h5>
-                            <p className="card-text">I am using this product around 5 yaers and its fine and value of money</p>
+                            <p className="card-text">I am using this product around 5 years and its fine and value of money</p>
                             <div className="d-flex justify-content-end align-items-center gap-3">
                               <button className="btn">
                                 <BsFillPencilFill/>
