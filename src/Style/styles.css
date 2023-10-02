@@ -75,6 +75,11 @@
   height: 100%;
   max-height: 50px;
 }
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 .navbar-toggler{
   background-color: cyan !important;
 }
