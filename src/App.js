@@ -1,22 +1,26 @@
-import HeadPhone from "./Pages/Headphone";
-import Body from "./Pages/Body";
-import Speaker from "./Pages/Speaker";
-import Watch from "./Pages/Watches";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Laptops from "./Pages/Laptops";
-import Smartphones from "./Pages/Smartphones";
-import WishList from "./Pages/Wishlist";
-import Cart from "./Pages/Cart";
-import SignIn from "./Pages/SignIn";
-import Error from "./Pages/Error";
-import ProductDetail from "./Pages/ProductDetail";
-// import { Provider } from 'react-redux';
-// import Store from './Store/Store';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+ // Import the ThemeProvider
+import './Style/styles.css'; // Import any common styles you have
+import './Style/light-theme.css'; // Import the light theme styles
+import './Style/dark-theme.css'; // Import the dark theme styles
+
+// Import your page components
+import HeadPhone from './Pages/Headphone';
+import Body from './Pages/Body';
+import Speaker from './Pages/Speaker';
+import Watch from './Pages/Watches';
+import Laptops from './Pages/Laptops';
+import Smartphones from './Pages/Smartphones';
+import WishList from './Pages/Wishlist';
+import Cart from './Pages/Cart';
+import SignIn from './Pages/SignIn';
+import Error from './Pages/Error';
+import ProductDetail from './Pages/ProductDetail';
 
 function App() {
-  return (
-    <>
-     {/* <Provider Store={Store}> */}
+  return ( 
+  <>
       <Router>
         <Routes>
           <Route path="/" element={<Body />} />
@@ -33,8 +37,7 @@ function App() {
           <Route path="/AllProducts/:productId" element={<ProductDetail />} />
         </Routes>
       </Router>
-      {/* </Provider> */}
-    </>
+      </>
   );
 }
 
