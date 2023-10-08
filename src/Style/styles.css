@@ -80,6 +80,9 @@
   height: auto;
   object-fit: cover;
 }
+.z-9{
+  z-index: 99;
+}
 .navbar-toggler{
   background-color: cyan !important;
 }

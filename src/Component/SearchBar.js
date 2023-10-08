@@ -40,7 +40,7 @@ export default function SearchBar() {
       </Form>
 
       {query && showResults ? (
-        <div className="position-absolute top-100">
+        <div className="position-absolute top-100 z-9">
           <div className="card h-100">
             <div className="card-body" style={{ overflow: "auto" }}>
               {filteredProducts.length > 0 ? (
