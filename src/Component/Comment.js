@@ -40,14 +40,14 @@ const Comments = () => {
       <div className="">
         <div className="card mb-3 border-0">
           <div className="row g-0">
-            <div className="col-md-4">
+            <div className="col-4">
               <img
                 src={image1}
                 className="img-fluid rounded-start h-100 object-fit-cover"
                 alt="..."
               />
             </div>
-            <div className="col-md-8">
+            <div className="col-8">
               <div class="statictext">
                 <div className="card-body">
                   <h5 className="card-title">Sherlyn</h5>

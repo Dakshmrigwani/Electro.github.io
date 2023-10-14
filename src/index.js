@@ -27,13 +27,9 @@ const RootComponent = () => {
 
   return (
     <React.StrictMode>
-      {isLoading ? (
-        <MyLoader />
-      ) : (
-        <Provider store={store}>
-          <App className="App" />
-        </Provider>
-      )}
+      <Provider store={store}>
+        {isLoading ? <MyLoader /> : <App className="App" />}
+      </Provider>
     </React.StrictMode>
   );
 };

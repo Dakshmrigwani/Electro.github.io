@@ -17,8 +17,6 @@ import { addToCart, addToWishlist } from "./items";
 import { useSelector, useDispatch } from 'react-redux';
 import Comments from "../Component/Comment"
 
-import { AddComment , DeleteComment } from "../Slices/CommentSlice";
-
 function reducer(state, action) {
   switch (action.type) {
     case "incremented_age": {
