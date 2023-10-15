@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { ThemeProvider } from "./Context/ThemeContext";
 import { store } from "./Store/store";
 import { Provider } from "react-redux";
 import "./Style/styles.css";
@@ -27,9 +28,11 @@ const RootComponent = () => {
 
   return (
     <React.StrictMode>
-      <Provider store={store}>
-        {isLoading ? <MyLoader /> : <App className="App" />}
-      </Provider>
+      <ThemeProvider>
+        <Provider store={store}>
+          {isLoading ? <MyLoader /> : <App className="App" />}
+        </Provider>
+      </ThemeProvider>
     </React.StrictMode>
   );
 };

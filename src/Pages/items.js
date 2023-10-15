@@ -1,3 +1,6 @@
+const ThemeChanger = localStorage.getItem("ThemeChanger")
+
+
 // Load cart items from localStorage
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 // Remove item from cart
@@ -69,6 +72,7 @@ const saveWishlistItemsToLocalStorage = () => {
 };
 
 export {
+  ThemeChanger,
   cartItems,
   wishItems,
   addToCart,

@@ -1,20 +1,22 @@
 import Button from "react-bootstrap/Button";
 import Logo from "./Electro-logo.png";
-import { BsCart3 , BsFillSunFill , BsFillMoonFill } from "react-icons/bs";
+import { BsCart3, BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import SearchBar from "./SearchBar";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
 import { cartItems, wishItems } from "../Pages/items";
+import { ThemeContext } from "../Context/ThemeContext";
 
 function NavBar() {
   const [show, setShow] = useState(false);
 
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark ">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary ">
         <div className="container-fluid">
           <a className="navbar-brand">
             <div className="imglogo">
@@ -127,6 +129,9 @@ function NavBar() {
                     </span>
                   </Link>
                 </Button>
+                <div className="header-toggle-buttons">
+                  <button onClick={() => toggleTheme()}>{theme}</button>
+                </div>
                 <Button
                   className="btn bg-dark border-0"
                   style={{ boxShadow: "none" }}
