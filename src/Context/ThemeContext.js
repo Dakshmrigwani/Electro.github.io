@@ -3,6 +3,7 @@ import { ThemeChanger } from "../Pages/items";
 
 const ThemeContext = createContext();
 
+
 const getTheme = () => {
   if (!ThemeChanger) {
     localStorage.setItem("ThemeChanger", "dark-theme");
@@ -17,6 +18,7 @@ const ThemeProvider = ({ children }) => {
   function toggleTheme() {
     if (theme === "dark-theme") {
       setTheme("light-theme");
+      
     } else {
       setTheme("dark-theme");
     }

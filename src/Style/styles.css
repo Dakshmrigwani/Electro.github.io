@@ -17,10 +17,26 @@
 
   --bg-primary: var(--bg-dark);
 }
+.header-toggle-buttons{
+  position: absolute;
+    right: 20px;
+    z-index: 99;
+    bottom: 40px;
+}
 
 .navbar{
   background-color: var(--bg-primary) !important;
   color: var(--text-primary) !important
+}
+.navtext{
+  color: var(--text-primary) !important
+}
+.navbg{
+  background-color: var(--bg-primary) !important;
+}
+.navicons{
+  color: var(--text-primary) !important;
+  
 }
 .App {
   background-color: var(--background-color);
