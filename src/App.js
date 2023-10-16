@@ -1,9 +1,7 @@
-import React , {useContext} from "react";
+import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // Import the ThemeProvider
 import "./Style/styles.css"; // Import any common styles you have
-import "./Style/light-theme.css"; // Import the light theme styles
-import "./Style/dark-theme.css"; // Import the dark theme styles
 
 // Import your page components
 import HeadPhone from "./Pages/Headphone";
