@@ -1,20 +1,22 @@
 import Button from "react-bootstrap/Button";
 import Logo from "./Electro-logo.png";
-import { BsCart3 , BsFillSunFill , BsFillMoonFill } from "react-icons/bs";
+import { BsCart3, BsMoonFill, BsFillSunFill } from "react-icons/bs";
 import SearchBar from "./SearchBar";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { cartItems, wishItems } from "../Pages/items";
+import { ThemeContext } from "../Context/ThemeContext";
 
 function NavBar() {
   const [show, setShow] = useState(false);
 
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark ">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary ">
         <div className="container-fluid">
           <a className="navbar-brand">
             <div className="imglogo">
@@ -56,7 +58,7 @@ function NavBar() {
                   {" "}
                   <Link
                     to="/Pages/Headphone"
-                    className="text-decoration-none text-light me-2"
+                    className="text-decoration-none navtext me-2"
                   >
                     Headphone
                   </Link>
@@ -66,7 +68,7 @@ function NavBar() {
                 <a className="nav-link">
                   <Link
                     to="/Pages/Laptops"
-                    className="text-decoration-none text-light me-2"
+                    className="text-decoration-none navtext me-2"
                   >
                     Laptops
                   </Link>
@@ -77,7 +79,7 @@ function NavBar() {
                   {" "}
                   <Link
                     to="/Pages/Speaker"
-                    className="text-decoration-none text-light me-2"
+                    className="text-decoration-none navtext me-2"
                   >
                     Speakers
                   </Link>
@@ -88,7 +90,7 @@ function NavBar() {
                   {" "}
                   <Link
                     to="/Pages/Watch"
-                    className="text-decoration-none text-light me-2"
+                    className="text-decoration-none navtext me-2"
                   >
                     Watches
                   </Link>
@@ -98,7 +100,7 @@ function NavBar() {
                 <a className="nav-link">
                   <Link
                     to="/Pages/Smartphones"
-                    className="text-decoration-none text-light me-2"
+                    className="text-decoration-none navtext me-2"
                   >
                     Smartphones
                   </Link>
@@ -113,8 +115,8 @@ function NavBar() {
                   style={{ boxShadow: "none" }}
                 >
                   <Link to="/Pages/Wishlist">
-                    <span className="position-relative">
-                      <AiOutlineHeart className="text-light fs-4" />
+                    <span className="position-relative navbg">
+                      <AiOutlineHeart className="navicons fs-4" />
                       {wishItems.length === 0 ? (
                         ""
                       ) : (
@@ -127,13 +129,14 @@ function NavBar() {
                     </span>
                   </Link>
                 </Button>
+                
                 <Button
                   className="btn bg-dark border-0"
                   style={{ boxShadow: "none" }}
                 >
                   <Link to="/pages/Cart">
-                    <span className="position-relative">
-                      <BsCart3 className="text-light fs-4" />
+                    <span className="position-relative navbg">
+                      <BsCart3 className="navicons fs-4" />
 
                       <span className="">
                         {cartItems.length === 0 ? (
@@ -154,8 +157,8 @@ function NavBar() {
                   style={{ boxShadow: "none" }}
                 >
                   <Link to="/pages/SignIn">
-                    <span>
-                      <AiOutlineUser className="text-light" />
+                    <span className="navbg">
+                      <AiOutlineUser className="navicons" />
                     </span>
                   </Link>
                 </Button>
@@ -163,7 +166,12 @@ function NavBar() {
             </div>
           </div>
         </div>
+        
       </nav>
+      <div className="header-toggle-buttons">
+                  <span onClick={toggleTheme}> {theme === "dark-theme" ? <BsFillSunFill/> : <BsMoonFill/>}</span>
+                </div>
+      
     </>
   );
 }

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-
+import { ThemeProvider } from "./Context/ThemeContext";
+import { store } from "./Store/store";
+import { Provider } from "react-redux";
 import "./Style/styles.css";
 
 import ContentLoader from "react-content-loader";
@@ -26,21 +28,17 @@ const RootComponent = () => {
 
   return (
     <React.StrictMode>
-      {isLoading ? (
-        <MyLoader />
-      ) : (
-        // <Provider store={store}>
-        <App className="App" />
-        // </Provider>
-      )}
+      <ThemeProvider>
+        <Provider store={store}>
+          {isLoading ? <MyLoader /> : <App className="App" />}
+        </Provider>
+      </ThemeProvider>
     </React.StrictMode>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <RootComponent />
-);
+root.render(<RootComponent />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

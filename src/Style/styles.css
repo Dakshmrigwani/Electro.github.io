@@ -1,6 +1,48 @@
+:root {
+  --text-light: black;
+  --text-dark: white;
+
+  --bg-light: white;
+  --bg-dark: black;
+}
+
+.light-theme {
+  --text-primary: var(--text-light);
+
+  --bg-primary: var(--bg-light);
+}
+
+.dark-theme {
+  --text-primary: var(--text-dark);
+
+  --bg-primary: var(--bg-dark);
+}
+
+.header-toggle-buttons {
+  position: fixed;
+  right: 20px;
+  z-index: 99;
+  bottom: 40px;
+}
+
+.navbar {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+.toggletext {
+  color: var(--text-primary);
+}
+.navtext {
+  color: var(--text-primary) !important;
+}
+.navbg {
+  background-color: var(--bg-primary) !important;
+}
+.navicons {
+  color: var(--text-primary) !important;
+}
 .App {
-  background-color: var(--background-color);
-  color: var(--color);
+  background-color: var(--bg-primary) !important;
 }
 .title-word {
   animation: color-animation 4s linear infinite;
@@ -71,7 +113,7 @@
   font-size: 4vw;
   text-transform: uppercase;
 }
-.imglogo img{
+.imglogo img {
   height: 100%;
   max-height: 50px;
 }
@@ -80,27 +122,28 @@
   height: auto;
   object-fit: cover;
 }
-.z-9{
+.z-9 {
   z-index: 99;
 }
-.navbar-toggler{
+.navbar-toggler {
   background-color: cyan !important;
 }
-.imglogofooter img{
+.imglogofooter img {
   height: 100%;
   max-height: 100px;
 }
 .carousel-control-prev-icon {
-padding: 10px;
-background-color: #000;
-border-radius: 50%;
+  padding: 10px;
+  background-color: #000;
+  border-radius: 50%;
 }
 .carousel-control-next-icon {
   padding: 10px;
   background-color: #000;
   border-radius: 50%;
-  }
-.carousel-control-next-icon, .carousel-control-prev-icon {
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
   display: inline-block;
   width: 3rem;
   height: 3rem;
@@ -113,7 +156,7 @@ border-radius: 50%;
   margin-top: 6rem;
   margin-bottom: 10rem;
 }
-.bg-dark{
+.bg-dark {
   background-color: #000 !important;
 }
 .center-screen {
@@ -145,7 +188,7 @@ border-radius: 50%;
 }
 .filter-section {
   position: sticky;
-  top: 100px;
+  top: 10px;
   height: calc(100vh - 1rem);
   overflow-y: auto;
 }

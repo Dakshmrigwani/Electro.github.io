@@ -48,7 +48,7 @@ export default function Body() {
 
   const handleFilter = (filterCriteria) => {
     const filteredProducts = ProductDetailData.filter(
-      (product) => product.category === filterCriteria
+      (product) => product.category === filterCriteria,
     );
     setFilteredData(filteredProducts);
   };
@@ -324,7 +324,7 @@ export default function Body() {
         </CardGroup>
         <div className=" container my-5 pb-5" style={{ height: "5vh" }}>
           <div className="text-center padding-the-text">
-            <h1 className="text-dark">
+            <h1 className="toggletext">
               <Typewriter
                 options={{
                   autoStart: true,

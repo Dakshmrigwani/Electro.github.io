@@ -1,7 +1,5 @@
 import React, { useState, useReducer } from "react";
-import image1 from "../Images/image1.avif"
-import image2 from "../Images/image2.avif"
-import ReactImageZoom from 'react-image-zoom';
+
 import { useParams } from "react-router-dom";
 import { ProductDetailData } from "../Component/data";
 import Layout from "../Component/Layout";
@@ -9,17 +7,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import InputGroup from "react-bootstrap/InputGroup";
-import Form from "react-bootstrap/Form";
 import { CiLocationOn } from "react-icons/ci";
-import { BsPencil, BsCurrencyRupee , BsFillPencilFill } from "react-icons/bs";
-import {AiFillDelete} from "react-icons/ai"
+import { BsPencil, BsCurrencyRupee, BsFillPencilFill } from "react-icons/bs";
+import { AiFillDelete } from "react-icons/ai";
 import ReactStars from "react-stars";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { addToCart, addToWishlist } from "./items";
-// import { useSelector, useDispatch } from 'react-redux';
-// import { deleteComment } from '../store/CommentSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import Comments from "../Component/Comment"
 
 function reducer(state, action) {
   switch (action.type) {
@@ -49,8 +45,7 @@ function ProductDetail() {
   const tax = 50.0;
   const deliveryCharge = 50.0;
 
-  // const comments = useSelector((state) => state.comments);
-  // const Dispatch = useDispatch();
+  const Dispatch = useDispatch();
 
   const handleDelete = (id) => {
     dispatch(deleteComment(id));
@@ -70,6 +65,8 @@ function ProductDetail() {
     (product) => product.id === parseInt(productId)
   );
 
+
+
   const total = (
     selectedProduct.DisPrice * state.age +
     tax +
@@ -85,7 +82,6 @@ function ProductDetail() {
           <div className="container my-5">
             <Row>
               <Col md={8}>
-
                 <Carousel
                   selectedItem={mainIndex}
                   onChange={(index) => setMainIndex(index)}
@@ -93,7 +89,6 @@ function ProductDetail() {
                   infiniteLoop={true}
                   showThumbs={true}
                   thumbWidth={100}
-                
                   dynamicHeight={false}
                   autoPlay={true}
                   className=""
@@ -117,42 +112,42 @@ function ProductDetail() {
                     <img src={selectedProduct.image5} alt="" />
                   </div>
                 </Carousel>
-                
+
                 <div className="container-fluid">
-                <h2>{selectedProduct.MoreTitle}</h2>
-                <p className="d-inline">
-                  <p className="fs-3 text-decoration-line-through d-inline">
-                    <BsCurrencyRupee />
-                    {selectedProduct.ActPrice}
+                  <h2>{selectedProduct.MoreTitle}</h2>
+                  <p className="d-inline">
+                    <p className="fs-3 text-decoration-line-through d-inline">
+                      <BsCurrencyRupee />
+                      {selectedProduct.ActPrice}
+                    </p>
                   </p>
-                </p>
-                <p className="">
-                  <p className="fs-6 d-inline">
-                    <BsCurrencyRupee />
-                    {selectedProduct.DisPrice}
+                  <p className="">
+                    <p className="fs-6 d-inline">
+                      <BsCurrencyRupee />
+                      {selectedProduct.DisPrice}
+                    </p>
                   </p>
-                </p>
-                <p>{selectedProduct.disPercent}% Off</p>
-                <ReactStars value={selectedProduct.Rating} edit={false} />
-                <p>
-                  Rating: {selectedProduct.Rating} ({selectedProduct.reviews}{" "}
-                  reviews)
-                </p>
-                <b>Here are some details</b>
-                <ul className="mt-4">
-                  <li>{selectedProduct.description1}</li>
-                  <li>{selectedProduct.description2}</li>
-                  <li>{selectedProduct.description3}</li>
-                  <li>{selectedProduct.description4}</li>
-                  <li>{selectedProduct.description5}</li>
-                </ul>
+                  <p>{selectedProduct.disPercent}% Off</p>
+                  <ReactStars value={selectedProduct.Rating} edit={false} />
+                  <p>
+                    Rating: {selectedProduct.Rating} ({selectedProduct.reviews}{" "}
+                    reviews)
+                  </p>
+                  <b>Here are some details</b>
+                  <ul className="mt-4">
+                    <li>{selectedProduct.description1}</li>
+                    <li>{selectedProduct.description2}</li>
+                    <li>{selectedProduct.description3}</li>
+                    <li>{selectedProduct.description4}</li>
+                    <li>{selectedProduct.description5}</li>
+                  </ul>
                 </div>
               </Col>
-            
+
               <Col md={4}>
                 <div className="sticky-top mt-3 mt-md-0">
-                 <div className="d-flex flex-column gap-4">
-                    <Card >
+                  <div className="d-flex flex-column gap-4">
+                    <Card>
                       <Card.Body>
                         <Card.Title className="fs-6 text-secondary">
                           Order Summary
@@ -289,33 +284,8 @@ function ProductDetail() {
                         </div>
                       </Card.Body>
                     </Card>
-                    <div className="">
-                       <h3>Comments</h3>
-                       <div className="">
-                       <div className="card mb-3 border-0" >
-                      <div className="row g-0">
-                        <div className="col-md-4">
-                          <img src={image1} className="img-fluid rounded-start h-100 object-fit-cover" alt="..."/>
-                        </div>
-                        <div className="col-md-8">
-                          <div className="card-body">
-                            <h5 className="card-title">Sherlyn</h5>
-                            <p className="card-text">I am using this product around 5 years and its fine and value of money</p>
-                            <div className="d-flex justify-content-end align-items-center gap-3">
-                              <button className="btn">
-                                <BsFillPencilFill/>
-                              </button>
-                              <button className="btn">
-                                <AiFillDelete/>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      </div>
-                       </div>
-                    </div>
-                    </div>
+                    <Comments/>
+                  </div>
                 </div>
               </Col>
             </Row>
