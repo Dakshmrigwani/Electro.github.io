@@ -19,6 +19,8 @@ i have implemeted search functionality also in the search bar
 
 add filter functionality in product page
 
+Add dark and light theme
+
 there are many different kind of the products in this page and also available for product detail page
 
 i have added add to cart functionality in wishlist so that when you click on that product then it takes the data in cart page and remove the product from wishlist automatically
@@ -32,7 +34,6 @@ show toast when you add a product to the cart or wishlist
 show quantity in icon of cart and wishlist
 
 - **User Authentication and User Profiles:** Implement user registration and login functionality. Allow users to create profiles, save their personal information, and view their order history.
-- Add dark and light theme
 - **Reviews and Ratings:** Add the ability for users to leave product reviews and ratings. You can also display average product ratings and sort products based on reviews.
 - **Payment Integration:** Incorporate payment gateways like Stripe, PayPal, or Square to enable users to make purchases securely.
 - **Product Recommendations:** Implement a recommendation system that suggests related products based on user browsing and purchase history.
