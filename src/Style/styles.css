@@ -17,30 +17,32 @@
 
   --bg-primary: var(--bg-dark);
 }
-.header-toggle-buttons{
-  position: absolute;
-    right: 20px;
-    z-index: 99;
-    bottom: 40px;
+
+.header-toggle-buttons {
+  position: fixed;
+  right: 20px;
+  z-index: 99;
+  bottom: 40px;
 }
 
-.navbar{
+.navbar {
   background-color: var(--bg-primary) !important;
-  color: var(--text-primary) !important
-}
-.navtext{
-  color: var(--text-primary) !important
-}
-.navbg{
-  background-color: var(--bg-primary) !important;
-}
-.navicons{
   color: var(--text-primary) !important;
-  
+}
+.toggletext {
+  color: var(--text-primary);
+}
+.navtext {
+  color: var(--text-primary) !important;
+}
+.navbg {
+  background-color: var(--bg-primary) !important;
+}
+.navicons {
+  color: var(--text-primary) !important;
 }
 .App {
-  background-color: var(--background-color);
-  color: var(--color);
+  background-color: var(--bg-primary) !important;
 }
 .title-word {
   animation: color-animation 4s linear infinite;
@@ -186,7 +188,7 @@
 }
 .filter-section {
   position: sticky;
-  top: 100px;
+  top: 10px;
   height: calc(100vh - 1rem);
   overflow-y: auto;
 }
