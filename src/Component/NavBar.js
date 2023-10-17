@@ -168,9 +168,7 @@ function NavBar() {
         </div>
         
       </nav>
-      <div className="header-toggle-buttons">
-                  <span onClick={toggleTheme}> {theme === "dark-theme" ? <BsFillSunFill/> : <BsMoonFill/>}</span>
-                </div>
+      
       
     </>
   );

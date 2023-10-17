@@ -8,13 +8,15 @@
 
 .light-theme {
   --text-primary: var(--text-light);
-
+  --text-secondary: var(--text-dark);
+  --bg-secondary: var(--bg-dark);
   --bg-primary: var(--bg-light);
 }
 
 .dark-theme {
+  --text-secondary: var(--text-light);
   --text-primary: var(--text-dark);
-
+  --bg-secondary: var(--bg-light);
   --bg-primary: var(--bg-dark);
 }
 
@@ -40,6 +42,14 @@
 }
 .navicons {
   color: var(--text-primary) !important;
+}
+.padicon {
+  background-color: var(--bg-secondary);
+  padding: 10px 10px 15px 10px;
+  border-radius: 15px;
+}
+.padicon svg {
+  color: var(--text-secondary) !important;
 }
 .App {
   background-color: var(--bg-primary) !important;
