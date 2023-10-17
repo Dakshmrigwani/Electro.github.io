@@ -26,7 +26,15 @@
   z-index: 99;
   bottom: 40px;
 }
-
+.fullheight {
+  height: 100vh;
+}
+.bannerheight img {
+  max-height: 600px;
+}
+.mar8 {
+  margin-top: -8px;
+}
 .navbar {
   background-color: var(--bg-primary) !important;
   color: var(--text-primary) !important;

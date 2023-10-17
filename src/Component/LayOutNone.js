@@ -6,7 +6,7 @@ function LayOutNone({ children }) {
   const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <>
-      <div>
+      <div className="fullheight mar8">
         <main>{children}</main>
       </div>
       <div className="header-toggle-buttons">

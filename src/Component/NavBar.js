@@ -11,7 +11,6 @@ import { ThemeContext } from "../Context/ThemeContext";
 function NavBar() {
   const [show, setShow] = useState(false);
 
-  const { theme, toggleTheme } = useContext(ThemeContext);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
@@ -129,7 +128,7 @@ function NavBar() {
                     </span>
                   </Link>
                 </Button>
-                
+
                 <Button
                   className="btn bg-dark border-0"
                   style={{ boxShadow: "none" }}
@@ -166,10 +165,7 @@ function NavBar() {
             </div>
           </div>
         </div>
-        
       </nav>
-      
-      
     </>
   );
 }
