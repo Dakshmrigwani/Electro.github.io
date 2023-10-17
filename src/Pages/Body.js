@@ -331,12 +331,12 @@ export default function Body() {
             </h1>
           </div>
         </div>
-        <div className="d-flex justify-content-center ">
-          <div style={{ position: "relative" }}>
+        <div className="d-flex  ">
+          <div className="position-relative w-100">
             <img
               src="https://img.freepik.com/free-photo/headphones-african-american-woman-s-portrait-isolated-dark-studio-background-multicolored-neon-light-beautiful-female-model-concept-human-emotions-facial-expression-sales-ad-fashion_155003-34470.jpg?size=626&ext=jpg&ga=GA1.1.431024627.1681996656&semt=sph"
               alt=""
-              style={{ width: "98vw" }}
+              className="w-100"
             />
             <div
               style={{
