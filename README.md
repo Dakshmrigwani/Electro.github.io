@@ -21,6 +21,8 @@ add filter functionality in product page
 
 Add dark and light theme
 
+added pagination all the pages
+
 there are many different kind of the products in this page and also available for product detail page
 
 i have added add to cart functionality in wishlist so that when you click on that product then it takes the data in cart page and remove the product from wishlist automatically
@@ -38,7 +40,6 @@ show quantity in icon of cart and wishlist
 - **Payment Integration:** Incorporate payment gateways like Stripe, PayPal, or Square to enable users to make purchases securely.
 - **Product Recommendations:** Implement a recommendation system that suggests related products based on user browsing and purchase history.
 - **Product Comparison:** Allow users to compare multiple products side by side, highlighting key features, specifications, and prices.
-- **Pagination or Infinite Scrolling:** Implement pagination or infinite scrolling to improve the browsing experience, especially if you have a large number of products.
 - **Product Images and Zoom:** Enhance the product display by adding zoom-in functionality for product images and the ability to showcase multiple product images.
 - **Wishlist Sharing:** Enable users to share their wishlist with friends or family through social media or email.
 - **Product Videos:** Add the option to include product demonstration videos for certain products.
