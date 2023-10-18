@@ -12,8 +12,12 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Link } from "react-router-dom";
 import { addToCart, addToWishlist } from "./items";
+import ReactPaginate from "react-paginate";
 
 export default function Speaker() {
+  const [data, setData] = useState();
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
   const [showMore, setShowMore] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Speakers");
   const [filteredData, setFilteredData] = useState([]);
@@ -24,36 +28,42 @@ export default function Speaker() {
 
   const handleToggle = () => setShowMore(!showMore);
 
+  const itemsPerPage = 6;
+
   const handleFilter = () => {
     let filteredProducts = ProductDetailData.filter(
-      (product) => product.category === selectedCategory
+      (product) => product.category === selectedCategory,
     );
 
     if (brandFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        brandFilters.includes(product.brand)
+        brandFilters.includes(product.brand),
       );
     }
 
     if (priceFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        priceFilters.includes(product.RangePrice)
+        priceFilters.includes(product.RangePrice),
       );
     }
 
     if (discountFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        discountFilters.includes(product.disPercentFilter)
+        discountFilters.includes(product.disPercentFilter),
       );
     }
 
     if (ratingFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        ratingFilters.includes(product.ratingFilter)
+        ratingFilters.includes(product.ratingFilter),
       );
     }
 
     setFilteredData(filteredProducts);
+  };
+
+  const handlePageClick = ({ selected }) => {
+    setCurrentPage(selected);
   };
 
   useEffect(() => {
@@ -66,12 +76,17 @@ export default function Speaker() {
     ratingFilters,
   ]);
 
+  useEffect(() => {
+    const total = filteredData.length;
+    setTotalPages(Math.ceil(total / itemsPerPage));
+  }, [filteredData]);
+
   return (
     <>
       <Layout>
         <div className="container-fluid my-3">
           <Row>
-          <div
+            <div
               className="d-flex d-lg-none"
               style={{ maxWidth: "10rem", height: "fit-content" }}
             >
@@ -118,8 +133,8 @@ export default function Speaker() {
                                 } else {
                                   setBrandFilters(
                                     brandFilters.filter(
-                                      (brand) => brand !== "JBL"
-                                    )
+                                      (brand) => brand !== "JBL",
+                                    ),
                                   );
                                 }
                               }}
@@ -138,8 +153,8 @@ export default function Speaker() {
                                 } else {
                                   setBrandFilters(
                                     brandFilters.filter(
-                                      (brand) => brand !== "boAt"
-                                    )
+                                      (brand) => brand !== "boAt",
+                                    ),
                                   );
                                 }
                               }}
@@ -158,8 +173,8 @@ export default function Speaker() {
                                 } else {
                                   setBrandFilters(
                                     brandFilters.filter(
-                                      (brand) => brand !== "Mivi"
-                                    )
+                                      (brand) => brand !== "Mivi",
+                                    ),
                                   );
                                 }
                               }}
@@ -184,8 +199,8 @@ export default function Speaker() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "under 500"
-                                    )
+                                      (price) => price !== "under 500",
+                                    ),
                                   );
                                 }
                               }}
@@ -207,8 +222,8 @@ export default function Speaker() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "1000 - 2000"
-                                    )
+                                      (price) => price !== "1000 - 2000",
+                                    ),
                                   );
                                 }
                               }}
@@ -230,8 +245,8 @@ export default function Speaker() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "3000 - 4000"
-                                    )
+                                      (price) => price !== "3000 - 4000",
+                                    ),
                                   );
                                 }
                               }}
@@ -253,8 +268,8 @@ export default function Speaker() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "6000 - 7000"
-                                    )
+                                      (price) => price !== "6000 - 7000",
+                                    ),
                                   );
                                 }
                               }}
@@ -280,8 +295,8 @@ export default function Speaker() {
                                 } else {
                                   setDiscountFilters(
                                     discountFilters.filter(
-                                      (discount) => discount !== "50 - 60"
-                                    )
+                                      (discount) => discount !== "50 - 60",
+                                    ),
                                   );
                                 }
                               }}
@@ -303,8 +318,8 @@ export default function Speaker() {
                                 } else {
                                   setDiscountFilters(
                                     discountFilters.filter(
-                                      (discount) => discount !== "20 - 30"
-                                    )
+                                      (discount) => discount !== "20 - 30",
+                                    ),
                                   );
                                 }
                               }}
@@ -326,8 +341,8 @@ export default function Speaker() {
                                 } else {
                                   setDiscountFilters(
                                     discountFilters.filter(
-                                      (discount) => discount !== "30 - 40"
-                                    )
+                                      (discount) => discount !== "30 - 40",
+                                    ),
                                   );
                                 }
                               }}
@@ -349,8 +364,8 @@ export default function Speaker() {
                                 } else {
                                   setDiscountFilters(
                                     discountFilters.filter(
-                                      (discount) => discount !== "40 - 50"
-                                    )
+                                      (discount) => discount !== "40 - 50",
+                                    ),
                                   );
                                 }
                               }}
@@ -372,8 +387,8 @@ export default function Speaker() {
                                 } else {
                                   setDiscountFilters(
                                     discountFilters.filter(
-                                      (discount) => discount !== "50 - 60"
-                                    )
+                                      (discount) => discount !== "50 - 60",
+                                    ),
                                   );
                                 }
                               }}
@@ -395,8 +410,8 @@ export default function Speaker() {
                                 } else {
                                   setDiscountFilters(
                                     discountFilters.filter(
-                                      (discount) => discount !== "60 - 70"
-                                    )
+                                      (discount) => discount !== "60 - 70",
+                                    ),
                                   );
                                 }
                               }}
@@ -421,8 +436,8 @@ export default function Speaker() {
                                 } else {
                                   setRatingFilters(
                                     ratingFilters.filter(
-                                      (rating) => rating !== "3.5 - 4"
-                                    )
+                                      (rating) => rating !== "3.5 - 4",
+                                    ),
                                   );
                                 }
                               }}
@@ -444,8 +459,8 @@ export default function Speaker() {
                                 } else {
                                   setRatingFilters(
                                     ratingFilters.filter(
-                                      (rating) => rating !== "4 - 4.5"
-                                    )
+                                      (rating) => rating !== "4 - 4.5",
+                                    ),
                                   );
                                 }
                               }}
@@ -458,7 +473,7 @@ export default function Speaker() {
                 </div>
               </div>
             </div>
-            <Col md={2} className="d-none d-md-flex" >
+            <Col md={2} className="d-none d-md-flex">
               <Card className="scrollbar scrollbar-primary filter-section">
                 <Card.Body className="force-overflow">
                   <Card.Title>Filter</Card.Title>
@@ -475,7 +490,7 @@ export default function Speaker() {
                               setBrandFilters([...brandFilters, "JBL"]);
                             } else {
                               setBrandFilters(
-                                brandFilters.filter((brand) => brand !== "JBL")
+                                brandFilters.filter((brand) => brand !== "JBL"),
                               );
                             }
                           }}
@@ -491,7 +506,9 @@ export default function Speaker() {
                               setBrandFilters([...brandFilters, "boAt"]);
                             } else {
                               setBrandFilters(
-                                brandFilters.filter((brand) => brand !== "boAt")
+                                brandFilters.filter(
+                                  (brand) => brand !== "boAt",
+                                ),
                               );
                             }
                           }}
@@ -507,7 +524,9 @@ export default function Speaker() {
                               setBrandFilters([...brandFilters, "Mivi"]);
                             } else {
                               setBrandFilters(
-                                brandFilters.filter((brand) => brand !== "Mivi")
+                                brandFilters.filter(
+                                  (brand) => brand !== "Mivi",
+                                ),
                               );
                             }
                           }}
@@ -527,8 +546,8 @@ export default function Speaker() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "under 500"
-                                )
+                                  (price) => price !== "under 500",
+                                ),
                               );
                             }
                           }}
@@ -545,8 +564,8 @@ export default function Speaker() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "1000 - 2000"
-                                )
+                                  (price) => price !== "1000 - 2000",
+                                ),
                               );
                             }
                           }}
@@ -563,8 +582,8 @@ export default function Speaker() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "3000 - 4000"
-                                )
+                                  (price) => price !== "3000 - 4000",
+                                ),
                               );
                             }
                           }}
@@ -581,8 +600,8 @@ export default function Speaker() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "6000 - 7000"
-                                )
+                                  (price) => price !== "6000 - 7000",
+                                ),
                               );
                             }
                           }}
@@ -606,8 +625,8 @@ export default function Speaker() {
                             } else {
                               setDiscountFilters(
                                 discountFilters.filter(
-                                  (discount) => discount !== "50 - 60"
-                                )
+                                  (discount) => discount !== "50 - 60",
+                                ),
                               );
                             }
                           }}
@@ -627,8 +646,8 @@ export default function Speaker() {
                             } else {
                               setDiscountFilters(
                                 discountFilters.filter(
-                                  (discount) => discount !== "20 - 30"
-                                )
+                                  (discount) => discount !== "20 - 30",
+                                ),
                               );
                             }
                           }}
@@ -648,8 +667,8 @@ export default function Speaker() {
                             } else {
                               setDiscountFilters(
                                 discountFilters.filter(
-                                  (discount) => discount !== "30 - 40"
-                                )
+                                  (discount) => discount !== "30 - 40",
+                                ),
                               );
                             }
                           }}
@@ -669,8 +688,8 @@ export default function Speaker() {
                             } else {
                               setDiscountFilters(
                                 discountFilters.filter(
-                                  (discount) => discount !== "40 - 50"
-                                )
+                                  (discount) => discount !== "40 - 50",
+                                ),
                               );
                             }
                           }}
@@ -690,8 +709,8 @@ export default function Speaker() {
                             } else {
                               setDiscountFilters(
                                 discountFilters.filter(
-                                  (discount) => discount !== "50 - 60"
-                                )
+                                  (discount) => discount !== "50 - 60",
+                                ),
                               );
                             }
                           }}
@@ -711,8 +730,8 @@ export default function Speaker() {
                             } else {
                               setDiscountFilters(
                                 discountFilters.filter(
-                                  (discount) => discount !== "60 - 70"
-                                )
+                                  (discount) => discount !== "60 - 70",
+                                ),
                               );
                             }
                           }}
@@ -732,8 +751,8 @@ export default function Speaker() {
                             } else {
                               setRatingFilters(
                                 ratingFilters.filter(
-                                  (rating) => rating !== "3.5 - 4"
-                                )
+                                  (rating) => rating !== "3.5 - 4",
+                                ),
                               );
                             }
                           }}
@@ -750,8 +769,8 @@ export default function Speaker() {
                             } else {
                               setRatingFilters(
                                 ratingFilters.filter(
-                                  (rating) => rating !== "4 - 4.5"
-                                )
+                                  (rating) => rating !== "4 - 4.5",
+                                ),
                               );
                             }
                           }}
@@ -765,102 +784,136 @@ export default function Speaker() {
             <Col md={10}>
               <div className=" my-4">
                 <Row xs={1} md={3} className="g-4">
-                  {filteredData.map((body) => (
-                     <Col md={4} sm={12}>
-                    <div key={body.id}>
-                      <Card>
-                        <Card.Img variant="top" src={body.image} />
-                        <Card.Body>
-                          <Link
-                            to={`/AllProducts/${body.id}`}
-                            className="brandTitle"
-                          >
-                            <Card.Title className="fw-normal ">
-                              {showMore ? body.MoreTitle : body.LessTitle}
-                              <span
-                                onClick={() => handleToggle(body.id)}
-                                className="fw-bolder"
+                  {filteredData
+                    .slice(
+                      currentPage * itemsPerPage,
+                      (currentPage + 1) * itemsPerPage,
+                    )
+                    .map((body) => (
+                      <Col md={4} sm={12}>
+                        <div key={body.id}>
+                          <Card>
+                            <Card.Img variant="top" src={body.image} />
+                            <Card.Body>
+                              <Link
+                                to={`/AllProducts/${body.id}`}
+                                className="brandTitle"
                               >
-                                {showMore ? " ...Read Less" : " ...Read More"}
-                              </span>
-                            </Card.Title>
-                          </Link>
-                          <Card.Text>
-                            <div
-                              className="row row-cols-auto"
-                              style={{ display: "flex", alignItems: "center" }}
-                            >
-                              <ReactStars
-                                count={body.rating}
-                                size={24}
-                                color2={"#ffd700"}
-                                value={body.Rating}
-                                style={{ marginRight: "5px" }}
-                                className="col"
-                                edit={false}
-                              />
-                              <p style={{ margin: "0" }} className="ms-2 col">
-                                {body.reviews} review
-                              </p>
-                            </div>
+                                <Card.Title className="fw-normal ">
+                                  {showMore ? body.MoreTitle : body.LessTitle}
+                                  <span
+                                    onClick={() => handleToggle(body.id)}
+                                    className="fw-bolder"
+                                  >
+                                    {showMore
+                                      ? " ...Read Less"
+                                      : " ...Read More"}
+                                  </span>
+                                </Card.Title>
+                              </Link>
+                              <Card.Text>
+                                <div
+                                  className="row row-cols-auto"
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <ReactStars
+                                    count={body.rating}
+                                    size={24}
+                                    color2={"#ffd700"}
+                                    value={body.Rating}
+                                    style={{ marginRight: "5px" }}
+                                    className="col"
+                                    edit={false}
+                                  />
+                                  <p
+                                    style={{ margin: "0" }}
+                                    className="ms-2 col"
+                                  >
+                                    {body.reviews} review
+                                  </p>
+                                </div>
 
-                            <div
-                              style={{ display: "flex", alignItems: "center" }}
-                              className="row"
-                            >
-                              <div className="col">
-                                <b className="fs-2 d-flex">
-                                  <BsCurrencyRupee className="mt-2" />
-                                  {body.DisPrice}
-                                </b>
-                                <p className="fs-6 text-decoration-line-through">
-                                  <BsCurrencyRupee />
-                                  {body.ActPrice}
-                                </p>
-                              </div>
-                              <div className="col">
-                                <p className="mt-3 text-start">
-                                  ({body.disPercent}%off)
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              style={{ display: "flex", alignItems: "center" }}
-                              className="row row-cols-auto d-flex justify-content-center"
-                            >
-                              <Button
-                                variant="outline-light"
-                                style={{
-                                  backgroundColor: "#7E90C8",
-                                  color: "white",
-                                }}
-                                className="col"
-                                onClick={() => addToCart(body)}
-                              >
-                                Add To Cart
-                              </Button>
-                              <Button
-                                className="ms-2 col"
-                                variant="outline-light"
-                                style={{
-                                  backgroundColor: "#8B5095",
-                                  color: "white",
-                                }}
-                                onClick={() => addToWishlist(body)}
-                              >
-                                Add To Wishlist
-                              </Button>
-                            </div>
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    </Col>
-                  ))}
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                  className="row"
+                                >
+                                  <div className="col">
+                                    <b className="fs-2 d-flex">
+                                      <BsCurrencyRupee className="mt-2" />
+                                      {body.DisPrice}
+                                    </b>
+                                    <p className="fs-6 text-decoration-line-through">
+                                      <BsCurrencyRupee />
+                                      {body.ActPrice}
+                                    </p>
+                                  </div>
+                                  <div className="col">
+                                    <p className="mt-3 text-start">
+                                      ({body.disPercent}%off)
+                                    </p>
+                                  </div>
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                  className="row row-cols-auto d-flex justify-content-center"
+                                >
+                                  <Button
+                                    variant="outline-light"
+                                    style={{
+                                      backgroundColor: "#7E90C8",
+                                      color: "white",
+                                    }}
+                                    className="col"
+                                    onClick={() => addToCart(body)}
+                                  >
+                                    Add To Cart
+                                  </Button>
+                                  <Button
+                                    className="ms-2 col"
+                                    variant="outline-light"
+                                    style={{
+                                      backgroundColor: "#8B5095",
+                                      color: "white",
+                                    }}
+                                    onClick={() => addToWishlist(body)}
+                                  >
+                                    Add To Wishlist
+                                  </Button>
+                                </div>
+                              </Card.Text>
+                            </Card.Body>
+                          </Card>
+                        </div>
+                      </Col>
+                    ))}
                 </Row>
               </div>
             </Col>
           </Row>
+          <div className="d-flex justify-content-center mt-3">
+            <ReactPaginate
+              pageCount={totalPages}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              activeClassName={"active"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
+              pageLabelBuilder={() => ""} // Return an empty string for page labels
+              previousLabel={"Previous"} // Customize the "Previous" label
+              nextLabel={"Next"} // Customize the "Next" label
+            />
+          </div>
         </div>
       </Layout>
     </>

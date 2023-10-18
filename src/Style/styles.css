@@ -35,6 +35,33 @@
 .bannerheight img {
   max-height: 600px;
 }
+.pagination li {
+  display: none;
+}
+.pagination .previous {
+  display: flex;
+}
+.pagination .next {
+  display: flex;
+}
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  gap: 10px;
+}
+.pagination li {
+  padding: 10px;
+  background-color: crimson;
+  border-radius: 10px;
+}
+.pagination li:hover {
+  background-color: #a32139;
+}
+.pagination li a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
 .mar8 {
   margin-top: -8px;
 }
