@@ -50,6 +50,17 @@
   list-style: none;
   gap: 10px;
 }
+
+.posabs {
+  position: absolute;
+  top: 5px;
+  left: 6px;
+}
+.posabs p {
+  font-size: 12px;
+  font-weight: 500;
+  color: gray;
+}
 .pagination li {
   padding: 10px;
   background-color: crimson;
