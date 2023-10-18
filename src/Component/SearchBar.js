@@ -22,7 +22,7 @@ export default function SearchBar() {
   };
 
   const filteredProducts = ProductDetailData.filter((product) =>
-    product.LessTitle.toLowerCase().includes(query)
+    product.LessTitle.toLowerCase().includes(query),
   );
 
   return (
@@ -35,12 +35,11 @@ export default function SearchBar() {
             value={query}
             onChange={handleInputChange}
           />
-         
         </InputGroup>
       </Form>
 
       {query && showResults ? (
-        <div className="position-absolute top-100 z-9">
+        <div className="position-absolute top-100 z-9 widthsearch">
           <div className="card h-100">
             <div className="card-body" style={{ overflow: "auto" }}>
               {filteredProducts.length > 0 ? (
@@ -56,8 +55,8 @@ export default function SearchBar() {
                   </div>
                 ))
               ) : (
-                <div className="card-text px-5">
-                  <p>No Results Found</p>
+                <div className="card-text">
+                  <p className="text-dark">No Results Found</p>
                 </div>
               )}
             </div>

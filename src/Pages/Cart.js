@@ -8,8 +8,10 @@ export default function Cart() {
   console.log(cartItems, "total");
 
   return (
-    <cartContext.Provider value={cartItems}>
-      <CartContext />
-    </cartContext.Provider>
+    <div className="mar8">
+      <cartContext.Provider value={cartItems}>
+        <CartContext />
+      </cartContext.Provider>
+    </div>
   );
 }

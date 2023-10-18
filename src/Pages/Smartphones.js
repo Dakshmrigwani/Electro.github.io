@@ -5,14 +5,17 @@ import Button from "react-bootstrap/Button";
 import ReactStars from "react-stars";
 import { BsCurrencyRupee } from "react-icons/bs";
 import { ProductDetailData } from "../Component/data";
-import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 import { addToCart, addToWishlist } from "./items";
 import Form from "react-bootstrap/Form";
+import ReactPaginate from "react-paginate";
 
 export default function Smartphones() {
+  const [data, setData] = useState();
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
   const [showMore, setShowMore] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Smartphone");
   const [filteredData, setFilteredData] = useState([]);
@@ -25,48 +28,54 @@ export default function Smartphones() {
 
   const handleToggle = () => setShowMore(!showMore);
 
+  const itemsPerPage = 6;
+
   const handleFilter = () => {
     let filteredProducts = ProductDetailData.filter(
-      (product) => product.category === selectedCategory
+      (product) => product.category === selectedCategory,
     );
 
     if (brandFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        brandFilters.includes(product.brand)
+        brandFilters.includes(product.brand),
       );
     }
 
     if (priceFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        priceFilters.includes(product.RangePrice)
+        priceFilters.includes(product.RangePrice),
       );
     }
 
     if (memoryFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        memoryFilters.includes(product.memory)
+        memoryFilters.includes(product.memory),
       );
     }
 
     if (discountFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        discountFilters.includes(product.disPercentFilter)
+        discountFilters.includes(product.disPercentFilter),
       );
     }
 
     if (ramFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        ramFilters.includes(product.Ram)
+        ramFilters.includes(product.Ram),
       );
     }
 
     if (ratingFilters.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
-        ratingFilters.includes(product.ratingFilter)
+        ratingFilters.includes(product.ratingFilter),
       );
     }
 
     setFilteredData(filteredProducts);
+  };
+
+  const handlePageClick = ({ selected }) => {
+    setCurrentPage(selected);
   };
 
   useEffect(() => {
@@ -81,12 +90,17 @@ export default function Smartphones() {
     ramFilters,
   ]);
 
+  useEffect(() => {
+    const total = filteredData.length;
+    setTotalPages(Math.ceil(total / itemsPerPage));
+  }, [filteredData]);
+
   return (
     <>
       <Layout>
         <div className="container-fluid my-3">
           <Row>
-          <div
+            <div
               className="d-flex d-lg-none"
               style={{ maxWidth: "10rem", height: "fit-content" }}
             >
@@ -133,8 +147,8 @@ export default function Smartphones() {
                                 } else {
                                   setBrandFilters(
                                     brandFilters.filter(
-                                      (brand) => brand !== "Samsung"
-                                    )
+                                      (brand) => brand !== "Samsung",
+                                    ),
                                   );
                                 }
                               }}
@@ -153,8 +167,8 @@ export default function Smartphones() {
                                 } else {
                                   setBrandFilters(
                                     brandFilters.filter(
-                                      (brand) => brand !== "Realme"
-                                    )
+                                      (brand) => brand !== "Realme",
+                                    ),
                                   );
                                 }
                               }}
@@ -173,8 +187,8 @@ export default function Smartphones() {
                                 } else {
                                   setBrandFilters(
                                     brandFilters.filter(
-                                      (brand) => brand !== "Redmi"
-                                    )
+                                      (brand) => brand !== "Redmi",
+                                    ),
                                   );
                                 }
                               }}
@@ -193,8 +207,8 @@ export default function Smartphones() {
                                 } else {
                                   setBrandFilters(
                                     brandFilters.filter(
-                                      (brand) => brand !== "OnePlus"
-                                    )
+                                      (brand) => brand !== "OnePlus",
+                                    ),
                                   );
                                 }
                               }}
@@ -213,8 +227,8 @@ export default function Smartphones() {
                                 } else {
                                   setBrandFilters(
                                     brandFilters.filter(
-                                      (brand) => brand !== "Nokia"
-                                    )
+                                      (brand) => brand !== "Nokia",
+                                    ),
                                   );
                                 }
                               }}
@@ -239,8 +253,8 @@ export default function Smartphones() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "15000 - 16000"
-                                    )
+                                      (price) => price !== "15000 - 16000",
+                                    ),
                                   );
                                 }
                               }}
@@ -262,8 +276,8 @@ export default function Smartphones() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "5000 - 6000"
-                                    )
+                                      (price) => price !== "5000 - 6000",
+                                    ),
                                   );
                                 }
                               }}
@@ -285,8 +299,8 @@ export default function Smartphones() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "17000 - 18000"
-                                    )
+                                      (price) => price !== "17000 - 18000",
+                                    ),
                                   );
                                 }
                               }}
@@ -311,8 +325,8 @@ export default function Smartphones() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "8000 - 9000"
-                                    )
+                                      (price) => price !== "8000 - 9000",
+                                    ),
                                   );
                                 }
                               }}
@@ -334,8 +348,8 @@ export default function Smartphones() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "10000 - 11000"
-                                    )
+                                      (price) => price !== "10000 - 11000",
+                                    ),
                                   );
                                 }
                               }}
@@ -357,8 +371,8 @@ export default function Smartphones() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "11000 - 12000"
-                                    )
+                                      (price) => price !== "11000 - 12000",
+                                    ),
                                   );
                                 }
                               }}
@@ -380,8 +394,8 @@ export default function Smartphones() {
                                 } else {
                                   setPriceFilters(
                                     priceFilters.filter(
-                                      (price) => price !== "13000 - 14000"
-                                    )
+                                      (price) => price !== "13000 - 14000",
+                                    ),
                                   );
                                 }
                               }}
@@ -403,8 +417,8 @@ export default function Smartphones() {
                                 } else {
                                   setMemoryFilters(
                                     memoryFilters.filter(
-                                      (price) => price !== "64GB"
-                                    )
+                                      (price) => price !== "64GB",
+                                    ),
                                   );
                                 }
                               }}
@@ -423,8 +437,8 @@ export default function Smartphones() {
                                 } else {
                                   setMemoryFilters(
                                     memoryFilters.filter(
-                                      (price) => price !== "64GB"
-                                    )
+                                      (price) => price !== "64GB",
+                                    ),
                                   );
                                 }
                               }}
@@ -449,8 +463,8 @@ export default function Smartphones() {
                                 } else {
                                   setRatingFilters(
                                     ratingFilters.filter(
-                                      (price) => price !== "4 - 4.5"
-                                    )
+                                      (price) => price !== "4 - 4.5",
+                                    ),
                                   );
                                 }
                               }}
@@ -472,8 +486,8 @@ export default function Smartphones() {
                                 } else {
                                   setRatingFilters(
                                     ratingFilters.filter(
-                                      (price) => price !== "3 - 3.5"
-                                    )
+                                      (price) => price !== "3 - 3.5",
+                                    ),
                                   );
                                 }
                               }}
@@ -495,8 +509,8 @@ export default function Smartphones() {
                                 } else {
                                   setRatingFilters(
                                     ratingFilters.filter(
-                                      (price) => price !== "3.5 - 4"
-                                    )
+                                      (price) => price !== "3.5 - 4",
+                                    ),
                                   );
                                 }
                               }}
@@ -522,8 +536,8 @@ export default function Smartphones() {
                                 } else {
                                   setDiscountFilters(
                                     discountFilters.filter(
-                                      (discount) => discount !== "30 - 40"
-                                    )
+                                      (discount) => discount !== "30 - 40",
+                                    ),
                                   );
                                 }
                               }}
@@ -545,8 +559,8 @@ export default function Smartphones() {
                                 } else {
                                   setDiscountFilters(
                                     discountFilters.filter(
-                                      (discount) => discount !== "20 - 30"
-                                    )
+                                      (discount) => discount !== "20 - 30",
+                                    ),
                                   );
                                 }
                               }}
@@ -568,8 +582,8 @@ export default function Smartphones() {
                                 } else {
                                   setDiscountFilters(
                                     discountFilters.filter(
-                                      (discount) => discount !== "10 - 20"
-                                    )
+                                      (discount) => discount !== "10 - 20",
+                                    ),
                                   );
                                 }
                               }}
@@ -591,8 +605,8 @@ export default function Smartphones() {
                                 } else {
                                   setRamFilters(
                                     ramFilters.filter(
-                                      (discount) => discount !== "4GB"
-                                    )
+                                      (discount) => discount !== "4GB",
+                                    ),
                                   );
                                 }
                               }}
@@ -611,8 +625,8 @@ export default function Smartphones() {
                                 } else {
                                   setRamFilters(
                                     ramFilters.filter(
-                                      (discount) => discount !== "6GB"
-                                    )
+                                      (discount) => discount !== "6GB",
+                                    ),
                                   );
                                 }
                               }}
@@ -631,8 +645,8 @@ export default function Smartphones() {
                                 } else {
                                   setRamFilters(
                                     ramFilters.filter(
-                                      (discount) => discount !== "8GB"
-                                    )
+                                      (discount) => discount !== "8GB",
+                                    ),
                                   );
                                 }
                               }}
@@ -645,7 +659,7 @@ export default function Smartphones() {
                 </div>
               </div>
             </div>
-            <Col md={2} className="d-none d-md-flex" >
+            <Col md={2} className="d-none d-md-flex">
               <Card className="scrollbar scrollbar-primary filter-section">
                 <Card.Body className="force-overflow">
                   <Card.Title>Filter</Card.Title>
@@ -663,8 +677,8 @@ export default function Smartphones() {
                             } else {
                               setBrandFilters(
                                 brandFilters.filter(
-                                  (brand) => brand !== "Samsung"
-                                )
+                                  (brand) => brand !== "Samsung",
+                                ),
                               );
                             }
                           }}
@@ -681,8 +695,8 @@ export default function Smartphones() {
                             } else {
                               setBrandFilters(
                                 brandFilters.filter(
-                                  (brand) => brand !== "Realme"
-                                )
+                                  (brand) => brand !== "Realme",
+                                ),
                               );
                             }
                           }}
@@ -699,8 +713,8 @@ export default function Smartphones() {
                             } else {
                               setBrandFilters(
                                 brandFilters.filter(
-                                  (brand) => brand !== "Redmi"
-                                )
+                                  (brand) => brand !== "Redmi",
+                                ),
                               );
                             }
                           }}
@@ -717,8 +731,8 @@ export default function Smartphones() {
                             } else {
                               setBrandFilters(
                                 brandFilters.filter(
-                                  (brand) => brand !== "OnePlus"
-                                )
+                                  (brand) => brand !== "OnePlus",
+                                ),
                               );
                             }
                           }}
@@ -735,8 +749,8 @@ export default function Smartphones() {
                             } else {
                               setBrandFilters(
                                 brandFilters.filter(
-                                  (brand) => brand !== "Nokia"
-                                )
+                                  (brand) => brand !== "Nokia",
+                                ),
                               );
                             }
                           }}
@@ -759,8 +773,8 @@ export default function Smartphones() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "15000 - 16000"
-                                )
+                                  (price) => price !== "15000 - 16000",
+                                ),
                               );
                             }
                           }}
@@ -777,8 +791,8 @@ export default function Smartphones() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "5000 - 6000"
-                                )
+                                  (price) => price !== "5000 - 6000",
+                                ),
                               );
                             }
                           }}
@@ -798,8 +812,8 @@ export default function Smartphones() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "17000 - 18000"
-                                )
+                                  (price) => price !== "17000 - 18000",
+                                ),
                               );
                             }
                           }}
@@ -819,8 +833,8 @@ export default function Smartphones() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "8000 - 9000"
-                                )
+                                  (price) => price !== "8000 - 9000",
+                                ),
                               );
                             }
                           }}
@@ -840,8 +854,8 @@ export default function Smartphones() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "10000 - 11000"
-                                )
+                                  (price) => price !== "10000 - 11000",
+                                ),
                               );
                             }
                           }}
@@ -861,8 +875,8 @@ export default function Smartphones() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "11000 - 12000"
-                                )
+                                  (price) => price !== "11000 - 12000",
+                                ),
                               );
                             }
                           }}
@@ -882,8 +896,8 @@ export default function Smartphones() {
                             } else {
                               setPriceFilters(
                                 priceFilters.filter(
-                                  (price) => price !== "13000 - 14000"
-                                )
+                                  (price) => price !== "13000 - 14000",
+                                ),
                               );
                             }
                           }}
@@ -903,8 +917,8 @@ export default function Smartphones() {
                             } else {
                               setMemoryFilters(
                                 memoryFilters.filter(
-                                  (price) => price !== "64GB"
-                                )
+                                  (price) => price !== "64GB",
+                                ),
                               );
                             }
                           }}
@@ -921,8 +935,8 @@ export default function Smartphones() {
                             } else {
                               setMemoryFilters(
                                 memoryFilters.filter(
-                                  (price) => price !== "128GB"
-                                )
+                                  (price) => price !== "128GB",
+                                ),
                               );
                             }
                           }}
@@ -946,8 +960,8 @@ export default function Smartphones() {
                             } else {
                               setDiscountFilters(
                                 discountFilters.filter(
-                                  (discount) => discount !== "30 - 40"
-                                )
+                                  (discount) => discount !== "30 - 40",
+                                ),
                               );
                             }
                           }}
@@ -967,8 +981,8 @@ export default function Smartphones() {
                             } else {
                               setDiscountFilters(
                                 discountFilters.filter(
-                                  (discount) => discount !== "20 - 30"
-                                )
+                                  (discount) => discount !== "20 - 30",
+                                ),
                               );
                             }
                           }}
@@ -988,8 +1002,8 @@ export default function Smartphones() {
                             } else {
                               setDiscountFilters(
                                 discountFilters.filter(
-                                  (discount) => discount !== "10 - 20"
-                                )
+                                  (discount) => discount !== "10 - 20",
+                                ),
                               );
                             }
                           }}
@@ -1009,8 +1023,8 @@ export default function Smartphones() {
                             } else {
                               setRatingFilters(
                                 ratingFilters.filter(
-                                  (price) => price !== "4 - 4.5"
-                                )
+                                  (price) => price !== "4 - 4.5",
+                                ),
                               );
                             }
                           }}
@@ -1027,8 +1041,8 @@ export default function Smartphones() {
                             } else {
                               setRatingFilters(
                                 ratingFilters.filter(
-                                  (price) => price !== "3 - 3.5"
-                                )
+                                  (price) => price !== "3 - 3.5",
+                                ),
                               );
                             }
                           }}
@@ -1045,8 +1059,8 @@ export default function Smartphones() {
                             } else {
                               setRatingFilters(
                                 ratingFilters.filter(
-                                  (price) => price !== "3.5 - 4"
-                                )
+                                  (price) => price !== "3.5 - 4",
+                                ),
                               );
                             }
                           }}
@@ -1066,8 +1080,8 @@ export default function Smartphones() {
                             } else {
                               setRamFilters(
                                 ramFilters.filter(
-                                  (discount) => discount !== "4GB"
-                                )
+                                  (discount) => discount !== "4GB",
+                                ),
                               );
                             }
                           }}
@@ -1084,8 +1098,8 @@ export default function Smartphones() {
                             } else {
                               setRamFilters(
                                 ramFilters.filter(
-                                  (discount) => discount !== "6GB"
-                                )
+                                  (discount) => discount !== "6GB",
+                                ),
                               );
                             }
                           }}
@@ -1102,8 +1116,8 @@ export default function Smartphones() {
                             } else {
                               setRamFilters(
                                 ramFilters.filter(
-                                  (discount) => discount !== "8GB"
-                                )
+                                  (discount) => discount !== "8GB",
+                                ),
                               );
                             }
                           }}
@@ -1118,103 +1132,136 @@ export default function Smartphones() {
             <Col md={10}>
               <div className="my-4 ">
                 <Row className="g-4">
-                 
-                  {filteredData.map((body) => (
-                     <Col md={4}>
-                    <div key={body.id}>
-                      <Card className="">
-                        <Card.Img variant="top" src={body.image} />
-                        <Card.Body>
-                          <Link
-                            to={`/AllProducts/${body.id}`}
-                            className="brandTitle"
-                          >
-                            <Card.Title className="fw-normal ">
-                              {showMore ? body.MoreTitle : body.LessTitle}
-                              <span
-                                onClick={() => handleToggle(body.id)}
-                                className="fw-bolder"
+                  {filteredData
+                    .slice(
+                      currentPage * itemsPerPage,
+                      (currentPage + 1) * itemsPerPage,
+                    )
+                    .map((body) => (
+                      <Col md={4}>
+                        <div key={body.id}>
+                          <Card className="">
+                            <Card.Img variant="top" src={body.image} />
+                            <Card.Body>
+                              <Link
+                                to={`/AllProducts/${body.id}`}
+                                className="brandTitle"
                               >
-                                {showMore ? " ...Read Less" : " ...Read More"}
-                              </span>
-                            </Card.Title>
-                          </Link>
-                          <Card.Text>
-                            <div
-                              className="row row-cols-auto"
-                              style={{ display: "flex", alignItems: "center" }}
-                            >
-                              <ReactStars
-                                count={body.rating}
-                                size={24}
-                                color2={"#ffd700"}
-                                value={body.Rating}
-                                style={{ marginRight: "5px" }}
-                                className="col"
-                                edit={false}
-                              />
-                              <p style={{ margin: "0" }} className="ms-2 col">
-                                {body.reviews} review
-                              </p>
-                            </div>
+                                <Card.Title className="fw-normal ">
+                                  {showMore ? body.MoreTitle : body.LessTitle}
+                                  <span
+                                    onClick={() => handleToggle(body.id)}
+                                    className="fw-bolder"
+                                  >
+                                    {showMore
+                                      ? " ...Read Less"
+                                      : " ...Read More"}
+                                  </span>
+                                </Card.Title>
+                              </Link>
+                              <Card.Text>
+                                <div
+                                  className="row row-cols-auto"
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <ReactStars
+                                    count={body.rating}
+                                    size={24}
+                                    color2={"#ffd700"}
+                                    value={body.Rating}
+                                    style={{ marginRight: "5px" }}
+                                    className="col"
+                                    edit={false}
+                                  />
+                                  <p
+                                    style={{ margin: "0" }}
+                                    className="ms-2 col"
+                                  >
+                                    {body.reviews} review
+                                  </p>
+                                </div>
 
-                            <div
-                              style={{ display: "flex", alignItems: "center" }}
-                              className="row"
-                            >
-                              <div className="col">
-                                <b className="fs-2 d-flex">
-                                  <BsCurrencyRupee className="mt-2" />
-                                  {body.DisPrice}
-                                </b>
-                                <p className="fs-6 text-decoration-line-through">
-                                  <BsCurrencyRupee />
-                                  {body.ActPrice}
-                                </p>
-                              </div>
-                              <div className="col">
-                                <p className="mt-3 text-start">
-                                  ({body.disPercent}%off)
-                                </p>
-                              </div>
-                            </div>
-                            <div
-                              style={{ display: "flex", alignItems: "center" }}
-                              className="row row-cols-auto d-flex justify-content-center"
-                            >
-                              <Button
-                                variant="outline-light"
-                                style={{
-                                  backgroundColor: "#7E90C8",
-                                  color: "white",
-                                }}
-                                className="col"
-                                onClick={() => addToCart(body)}
-                              >
-                                Add To Cart
-                              </Button>
-                              <Button
-                                className="ms-2 col"
-                                variant="outline-light"
-                                onClick={() => addToWishlist(body)}
-                                style={{
-                                  backgroundColor: "#8B5095",
-                                  color: "white",
-                                }}
-                              >
-                                Add To Wishlist
-                              </Button>
-                            </div>
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </div>
-                    </Col>
-                  ))}
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                  className="row"
+                                >
+                                  <div className="col">
+                                    <b className="fs-2 d-flex">
+                                      <BsCurrencyRupee className="mt-2" />
+                                      {body.DisPrice}
+                                    </b>
+                                    <p className="fs-6 text-decoration-line-through">
+                                      <BsCurrencyRupee />
+                                      {body.ActPrice}
+                                    </p>
+                                  </div>
+                                  <div className="col">
+                                    <p className="mt-3 text-start">
+                                      ({body.disPercent}%off)
+                                    </p>
+                                  </div>
+                                </div>
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                  className="row row-cols-auto d-flex justify-content-center"
+                                >
+                                  <Button
+                                    variant="outline-light"
+                                    style={{
+                                      backgroundColor: "#7E90C8",
+                                      color: "white",
+                                    }}
+                                    className="col"
+                                    onClick={() => addToCart(body)}
+                                  >
+                                    Add To Cart
+                                  </Button>
+                                  <Button
+                                    className="ms-2 col"
+                                    variant="outline-light"
+                                    onClick={() => addToWishlist(body)}
+                                    style={{
+                                      backgroundColor: "#8B5095",
+                                      color: "white",
+                                    }}
+                                  >
+                                    Add To Wishlist
+                                  </Button>
+                                </div>
+                              </Card.Text>
+                            </Card.Body>
+                          </Card>
+                        </div>
+                      </Col>
+                    ))}
                 </Row>
               </div>
             </Col>
           </Row>
+          <div className="d-flex justify-content-center mt-3">
+            <ReactPaginate
+              pageCount={totalPages}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              activeClassName={"active"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
+              pageLabelBuilder={() => ""} // Return an empty string for page labels
+              previousLabel={"Previous"} // Customize the "Previous" label
+              nextLabel={"Next"} // Customize the "Next" label
+            />
+          </div>
         </div>
       </Layout>
     </>

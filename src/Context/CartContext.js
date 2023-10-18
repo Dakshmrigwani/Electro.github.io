@@ -67,14 +67,12 @@ export default function CartContext() {
     const updatedCartList = cartList.filter((item) => item.id !== product.id);
     setCartList(updatedCartList);
   }
-  
-  
 
   const showDeliveryCard = cartList.some(
     (product) =>
       product.DisPrice !== null &&
       product.DisPrice !== undefined &&
-      product.DisPrice !== 0
+      product.DisPrice !== 0,
   );
 
   return (
@@ -90,7 +88,9 @@ export default function CartContext() {
           </div>
           <div className="d-flex flex-column justify-content-center align-content-center mt-5">
             <div className="row">
-              <div className={`col-12${cartList.length === 0 ? "" : " col-md-8"}`}>
+              <div
+                className={`col-12${cartList.length === 0 ? "" : " col-md-8"}`}
+              >
                 {cartList.length === 0 ? (
                   <div className="d-flex flex-column justify-content-center align-items-center h-100 display-4 col-0">
                     <BsEmojiSmile />
@@ -243,7 +243,7 @@ export default function CartContext() {
                                   (total, product) =>
                                     total +
                                     product.DisPrice * state[product.id],
-                                  0
+                                  0,
                                 )
                                 .toFixed(2)}
                             </b>
@@ -263,7 +263,7 @@ export default function CartContext() {
                                   (total, product) =>
                                     total +
                                     product.DisPrice * state[product.id],
-                                  0
+                                  0,
                                 )
                               ).toFixed(2)}
                             </b>
