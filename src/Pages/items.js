@@ -1,5 +1,6 @@
-const ThemeChanger = localStorage.getItem("ThemeChanger")
+const ThemeChanger = localStorage.getItem("ThemeChanger");
 
+const Timer = sessionStorage.getItem("Timer");
 
 // Load cart items from localStorage
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -80,5 +81,5 @@ export {
   addToWishlist,
   removeFromWishlist,
   getCartItems,
-  clearCart
+  clearCart,
 };
