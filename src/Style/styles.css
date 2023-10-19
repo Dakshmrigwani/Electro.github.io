@@ -19,7 +19,45 @@
   --bg-secondary: var(--bg-light);
   --bg-primary: var(--bg-dark);
 }
-
+.modal-content h1 {
+  color: var(--text-secondary) !important;
+}
+.modal-content p {
+  color: var(--text-secondary) !important;
+}
+.modal-content b {
+  color: var(--text-secondary) !important;
+}
+span,
+svg,
+a,
+div,
+h2,
+h1,
+h3,
+h4,
+h5 {
+  color: var(--text-primary);
+}
+.card {
+  background-color: var(--bg-primary);
+}
+button:hover svg {
+  color: var(--text-secondary);
+}
+p,
+b {
+  color: var(--text-primary);
+}
+ul li {
+  color: var(--text-primary);
+}
+.card {
+  border: 0;
+}
+.card-body {
+  background-color: var(--bg-primary);
+}
 .header-toggle-buttons {
   position: fixed;
   right: 20px;
@@ -73,6 +111,7 @@
   text-decoration: none;
   color: var(--text-primary);
 }
+
 .mar8 {
   margin-top: -8px;
 }
