@@ -14,8 +14,8 @@ import ReactStars from "react-stars";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { addToCart, addToWishlist } from "./items";
-import { useSelector, useDispatch } from 'react-redux';
-import Comments from "../Component/Comment"
+import { useSelector, useDispatch } from "react-redux";
+import Comments from "../Component/Comment";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -62,10 +62,8 @@ function ProductDetail() {
   }
 
   const selectedProduct = ProductDetailData.find(
-    (product) => product.id === parseInt(productId)
+    (product) => product.id === parseInt(productId),
   );
-
-
 
   const total = (
     selectedProduct.DisPrice * state.age +
@@ -284,7 +282,7 @@ function ProductDetail() {
                         </div>
                       </Card.Body>
                     </Card>
-                    <Comments/>
+                    <Comments />
                   </div>
                 </div>
               </Col>
