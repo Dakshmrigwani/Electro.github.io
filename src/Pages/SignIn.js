@@ -15,11 +15,7 @@ import {
   MDBInput,
   MDBCheckbox,
 } from "mdb-react-ui-kit";
-import {
-  BsTwitter,
-  BsInstagram,
-  BsLinkedin,
-} from "react-icons/bs";
+import { BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { SiGmail } from "react-icons/si";
 
@@ -28,7 +24,7 @@ function SignIn() {
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
-  
+
   const [showPassword1, setShowPassword1] = useState(false);
   const togglePasswordVisibility1 = () => {
     setShowPassword1((prevShowPassword1) => !prevShowPassword1);
@@ -47,13 +43,13 @@ function SignIn() {
       .required("Password is required")
       .matches(
         /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
-        "Password must contain at least 8 characters, 1 uppercase letter, 1 number, and 1 special character"
+        "Password must contain at least 8 characters, 1 uppercase letter, 1 number, and 1 special character",
       ),
     password1: Yup.string()
       .required("Password is required")
       .matches(
         /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/,
-        "Password must contain at least 8 characters, 1 uppercase letter, 1 number, and 1 special character"
+        "Password must contain at least 8 characters, 1 uppercase letter, 1 number, and 1 special character",
       ),
     email1: Yup.string()
       .email("Invalid email address")
@@ -69,20 +65,21 @@ function SignIn() {
       username: "",
       password1: "",
       email1: "",
-      password:'',
-      email:'',
+      password: "",
+      email: "",
     },
     validationSchema,
-    onSubmit: values => {
-      if ((formik.values.email && formik.values.password) ) {
+    onSubmit: (values) => {
+      if (formik.values.email && formik.values.password) {
         navigate("/Pages/Body");
-      }
-      else if
-        (formik.values.email1 && formik.values.password1 && formik.values.username && formik.values.name)
-        {
-          navigate("/Pages/Body");
-        }
-       else {
+      } else if (
+        formik.values.email1 &&
+        formik.values.password1 &&
+        formik.values.username &&
+        formik.values.name
+      ) {
+        navigate("/Pages/Body");
+      } else {
         console.log("Please fill the form");
       }
     },
@@ -100,165 +97,107 @@ function SignIn() {
   };
 
   return (
-    <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
-      <MDBTabs
-        pills
-        justify
-        className="mb-3 d-flex flex-row justify-content-between"
-      >
-        <MDBTabsItem>
-          <MDBTabsLink
-            onClick={() => handleJustifyClick("tab1")}
-            active={justifyActive === "tab1"}
-          >
-            Login
-          </MDBTabsLink>
-        </MDBTabsItem>
-        <MDBTabsItem>
-          <MDBTabsLink
-            onClick={() => handleJustifyClick("tab2")}
-            active={justifyActive === "tab2"}
-          >
-            Register
-          </MDBTabsLink>
-        </MDBTabsItem>
-      </MDBTabs>
-
-      <MDBTabsContent>
-        <MDBTabsPane show={justifyActive === "tab1"}>
-          <form onSubmit={handleSubmit}>
-            <div label="email">Email address</div>
-            <MDBInput
-              id="email"
-              name="email"
-              type="email"
-              value={formik.values.email}
-              onChange={handleChange}
-              onBlur={formik.handleBlur}
-              error={touched.email && errors.email}
-            />
-            {touched.email && errors.email && (
-              <div className="text-danger">{errors.email}</div>
-            )}
-            <div label="password">Password</div>
-            <MDBInput
-              wrapperClass="w-100 input-group"
-              id="password"
-              name="password"
-              type={showPassword ? "text" : "password"}
-              value={formik.values.password}
-              onChange={handleChange}
-              onBlur={formik.handleBlur}
-              error={touched.password && errors.password}
+    <div className="container">
+      <div className="d-flex flex-column">
+        <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link active"
+              id="pills-home-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-home"
+              type="button"
+              role="tab"
+              aria-controls="pills-home"
+              aria-selected="true"
             >
-              <button
-                type="button"
-                className="btn btn-outline-primary"
-                onClick={togglePasswordVisibility}
-              >
-                {showPassword ? <BsEyeSlash /> : <BsEye />}
-              </button>
-            </MDBInput>
-            {touched.password && errors.password && (
-              <div className="text-danger">{errors.password}</div>
-            )}
-
-            <MDBBtn className="mt-4 w-100" type="submit">
-              Sign in
-            </MDBBtn>
-          </form>
-        </MDBTabsPane>
-
-        <MDBTabsPane show={justifyActive === "tab2"}>
-          <form onSubmit={handleSubmit}>
-            <div label="name">Name</div>
-            <MDBInput
-              id="name"
-              name="name"
-              type="text"
-              value={formik.values.name}
-              onChange={handleChange}
-              onBlur={formik.handleBlur}
-              error={touched.name && errors.name}
-            />
-            {touched.name && errors.name && (
-              <div className="text-danger">{errors.name}</div>
-            )}
-            <div label="username">Username</div>
-            <MDBInput
-              id="username"
-              name="username"
-              type="text"
-              value={formik.values.username}
-              onChange={handleChange}
-              onBlur={formik.handleBlur}
-              error={touched.username && errors.username}
-            />
-            {touched.username && errors.username && (
-              <div className="text-danger">{errors.username}</div>
-            )}
-            <div label="email1">Email address</div>
-            <MDBInput
-              id="email1"
-              name="email1"
-              type="email1"
-              value={formik.values.email1}
-              onChange={handleChange}
-              onBlur={formik.handleBlur}
-              error={touched.email1 && errors.email1}
-            />
-            {touched.email1 && errors.email1 && (
-              <div className="text-danger">{errors.email1}</div>
-            )}
-            <div label="password1">Password</div>
-
-            <MDBInput
-              wrapperClass="w-100 input-group"
-              id="password1"
-              name="password1"
-              type={showPassword1 ? "text" : "password"}
-              value={formik.values.password1}
-              onChange={handleChange}
-              onBlur={formik.handleBlur}
-              error={touched.password1 && errors.password1}
+              Home
+            </button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link"
+              id="pills-profile-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-profile"
+              type="button"
+              role="tab"
+              aria-controls="pills-profile"
+              aria-selected="false"
             >
-              <button
-                type="button"
-                className="btn btn-outline-primary"
-                onClick={togglePasswordVisibility1}
-              >
-                {showPassword1 ? <BsEyeSlash /> : <BsEye />}
-              </button>
-            </MDBInput>
-
-            {touched.password1 && errors.password1 && (
-              <div className="text-danger mb-4">{errors.password1}</div>
-            )}
-
-            <div className="d-flex justify-content-center mb-4">
-              <MDBCheckbox
-                name="agreeToTerms"
-                id="flexCheckDefault"
-                label="I have read and agree to the terms"
-                onChange={handleChange}
-              />
-            </div>
-            <MDBBtn className="mb-4 w-100" type="submit">
-              Sign up
-            </MDBBtn>
-          </form>
-        </MDBTabsPane>
-      </MDBTabsContent>
-      <div className="d-flex justify-content-center">
-        <div className="d-flex flex-column text-center">
-          <p>Sign in with</p>
-          <div className="d-flex gap-3">
-            <BsInstagram /> <BsLinkedin /> <BsTwitter /> <FcGoogle />{" "}
-            <SiGmail />
+              Profile
+            </button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link"
+              id="pills-contact-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-contact"
+              type="button"
+              role="tab"
+              aria-controls="pills-contact"
+              aria-selected="false"
+            >
+              Contact
+            </button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button
+              className="nav-link"
+              id="pills-disabled-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-disabled"
+              type="button"
+              role="tab"
+              aria-controls="pills-disabled"
+              aria-selected="false"
+              disabled
+            >
+              Disabled
+            </button>
+          </li>
+        </ul>
+        <div className="tab-content" id="pills-tabContent">
+          <div
+            className="tab-pane fade show active"
+            id="pills-home"
+            role="tabpanel"
+            aria-labelledby="pills-home-tab"
+            tabindex="0"
+          >
+            ...
+          </div>
+          <div
+            className="tab-pane fade"
+            id="pills-profile"
+            role="tabpanel"
+            aria-labelledby="pills-profile-tab"
+            tabindex="0"
+          >
+            ...
+          </div>
+          <div
+            className="tab-pane fade"
+            id="pills-contact"
+            role="tabpanel"
+            aria-labelledby="pills-contact-tab"
+            tabindex="0"
+          >
+            ...
+          </div>
+          <div
+            className="tab-pane fade"
+            id="pills-disabled"
+            role="tabpanel"
+            aria-labelledby="pills-disabled-tab"
+            tabindex="0"
+          >
+            ...
           </div>
         </div>
       </div>
-    </MDBContainer>
+    </div>
   );
 }
 
