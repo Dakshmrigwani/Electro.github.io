@@ -110,10 +110,10 @@ function NavBar() {
               <SearchBar className="increase_on_click" />
               <div className="d-flex gap-2 ms-2">
                 <Button
-                  className="btn bg-dark border-0"
+                  className="btn border-0 navbg"
                   style={{ boxShadow: "none" }}
                 >
-                  <Link to="/Pages/Wishlist">
+                  <Link to="/Pages/Wishlist" className="">
                     <span className="position-relative navbg">
                       <AiOutlineHeart className="navicons fs-4" />
                       {wishItems.length === 0 ? (
@@ -130,10 +130,10 @@ function NavBar() {
                 </Button>
 
                 <Button
-                  className="btn bg-dark border-0"
+                  className="btn  border-0 navbg"
                   style={{ boxShadow: "none" }}
                 >
-                  <Link to="/pages/Cart">
+                  <Link to="/pages/Cart" className="">
                     <span className="position-relative navbg">
                       <BsCart3 className="navicons fs-4" />
 
@@ -152,10 +152,10 @@ function NavBar() {
                   </Link>
                 </Button>
                 <Button
-                  className="btn bg-dark border-0 fs-5"
+                  className="btn  border-0 fs-5 navbg"
                   style={{ boxShadow: "none" }}
                 >
-                  <Link to="/pages/SignIn">
+                  <Link to="/pages/SignIn" className="">
                     <span className="navbg">
                       <AiOutlineUser className="navicons" />
                     </span>

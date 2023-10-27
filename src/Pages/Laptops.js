@@ -848,7 +848,7 @@ export default function Laptops() {
                                 to={`/AllProducts/${body.id}`}
                                 className="brandTitle"
                               >
-                                <Card.Title className="fw-normal ">
+                                <Card.Title className="fw-normal textsize">
                                   {showMore ? body.MoreTitle : body.LessTitle}
                                   <span
                                     onClick={() => handleToggle(body.id)}

@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import image1 from "../Images/image1.avif";
 import Button from "react-bootstrap/Button";
 import { useSelector, useDispatch } from "react-redux";
@@ -11,10 +11,24 @@ const Comments = () => {
   const [editCommentId, setEditCommentId] = useState(null);
   const [editedComment, setEditedComment] = useState("");
 
+  useEffect(() => {
+    const storedComments = localStorage.getItem("comments");
+    if (storedComments) {
+      try {
+        const parsedComments = JSON.parse(storedComments);
+        if (Array.isArray(parsedComments)) {
+          // Filter out invalid comments
+          const validComments = parsedComments.filter(comment => comment.id && comment.content);
+          dispatch(AddComment(validComments));
+        } else {
+          console.error("Stored comments are not in the expected format.");
+        }
+      } catch (error) {
+        console.error("Error parsing stored comments:", error);
+      }
+    }
+  }, [dispatch]);
 
-  useEffect(()=> {
-    AddComment
-  },[])
   const handlePostComment = () => {
     if (newComment.trim() !== "") {
       dispatch(AddComment({ content: newComment, id: Date.now() })); // Use a unique identifier for the comment
@@ -33,7 +47,7 @@ const Comments = () => {
   const handleDeleteComment = (id) => {
     dispatch(DeleteComment(id));
   };
-  console.log(comments)
+  console.log(comments);
   return (
     <div className="">
       <h3>Comments</h3>
@@ -70,10 +84,10 @@ const Comments = () => {
         </div>
         <div className="addnew">
           <div className="form-floating">
-            {/* {comments.map((comment) => (
-              <div key={comment.id} className="card mb-3 border-0">
+            {/* {comments.map((body) => (
+              <div key={body.id} className="card mb-3 border-0">
                 <div className="card-body">
-                  {editCommentId === comment.id ? (
+                  {editCommentId === body.id ? (
                     <>
                       <textarea
                         value={editedComment}
@@ -84,11 +98,11 @@ const Comments = () => {
                   ) : (
                     <>
                       <h5 className="card-title">Sherlyn</h5>
-                      <p className="card-text">{comment.content}</p>
-                      <button onClick={() => setEditCommentId(comment.id)}>
+                      <p className="card-text">{body.content}</p>
+                      <button onClick={() => setEditCommentId(body.id)}>
                         Edit
                       </button>
-                      <button onClick={() => handleDeleteComment(comment.id)}>
+                      <button onClick={() => handleDeleteComment(body.id)}>
                         Delete
                       </button>
                     </>
@@ -120,4 +134,4 @@ const Comments = () => {
     </div>
   );
 };
-export default Comments
+export default Comments;

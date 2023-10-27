@@ -39,6 +39,9 @@ h4,
 h5 {
   color: var(--text-primary);
 }
+.textsize{
+  font-size: 1.1rem !important;
+}
 .card {
   background-color: var(--bg-primary);
 }
