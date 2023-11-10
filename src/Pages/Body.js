@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import Typewriter from "typewriter-effect";
 import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
+import { Parallax } from "react-scroll-parallax";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
