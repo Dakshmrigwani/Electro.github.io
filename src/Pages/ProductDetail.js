@@ -1,5 +1,4 @@
 import React, { useState, useReducer } from "react";
-
 import { useParams } from "react-router-dom";
 import { ProductDetailData } from "../Component/data";
 import Layout from "../Component/Layout";
@@ -9,7 +8,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CiLocationOn } from "react-icons/ci";
 import { BsPencil, BsCurrencyRupee, BsFillPencilFill } from "react-icons/bs";
-import { AiFillDelete } from "react-icons/ai";
+
 import ReactStars from "react-stars";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";

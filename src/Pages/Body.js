@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import Typewriter from "typewriter-effect";
 import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
+
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -48,7 +49,7 @@ export default function Body() {
 
   const handleFilter = (filterCriteria) => {
     const filteredProducts = ProductDetailData.filter(
-      (product) => product.category === filterCriteria,
+      (product) => product.category === filterCriteria
     );
     setFilteredData(filteredProducts);
   };

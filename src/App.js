@@ -5,6 +5,7 @@ import "./Style/styles.css"; // Import any common styles you have
 
 // Import your page components
 import HeadPhone from "./Pages/Headphone";
+
 import Body from "./Pages/Body";
 import Speaker from "./Pages/Speaker";
 import Watch from "./Pages/Watches";
