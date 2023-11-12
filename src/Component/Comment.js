@@ -98,51 +98,58 @@ const Comments = () => {
         </div>
         <div className="addnew">
           <div className="form-floating">
-            {commentsData.map((body) => (
-              <div key={body.id} className="card mb-3 border-0">
-                <div className="card-body">
-                  { editCommentId === body.id ? (
-                    <>
-                    <div className="d-flex flex-column gap-3">
-                    <input
-                        value={editedName}
-                        onChange={(e) => setEditedName(e.target.value)}
-                        placeholder="Edit Your Name"
-                      />
-                      <textarea
-                        value={editedComment}
-                        onChange={(e) => setEditedComment(e.target.value)}
-                      ></textarea>
-                      <button onClick={handleEditComment} className="btn btn-primary">Save</button>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div class="statictext">
-                        <div className="card-body">
-                          <h5 className="card-title">{body.name}</h5>
-                          <p className="card-text">{body.content}</p>
-                          <div className="d-flex justify-content-end align-items-center gap-3">
-                            <button
-                              onClick={() => setEditCommentId(body.id)}
-                              className="btn"
-                            >
-                              <BsFillPencilFill />
-                            </button>
-                            <button
-                              onClick={() => handleDeleteComment(body.id)}
-                              className="btn"
-                            >
-                              <AiFillDelete />
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  )}
+          // ... previous code
+
+{commentsData.map((body) => (
+  body.name && body.content && ( // Added parentheses here
+    <div key={body.id} className="card mb-3 border-0">
+      <div className="card-body">
+        {editCommentId === body.id ? (
+          <>
+            <div className="d-flex flex-column gap-3">
+              <input
+                value={editedName}
+                onChange={(e) => setEditedName(e.target.value)}
+                placeholder="Edit Your Name"
+              />
+              <textarea
+                value={editedComment}
+                onChange={(e) => setEditedComment(e.target.value)}
+              ></textarea>
+              <button onClick={handleEditComment} className="btn btn-primary">Save</button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div class="statictext">
+              <div className="card-body">
+                <h5 className="card-title">{body.name}</h5>
+                <p className="card-text">{body.content}</p>
+                <div className="d-flex justify-content-end align-items-center gap-3">
+                  <button
+                    onClick={() => setEditCommentId(body.id)}
+                    className="btn"
+                  >
+                    <BsFillPencilFill />
+                  </button>
+                  <button
+                    onClick={() => handleDeleteComment(body.id)}
+                    className="btn"
+                  >
+                    <AiFillDelete />
+                  </button>
                 </div>
               </div>
-            ))}
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  )
+))}
+
+// ... rest of your code
+
             <div className="addnew">
               <div className=" d-flex flex-column gap-3">
                 <input
