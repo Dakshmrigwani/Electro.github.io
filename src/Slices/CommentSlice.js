@@ -12,13 +12,15 @@ const CommentSlice = createSlice({
   initialState,
   reducers: {
     AddComment: (state, action) => {
+      const { name, content } = action.payload;
       const uniqueId = uuidv4(); // Generate a unique ID for the comment
-      state.commentsData.push({ id: uniqueId, ...action.payload });
+      state.commentsData.push({ id: uniqueId, name, content });
     },
     editComment: (state, action) => {
-      const { id, content } = action.payload;
+      const { id, name, content } = action.payload;
       const comment = state.commentsData.find((comment) => comment.id === id);
       if (comment) {
+        comment.name = name;
         comment.content = content;
       }
     },
