@@ -11,7 +11,7 @@ const Comments = () => {
   const { commentsData } = useSelector((state) => state.comments);
   const [newComment, setNewComment] = useState("");
   const [newName, setNewName] = useState("");
- 
+
   const [editedName, setEditedName] = useState("");
   const [editCommentId, setEditCommentId] = useState(null);
   const [editedComment, setEditedComment] = useState("");
@@ -51,7 +51,13 @@ const Comments = () => {
 
   const handleEditComment = () => {
     if (editedName.trim() !== "" && editedComment.trim() !== "") {
-      dispatch(editComment({ id: editCommentId, content: editedComment , name: editedName }));
+      dispatch(
+        editComment({
+          id: editCommentId,
+          content: editedComment,
+          name: editedName,
+        })
+      );
       setEditCommentId(null);
       setEditedComment("");
       setEditedName("");
@@ -96,84 +102,88 @@ const Comments = () => {
             </div>
           </div>
         </div>
-        <div className="addnew">
-          <div className="form-floating">
-          // ... previous code
 
-{commentsData.map((body) => (
-  body.name && body.content && ( // Added parentheses here
-    <div key={body.id} className="card mb-3 border-0">
-      <div className="card-body">
-        {editCommentId === body.id ? (
-          <>
-            <div className="d-flex flex-column gap-3">
-              <input
-                value={editedName}
-                onChange={(e) => setEditedName(e.target.value)}
-                placeholder="Edit Your Name"
-              />
-              <textarea
-                value={editedComment}
-                onChange={(e) => setEditedComment(e.target.value)}
-              ></textarea>
-              <button onClick={handleEditComment} className="btn btn-primary">Save</button>
-            </div>
-          </>
-        ) : (
-          <>
-            <div class="statictext">
-              <div className="card-body">
-                <h5 className="card-title">{body.name}</h5>
-                <p className="card-text">{body.content}</p>
-                <div className="d-flex justify-content-end align-items-center gap-3">
-                  <button
-                    onClick={() => setEditCommentId(body.id)}
-                    className="btn"
-                  >
-                    <BsFillPencilFill />
-                  </button>
-                  <button
-                    onClick={() => handleDeleteComment(body.id)}
-                    className="btn"
-                  >
-                    <AiFillDelete />
-                  </button>
+        {commentsData.map((body) => (
+          <div key={body.id}>
+            {editCommentId === body.id ? (
+              <>
+                <div className="card mb-3 border-0">
+                  <div className="card-body">
+                    <div className="d-flex flex-column gap-3">
+                      <input
+                        value={editedName}
+                        onChange={(e) => setEditedName(e.target.value)}
+                        placeholder="Edit Your Name"
+                      />
+                      <textarea
+                        value={editedComment}
+                        onChange={(e) => setEditedComment(e.target.value)}
+                      ></textarea>
+                      <button
+                        onClick={handleEditComment}
+                        className="btn btn-primary"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </>
-        )}
-      </div>
-    </div>
-  )
-))}
+              </>
+            ) : (
+              <>
+                {body.name &&
+                  body.content && ( // Added parentheses here
+                    <div class="statictext">
+                      <div className="card mb-3 border-0">
+                        <div className="card-body">
+                          <h5 className="card-title">{body.name}</h5>
+                          <p className="card-text">{body.content}</p>
+                          <div className="d-flex justify-content-end align-items-center gap-3">
+                            <button
+                              onClick={() => setEditCommentId(body.id)}
+                              className="btn"
+                            >
+                              <BsFillPencilFill />
+                            </button>
+                            <button
+                              onClick={() => handleDeleteComment(body.id)}
+                              className="btn"
+                            >
+                              <AiFillDelete />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+              </>
+            )}
+          </div>
+        ))}
 
-// ... rest of your code
-
-            <div className="addnew">
-              <div className=" d-flex flex-column gap-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="Enter your Name"
-                  value={newName}
-                  onChange={(e) => setNewName(e.target.value)}
-                />
-                <textarea
-                  style={{ height: "100px" }}
-                  className="form-control"
-                  id="floatingTextarea"
-                  value={newComment}
-                  onChange={(e) => setNewComment(e.target.value)}
-                ></textarea>
-              </div>
-              <div className="mt-2">
-                <button className="btn btn-primary" onClick={handlePostComment}>
-                  Post Your View
-                </button>
-              </div>
-            </div>
+        <div className="addnew">
+          
+          <div className=" d-flex flex-column gap-3">
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Enter your Name"
+              value={newName}
+              onChange={(e) => setNewName(e.target.value)}
+            />
+            <textarea
+              style={{ height: "100px" }}
+              className="form-control"
+              id="floatingTextarea"
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+            ></textarea>
+          </div>
+          <div className="mt-2">
+            <button className="btn btn-primary" onClick={handlePostComment}>
+              Post Your View
+            </button>
           </div>
         </div>
       </div>
@@ -181,3 +191,4 @@ const Comments = () => {
   );
 };
 export default Comments;
+// hfdewkhfvbwhfvb
