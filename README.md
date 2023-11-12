@@ -27,7 +27,9 @@ there are many different kind of the products in this page and also available fo
 
 i have added add to cart functionality in wishlist so that when you click on that product then it takes the data in cart page and remove the product from wishlist automatically
 
-there is sign in so that the user can sign in and add validation using yup and formik 
+there is sign in so that the user can sign in and add validation using yup and formik
+
+added comment section -> You can edit and delete as well ,but the data is global it shows in all the product detail page
 
 what will come
 
