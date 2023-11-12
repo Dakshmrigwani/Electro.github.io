@@ -45,8 +45,18 @@ h5 {
 .card {
   background-color: var(--bg-primary);
 }
+.btn:hover {
+  color: var(--text-primary);
+}
+button{
+  color: var(--text-primary)
+}
 button:hover svg {
-  color: var(--text-secondary);
+  color: var(--text-primary);
+}
+.btn-check:focus+.btn, .btn:focus {
+  outline: 0;
+  box-shadow: none;
 }
 p,
 b {
