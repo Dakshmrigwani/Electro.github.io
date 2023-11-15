@@ -49,8 +49,14 @@ h5 {
   color: var(--text-primary);
 }
 .widthsearch .card-body{
-  background-color: var(--bg-secondary);
-  height:300px
+  background-color: white;
+  max-height:300px
+}
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 button{
   color: var(--text-primary)
