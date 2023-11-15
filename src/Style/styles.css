@@ -48,6 +48,10 @@ h5 {
 .btn:hover {
   color: var(--text-primary);
 }
+.widthsearch .card-body{
+  background-color: var(--bg-secondary);
+  height:300px
+}
 button{
   color: var(--text-primary)
 }
