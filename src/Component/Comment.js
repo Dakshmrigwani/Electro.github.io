@@ -139,6 +139,7 @@ const Comments = () => {
                           <h5 className="card-title">{body.name}</h5>
                           <p className="card-text">{body.content}</p>
                           <div className="d-flex justify-content-end align-items-center gap-3">
+                            <p className="card-text">{body.changetext}</p>
                             <button
                               onClick={() => setEditCommentId(body.id)}
                               className="btn"
@@ -191,4 +192,3 @@ const Comments = () => {
   );
 };
 export default Comments;
-// hfdewkhfvbwhfvb
