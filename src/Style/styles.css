@@ -50,7 +50,13 @@ h5 {
 }
 .widthsearch .card-body{
   background-color: white;
-  height:300px
+  max-height:300px
+}
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 button{
   color: var(--text-primary)
